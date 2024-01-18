@@ -28,8 +28,9 @@ public class TheGame extends JFrame implements KeyListener {
         setLocation(200, 200);
 
         try {
-            rocket = ImageIO.read(new File("C:\\Users\\GTA01\\IdeaProjects\\Demo01\\SpaceShuttle.png"));
+            rocket = ImageIO.read(new File("/Users/malvers/IdeaProjects/CGTA_ESZ/PSYCHE_Asteroid.png"));
         } catch (IOException e) {
+            System.out.println("IMAGE PROBLEMS");
             System.out.println(e);
         }
 
