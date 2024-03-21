@@ -6,9 +6,10 @@ import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 import java.text.DecimalFormat;
 
-public class Rays extends JButton {
+public class InterceptTheorem extends JButton {
 
     private boolean drawDist = false;
+    private boolean drawParellels = false;
 
     private class Handle extends Ellipse2D.Double {
         public boolean selected = false;
@@ -20,6 +21,8 @@ public class Rays extends JButton {
 
     private Color red = new Color(180, 0, 0);
     private Color blue = new Color(0, 0, 80);
+
+    private Color green = new Color(80, 140, 0);
     private Handle handle1 = null;
     private Handle handle2 = null;
     private Point2D.Double pto1 = null;
@@ -28,7 +31,7 @@ public class Rays extends JButton {
     private int gapX = 100;
     private int gapY = 100;
 
-    public Rays() {
+    public InterceptTheorem() {
 
         addMouseListener(new MouseAdapter() {
             @Override
@@ -40,6 +43,12 @@ public class Rays extends JButton {
                     handle1.selected = false;
                     handle2.selected = true;
                 }
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                handle1.selected = false;
+                handle2.selected = false;
             }
         });
 
@@ -68,6 +77,8 @@ public class Rays extends JButton {
                 super.keyPressed(e);
                 if (e.getKeyCode() == KeyEvent.VK_W) {
                     System.exit(0);
+                } else if (e.getKeyCode() == KeyEvent.VK_P) {
+                    drawParellels = !drawParellels;
                 } else if (e.getKeyCode() == KeyEvent.VK_N) {
                     drawDist = !drawDist;
                 } else if (e.getKeyCode() == KeyEvent.VK_UP) {
@@ -91,8 +102,8 @@ public class Rays extends JButton {
 
         Graphics2D g2d = (Graphics2D) g;
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        g2d.setFont(new Font("Arial", Font.PLAIN, 16));
-        g2d.setStroke(new BasicStroke(2));
+        g2d.setFont(new Font("Arial", Font.PLAIN, 22));
+        g2d.setStroke(new BasicStroke(3));
         DecimalFormat df = new DecimalFormat("#.##");
 
         double ps = 6.0;
@@ -109,15 +120,9 @@ public class Rays extends JButton {
         Line2D leg1 = new Line2D.Double(pointS, pto1);
         Line2D leg2 = new Line2D.Double(pointS, pto2);
 
-        /// draw S /////////////////////////////////////////////////////////////////////////////////////////////////////
-        g2d.setColor(red);
-
-        Point2D.Double pS = getIntersectionPoint(leg1, leg2);
-        g2d.fill(new Ellipse2D.Double(pS.x - shift, pS.y - shift, ps, ps));
-        g2d.drawString("S", (int) (pS.x + ps), (int) (pS.y + ps));
-
         /// draw rays //////////////////////////////////////////////////////////////////////////////////////////////////
 
+        g2d.setColor(red);
         if (handle1 == null) {
             handle1 = new Handle(pto1.x - 6, pto1.y - 6, 12, 12);
         }
@@ -130,6 +135,14 @@ public class Rays extends JButton {
         g2d.fill(handle1);
         g2d.fill(handle2);
 
+        /// draw S /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        g2d.setColor(blue);
+
+        Point2D.Double pS = getIntersectionPoint(leg1, leg2);
+        g2d.fill(new Ellipse2D.Double(pS.x - shift, pS.y - shift, ps, ps));
+        g2d.drawString("S", (int) (pS.x + ps), (int) (pS.y + ps));
+
         /// draw parallels /////////////////////////////////////////////////////////////////////////////////////////////
         g2d.setColor(blue);
 
@@ -139,25 +152,34 @@ public class Rays extends JButton {
         Line2D parallel1 = new Line2D.Double(0, sizeY - gapY, sizeX - gapX, 0);
         Line2D parallel2 = new Line2D.Double(gapX, sizeY, sizeX, gapY);
 
-        g2d.draw(parallel1);
-        g2d.draw(parallel2);
+        if (drawParellels) {
+            g2d.draw(parallel1);
+            g2d.draw(parallel2);
+        }
 
         Point2D.Double pA = getIntersectionPoint(leg1, parallel2);
         Point2D.Double pB = getIntersectionPoint(leg2, parallel2);
 
+        Point2D.Double pC = getIntersectionPoint(leg1, parallel1);
+        Point2D.Double pD = getIntersectionPoint(leg2, parallel1);
+
+        g2d.setColor(green);
+        g2d.draw(new Line2D.Double(pA, pB));
+        g2d.draw(new Line2D.Double(pC, pD));
+
+        g2d.setColor(blue);
         g2d.fill(new Ellipse2D.Double(pA.getX() - shift, pA.getY() - shift, ps, ps));
         g2d.drawString("A", (int) (pA.x + ps), (int) (pA.y + ps));
 
         g2d.fill(new Ellipse2D.Double(pB.getX() - shift, pB.getY() - shift, ps, ps));
-        g2d.drawString("B", (int) (pB.x + ps), (int) (pB.y + ps));
-
-        Point2D.Double pC = getIntersectionPoint(leg1, parallel1);
-        Point2D.Double pD = getIntersectionPoint(leg2, parallel1);
+        g2d.drawString("B", (int) (pB.x - 2 * ps), (int) (pB.y + 3.5 * ps));
 
         g2d.fill(new Ellipse2D.Double(pC.getX() - shift, pC.getY() - shift, ps, ps));
         g2d.drawString("C", (int) (pC.x + ps), (int) (pC.y + ps));
+
         g2d.fill(new Ellipse2D.Double(pD.getX() - shift, pD.getY() - shift, ps, ps));
-        g2d.drawString("D", (int) (pD.x + ps), (int) (pD.y + ps));
+        g2d.drawString("D", (int) (pD.x - 2 * ps), (int) (pD.y + 3.5 * ps));
+
 
         /// get the distances //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -222,9 +244,9 @@ public class Rays extends JButton {
         String str2 = "SA/SC = " + df.format(ratioSA_SC) + "    AB/CD = " + df.format(ratioAB_CD);
         String str3 = "SB/SD = " + df.format(ratioSA_SC) + "    AB/CD = " + df.format(ratioAB_CD);
 
-        g2d.drawString(str1, 20, 40 );
-        g2d.drawString(str2, 20, 70 );
-        g2d.drawString(str3, 20, 100 );
+        g2d.drawString(str1, 20, 40);
+        g2d.drawString(str2, 20, 70);
+        g2d.drawString(str3, 20, 100);
     }
 
     private double calculateDistance(Point2D.Double point1, Point2D.Double point2) {
@@ -265,12 +287,12 @@ public class Rays extends JButton {
 
     public static void main(String[] args) {
 
-        Rays rays = new Rays();
+        InterceptTheorem rays = new InterceptTheorem();
         JFrame f = new JFrame();
         f.add(rays);
         f.setTitle("Strahlensatz - Intercept Theorem");
         f.setLocation(300, 0);
-        f.setSize(size, size);
+        f.setSize((int) (1.6*size), (int) (1.0*size));
         f.setVisible(true);
     }
 }
