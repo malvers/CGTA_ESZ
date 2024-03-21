@@ -10,7 +10,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class TheGame extends JFrame implements KeyListener {
+public class Modifiziert extends JFrame implements KeyListener {
 
     private final Timer timer;
     private BufferedImage rocket = null;
@@ -20,14 +20,15 @@ public class TheGame extends JFrame implements KeyListener {
     private int xRect = 10;
     private int yRect = 10;
 
-    public TheGame() {
+    public Modifiziert() {
 
-        setTitle("The Game bal");
+        setTitle("Modifiziert");
         setSize(800, 500);
         setLocation(200, 200);
+        setVisible(true);
 
         try {
-            rocket = ImageIO.read(new File("/Users/malvers/IdeaProjects/CGTA_ESZ/PSYCHE_Asteroid.png"));
+            rocket = ImageIO.read(new File("/Users/malvers/IdeaProjects/CGTA_ESZ/src/Asteroid_big.png"));
         } catch (IOException e) {
             System.out.println("IMAGE PROBLEMS");
             System.out.println(e);
@@ -41,6 +42,7 @@ public class TheGame extends JFrame implements KeyListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 moveObject();
+                checkCollision(); // Neues Aufruf für die Kollisionserkennung
                 repaint();
             }
         });
@@ -56,29 +58,32 @@ public class TheGame extends JFrame implements KeyListener {
         }
     }
 
+    private void checkCollision() {
+        Rectangle rocketBounds = new Rectangle(x, y, getWidth() / 10, getHeight() / 10);
+        Rectangle rectBounds = new Rectangle(xRect, yRect, 20, 100);
+
+        if (rocketBounds.intersects(rectBounds)) {
+            // Kollision erkannt, füge hier deine Reaktion auf die Kollision ein
+            System.out.println("Kollision mit dem Rechteck!");
+        }
+    }
+
     @Override
     public void paint(Graphics g) {
 
         Graphics2D g2d = (Graphics2D) g;
 
-        //g2d.setRenderingHints();
-
         g2d.setColor(Color.WHITE);
         g2d.fill(new Rectangle2D.Double(0, 0, getWidth(), getHeight()));
 
-        g2d.drawImage(rocket, x,y, getWidth()/10, getHeight()/10, this);
+        g2d.drawImage(rocket, x, y, getWidth() / 10, getHeight() / 10, this);
 
         g2d.setColor(new Color(0, 0, 80));
         g2d.fillRect(xRect, yRect, 20, 100);
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new TheGame().setVisible(true);
-            }
-        });
+        new Modifiziert();
     }
 
     @Override
@@ -97,15 +102,6 @@ public class TheGame extends JFrame implements KeyListener {
                 yRect += 10;
                 break;
         }
-
-        /*
-        myDelay -= 5;
-        if (myDelay < 50) {
-            myDelay = 50;
-        }
-        timer.setDelay(myDelay);
-
-         */
     }
 
     @Override
