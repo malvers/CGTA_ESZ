@@ -171,6 +171,7 @@ public class Rays extends JButton {
         }
 
         double distSA = calculateDistance(pS, pA);
+        double distSB = calculateDistance(pS, pB);
 
         Point2D.Double pSD = calculateMidpoint(pS, pD);
         ///g2d.fill(new Ellipse2D.Double(pSD.getX() - shift, pSD.getY() - shift, ps, ps));
@@ -215,14 +216,15 @@ public class Rays extends JButton {
         double ratioSA_SC = distSA / distSC;
         double ratioAB_CD = distAB / distCD;
 
+        double ratioSB_SD = distSB / distSD;
+
         String str1 = "SA/AB = " + df.format(ratioSA_AB) + "    SC/CD = " + df.format(ratioSC_CD);
-        System.out.println(str1);
         String str2 = "SA/SC = " + df.format(ratioSA_SC) + "    AB/CD = " + df.format(ratioAB_CD);
-        System.out.println(str2);
-        System.out.println();
+        String str3 = "SB/SD = " + df.format(ratioSA_SC) + "    AB/CD = " + df.format(ratioAB_CD);
 
         g2d.drawString(str1, 20, 40 );
         g2d.drawString(str2, 20, 70 );
+        g2d.drawString(str3, 20, 100 );
     }
 
     private double calculateDistance(Point2D.Double point1, Point2D.Double point2) {
