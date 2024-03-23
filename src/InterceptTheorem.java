@@ -4,6 +4,7 @@ import java.awt.event.*;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
+import java.awt.geom.Rectangle2D;
 import java.text.DecimalFormat;
 
 public class InterceptTheorem extends JButton {
@@ -18,6 +19,8 @@ public class InterceptTheorem extends JButton {
             super(p1, p2, w, h);
         }
     }
+
+    private Color grey = new Color(220, 220, 220);
 
     private Color red = new Color(180, 0, 0);
     private Color blue = new Color(0, 0, 80);
@@ -185,49 +188,44 @@ public class InterceptTheorem extends JButton {
 
         g2d.setColor(Color.BLACK);
 
-        Point2D.Double pSC = calculateMidpoint(pS, pC);
-        ///g2d.fill(new Ellipse2D.Double(pSC.getX() - shift, pSC.getY() - shift, ps, ps));
-        double distSC = calculateDistance(pS, pC);
-        if (drawDist) {
-            g2d.drawString(df.format(distSC), (int) (pSC.x + shift), (int) (pSC.y - shift));
-        }
-
         double distSA = calculateDistance(pS, pA);
         double distSB = calculateDistance(pS, pB);
 
+        Point2D.Double pSC = calculateMidpoint(pS, pC);
+        double distSC = calculateDistance(pS, pC);
+        if (drawDist) {
+            numberInBox(pSC.x, pSC.y, df.format(distSC), g2d);
+        }
+
         Point2D.Double pSD = calculateMidpoint(pS, pD);
-        ///g2d.fill(new Ellipse2D.Double(pSD.getX() - shift, pSD.getY() - shift, ps, ps));
         double distSD = calculateDistance(pS, pD);
         if (drawDist) {
-            g2d.drawString(df.format(distSD), (int) (pSD.x + shift), (int) (pSD.y - shift));
+            numberInBox(pSD.x, pSD.y, df.format(distSD), g2d);
         }
 
         Point2D.Double pBD = calculateMidpoint(pB, pD);
-        ///g2d.fill(new Ellipse2D.Double(pBD.getX() - shift, pBD.getY() - shift, ps, ps));
         double distBD = calculateDistance(pB, pD);
         if (drawDist) {
-            g2d.drawString(df.format(distBD), (int) (pBD.x + shift), (int) (pBD.y - shift));
+            numberInBox(pBD.x, pBD.y, df.format(distBD), g2d);
         }
 
         Point2D.Double pAC = calculateMidpoint(pA, pC);
         ///g2d.fill(new Ellipse2D.Double(pAC.getX() - shift, pAC.getY() - shift, ps, ps));
         double distAC = calculateDistance(pA, pC);
         if (drawDist) {
-            g2d.drawString(df.format(distAC), (int) (pAC.x + shift), (int) (pAC.y - shift));
+            numberInBox(pAC.x, pAC.y, df.format(distAC), g2d);
         }
 
         Point2D.Double pAB = calculateMidpoint(pA, pB);
-        ///g2d.fill(new Ellipse2D.Double(pAB.getX() - shift, pAB.getY() - shift, ps, ps));
         double distAB = calculateDistance(pA, pB);
         if (drawDist) {
-            g2d.drawString(df.format(distAB), (int) (pAB.x + shift), (int) (pAB.y - shift));
+            numberInBox(pAB.x, pAB.y, df.format(distAB), g2d);
         }
 
         Point2D.Double pCD = calculateMidpoint(pC, pD);
-        ///g2d.fill(new Ellipse2D.Double(pCD.getX() - shift, pCD.getY() - shift, ps, ps));
         double distCD = calculateDistance(pC, pD);
         if (drawDist) {
-            g2d.drawString(df.format(distCD), (int) (pCD.x + shift), (int) (pCD.y - shift));
+            numberInBox(pCD.x, pCD.y, df.format(distCD), g2d);
         }
 
         /// calculate the rations //////////////////////////////////////////////////////////////////////////////////////
@@ -247,6 +245,19 @@ public class InterceptTheorem extends JButton {
         g2d.drawString(str1, 20, 40);
         g2d.drawString(str2, 20, 70);
         g2d.drawString(str3, 20, 100);
+    }
+
+    private void numberInBox(double x, double y, String content, Graphics2D g2d) {
+
+        int frame = 4;
+        double w = g2d.getFontMetrics().stringWidth(content) + 2 * frame;
+        double h = g2d.getFontMetrics().getHeight() + 2 * frame;
+        double lx = x - (w / 2) - frame;
+        double ly = y - (h / 2) - frame;
+        g2d.setColor(grey);
+        g2d.fill(new Rectangle2D.Double(lx, ly, w, h));
+        g2d.setColor(blue);
+        g2d.drawString(content, (int) lx + frame, (int) y + frame);
     }
 
     private double calculateDistance(Point2D.Double point1, Point2D.Double point2) {
@@ -292,7 +303,7 @@ public class InterceptTheorem extends JButton {
         f.add(rays);
         f.setTitle("Strahlensatz - Intercept Theorem");
         f.setLocation(300, 0);
-        f.setSize((int) (1.6*size), (int) (1.0*size));
+        f.setSize((int) (1.6 * size), (int) (1.0 * size));
         f.setVisible(true);
     }
 }
