@@ -1,12 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 import java.awt.geom.Line2D;
 
-public class IRISVisualization extends JFrame {
+public class IRISVisualization extends JButton {
 
     private Handle mBC = null;
     private Handle mBA = null;
@@ -32,16 +29,19 @@ public class IRISVisualization extends JFrame {
 
     public IRISVisualization() {
 
-        super("Conway's IRIS Visualization");
-        setSize(760, 760);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        keyAndMouseInit();
 
-        double s = 10;
+        double s = 12;
         double x = 80;
         double y = 20;
         handleA = new Handle(360 + x, 280 - y, s, "A");
         handleB = new Handle(220 + x, 480 - y, s, "B");
         handleC = new Handle(390 + x, 540 - y, s, "C");
+
+        doCalculations();
+    }
+
+    private void doCalculations() {
 
         exBA = calculateExtendedPoint(handleB, handleC, handleA);
         exCA = calculateExtendedPoint(handleC, handleB, handleA);
@@ -59,17 +59,59 @@ public class IRISVisualization extends JFrame {
         mBC = calculateMidpoint(handleB, handleC);
         mBA = calculateMidpoint(handleB, handleA);
         mAC = calculateMidpoint(handleA, handleC);
-
-        keyAndMouseInit();
     }
 
     private void keyAndMouseInit() {
         addMouseListener(new MouseAdapter() {
+
             @Override
-            public void mouseClicked(MouseEvent e) {
+            public void mousePressed(MouseEvent e) {
+
+                deselectAllHandles();
+
+                System.out.println("sel x: " + handleA.x + " y: " + handleA.y + " mx: " + e.getX() + " my: " + e.getY());
+                System.out.println("con: " + handleA.contains(e.getX(), e.getY()) + " width " + handleA.width + " height: " + handleA.height);
+
+                handleA.selected = true;
+
+                if (handleA.contains(e.getX(), e.getY())) {
+                    handleA.selected = true;
+                } else if (handleB.contains(e.getX(), e.getY())) {
+                    System.out.println("sel B: ");
+                    handleB.selected = true;
+                } else if (handleC.contains(e.getX(), e.getY())) {
+                    System.out.println("sel C: ");
+                    handleC.selected = true;
+                }
+                System.out.println("sel A: " + handleA.selected);
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                deselectAllHandles();
+            }
+        });
+
+        addMouseMotionListener(new MouseMotionAdapter() {
+            @Override
+            public void mouseDragged(MouseEvent e) {
+
+                if (handleA.selected) {
+                    handleA.x = e.getX() - 6;
+                    handleA.y = e.getY() - 6;
+                    System.out.println("x: " + handleA.x + " y: " + handleA.y);
+                } else if (handleB.selected) {
+                    handleB.x = e.getX() - 6;
+                    handleB.y = e.getY() - 6;
+                } else if (handleC.selected) {
+                    handleC.x = e.getX() - 6;
+                    handleC.y = e.getY() - 6;
+                }
+                doCalculations();
                 repaint();
             }
         });
+
 
         addKeyListener(new KeyAdapter() {
             @Override
@@ -87,6 +129,12 @@ public class IRISVisualization extends JFrame {
                 repaint();
             }
         });
+    }
+
+    private void deselectAllHandles() {
+        handleA.selected = false;
+        handleB.selected = false;
+        handleC.selected = false;
     }
 
     private Handle calculateExtendedPoint(Handle one, Handle two, Handle three) {
@@ -111,8 +159,6 @@ public class IRISVisualization extends JFrame {
 
     @Override
     public void paint(Graphics g) {
-
-        super.paint(g);
 
         Graphics2D g2d = (Graphics2D) g;
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
@@ -142,7 +188,6 @@ public class IRISVisualization extends JFrame {
         g2d.draw(new Line2D.Double(handleB.x, handleB.y, exAB.x, exAB.y));
         g2d.draw(new Line2D.Double(handleB.x, handleB.y, exCB.x, exCB.y));
 
-
         g2d.setColor(Color.darkGray);
         handleA.fill(g2d);
         handleB.fill(g2d);
@@ -159,26 +204,19 @@ public class IRISVisualization extends JFrame {
         mBC_AC.fill(g2d);
         mCB_AB.fill(g2d);
 
-        g2d.setColor(Color.RED);
-
-        Handle vCA_BA = getVector(exCA, exBA);
-//        vCA_BA = vCA_BA.flip();
-        mCA_BA.add(vCA_BA).fill(g2d);
-        drawHandleConnector(g2d, mCA_BA, mCA_BA.add(vCA_BA));
-
-        Handle vBC_AC = getVector(exBC, exAC);
-        mBC_AC.add(vBC_AC).fill(g2d);
-        drawHandleConnector(g2d, mBC_AC, mBC_AC.add(vBC_AC));
-
-        Handle vCB_AB = getVector(exCB, exAB);
-        mCB_AB.add(vCB_AB).fill(g2d);
-        drawHandleConnector(g2d, mCB_AB, mCB_AB.add(vCB_AB));
-
 //        g2d.setColor(Color.RED);
 //
-//        Handle rayA = getVector(mCB_AB, mCB_AB.add(vCB_AB)).flip();
-//        rayA = mCB_AB.add(rayA);
-//        rayA.fill(g2d);
+//        Handle vCA_BA = getVector(exCA, exBA);
+//        mCA_BA.add(vCA_BA).fill(g2d);
+//        drawHandleConnector(g2d, mCA_BA, mCA_BA.add(vCA_BA));
+//
+//        Handle vBC_AC = getVector(exBC, exAC);
+//        mBC_AC.add(vBC_AC).fill(g2d);
+//        drawHandleConnector(g2d, mBC_AC, mBC_AC.add(vBC_AC));
+//
+//        Handle vCB_AB = getVector(exCB, exAB);
+//        mCB_AB.add(vCB_AB).fill(g2d);
+//        drawHandleConnector(g2d, mCB_AB, mCB_AB.add(vCB_AB));
 
     }
 
@@ -203,8 +241,11 @@ public class IRISVisualization extends JFrame {
     public static void main(String[] args) {
 
         SwingUtilities.invokeLater(() -> {
-            IRISVisualization iris = new IRISVisualization();
-            iris.setVisible(true);
+
+            JFrame f = new JFrame();
+            f.add(new IRISVisualization());
+            f.setSize(760,760);
+            f.setVisible(true);
         });
     }
 }
