@@ -1,5 +1,5 @@
 
-public class Addierer {
+public class GaussSum {
 
     public static void main(String[] args) {
 

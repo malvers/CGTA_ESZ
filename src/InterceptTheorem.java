@@ -10,21 +10,10 @@ import java.text.DecimalFormat;
 public class InterceptTheorem extends JButton {
 
     private boolean drawDist = false;
-    private boolean drawParellels = false;
-
-    private class Handle extends Ellipse2D.Double {
-        public boolean selected = false;
-
-        public Handle(double p1, double p2, int w, int h) {
-            super(p1, p2, w, h);
-        }
-    }
-
+    private boolean drawParallels = false;
     private Color grey = new Color(220, 220, 220);
-
     private Color red = new Color(180, 0, 0);
     private Color blue = new Color(0, 0, 80);
-
     private Color green = new Color(80, 140, 0);
     private Handle handle1 = null;
     private Handle handle2 = null;
@@ -81,7 +70,7 @@ public class InterceptTheorem extends JButton {
                 if (e.getKeyCode() == KeyEvent.VK_W) {
                     System.exit(0);
                 } else if (e.getKeyCode() == KeyEvent.VK_P) {
-                    drawParellels = !drawParellels;
+                    drawParallels = !drawParallels;
                 } else if (e.getKeyCode() == KeyEvent.VK_N) {
                     drawDist = !drawDist;
                 } else if (e.getKeyCode() == KeyEvent.VK_UP) {
@@ -127,10 +116,10 @@ public class InterceptTheorem extends JButton {
 
         g2d.setColor(red);
         if (handle1 == null) {
-            handle1 = new Handle(pto1.x - 6, pto1.y - 6, 12, 12);
+            handle1 = new Handle(pto1.x - 6, pto1.y - 6, 12, "");
         }
         if (handle2 == null) {
-            handle2 = new Handle(pto2.x - 6, pto2.y - 6, 12, 12);
+            handle2 = new Handle(pto2.x - 6, pto2.y - 6, 12, "");
         }
 
         g2d.draw(leg1);
@@ -155,7 +144,7 @@ public class InterceptTheorem extends JButton {
         Line2D parallel1 = new Line2D.Double(0, sizeY - gapY, sizeX - gapX, 0);
         Line2D parallel2 = new Line2D.Double(gapX, sizeY, sizeX, gapY);
 
-        if (drawParellels) {
+        if (drawParallels) {
             g2d.draw(parallel1);
             g2d.draw(parallel2);
         }
