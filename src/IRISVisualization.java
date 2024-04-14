@@ -72,15 +72,11 @@ public class IRISVisualization extends JButton {
                 System.out.println("sel x: " + handleA.x + " y: " + handleA.y + " mx: " + e.getX() + " my: " + e.getY());
                 System.out.println("con: " + handleA.contains(e.getX(), e.getY()) + " width " + handleA.width + " height: " + handleA.height);
 
-                handleA.selected = true;
-
-                if (handleA.contains(e.getX(), e.getY())) {
+                if (handleA.contains((double)e.getX(), (double)e.getY())) {
                     handleA.selected = true;
                 } else if (handleB.contains(e.getX(), e.getY())) {
-                    System.out.println("sel B: ");
                     handleB.selected = true;
                 } else if (handleC.contains(e.getX(), e.getY())) {
-                    System.out.println("sel C: ");
                     handleC.selected = true;
                 }
                 System.out.println("sel A: " + handleA.selected);
@@ -97,15 +93,15 @@ public class IRISVisualization extends JButton {
             public void mouseDragged(MouseEvent e) {
 
                 if (handleA.selected) {
-                    handleA.x = e.getX() - 6;
-                    handleA.y = e.getY() - 6;
+                    handleA.x = e.getX();
+                    handleA.y = e.getY();
                     System.out.println("x: " + handleA.x + " y: " + handleA.y);
                 } else if (handleB.selected) {
-                    handleB.x = e.getX() - 6;
-                    handleB.y = e.getY() - 6;
+                    handleB.x = e.getX();
+                    handleB.y = e.getY();
                 } else if (handleC.selected) {
-                    handleC.x = e.getX() - 6;
-                    handleC.y = e.getY() - 6;
+                    handleC.x = e.getX();
+                    handleC.y = e.getY();
                 }
                 doCalculations();
                 repaint();

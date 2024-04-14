@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
+import java.awt.geom.Point2D;
 
 class Handle extends Ellipse2D.Double {
     private String name = "";
@@ -12,6 +13,13 @@ class Handle extends Ellipse2D.Double {
         this.y = p2;
         this.width = d;
         this.height = d;
+    }
+
+    @Override
+    public boolean contains(double x, double y) {
+        double xx = x + width / 2;
+        double yy = y + width / 2;
+        return super.contains(xx, yy);
     }
 
     public void fill(Graphics2D g2d) {
