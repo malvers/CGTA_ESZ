@@ -25,7 +25,7 @@ class Handle extends Ellipse2D.Double {
 
         g2d.fill(new Ellipse2D.Double(x - width / 2, y - width / 2, width, width));
         if (drawAnnotation) {
-            g2d.drawString(name, (int) x, (int) y);
+            g2d.drawString(name, (int) x + 6, (int) y + 6);
         }
     }
 
@@ -66,7 +66,14 @@ class Handle extends Ellipse2D.Double {
         return new Handle(x, y , 10, "");
     }
 
-    private double getLength() {
+    protected double getLength() {
         return Math.sqrt(x*x + y*y);
+    }
+
+    protected static double getLength(Handle o, Handle t) {
+
+        double dx = o.x - t.x;
+        double dy = o.y - t.y;
+        return Math.sqrt(dx*dx + dy*dy);
     }
 }
