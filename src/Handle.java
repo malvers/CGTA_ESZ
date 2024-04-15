@@ -1,9 +1,8 @@
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
-import java.awt.geom.Point2D;
 
 class Handle extends Ellipse2D.Double {
-    private String name = "";
+    private final String name;
     public boolean selected = false;
 
     public Handle(double p1, double p2, double d, String str) {
@@ -22,10 +21,10 @@ class Handle extends Ellipse2D.Double {
         return super.contains(xx, yy);
     }
 
-    public void fill(Graphics2D g2d) {
+    public void fill(Graphics2D g2d, boolean drawAnnotation) {
 
         g2d.fill(new Ellipse2D.Double(x - width / 2, y - width / 2, width, width));
-        g2d.drawString(name, (int) x, (int) y);
+        if(drawAnnotation) g2d.drawString(name, (int) x, (int) y);
     }
 
     public void print() {

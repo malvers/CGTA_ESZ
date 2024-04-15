@@ -1,5 +1,3 @@
-import com.sun.javafx.geom.Ellipse2D;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -10,30 +8,26 @@ import java.io.*;
 
 public class IRISVisualization extends JButton {
 
-    private JFrame frame;
-    private Handle mBC;
-    private Handle mBA;
-    private Handle mAC;
+    private final JFrame frame;
     private Handle exBC;
     private Handle exAB;
     private Handle exCB;
     private Handle exAC;
     private Handle exCA;
     private Handle exBA;
-
-    private Color grey = new Color(220, 220, 220);
-    private Color red = new Color(180, 0, 0);
-    private Color blue = new Color(0, 0, 80);
-    private Color green = new Color(80, 140, 0);
+    private final Color red = new Color(180, 0, 0);
+    private final Color blue = new Color(0, 0, 80);
+    private final Color green = new Color(80, 140, 0);
     private Handle handleA;
     private Handle handleB;
     private Handle handleC;
     private Handle mCA_BA;
     private Handle mCB_AB;
     private Handle mBC_AC;
-    private Point2D.Double onMousePressed = new Point2D.Double();
-    private Point2D.Double dragShift = new Point2D.Double();
+    private final Point2D.Double onMousePressed = new Point2D.Double();
+    private final Point2D.Double dragShift = new Point2D.Double();
     private Point2D.Double sceneShift = new Point2D.Double();
+    private boolean drawAnnotation = true;
 
     public IRISVisualization(JFrame f) {
 
@@ -116,13 +110,12 @@ public class IRISVisualization extends JButton {
         mBC_AC = calculateMidpoint(exAC, exBC);
         mCB_AB = calculateMidpoint(exCB, exAB);
 
-        mBC = calculateMidpoint(handleB, handleC);
-        mBA = calculateMidpoint(handleB, handleA);
-        mAC = calculateMidpoint(handleA, handleC);
+//        Handle mBC = calculateMidpoint(handleB, handleC);
+//        Handle mBA = calculateMidpoint(handleB, handleA);
+//        Handle mAC = calculateMidpoint(handleA, handleC);
     }
 
     private void keyAndMouseInit() {
-
         addMouseListener(new MouseAdapter() {
 
             @Override
@@ -140,13 +133,10 @@ public class IRISVisualization extends JButton {
 
                 if (handleA.contains(shiftMouse.x, shiftMouse.y)) {
                     handleA.selected = true;
-                    System.out.println("sel A: " + handleA.selected);
                 } else if (handleB.contains(shiftMouse.x, shiftMouse.y)) {
                     handleB.selected = true;
-                    System.out.println("sel B: " + handleB.selected);
                 } else if (handleC.contains(shiftMouse.x, shiftMouse.y)) {
                     handleC.selected = true;
-                    System.out.println("sel C: " + handleC.selected);
                 }
             }
 
@@ -194,7 +184,8 @@ public class IRISVisualization extends JButton {
                 if (e.getKeyCode() == KeyEvent.VK_W) {
                     writeSettings();
                     System.exit(0);
-                } else if (e.getKeyCode() == KeyEvent.VK_N) {
+                } else if (e.getKeyCode() == KeyEvent.VK_A) {
+                    drawAnnotation = ! drawAnnotation;
                 } else if (e.getKeyCode() == KeyEvent.VK_P) {
                 } else if (e.getKeyCode() == KeyEvent.VK_R) {
                     sceneShift.x = 0;
@@ -235,6 +226,19 @@ public class IRISVisualization extends JButton {
         return new Handle(three.getX() - vector13Scaled_x, three.getY() - vector13Scaled_y, 10, name);
     }
 
+    private Handle getVector(Handle h1, Handle h2) {
+
+        return new Handle(h1.x - h2.x, h1.y - h2.y, 2, "");
+
+    }
+
+    private Handle calculateMidpoint(Handle point1, Handle point2) {
+
+        double midX = (point1.getX() + point2.getX()) / 2;
+        double midY = (point1.getY() + point2.getY()) / 2;
+        return new Handle(midX, midY, 6, "");
+    }
+
     @Override
     public void paint(Graphics g) {
 
@@ -255,25 +259,25 @@ public class IRISVisualization extends JButton {
         g2d.draw(new Line2D.Double(handleC.x, handleC.y, handleA.x, handleA.y));
 
         g2d.setColor(green);
-        exBA.fill(g2d);
-        exCA.fill(g2d);
+        exBA.fill(g2d, drawAnnotation);
+        exCA.fill(g2d, drawAnnotation);
         g2d.draw(new Line2D.Double(handleA.x, handleA.y, exBA.x, exBA.y));
         g2d.draw(new Line2D.Double(handleA.x, handleA.y, exCA.x, exCA.y));
         g2d.setColor(blue);
-        exBC.fill(g2d);
-        exAC.fill(g2d);
+        exBC.fill(g2d, drawAnnotation);
+        exAC.fill(g2d, drawAnnotation);
         g2d.draw(new Line2D.Double(handleC.x, handleC.y, exBC.x, exBC.y));
         g2d.draw(new Line2D.Double(handleC.x, handleC.y, exAC.x, exAC.y));
         g2d.setColor(red);
-        exAB.fill(g2d);
-        exCB.fill(g2d);
+        exAB.fill(g2d, drawAnnotation);
+        exCB.fill(g2d, drawAnnotation);
         g2d.draw(new Line2D.Double(handleB.x, handleB.y, exAB.x, exAB.y));
         g2d.draw(new Line2D.Double(handleB.x, handleB.y, exCB.x, exCB.y));
 
         g2d.setColor(Color.darkGray);
-        handleA.fill(g2d);
-        handleB.fill(g2d);
-        handleC.fill(g2d);
+        handleA.fill(g2d, drawAnnotation);
+        handleB.fill(g2d, drawAnnotation);
+        handleC.fill(g2d, drawAnnotation);
 
         g2d.setColor(Color.lightGray);
         g2d.setStroke(new BasicStroke(1));
@@ -282,37 +286,24 @@ public class IRISVisualization extends JButton {
         drawHandleConnector(g2d, exBC, exAC);
         drawHandleConnector(g2d, exCB, exAB);
 
-        mCA_BA.fill(g2d);
-        mBC_AC.fill(g2d);
-        mCB_AB.fill(g2d);
+        mCA_BA.fill(g2d, drawAnnotation);
+        mBC_AC.fill(g2d, drawAnnotation);
+        mCB_AB.fill(g2d, drawAnnotation);
 
         g2d.setColor(Color.RED);
 
         Handle vCA_BA = getVector(exCA, exBA);
-        mCA_BA.add(vCA_BA).fill(g2d);
+        mCA_BA.add(vCA_BA).fill(g2d, drawAnnotation);
         drawHandleConnector(g2d, mCA_BA, mCA_BA.add(vCA_BA));
 
         Handle vBC_AC = getVector(exBC, exAC);
-        mBC_AC.add(vBC_AC).fill(g2d);
+        mBC_AC.add(vBC_AC).fill(g2d, drawAnnotation);
         drawHandleConnector(g2d, mBC_AC, mBC_AC.add(vBC_AC));
 
         Handle vCB_AB = getVector(exCB, exAB);
-        mCB_AB.add(vCB_AB).fill(g2d);
+        mCB_AB.add(vCB_AB).fill(g2d, drawAnnotation);
         drawHandleConnector(g2d, mCB_AB, mCB_AB.add(vCB_AB));
 
-    }
-
-    private Handle getVector(Handle h1, Handle h2) {
-
-        return new Handle(h1.x - h2.x, h1.y - h2.y, 2, "");
-
-    }
-
-    private Handle calculateMidpoint(Handle point1, Handle point2) {
-
-        double midX = (point1.getX() + point2.getX()) / 2;
-        double midY = (point1.getY() + point2.getY()) / 2;
-        return new Handle(midX, midY, 6, "");
     }
 
     private void drawHandleConnector(Graphics2D g2d, Handle h1, Handle h2) {
