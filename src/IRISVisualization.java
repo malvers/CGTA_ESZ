@@ -67,6 +67,10 @@ public class IRISVisualization extends JButton {
 
             os.writeObject(sceneShift);
 
+            os.writeObject(handleA);
+            os.writeObject(handleB);
+            os.writeObject(handleC);
+
             os.close();
             f.close();
         } catch (IOException e) {
@@ -83,6 +87,12 @@ public class IRISVisualization extends JButton {
 
             frame.setSize((Dimension) os.readObject());
             frame.setLocation((Point) os.readObject());
+
+            sceneShift = (Point2D.Double) os.readObject();
+
+            handleA = (Handle) os.readObject();
+            handleB = (Handle) os.readObject();
+            handleC = (Handle) os.readObject();
 
             os.close();
             f.close();
