@@ -24,12 +24,14 @@ class Handle extends Ellipse2D.Double {
     public void fill(Graphics2D g2d, boolean drawAnnotation) {
 
         g2d.fill(new Ellipse2D.Double(x - width / 2, y - width / 2, width, width));
-        if(drawAnnotation) g2d.drawString(name, (int) x, (int) y);
+        if (drawAnnotation) {
+            g2d.drawString(name, (int) x, (int) y);
+        }
     }
 
-    public void print() {
+    public void print(String s) {
 
-        System.out.println(name + " x: " + x + " y: " + y);
+        System.out.println(s + " name: " + " x: " + x + " y: " + y);
     }
 
     public String getName() {
@@ -43,5 +45,28 @@ class Handle extends Ellipse2D.Double {
 
     public Handle flip() {
         return new Handle(y, x, 6, "");
+    }
+
+    public Handle multiply(double v) {
+        return new Handle(x * v, y * v, 10, "");
+    }
+
+    public Handle subtract(Handle in) {
+
+        return new Handle(x - in.x, y - in.y, 6, "");
+    }
+
+    public Handle makeItThatLong(double l) {
+
+        double len = getLength();
+
+        x = (x / len) * l;
+        y = (y / len) * l;
+
+        return new Handle(x, y , 10, "");
+    }
+
+    private double getLength() {
+        return Math.sqrt(x*x + y*y);
     }
 }

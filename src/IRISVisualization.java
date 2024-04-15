@@ -21,13 +21,16 @@ public class IRISVisualization extends JButton {
     private Handle handleA;
     private Handle handleB;
     private Handle handleC;
-    private Handle mCA_BA;
-    private Handle mCB_AB;
-    private Handle mBC_AC;
+    private Handle midCA_BA;
+    private Handle midCB_AB;
+    private Handle midBC_AC;
     private final Point2D.Double onMousePressed = new Point2D.Double();
     private final Point2D.Double dragShift = new Point2D.Double();
     private Point2D.Double sceneShift = new Point2D.Double();
     private boolean drawAnnotation = true;
+    private Handle towCA_BA;
+    private Handle towBC_AC;
+    private Handle towCB_AB;
 
     public IRISVisualization(JFrame f) {
 
@@ -95,26 +98,6 @@ public class IRISVisualization extends JButton {
         }
     }
 
-    private void doCalculations() {
-
-        exBA = calculateExtendedPoint(handleB, handleC, handleA);
-        exCA = calculateExtendedPoint(handleC, handleB, handleA);
-
-        exBC = calculateExtendedPoint(handleB, handleA, handleC);
-        exAC = calculateExtendedPoint(handleA, handleB, handleC);
-
-        exAB = calculateExtendedPoint(handleA, handleC, handleB);
-        exCB = calculateExtendedPoint(handleC, handleA, handleB);
-
-        mCA_BA = calculateMidpoint(exCA, exBA);
-        mBC_AC = calculateMidpoint(exAC, exBC);
-        mCB_AB = calculateMidpoint(exCB, exAB);
-
-//        Handle mBC = calculateMidpoint(handleB, handleC);
-//        Handle mBA = calculateMidpoint(handleB, handleA);
-//        Handle mAC = calculateMidpoint(handleA, handleC);
-    }
-
     private void keyAndMouseInit() {
         addMouseListener(new MouseAdapter() {
 
@@ -174,6 +157,11 @@ public class IRISVisualization extends JButton {
                 doCalculations();
                 repaint();
             }
+
+            @Override
+            public void mouseMoved(MouseEvent e) {
+                frame.setTitle("x: " + e.getX() + " y: " + e.getY());
+            }
         });
 
 
@@ -204,6 +192,40 @@ public class IRISVisualization extends JButton {
         handleA.selected = false;
         handleB.selected = false;
         handleC.selected = false;
+    }
+
+    private void doCalculations() {
+
+        exBA = calculateExtendedPoint(handleB, handleC, handleA);
+        exCA = calculateExtendedPoint(handleC, handleB, handleA);
+
+        exBC = calculateExtendedPoint(handleB, handleA, handleC);
+        exAC = calculateExtendedPoint(handleA, handleB, handleC);
+
+        exAB = calculateExtendedPoint(handleA, handleC, handleB);
+        exCB = calculateExtendedPoint(handleC, handleA, handleB);
+
+        midCA_BA = calculateMidpoint(exCA, exBA);
+        midBC_AC = calculateMidpoint(exAC, exBC);
+        midCB_AB = calculateMidpoint(exCB, exAB);
+
+        Handle vecCA_BA = getVector(exBA, exCA);
+        Handle recCA_BA = vecCA_BA.flip();
+        recCA_BA.x = -recCA_BA.x;
+        recCA_BA = recCA_BA.makeItThatLong(400);
+        towCA_BA = midCA_BA.add(recCA_BA);
+
+        Handle vecBC_AC = getVector(exBC, exAC);
+        Handle recBC_AC = vecBC_AC.flip();
+        recBC_AC.x = -recBC_AC.x;
+        recBC_AC.makeItThatLong(400);
+        towBC_AC = midBC_AC.subtract(recBC_AC);
+
+        Handle vecCB_AB = getVector(exCB, exAB);
+        Handle recCB_AB = vecCB_AB.flip();
+        recCB_AB.x = -recCB_AB.x;
+        recCB_AB.makeItThatLong(400);
+        towCB_AB = midCB_AB.add(recCB_AB);
     }
 
     private Handle calculateExtendedPoint(Handle one, Handle two, Handle three) {
@@ -286,24 +308,19 @@ public class IRISVisualization extends JButton {
         drawHandleConnector(g2d, exBC, exAC);
         drawHandleConnector(g2d, exCB, exAB);
 
-        mCA_BA.fill(g2d, drawAnnotation);
-        mBC_AC.fill(g2d, drawAnnotation);
-        mCB_AB.fill(g2d, drawAnnotation);
+        midCA_BA.fill(g2d, drawAnnotation);
+        midBC_AC.fill(g2d, drawAnnotation);
+        midCB_AB.fill(g2d, drawAnnotation);
 
-        g2d.setColor(Color.RED);
+        g2d.setColor(Color.MAGENTA);
+        towCA_BA.fill(g2d, drawAnnotation);
+        drawHandleConnector(g2d, midCA_BA, towCA_BA);
 
-        Handle vCA_BA = getVector(exCA, exBA);
-        mCA_BA.add(vCA_BA).fill(g2d, drawAnnotation);
-        drawHandleConnector(g2d, mCA_BA, mCA_BA.add(vCA_BA));
+        towBC_AC.fill(g2d, drawAnnotation);
+        drawHandleConnector(g2d, midBC_AC, towBC_AC);
 
-        Handle vBC_AC = getVector(exBC, exAC);
-        mBC_AC.add(vBC_AC).fill(g2d, drawAnnotation);
-        drawHandleConnector(g2d, mBC_AC, mBC_AC.add(vBC_AC));
-
-        Handle vCB_AB = getVector(exCB, exAB);
-        mCB_AB.add(vCB_AB).fill(g2d, drawAnnotation);
-        drawHandleConnector(g2d, mCB_AB, mCB_AB.add(vCB_AB));
-
+        towCB_AB.fill(g2d, drawAnnotation);
+        drawHandleConnector(g2d, midCB_AB, towCB_AB);
     }
 
     private void drawHandleConnector(Graphics2D g2d, Handle h1, Handle h2) {
