@@ -1,44 +1,94 @@
+import com.sun.javafx.geom.Ellipse2D;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.geom.AffineTransform;
 import java.awt.geom.Line2D;
+import java.awt.geom.Point2D;
+import java.io.*;
 
 public class IRISVisualization extends JButton {
 
-    private Handle mBC = null;
-    private Handle mBA = null;
-    private Handle mAC = null;
-
-    private Handle exBC = null;
-    private Handle exAB = null;
-    private Handle exCB = null;
-    private Handle exAC = null;
-    private Handle exCA = null;
-    private Handle exBA = null;
+    private JFrame frame;
+    private Handle mBC;
+    private Handle mBA;
+    private Handle mAC;
+    private Handle exBC;
+    private Handle exAB;
+    private Handle exCB;
+    private Handle exAC;
+    private Handle exCA;
+    private Handle exBA;
 
     private Color grey = new Color(220, 220, 220);
     private Color red = new Color(180, 0, 0);
     private Color blue = new Color(0, 0, 80);
     private Color green = new Color(80, 140, 0);
-    private Handle handleA = null;
-    private Handle handleB = null;
-    private Handle handleC = null;
+    private Handle handleA;
+    private Handle handleB;
+    private Handle handleC;
     private Handle mCA_BA;
     private Handle mCB_AB;
     private Handle mBC_AC;
+    private Point2D.Double onMousePressed = new Point2D.Double();
+    private Point2D.Double dragShift = new Point2D.Double();
+    private Point2D.Double sceneShift = new Point2D.Double();
 
-    public IRISVisualization() {
+    public IRISVisualization(JFrame f) {
+
+        frame = f;
 
         keyAndMouseInit();
 
-        double s = 12;
-        double x = 80;
-        double y = 20;
-        handleA = new Handle(360 + x, 280 - y, s, "A");
-        handleB = new Handle(220 + x, 480 - y, s, "B");
-        handleC = new Handle(390 + x, 540 - y, s, "C");
+        double handleSize = 12;
+        sceneShift.x = 80;
+        sceneShift.y = 20;
+
+        handleA = new Handle(360, 280, handleSize, "A");
+        handleB = new Handle(220, 480, handleSize, "B");
+        handleC = new Handle(390, 540, handleSize, "C");
+
+        readSettings();
 
         doCalculations();
+    }
+
+    private void writeSettings() {
+
+        System.out.println("writeSettings ...");
+        try {
+            String uh = System.getProperty("user.home");
+            FileOutputStream f = new FileOutputStream(uh + "/IRISVisualization.bin");
+            ObjectOutputStream os = new ObjectOutputStream(f);
+
+            os.writeObject(frame.getSize());
+            os.writeObject(frame.getLocation());
+
+            os.writeObject(sceneShift);
+
+            os.close();
+            f.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void readSettings() {
+
+        try {
+            String uh = System.getProperty("user.home");
+            FileInputStream f = new FileInputStream(uh + "/IRISVisualization.bin");
+            ObjectInputStream os = new ObjectInputStream(f);
+
+            frame.setSize((Dimension) os.readObject());
+            frame.setLocation((Point) os.readObject());
+
+            os.close();
+            f.close();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     private void doCalculations() {
@@ -62,28 +112,42 @@ public class IRISVisualization extends JButton {
     }
 
     private void keyAndMouseInit() {
+
         addMouseListener(new MouseAdapter() {
 
             @Override
             public void mousePressed(MouseEvent e) {
 
+                onMousePressed.x = e.getX();
+                onMousePressed.y = e.getY();
+
+                Point2D.Double shiftMouse = new Point2D.Double();
+
+                shiftMouse.x = e.getX() - sceneShift.x;
+                shiftMouse.y = e.getY() - sceneShift.y;
+
                 deselectAllHandles();
 
-                System.out.println("sel x: " + handleA.x + " y: " + handleA.y + " mx: " + e.getX() + " my: " + e.getY());
-                System.out.println("con: " + handleA.contains(e.getX(), e.getY()) + " width " + handleA.width + " height: " + handleA.height);
-
-                if (handleA.contains((double)e.getX(), (double)e.getY())) {
+                if (handleA.contains(shiftMouse.x, shiftMouse.y)) {
                     handleA.selected = true;
-                } else if (handleB.contains(e.getX(), e.getY())) {
+                    System.out.println("sel A: " + handleA.selected);
+                } else if (handleB.contains(shiftMouse.x, shiftMouse.y)) {
                     handleB.selected = true;
-                } else if (handleC.contains(e.getX(), e.getY())) {
+                    System.out.println("sel B: " + handleB.selected);
+                } else if (handleC.contains(shiftMouse.x, shiftMouse.y)) {
                     handleC.selected = true;
+                    System.out.println("sel C: " + handleC.selected);
                 }
-                System.out.println("sel A: " + handleA.selected);
             }
 
             @Override
             public void mouseReleased(MouseEvent e) {
+
+                sceneShift.x += dragShift.x;
+                sceneShift.y += dragShift.y;
+                dragShift.x = 0;
+                dragShift.y = 0;
+
                 deselectAllHandles();
             }
         });
@@ -93,15 +157,19 @@ public class IRISVisualization extends JButton {
             public void mouseDragged(MouseEvent e) {
 
                 if (handleA.selected) {
-                    handleA.x = e.getX();
-                    handleA.y = e.getY();
-                    System.out.println("x: " + handleA.x + " y: " + handleA.y);
+                    handleA.x = e.getX() - sceneShift.x;
+                    handleA.y = e.getY() - sceneShift.y;
                 } else if (handleB.selected) {
-                    handleB.x = e.getX();
-                    handleB.y = e.getY();
+                    handleB.x = e.getX() - sceneShift.x;
+                    handleB.y = e.getY() - sceneShift.y;
                 } else if (handleC.selected) {
-                    handleC.x = e.getX();
-                    handleC.y = e.getY();
+                    handleC.x = e.getX() - sceneShift.x;
+                    handleC.y = e.getY() - sceneShift.y;
+                } else {
+                    dragShift.x = -(onMousePressed.x - e.getX());
+                    dragShift.y = -(onMousePressed.y - e.getY());
+
+                    System.out.println("dragShift.x: " + dragShift.x + " dragShift.y: " + dragShift.y);
                 }
                 doCalculations();
                 repaint();
@@ -114,9 +182,13 @@ public class IRISVisualization extends JButton {
             public void keyPressed(KeyEvent e) {
                 super.keyPressed(e);
                 if (e.getKeyCode() == KeyEvent.VK_W) {
+                    writeSettings();
                     System.exit(0);
-                } else if (e.getKeyCode() == KeyEvent.VK_P) {
                 } else if (e.getKeyCode() == KeyEvent.VK_N) {
+                } else if (e.getKeyCode() == KeyEvent.VK_P) {
+                } else if (e.getKeyCode() == KeyEvent.VK_R) {
+                    sceneShift.x = 0;
+                    sceneShift.y = 0;
                 } else if (e.getKeyCode() == KeyEvent.VK_UP) {
                 } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
                 } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
@@ -161,6 +233,10 @@ public class IRISVisualization extends JButton {
         g2d.setFont(new Font("Arial", Font.PLAIN, 22));
         g2d.setStroke(new BasicStroke(3));
 
+        AffineTransform shiftTransform = AffineTransform.getTranslateInstance(sceneShift.x + dragShift.x, sceneShift.y + dragShift.y);
+
+        g2d.setTransform(shiftTransform);
+
         g2d.setColor(blue);
         g2d.draw(new Line2D.Double(handleA.x, handleA.y, handleB.x, handleB.y));
         g2d.setColor(green);
@@ -200,19 +276,19 @@ public class IRISVisualization extends JButton {
         mBC_AC.fill(g2d);
         mCB_AB.fill(g2d);
 
-//        g2d.setColor(Color.RED);
-//
-//        Handle vCA_BA = getVector(exCA, exBA);
-//        mCA_BA.add(vCA_BA).fill(g2d);
-//        drawHandleConnector(g2d, mCA_BA, mCA_BA.add(vCA_BA));
-//
-//        Handle vBC_AC = getVector(exBC, exAC);
-//        mBC_AC.add(vBC_AC).fill(g2d);
-//        drawHandleConnector(g2d, mBC_AC, mBC_AC.add(vBC_AC));
-//
-//        Handle vCB_AB = getVector(exCB, exAB);
-//        mCB_AB.add(vCB_AB).fill(g2d);
-//        drawHandleConnector(g2d, mCB_AB, mCB_AB.add(vCB_AB));
+        g2d.setColor(Color.RED);
+
+        Handle vCA_BA = getVector(exCA, exBA);
+        mCA_BA.add(vCA_BA).fill(g2d);
+        drawHandleConnector(g2d, mCA_BA, mCA_BA.add(vCA_BA));
+
+        Handle vBC_AC = getVector(exBC, exAC);
+        mBC_AC.add(vBC_AC).fill(g2d);
+        drawHandleConnector(g2d, mBC_AC, mBC_AC.add(vBC_AC));
+
+        Handle vCB_AB = getVector(exCB, exAB);
+        mCB_AB.add(vCB_AB).fill(g2d);
+        drawHandleConnector(g2d, mCB_AB, mCB_AB.add(vCB_AB));
 
     }
 
@@ -239,8 +315,8 @@ public class IRISVisualization extends JButton {
         SwingUtilities.invokeLater(() -> {
 
             JFrame f = new JFrame();
-            f.add(new IRISVisualization());
-            f.setSize(760,760);
+            f.setSize(760, 760);
+            f.add(new IRISVisualization(f));
             f.setVisible(true);
         });
     }
