@@ -16,9 +16,9 @@ public class IRISVisualization extends JButton {
     private Handle exAC;
     private Handle exCA;
     private Handle exBA;
-    private final Color red = new Color(180, 0, 0);
-    private final Color blue = new Color(0, 0, 80);
-    private final Color green = new Color(80, 140, 0);
+    private final Color color1 = new Color(180, 0, 0);
+    private Color color2 = new Color(0, 0, 80);
+    private final Color color3 = new Color(80, 140, 0);
     private Handle handleA;
     private Handle handleB;
     private Handle handleC;
@@ -37,6 +37,7 @@ public class IRISVisualization extends JButton {
     private boolean drawCircle = false;
     private boolean drawLines = false;
     private boolean drawIris = false;
+    private boolean blackMode = true;
 
     public IRISVisualization(JFrame f) {
 
@@ -55,12 +56,13 @@ public class IRISVisualization extends JButton {
 
         readSettings();
 
+        adjustColorBlackMode();
+
         doCalculations();
     }
 
     private void writeSettings() {
 
-        System.out.println("writeSettings ...");
         try {
             String uh = System.getProperty("user.home");
             FileOutputStream f = new FileOutputStream(uh + "/IRISVisualization.bin");
@@ -79,6 +81,7 @@ public class IRISVisualization extends JButton {
             os.writeBoolean(drawLines);
             os.writeBoolean(drawAnnotation);
             os.writeBoolean(drawIris);
+            os.writeBoolean(blackMode);
 
             os.close();
             f.close();
@@ -107,6 +110,7 @@ public class IRISVisualization extends JButton {
             drawLines = os.readBoolean();
             drawAnnotation = os.readBoolean();
             drawIris = os.readBoolean();
+            blackMode = os.readBoolean();
 
             os.close();
             f.close();
@@ -190,6 +194,9 @@ public class IRISVisualization extends JButton {
                     System.exit(0);
                 } else if (e.getKeyCode() == KeyEvent.VK_A) {
                     drawAnnotation = !drawAnnotation;
+                } else if (e.getKeyCode() == KeyEvent.VK_B) {
+                    blackMode = !blackMode;
+                    adjustColorBlackMode();
                 } else if (e.getKeyCode() == KeyEvent.VK_C) {
                     drawCircle = !drawCircle;
                 } else if (e.getKeyCode() == KeyEvent.VK_I) {
@@ -207,6 +214,14 @@ public class IRISVisualization extends JButton {
                 repaint();
             }
         });
+    }
+
+    private void adjustColorBlackMode() {
+        if (blackMode) {
+            color2 = new Color(0, 180, 180);
+        } else {
+            color2 = new Color(0, 0, 80);
+        }
     }
 
     private void deselectAllHandles() {
@@ -359,28 +374,32 @@ public class IRISVisualization extends JButton {
         g2d.setFont(new Font("Arial", Font.PLAIN, 22));
         g2d.setStroke(new BasicStroke(3));
 
-        AffineTransform shiftTransform = AffineTransform.getTranslateInstance(sceneShift.x + dragShift.x, sceneShift.y + dragShift.y);
+        if (blackMode) {
+            g2d.setColor(Color.BLACK);
+            g2d.fillRect(0, 0, getWidth(), getHeight());
+        }
 
+        AffineTransform shiftTransform = AffineTransform.getTranslateInstance(sceneShift.x + dragShift.x, sceneShift.y + dragShift.y);
         g2d.setTransform(shiftTransform);
 
-        g2d.setColor(blue);
+        g2d.setColor(color2);
         g2d.draw(new Line2D.Double(handleA.x, handleA.y, handleB.x, handleB.y));
-        g2d.setColor(green);
+        g2d.setColor(color3);
         g2d.draw(new Line2D.Double(handleB.x, handleB.y, handleC.x, handleC.y));
-        g2d.setColor(red);
+        g2d.setColor(color1);
         g2d.draw(new Line2D.Double(handleC.x, handleC.y, handleA.x, handleA.y));
 
-        g2d.setColor(green);
+        g2d.setColor(color3);
         exBA.fill(g2d, drawAnnotation);
         exCA.fill(g2d, drawAnnotation);
         g2d.draw(new Line2D.Double(handleA.x, handleA.y, exBA.x, exBA.y));
         g2d.draw(new Line2D.Double(handleA.x, handleA.y, exCA.x, exCA.y));
-        g2d.setColor(blue);
+        g2d.setColor(color2);
         exBC.fill(g2d, drawAnnotation);
         exAC.fill(g2d, drawAnnotation);
         g2d.draw(new Line2D.Double(handleC.x, handleC.y, exBC.x, exBC.y));
         g2d.draw(new Line2D.Double(handleC.x, handleC.y, exAC.x, exAC.y));
-        g2d.setColor(red);
+        g2d.setColor(color1);
         exAB.fill(g2d, drawAnnotation);
         exCB.fill(g2d, drawAnnotation);
         g2d.draw(new Line2D.Double(handleB.x, handleB.y, exAB.x, exAB.y));
@@ -410,7 +429,7 @@ public class IRISVisualization extends JButton {
         handleC.fill(g2d, drawAnnotation);
 
         if (drawCircle) {
-            g2d.setColor(green);
+            g2d.setColor(color3);
             centerCircle.fill(g2d, drawAnnotation);
             g2d.draw(new Ellipse2D.Double(centerCircle.x - radiusCircle, centerCircle.y - radiusCircle, 2 * radiusCircle, 2 * radiusCircle));
         }
