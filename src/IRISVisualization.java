@@ -372,7 +372,6 @@ public class IRISVisualization extends JButton {
         Graphics2D g2d = (Graphics2D) g;
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setFont(new Font("Arial", Font.PLAIN, 22));
-        g2d.setStroke(new BasicStroke(3));
 
         if (blackMode) {
             g2d.setColor(Color.BLACK);
@@ -382,6 +381,16 @@ public class IRISVisualization extends JButton {
         AffineTransform shiftTransform = AffineTransform.getTranslateInstance(sceneShift.x + dragShift.x, sceneShift.y + dragShift.y);
         g2d.setTransform(shiftTransform);
 
+        if (drawCircle) {
+            drawCircle(g2d);
+        }
+
+        if (drawIris) {
+            drawIris(g2d);
+        }
+
+        g2d.setStroke(new BasicStroke(2));
+
         g2d.setColor(color2);
         g2d.draw(new Line2D.Double(handleA.x, handleA.y, handleB.x, handleB.y));
         g2d.setColor(color3);
@@ -390,54 +399,59 @@ public class IRISVisualization extends JButton {
         g2d.draw(new Line2D.Double(handleC.x, handleC.y, handleA.x, handleA.y));
 
         g2d.setColor(color3);
-        exBA.fill(g2d, drawAnnotation);
-        exCA.fill(g2d, drawAnnotation);
+//        exBA.fill(g2d, drawAnnotation);
+//        exCA.fill(g2d, drawAnnotation);
         g2d.draw(new Line2D.Double(handleA.x, handleA.y, exBA.x, exBA.y));
         g2d.draw(new Line2D.Double(handleA.x, handleA.y, exCA.x, exCA.y));
         g2d.setColor(color2);
-        exBC.fill(g2d, drawAnnotation);
-        exAC.fill(g2d, drawAnnotation);
+//        exBC.fill(g2d, drawAnnotation);
+//        exAC.fill(g2d, drawAnnotation);
         g2d.draw(new Line2D.Double(handleC.x, handleC.y, exBC.x, exBC.y));
         g2d.draw(new Line2D.Double(handleC.x, handleC.y, exAC.x, exAC.y));
         g2d.setColor(color1);
-        exAB.fill(g2d, drawAnnotation);
-        exCB.fill(g2d, drawAnnotation);
+//        exAB.fill(g2d, drawAnnotation);
+//        exCB.fill(g2d, drawAnnotation);
         g2d.draw(new Line2D.Double(handleB.x, handleB.y, exAB.x, exAB.y));
         g2d.draw(new Line2D.Double(handleB.x, handleB.y, exCB.x, exCB.y));
 
         g2d.setStroke(new BasicStroke(1));
 
         if (drawLines) {
-            g2d.setColor(Color.lightGray);
-            drawHandleConnector(g2d, exCA, exBA);
-            drawHandleConnector(g2d, exBC, exAC);
-            drawHandleConnector(g2d, exCB, exAB);
-
-            midCA_BA.fill(g2d, drawAnnotation);
-            midBC_AC.fill(g2d, drawAnnotation);
-            midCB_AB.fill(g2d, drawAnnotation);
-
-            g2d.setColor(Color.LIGHT_GRAY);
-            drawHandleConnector(g2d, midCA_BA, towCA_BA);
-            drawHandleConnector(g2d, midBC_AC, towBC_AC);
-            drawHandleConnector(g2d, midCB_AB, towCB_AB);
+            drawLines(g2d);
         }
 
-        g2d.setColor(Color.darkGray);
+        g2d.setColor(Color.gray);
         handleA.fill(g2d, drawAnnotation);
         handleB.fill(g2d, drawAnnotation);
         handleC.fill(g2d, drawAnnotation);
+    }
 
-        if (drawCircle) {
-            g2d.setColor(color3);
-            centerCircle.fill(g2d, drawAnnotation);
-            g2d.draw(new Ellipse2D.Double(centerCircle.x - radiusCircle, centerCircle.y - radiusCircle, 2 * radiusCircle, 2 * radiusCircle));
-        }
+    private void drawLines(Graphics2D g2d) {
+        g2d.setColor(Color.lightGray);
+        drawHandleConnector(g2d, exCA, exBA);
+        drawHandleConnector(g2d, exBC, exAC);
+        drawHandleConnector(g2d, exCB, exAB);
 
-        if (drawIris) {
-            double ir = calculateInnerRadiusTriangle(handleA, handleB, handleC);
-            g2d.draw(new Ellipse2D.Double(centerCircle.x - ir, centerCircle.y - ir, 2 * ir, 2 * ir));
-        }
+        midCA_BA.fill(g2d, drawAnnotation);
+        midBC_AC.fill(g2d, drawAnnotation);
+        midCB_AB.fill(g2d, drawAnnotation);
+
+        g2d.setColor(Color.LIGHT_GRAY);
+        drawHandleConnector(g2d, midCA_BA, towCA_BA);
+        drawHandleConnector(g2d, midBC_AC, towBC_AC);
+        drawHandleConnector(g2d, midCB_AB, towCB_AB);
+    }
+
+    private void drawIris(Graphics2D g2d) {
+        g2d.setColor(Color.MAGENTA.darker().darker());
+        double ir = calculateInnerRadiusTriangle(handleA, handleB, handleC);
+        g2d.draw(new Ellipse2D.Double(centerCircle.x - ir, centerCircle.y - ir, 2 * ir, 2 * ir));
+    }
+
+    private void drawCircle(Graphics2D g2d) {
+        g2d.setColor(Color.MAGENTA.darker().darker());
+        centerCircle.fill(g2d, drawAnnotation);
+        g2d.draw(new Ellipse2D.Double(centerCircle.x - radiusCircle, centerCircle.y - radiusCircle, 2 * radiusCircle, 2 * radiusCircle));
     }
 
     private void drawHandleConnector(Graphics2D g2d, Handle h1, Handle h2) {
