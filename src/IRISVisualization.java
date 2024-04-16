@@ -60,9 +60,9 @@ public class IRISVisualization extends JButton {
         sceneShift.x = 80;
         sceneShift.y = 20;
 
-        handleA = new Handle(360, 280, handleSize, "A");
-        handleB = new Handle(220, 480, handleSize, "B");
-        handleC = new Handle(390, 540, handleSize, "C");
+        handleA = new Handle(535, 395, handleSize, "A");
+        handleB = new Handle(358, 573, handleSize, "B");
+        handleC = new Handle(615, 635, handleSize, "C");
 
         readSettings();
 
@@ -85,9 +85,9 @@ public class IRISVisualization extends JButton {
 
             os.writeObject(sceneShift);
 
-            os.writeObject(handleA);
-            os.writeObject(handleB);
-            os.writeObject(handleC);
+//            os.writeObject(handleA);
+//            os.writeObject(handleB);
+//            os.writeObject(handleC);
 
             os.writeBoolean(drawCircle);
             os.writeBoolean(drawLines);
@@ -121,9 +121,9 @@ public class IRISVisualization extends JButton {
 
             sceneShift = (Point2D.Double) os.readObject();
 
-            handleA = (Handle) os.readObject();
-            handleB = (Handle) os.readObject();
-            handleC = (Handle) os.readObject();
+//            handleA = (Handle) os.readObject();
+//            handleB = (Handle) os.readObject();
+//            handleC = (Handle) os.readObject();
 
             drawCircle = os.readBoolean();
             drawLines = os.readBoolean();
@@ -239,6 +239,9 @@ public class IRISVisualization extends JButton {
                     case KeyEvent.VK_C:
                         drawCircle = !drawCircle;
                         break;
+                    case KeyEvent.VK_D:
+                        printHandles();
+                        break;
                     case KeyEvent.VK_H:
                         drawHelp = !drawHelp;
                         break;
@@ -287,6 +290,12 @@ public class IRISVisualization extends JButton {
                 repaint();
             }
         });
+    }
+
+    private void printHandles() {
+        handleA.print("A");
+        handleB.print("B");
+        handleC.print("C");
     }
 
     private void moveIrisPic(int vKup, int inc) {
