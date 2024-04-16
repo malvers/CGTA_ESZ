@@ -51,6 +51,13 @@ class Handle extends Ellipse2D.Double {
         return new Handle(x * v, y * v, 10, "");
     }
 
+    public Handle rotate( double ang) {
+
+        double newX = this.x * Math.cos(ang) - this.y * Math.sin(ang);
+        double newY = this.x * Math.sin(ang) + this.y * Math.cos(ang);
+        return new Handle(newX, newY, 6, this.name);
+    }
+
     public Handle subtract(Handle in) {
 
         return new Handle(x - in.x, y - in.y, 6, "");

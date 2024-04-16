@@ -45,9 +45,13 @@ public class IRISVisualization extends JButton {
     private boolean drawTriangle = false;
     private boolean drawHelp = false;
     private boolean drawIrisPic = true;
+    private boolean debugMode = true;
+
     private int irisPicSize = 688;
     private int irisPicShiftX = 163;
     private int irisPicShifty = 186;
+    private Handle whiperC_CB;
+    private double rotationAngle = 0;
 
     public IRISVisualization(JFrame f) {
 
@@ -184,6 +188,7 @@ public class IRISVisualization extends JButton {
         });
 
         addMouseMotionListener(new MouseMotionAdapter() {
+
             @Override
             public void mouseDragged(MouseEvent e) {
 
@@ -207,7 +212,11 @@ public class IRISVisualization extends JButton {
             @Override
             public void mouseMoved(MouseEvent e) {
                 if (!drawHelp) {
-                    //frame.setTitle("Conway's IRIS - x: " + e.getX() + " y: " + e.getY());
+                    String title = "Conway's IRIS";
+                    if (debugMode) {
+                        title += " - x: " + e.getX() + " y: " + e.getY();
+                    }
+                    frame.setTitle(title);
                 }
             }
         });
@@ -220,7 +229,6 @@ public class IRISVisualization extends JButton {
             public void keyPressed(KeyEvent e) {
 
 //                System.out.println("key: " + e.getKeyCode());
-
                 switch (e.getKeyCode()) {
                     case KeyEvent.VK_W:
                         if (e.isMetaDown()) {
@@ -241,7 +249,9 @@ public class IRISVisualization extends JButton {
                         drawCircle = !drawCircle;
                         break;
                     case KeyEvent.VK_D:
-                        printHandles();
+                        //printHandles();
+                        whiperC_CB = rotateWhiper(whiperC_CB);
+
                         break;
                     case KeyEvent.VK_H:
                         drawHelp = !drawHelp;
@@ -262,8 +272,9 @@ public class IRISVisualization extends JButton {
                         }
                         break;
                     case KeyEvent.VK_R:
-                        sceneShift.x = 0;
-                        sceneShift.y = 0;
+//                        sceneShift.x = 0;
+//                        sceneShift.y = 0;
+                        rotationAngle = 0;
                         break;
                     case KeyEvent.VK_T:
                         drawTriangle = !drawTriangle;
@@ -426,6 +437,24 @@ public class IRISVisualization extends JButton {
         if (centerCircle != null) {
             radiusCircle = getVector(centerCircle, whiskerAB).getLength();
         }
+
+        calculateGoodVips();
+    }
+
+    private void calculateGoodVips() {
+
+        whiperC_CB = getVector(whiskerCB, handleC).add(handleC);
+    }
+
+    private void drawWipers(Graphics2D g2d) {
+
+        g2d.setColor(Color.MAGENTA.darker());
+        g2d.setStroke(new BasicStroke(2));
+        drawHandleConnector(g2d, handleC, whiperC_CB);
+    }
+    private Handle rotateWhiper(Handle whiper) {
+        rotationAngle += Math.PI/360;
+        return getVector(whiskerCB, handleC).rotate(rotationAngle).add(handleC);
     }
 
     private Handle calculateExtendedPoint(Handle one, Handle two, Handle three) {
@@ -451,7 +480,6 @@ public class IRISVisualization extends JButton {
     private Handle getVector(Handle h1, Handle h2) {
 
         return new Handle(h1.x - h2.x, h1.y - h2.y, 2, "");
-
     }
 
     private Handle calculateMidpoint(Handle point1, Handle point2) {
@@ -506,6 +534,10 @@ public class IRISVisualization extends JButton {
             g2d.drawImage(irisPic, irisPicShiftX, irisPicShifty, irisPicSize, irisPicSize, null);
         }
 
+        if (drawLines) {
+            drawLines(g2d);
+        }
+
         if (drawCircle) {
             drawCircle(g2d);
         }
@@ -522,9 +554,7 @@ public class IRISVisualization extends JButton {
             drawTriangle(g2d);
         }
 
-        if (drawLines) {
-            drawLines(g2d);
-        }
+        drawWipers(g2d);
     }
 
     private void drawTriangle(Graphics2D g2d) {
