@@ -13,12 +13,12 @@ public class IRISVisualization extends JButton {
 
     private final JFrame frame;
     private final BufferedImage irisPic;
-    private Handle exBC;
-    private Handle exAB;
-    private Handle exCB;
-    private Handle exAC;
-    private Handle exCA;
-    private Handle exBA;
+    private Handle whiskerBC;
+    private Handle whiskerAB;
+    private Handle whiskerCB;
+    private Handle whiskerAC;
+    private Handle whiskerCA;
+    private Handle whiskerBA;
     private final Color color1 = new Color(180, 0, 0);
     private Color color2 = new Color(0, 0, 80);
     private final Color color3 = new Color(80, 140, 0);
@@ -85,10 +85,6 @@ public class IRISVisualization extends JButton {
 
             os.writeObject(sceneShift);
 
-//            os.writeObject(handleA);
-//            os.writeObject(handleB);
-//            os.writeObject(handleC);
-
             os.writeBoolean(drawCircle);
             os.writeBoolean(drawLines);
             os.writeBoolean(drawAnnotation);
@@ -101,6 +97,11 @@ public class IRISVisualization extends JButton {
             os.writeInt(irisPicShiftX);
             os.writeInt(irisPicShifty);
             os.writeInt(irisPicSize);
+
+//            os.writeObject(handleA);
+//            os.writeObject(handleB);
+//            os.writeObject(handleC);
+
 
             os.close();
             f.close();
@@ -121,10 +122,6 @@ public class IRISVisualization extends JButton {
 
             sceneShift = (Point2D.Double) os.readObject();
 
-//            handleA = (Handle) os.readObject();
-//            handleB = (Handle) os.readObject();
-//            handleC = (Handle) os.readObject();
-
             drawCircle = os.readBoolean();
             drawLines = os.readBoolean();
             drawAnnotation = os.readBoolean();
@@ -137,6 +134,10 @@ public class IRISVisualization extends JButton {
             irisPicShiftX = os.readInt();
             irisPicShifty = os.readInt();
             irisPicSize = os.readInt();
+
+//            handleA = (Handle) os.readObject();
+//            handleB = (Handle) os.readObject();
+//            handleC = (Handle) os.readObject();
 
             os.close();
             f.close();
@@ -389,32 +390,32 @@ public class IRISVisualization extends JButton {
 
     private void doCalculations() {
 
-        exBA = calculateExtendedPoint(handleB, handleC, handleA);
-        exCA = calculateExtendedPoint(handleC, handleB, handleA);
+        whiskerBA = calculateExtendedPoint(handleB, handleC, handleA);
+        whiskerCA = calculateExtendedPoint(handleC, handleB, handleA);
 
-        exBC = calculateExtendedPoint(handleB, handleA, handleC);
-        exAC = calculateExtendedPoint(handleA, handleB, handleC);
+        whiskerBC = calculateExtendedPoint(handleB, handleA, handleC);
+        whiskerAC = calculateExtendedPoint(handleA, handleB, handleC);
 
-        exAB = calculateExtendedPoint(handleA, handleC, handleB);
-        exCB = calculateExtendedPoint(handleC, handleA, handleB);
+        whiskerAB = calculateExtendedPoint(handleA, handleC, handleB);
+        whiskerCB = calculateExtendedPoint(handleC, handleA, handleB);
 
-        midCA_BA = calculateMidpoint(exCA, exBA);
-        midBC_AC = calculateMidpoint(exAC, exBC);
-        midCB_AB = calculateMidpoint(exCB, exAB);
+        midCA_BA = calculateMidpoint(whiskerCA, whiskerBA);
+        midBC_AC = calculateMidpoint(whiskerAC, whiskerBC);
+        midCB_AB = calculateMidpoint(whiskerCB, whiskerAB);
 
-        Handle vecCA_BA = getVector(exBA, exCA);
+        Handle vecCA_BA = getVector(whiskerBA, whiskerCA);
         Handle recCA_BA = vecCA_BA.flip();
         recCA_BA.x = -recCA_BA.x;
         recCA_BA = recCA_BA.makeItThatLong(400);
         towCA_BA = midCA_BA.add(recCA_BA);
 
-        Handle vecBC_AC = getVector(exBC, exAC);
+        Handle vecBC_AC = getVector(whiskerBC, whiskerAC);
         Handle recBC_AC = vecBC_AC.flip();
         recBC_AC.x = -recBC_AC.x;
         recBC_AC.makeItThatLong(400);
         towBC_AC = midBC_AC.subtract(recBC_AC);
 
-        Handle vecCB_AB = getVector(exCB, exAB);
+        Handle vecCB_AB = getVector(whiskerCB, whiskerAB);
         Handle recCB_AB = vecCB_AB.flip();
         recCB_AB.x = -recCB_AB.x;
         recCB_AB.makeItThatLong(400);
@@ -423,7 +424,7 @@ public class IRISVisualization extends JButton {
         centerCircle = getIntersectionPointGPT(midCB_AB, towCB_AB, midBC_AC, towBC_AC);
 
         if (centerCircle != null) {
-            radiusCircle = getVector(centerCircle, exAB).getLength();
+            radiusCircle = getVector(centerCircle, whiskerAB).getLength();
         }
     }
 
@@ -547,29 +548,29 @@ public class IRISVisualization extends JButton {
 
         g2d.setStroke(new BasicStroke(3));
         g2d.setColor(color3);
-        exBA.fill(g2d, drawAnnotation);
-        exCA.fill(g2d, drawAnnotation);
-        g2d.draw(new Line2D.Double(handleA.x, handleA.y, exBA.x, exBA.y));
-        g2d.draw(new Line2D.Double(handleA.x, handleA.y, exCA.x, exCA.y));
+        whiskerBA.fill(g2d, drawAnnotation);
+        whiskerCA.fill(g2d, drawAnnotation);
+        g2d.draw(new Line2D.Double(handleA.x, handleA.y, whiskerBA.x, whiskerBA.y));
+        g2d.draw(new Line2D.Double(handleA.x, handleA.y, whiskerCA.x, whiskerCA.y));
         g2d.setColor(color2);
-        exBC.fill(g2d, drawAnnotation);
-        exAC.fill(g2d, drawAnnotation);
-        g2d.draw(new Line2D.Double(handleC.x, handleC.y, exBC.x, exBC.y));
-        g2d.draw(new Line2D.Double(handleC.x, handleC.y, exAC.x, exAC.y));
+        whiskerBC.fill(g2d, drawAnnotation);
+        whiskerAC.fill(g2d, drawAnnotation);
+        g2d.draw(new Line2D.Double(handleC.x, handleC.y, whiskerBC.x, whiskerBC.y));
+        g2d.draw(new Line2D.Double(handleC.x, handleC.y, whiskerAC.x, whiskerAC.y));
         g2d.setColor(color1);
-        exAB.fill(g2d, drawAnnotation);
-        exCB.fill(g2d, drawAnnotation);
-        g2d.draw(new Line2D.Double(handleB.x, handleB.y, exAB.x, exAB.y));
-        g2d.draw(new Line2D.Double(handleB.x, handleB.y, exCB.x, exCB.y));
+        whiskerAB.fill(g2d, drawAnnotation);
+        whiskerCB.fill(g2d, drawAnnotation);
+        g2d.draw(new Line2D.Double(handleB.x, handleB.y, whiskerAB.x, whiskerAB.y));
+        g2d.draw(new Line2D.Double(handleB.x, handleB.y, whiskerCB.x, whiskerCB.y));
     }
 
     private void drawLines(Graphics2D g2d) {
 
         g2d.setStroke(new BasicStroke(1));
         g2d.setColor(Color.lightGray);
-        drawHandleConnector(g2d, exCA, exBA);
-        drawHandleConnector(g2d, exBC, exAC);
-        drawHandleConnector(g2d, exCB, exAB);
+        drawHandleConnector(g2d, whiskerCA, whiskerBA);
+        drawHandleConnector(g2d, whiskerBC, whiskerAC);
+        drawHandleConnector(g2d, whiskerCB, whiskerAB);
 
         midCA_BA.fill(g2d, drawAnnotation);
         midBC_AC.fill(g2d, drawAnnotation);

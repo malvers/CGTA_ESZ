@@ -26,13 +26,13 @@ public class Helper {
         g2d.drawString("Move triangle left and right", xPos + tab, yPos);
         yPos += dy;
 
-        g2d.drawString("Space bar", xPos, yPos);
-        g2d.drawString(" ", xPos + tab, yPos);
-        yPos += dy;
-
-        g2d.drawString("Numbers 0 - 9", xPos, yPos);
-        g2d.drawString("", xPos + tab, yPos);
-        yPos += dy;
+//        g2d.drawString("Space bar", xPos, yPos);
+//        g2d.drawString(" ", xPos + tab, yPos);
+//        yPos += dy;
+//
+//        g2d.drawString("Numbers 0 - 9", xPos, yPos);
+//        g2d.drawString("", xPos + tab, yPos);
+//        yPos += dy;
 
         g2d.drawString("A", xPos, yPos);
         g2d.drawString("Toggle annotations", xPos + tab, yPos);
@@ -51,7 +51,7 @@ public class Helper {
         yPos += dy;
 
         g2d.drawString("I", xPos, yPos);
-        g2d.drawString("Toggle iris", xPos + tab, yPos);
+        g2d.drawString("Toggle iris circle", xPos + tab, yPos);
         yPos += dy;
 
         g2d.drawString("P", xPos, yPos);
