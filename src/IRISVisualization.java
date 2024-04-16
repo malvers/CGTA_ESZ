@@ -37,7 +37,9 @@ public class IRISVisualization extends JButton {
     private boolean drawCircle = false;
     private boolean drawLines = false;
     private boolean drawIris = false;
-    private boolean blackMode = true;
+    private boolean blackMode = false;
+    private boolean drawWhiskers = false;
+    private boolean drawTriangle = false;
 
     public IRISVisualization(JFrame f) {
 
@@ -82,6 +84,8 @@ public class IRISVisualization extends JButton {
             os.writeBoolean(drawAnnotation);
             os.writeBoolean(drawIris);
             os.writeBoolean(blackMode);
+            os.writeBoolean(drawWhiskers);
+            os.writeBoolean(drawTriangle);
 
             os.close();
             f.close();
@@ -111,6 +115,8 @@ public class IRISVisualization extends JButton {
             drawAnnotation = os.readBoolean();
             drawIris = os.readBoolean();
             blackMode = os.readBoolean();
+            drawWhiskers = os.readBoolean();
+            drawTriangle = os.readBoolean();
 
             os.close();
             f.close();
@@ -179,7 +185,7 @@ public class IRISVisualization extends JButton {
 
             @Override
             public void mouseMoved(MouseEvent e) {
-                frame.setTitle("x: " + e.getX() + " y: " + e.getY());
+                frame.setTitle("Conway's IRIS - x: " + e.getX() + " y: " + e.getY());
             }
         });
     }
@@ -189,7 +195,7 @@ public class IRISVisualization extends JButton {
             @Override
             public void keyPressed(KeyEvent e) {
                 super.keyPressed(e);
-                if (e.getKeyCode() == KeyEvent.VK_W) {
+                if (e.getKeyCode() == KeyEvent.VK_W && e.isMetaDown()) {
                     writeSettings();
                     System.exit(0);
                 } else if (e.getKeyCode() == KeyEvent.VK_A) {
@@ -206,14 +212,49 @@ public class IRISVisualization extends JButton {
                 } else if (e.getKeyCode() == KeyEvent.VK_R) {
                     sceneShift.x = 0;
                     sceneShift.y = 0;
+                } else if (e.getKeyCode() == KeyEvent.VK_T) {
+                    drawTriangle = !drawTriangle;
+                } else if (e.getKeyCode() == KeyEvent.VK_W) {
+                    drawWhiskers = !drawWhiskers;
                 } else if (e.getKeyCode() == KeyEvent.VK_UP) {
+                    moveHandles(e.getKeyCode());
                 } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+                    moveHandles(e.getKeyCode());
                 } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+                    moveHandles(e.getKeyCode());
                 } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+                    moveHandles(e.getKeyCode());
                 }
                 repaint();
             }
         });
+    }
+
+    private void moveHandles(int vkUp) {
+
+        switch (vkUp) {
+            case KeyEvent.VK_UP:
+                handleA.y += 20;
+                handleB.y += 20;
+                handleC.y += 20;
+                break;
+            case KeyEvent.VK_DOWN:
+                handleA.y -= 20;
+                handleB.y -= 20;
+                handleC.y -= 20;
+                break;
+            case KeyEvent.VK_LEFT:
+                handleA.x -= 20;
+                handleB.x -= 20;
+                handleC.x -= 20;
+                break;
+            case KeyEvent.VK_RIGHT:
+                handleA.x += 20;
+                handleB.x += 20;
+                handleC.x += 20;
+                break;
+        }
+
     }
 
     private void adjustColorBlackMode() {
@@ -245,9 +286,7 @@ public class IRISVisualization extends JButton {
         double area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
 
         // Calculate the radius of the inscribed circle
-        double inradius = 2.0 * area / perimeter;
-
-        return inradius;
+        return 2.0 * area / perimeter;
     }
 
     private void doCalculations() {
@@ -285,9 +324,9 @@ public class IRISVisualization extends JButton {
 
         centerCircle = getIntersectionPointGPT(midCB_AB, towCB_AB, midBC_AC, towBC_AC);
 
-        radiusCircle = getVector(centerCircle, exAB).getLength();
-
-//        System.out.println("radius: " + radiusCircle);
+        if (centerCircle != null) {
+            radiusCircle = getVector(centerCircle, exAB).getLength();
+        }
     }
 
     private Handle calculateExtendedPoint(Handle one, Handle two, Handle three) {
@@ -307,7 +346,7 @@ public class IRISVisualization extends JButton {
         vector13Scaled_y *= length12;
 
         String name = one.getName() + three.getName();
-        return new Handle(three.getX() - vector13Scaled_x, three.getY() - vector13Scaled_y, 10, name);
+        return new Handle(three.getX() - vector13Scaled_x, three.getY() - vector13Scaled_y, 6, name);
     }
 
     private Handle getVector(Handle h1, Handle h2) {
@@ -321,28 +360,6 @@ public class IRISVisualization extends JButton {
         double midX = (point1.getX() + point2.getX()) / 2;
         double midY = (point1.getY() + point2.getY()) / 2;
         return new Handle(midX, midY, 6, "");
-    }
-
-    private Point2D.Double getIntersectionPoint(Line2D line1, Line2D line2) {
-
-        if (!line1.intersectsLine(line2)) {
-            return null; // No intersection
-        }
-
-        double x1 = line1.getX1(), y1 = line1.getY1();
-        double x2 = line1.getX2(), y2 = line1.getY2();
-        double x3 = line2.getX1(), y3 = line2.getY1();
-        double x4 = line2.getX2(), y4 = line2.getY2();
-
-        double det = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
-        if (det == 0) {
-            return null; // Parallel lines, no intersection
-        }
-
-        double px = ((x1 * y2 - y1 * x2) * (x3 - x4) - (x1 - x2) * (x3 * y4 - y3 * x4)) / det;
-        double py = ((x1 * y2 - y1 * x2) * (y3 - y4) - (y1 - y2) * (x3 * y4 - y3 * x4)) / det;
-
-        return new Point2D.Double(px, py);
     }
 
     private Handle getIntersectionPointGPT(Handle handle1Start, Handle handle1End, Handle handle2Start, Handle handle2End) {
@@ -389,44 +406,59 @@ public class IRISVisualization extends JButton {
             drawIris(g2d);
         }
 
-        g2d.setStroke(new BasicStroke(2));
+        if (drawWhiskers) {
+            drawWhiskers(g2d);
+        }
 
-        g2d.setColor(color2);
-        g2d.draw(new Line2D.Double(handleA.x, handleA.y, handleB.x, handleB.y));
-        g2d.setColor(color3);
-        g2d.draw(new Line2D.Double(handleB.x, handleB.y, handleC.x, handleC.y));
-        g2d.setColor(color1);
-        g2d.draw(new Line2D.Double(handleC.x, handleC.y, handleA.x, handleA.y));
-
-        g2d.setColor(color3);
-//        exBA.fill(g2d, drawAnnotation);
-//        exCA.fill(g2d, drawAnnotation);
-        g2d.draw(new Line2D.Double(handleA.x, handleA.y, exBA.x, exBA.y));
-        g2d.draw(new Line2D.Double(handleA.x, handleA.y, exCA.x, exCA.y));
-        g2d.setColor(color2);
-//        exBC.fill(g2d, drawAnnotation);
-//        exAC.fill(g2d, drawAnnotation);
-        g2d.draw(new Line2D.Double(handleC.x, handleC.y, exBC.x, exBC.y));
-        g2d.draw(new Line2D.Double(handleC.x, handleC.y, exAC.x, exAC.y));
-        g2d.setColor(color1);
-//        exAB.fill(g2d, drawAnnotation);
-//        exCB.fill(g2d, drawAnnotation);
-        g2d.draw(new Line2D.Double(handleB.x, handleB.y, exAB.x, exAB.y));
-        g2d.draw(new Line2D.Double(handleB.x, handleB.y, exCB.x, exCB.y));
-
-        g2d.setStroke(new BasicStroke(1));
+        if (drawTriangle) {
+            drawTriangle(g2d);
+        }
 
         if (drawLines) {
             drawLines(g2d);
         }
+    }
 
-        g2d.setColor(Color.gray);
+    private void drawTriangle(Graphics2D g2d) {
+
+        g2d.setStroke(new BasicStroke(3));
+
+        g2d.setColor(color2);
+        drawHandleConnector(g2d, handleA, handleB);
+        g2d.setColor(color3);
+        drawHandleConnector(g2d, handleB, handleC);
+        g2d.setColor(color1);
+        drawHandleConnector(g2d, handleC, handleA);
+
+        g2d.setColor(Color.darkGray);
         handleA.fill(g2d, drawAnnotation);
         handleB.fill(g2d, drawAnnotation);
         handleC.fill(g2d, drawAnnotation);
     }
 
+    private void drawWhiskers(Graphics2D g2d) {
+
+        g2d.setStroke(new BasicStroke(3));
+        g2d.setColor(color3);
+        exBA.fill(g2d, drawAnnotation);
+        exCA.fill(g2d, drawAnnotation);
+        g2d.draw(new Line2D.Double(handleA.x, handleA.y, exBA.x, exBA.y));
+        g2d.draw(new Line2D.Double(handleA.x, handleA.y, exCA.x, exCA.y));
+        g2d.setColor(color2);
+        exBC.fill(g2d, drawAnnotation);
+        exAC.fill(g2d, drawAnnotation);
+        g2d.draw(new Line2D.Double(handleC.x, handleC.y, exBC.x, exBC.y));
+        g2d.draw(new Line2D.Double(handleC.x, handleC.y, exAC.x, exAC.y));
+        g2d.setColor(color1);
+        exAB.fill(g2d, drawAnnotation);
+        exCB.fill(g2d, drawAnnotation);
+        g2d.draw(new Line2D.Double(handleB.x, handleB.y, exAB.x, exAB.y));
+        g2d.draw(new Line2D.Double(handleB.x, handleB.y, exCB.x, exCB.y));
+    }
+
     private void drawLines(Graphics2D g2d) {
+
+        g2d.setStroke(new BasicStroke(1));
         g2d.setColor(Color.lightGray);
         drawHandleConnector(g2d, exCA, exBA);
         drawHandleConnector(g2d, exBC, exAC);
