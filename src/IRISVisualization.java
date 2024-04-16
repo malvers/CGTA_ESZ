@@ -46,8 +46,8 @@ public class IRISVisualization extends JButton {
     private boolean drawHelp = false;
     private boolean drawPic = true;
     private int irisPicSize = 688;
-    private int irisPicShiftX = 184;
-    private int irisPicShifty = 188;
+    private int irisPicShiftX = 163;
+    private int irisPicShifty = 186;
 
     public IRISVisualization(JFrame f) {
 
@@ -97,6 +97,10 @@ public class IRISVisualization extends JButton {
             os.writeBoolean(drawWhiskers);
             os.writeBoolean(drawTriangle);
 
+            os.writeInt(irisPicShiftX);
+            os.writeInt(irisPicShifty);
+            os.writeInt(irisPicSize);
+
             os.close();
             f.close();
         } catch (IOException e) {
@@ -127,6 +131,10 @@ public class IRISVisualization extends JButton {
             blackMode = os.readBoolean();
             drawWhiskers = os.readBoolean();
             drawTriangle = os.readBoolean();
+
+            irisPicShiftX = os.readInt();
+            irisPicShifty = os.readInt();
+            irisPicSize = os.readInt();
 
             os.close();
             f.close();
@@ -203,6 +211,7 @@ public class IRISVisualization extends JButton {
     }
 
     private void keyInit() {
+
         addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
@@ -238,7 +247,13 @@ public class IRISVisualization extends JButton {
                         drawLines = !drawLines;
                         break;
                     case KeyEvent.VK_P:
+                        boolean bm = blackMode;
                         drawPic = !drawPic;
+                        if (drawPic) {
+                            blackMode = true;
+                        } else {
+                            blackMode = bm;
+                        }
                         break;
                     case KeyEvent.VK_R:
                         sceneShift.x = 0;
@@ -288,7 +303,7 @@ public class IRISVisualization extends JButton {
                 irisPicShiftX += inc;
                 break;
         }
-        //System.out.println("psx: " + picShiftX + " psy: " + picShifty + " ps: " + picSize);
+        System.out.println("psx: " + irisPicShiftX + " psy: " + irisPicShifty + " ps: " + irisPicSize);
     }
 
     public static BufferedImage loadImage(String filePath) {

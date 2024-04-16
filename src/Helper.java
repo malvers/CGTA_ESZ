@@ -54,6 +54,10 @@ public class Helper {
         g2d.drawString("Toggle iris", xPos + tab, yPos);
         yPos += dy;
 
+        g2d.drawString("P", xPos, yPos);
+        g2d.drawString("Toggle iris picture", xPos + tab, yPos);
+        yPos += dy;
+
         g2d.drawString("R", xPos, yPos);
         g2d.drawString("Reste position", xPos + tab, yPos);
         yPos += dy;
