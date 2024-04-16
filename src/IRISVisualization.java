@@ -1,3 +1,4 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -5,11 +6,13 @@ import java.awt.geom.AffineTransform;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
+import java.awt.image.BufferedImage;
 import java.io.*;
 
 public class IRISVisualization extends JButton {
 
     private final JFrame frame;
+    private final BufferedImage irisPic;
     private Handle exBC;
     private Handle exAB;
     private Handle exCB;
@@ -40,6 +43,11 @@ public class IRISVisualization extends JButton {
     private boolean blackMode = false;
     private boolean drawWhiskers = false;
     private boolean drawTriangle = false;
+    private boolean drawHelp = false;
+    private boolean drawPic = true;
+    private int irisPicSize = 688;
+    private int irisPicShiftX = 184;
+    private int irisPicShifty = 188;
 
     public IRISVisualization(JFrame f) {
 
@@ -59,6 +67,8 @@ public class IRISVisualization extends JButton {
         readSettings();
 
         adjustColorBlackMode();
+
+        irisPic = loadImage("/Users/malvers/IdeaProjects/CGTA_ESZ/src/Iris Mi free.png");
 
         doCalculations();
     }
@@ -185,7 +195,9 @@ public class IRISVisualization extends JButton {
 
             @Override
             public void mouseMoved(MouseEvent e) {
-                frame.setTitle("Conway's IRIS - x: " + e.getX() + " y: " + e.getY());
+                if (!drawHelp) {
+                    frame.setTitle("Conway's IRIS - x: " + e.getX() + " y: " + e.getY());
+                }
             }
         });
     }
@@ -194,64 +206,124 @@ public class IRISVisualization extends JButton {
         addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
-                super.keyPressed(e);
-                if (e.getKeyCode() == KeyEvent.VK_W && e.isMetaDown()) {
-                    writeSettings();
-                    System.exit(0);
-                } else if (e.getKeyCode() == KeyEvent.VK_A) {
-                    drawAnnotation = !drawAnnotation;
-                } else if (e.getKeyCode() == KeyEvent.VK_B) {
-                    blackMode = !blackMode;
-                    adjustColorBlackMode();
-                } else if (e.getKeyCode() == KeyEvent.VK_C) {
-                    drawCircle = !drawCircle;
-                } else if (e.getKeyCode() == KeyEvent.VK_I) {
-                    drawIris = !drawIris;
-                } else if (e.getKeyCode() == KeyEvent.VK_L) {
-                    drawLines = !drawLines;
-                } else if (e.getKeyCode() == KeyEvent.VK_R) {
-                    sceneShift.x = 0;
-                    sceneShift.y = 0;
-                } else if (e.getKeyCode() == KeyEvent.VK_T) {
-                    drawTriangle = !drawTriangle;
-                } else if (e.getKeyCode() == KeyEvent.VK_W) {
-                    drawWhiskers = !drawWhiskers;
-                } else if (e.getKeyCode() == KeyEvent.VK_UP) {
-                    moveHandles(e.getKeyCode());
-                } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-                    moveHandles(e.getKeyCode());
-                } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-                    moveHandles(e.getKeyCode());
-                } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-                    moveHandles(e.getKeyCode());
+
+//                System.out.println("key: " + e.getKeyCode());
+
+                switch (e.getKeyCode()) {
+                    case KeyEvent.VK_W:
+                        if (e.isMetaDown()) {
+                            writeSettings();
+                            System.exit(0);
+                        } else {
+                            drawWhiskers = !drawWhiskers;
+                        }
+                        break;
+                    case KeyEvent.VK_A:
+                        drawAnnotation = !drawAnnotation;
+                        break;
+                    case KeyEvent.VK_B:
+                        blackMode = !blackMode;
+                        adjustColorBlackMode();
+                        break;
+                    case KeyEvent.VK_C:
+                        drawCircle = !drawCircle;
+                        break;
+                    case KeyEvent.VK_H:
+                        drawHelp = !drawHelp;
+                        break;
+                    case KeyEvent.VK_I:
+                        drawIris = !drawIris;
+                        break;
+                    case KeyEvent.VK_L:
+                        drawLines = !drawLines;
+                        break;
+                    case KeyEvent.VK_P:
+                        drawPic = !drawPic;
+                        break;
+                    case KeyEvent.VK_R:
+                        sceneShift.x = 0;
+                        sceneShift.y = 0;
+                        break;
+                    case KeyEvent.VK_T:
+                        drawTriangle = !drawTriangle;
+                        break;
+                    case KeyEvent.VK_UP:
+                    case KeyEvent.VK_DOWN:
+                    case KeyEvent.VK_LEFT:
+                    case KeyEvent.VK_RIGHT:
+                        if (e.isMetaDown()) {
+                            moveIrisPic(e.getKeyCode(), 1);
+                        } else {
+                            moveHandles(e.getKeyCode(), 20);
+                            moveIrisPic(e.getKeyCode(), 20);
+                            doCalculations();
+                        }
+                        break;
+                    case 93: /// +
+                        irisPicSize++;
+                        break;
+                    case 47: /// -
+                        irisPicSize--;
+                        break;
                 }
+
                 repaint();
             }
         });
     }
 
-    private void moveHandles(int vkUp) {
+    private void moveIrisPic(int vKup, int inc) {
 
-        switch (vkUp) {
+        switch (vKup) {
             case KeyEvent.VK_UP:
-                handleA.y += 20;
-                handleB.y += 20;
-                handleC.y += 20;
+                irisPicShifty -= inc;
                 break;
             case KeyEvent.VK_DOWN:
-                handleA.y -= 20;
-                handleB.y -= 20;
-                handleC.y -= 20;
+                irisPicShifty += inc;
                 break;
             case KeyEvent.VK_LEFT:
-                handleA.x -= 20;
-                handleB.x -= 20;
-                handleC.x -= 20;
+                irisPicShiftX -= inc;
                 break;
             case KeyEvent.VK_RIGHT:
-                handleA.x += 20;
-                handleB.x += 20;
-                handleC.x += 20;
+                irisPicShiftX += inc;
+                break;
+        }
+        //System.out.println("psx: " + picShiftX + " psy: " + picShifty + " ps: " + picSize);
+    }
+
+    public static BufferedImage loadImage(String filePath) {
+
+        BufferedImage image = null;
+        try {
+            image = ImageIO.read(new File(filePath));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return image;
+    }
+
+    private void moveHandles(int theCase, int inc) {
+
+        switch (theCase) {
+            case KeyEvent.VK_UP:
+                handleA.y -= inc;
+                handleB.y -= inc;
+                handleC.y -= inc;
+                break;
+            case KeyEvent.VK_DOWN:
+                handleA.y += inc;
+                handleB.y += inc;
+                handleC.y += inc;
+                break;
+            case KeyEvent.VK_LEFT:
+                handleA.x -= inc;
+                handleB.x -= inc;
+                handleC.x -= inc;
+                break;
+            case KeyEvent.VK_RIGHT:
+                handleA.x += inc;
+                handleB.x += inc;
+                handleC.x += inc;
                 break;
         }
 
@@ -390,6 +462,11 @@ public class IRISVisualization extends JButton {
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setFont(new Font("Arial", Font.PLAIN, 22));
 
+        if (drawHelp) {
+            Helper.drawHelpPage(g2d);
+            return;
+        }
+
         if (blackMode) {
             g2d.setColor(Color.BLACK);
             g2d.fillRect(0, 0, getWidth(), getHeight());
@@ -397,6 +474,10 @@ public class IRISVisualization extends JButton {
 
         AffineTransform shiftTransform = AffineTransform.getTranslateInstance(sceneShift.x + dragShift.x, sceneShift.y + dragShift.y);
         g2d.setTransform(shiftTransform);
+
+        if (drawPic) {
+            g2d.drawImage(irisPic, irisPicShiftX, irisPicShifty, irisPicSize, irisPicSize, null);
+        }
 
         if (drawCircle) {
             drawCircle(g2d);
@@ -498,6 +579,7 @@ public class IRISVisualization extends JButton {
             JFrame f = new JFrame();
             f.setSize(760, 760);
             f.add(new IRISVisualization(f));
+            f.setTitle("Conway's IRIS");
             f.setVisible(true);
         });
     }
