@@ -44,7 +44,7 @@ public class IRISVisualization extends JButton {
     private boolean drawWhiskers = false;
     private boolean drawTriangle = false;
     private boolean drawHelp = false;
-    private boolean drawPic = true;
+    private boolean drawIrisPic = true;
     private int irisPicSize = 688;
     private int irisPicShiftX = 163;
     private int irisPicShifty = 186;
@@ -96,6 +96,7 @@ public class IRISVisualization extends JButton {
             os.writeBoolean(blackMode);
             os.writeBoolean(drawWhiskers);
             os.writeBoolean(drawTriangle);
+            os.writeBoolean(drawIrisPic);
 
             os.writeInt(irisPicShiftX);
             os.writeInt(irisPicShifty);
@@ -131,6 +132,7 @@ public class IRISVisualization extends JButton {
             blackMode = os.readBoolean();
             drawWhiskers = os.readBoolean();
             drawTriangle = os.readBoolean();
+            drawIrisPic = os.readBoolean();
 
             irisPicShiftX = os.readInt();
             irisPicShifty = os.readInt();
@@ -204,7 +206,7 @@ public class IRISVisualization extends JButton {
             @Override
             public void mouseMoved(MouseEvent e) {
                 if (!drawHelp) {
-                    frame.setTitle("Conway's IRIS - x: " + e.getX() + " y: " + e.getY());
+                    //frame.setTitle("Conway's IRIS - x: " + e.getX() + " y: " + e.getY());
                 }
             }
         });
@@ -248,8 +250,8 @@ public class IRISVisualization extends JButton {
                         break;
                     case KeyEvent.VK_P:
                         boolean bm = blackMode;
-                        drawPic = !drawPic;
-                        if (drawPic) {
+                        drawIrisPic = !drawIrisPic;
+                        if (drawIrisPic) {
                             blackMode = true;
                         } else {
                             blackMode = bm;
@@ -490,7 +492,7 @@ public class IRISVisualization extends JButton {
         AffineTransform shiftTransform = AffineTransform.getTranslateInstance(sceneShift.x + dragShift.x, sceneShift.y + dragShift.y);
         g2d.setTransform(shiftTransform);
 
-        if (drawPic) {
+        if (drawIrisPic) {
             g2d.drawImage(irisPic, irisPicShiftX, irisPicShifty, irisPicSize, irisPicSize, null);
         }
 
