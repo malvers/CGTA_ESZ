@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
+import java.awt.geom.Point2D;
 
 class MyVector extends Ellipse2D.Double {
     private final String name;
@@ -97,6 +98,22 @@ class MyVector extends Ellipse2D.Double {
     protected double getLength() {
         return Math.sqrt(x*x + y*y);
     }
+
+    public static double distanceToPointFromLine(Point point, Point2D.Double sceneShift, MyVector handle1, MyVector handle2) {
+
+        double x = point.x - sceneShift.x;
+        double y = point.y - sceneShift.y;
+        double x1 = handle1.x;
+        double y1 = handle1.y;
+        double x2 = handle2.x;
+        double y2 = handle2.y;
+
+        double numerator = Math.abs((x2 - x1) * (y1 - y) - (x1 - x) * (y2 - y1));
+        double denominator = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+
+        return numerator / denominator;
+    }
+
 
     protected static double getLength(MyVector o, MyVector t) {
 

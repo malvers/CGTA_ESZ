@@ -2,10 +2,10 @@ import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DoublePolygon {
+public class MyDoublePolygon {
     private List<Point2D.Double> points;
 
-    public DoublePolygon() {
+    public MyDoublePolygon() {
         points = new ArrayList<>();
     }
 

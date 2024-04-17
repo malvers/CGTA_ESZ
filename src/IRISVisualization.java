@@ -1,5 +1,3 @@
-import jdk.internal.org.objectweb.asm.Handle;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -51,13 +49,14 @@ public class IRISVisualization extends JButton {
     private int irisPicShiftX = 163;
     private int irisPicShifty = 186;
     private MyVector whiperC_CB;
-    private double rotationAngle = 0;
-    private DoublePolygon bigWhiperCurve1 = new DoublePolygon();
-    private DoublePolygon bigWhiperCurve2 = new DoublePolygon();
-    private DoublePolygon bigWhiperCurve3 = new DoublePolygon();
-    private DoublePolygon smallWhiperCurve1 = new DoublePolygon();
-    private DoublePolygon smallWhiperCurve2 = new DoublePolygon();
-    private DoublePolygon smallWhiperCurve3 = new DoublePolygon();
+    private MyVector whiperA_AC;
+    private MyVector whiperC_CA;
+    private MyDoublePolygon bigWhiperCurve1 = new MyDoublePolygon();
+    private MyDoublePolygon bigWhiperCurve2 = new MyDoublePolygon();
+    private MyDoublePolygon bigWhiperCurve3 = new MyDoublePolygon();
+    private MyDoublePolygon smallWhiperCurve1 = new MyDoublePolygon();
+    private MyDoublePolygon smallWhiperCurve2 = new MyDoublePolygon();
+    private MyDoublePolygon smallWhiperCurve3 = new MyDoublePolygon();
 
     public IRISVisualization(JFrame f) {
 
@@ -197,6 +196,10 @@ public class IRISVisualization extends JButton {
             }
         });
 
+        handleMouseMotion();
+    }
+
+    private void handleMouseMotion() {
         addMouseMotionListener(new MouseMotionAdapter() {
 
             @Override
@@ -227,6 +230,10 @@ public class IRISVisualization extends JButton {
                         title += " - x: " + e.getX() + " y: " + e.getY();
                     }
                     frame.setTitle(title);
+
+                    double dist = MyVector.distanceToPointFromLine(e.getPoint(), sceneShift, handleC, whiperC_CB);
+
+                    System.out.println("dist: " + dist);
                 }
             }
         });
@@ -449,23 +456,26 @@ public class IRISVisualization extends JButton {
             radiusCircle = MyVector.getVector(centerCircle, whiskerAB).getLength();
         }
 
-        rotateWhipers();
+        calculateWhipers();
     }
 
     private void calculateWhipers() {
 
         whiperC_CB = MyVector.getVector(whiskerCB, handleC).add(handleC);
+        whiperC_CA = MyVector.getVector(whiskerCA, handleC).add(handleC);
+        whiperA_AC = MyVector.getVector(whiskerAC, handleA).add(handleA);
+        rotateWhipers();
     }
 
     private void rotateWhipers() {
 
-        bigWhiperCurve1 = new DoublePolygon();
-        bigWhiperCurve2 = new DoublePolygon();
-        bigWhiperCurve3 = new DoublePolygon();
+        bigWhiperCurve1 = new MyDoublePolygon();
+        bigWhiperCurve2 = new MyDoublePolygon();
+        bigWhiperCurve3 = new MyDoublePolygon();
 
-        smallWhiperCurve1 = new DoublePolygon();
-        smallWhiperCurve2 = new DoublePolygon();
-        smallWhiperCurve3 = new DoublePolygon();
+        smallWhiperCurve1 = new MyDoublePolygon();
+        smallWhiperCurve2 = new MyDoublePolygon();
+        smallWhiperCurve3 = new MyDoublePolygon();
 
         rotateBigWhiperCurveSegment(bigWhiperCurve1, whiskerCB, handleC, handleB, handleA);
 
@@ -480,7 +490,7 @@ public class IRISVisualization extends JButton {
         rotateSmallWhiperCurveSegment(smallWhiperCurve3, handleC, whiskerBC, whiskerAC);
     }
 
-    private void rotateSmallWhiperCurveSegment(DoublePolygon whiperCurve, MyVector v1, MyVector v2, MyVector v3) {
+    private void rotateSmallWhiperCurveSegment(MyDoublePolygon whiperCurve, MyVector v1, MyVector v2, MyVector v3) {
 
         MyVector vec12 = MyVector.getVector(v1, v2);
         MyVector vec13 = MyVector.getVector(v1, v3);
@@ -498,15 +508,13 @@ public class IRISVisualization extends JButton {
         }
     }
 
-    private void rotateBigWhiperCurveSegment(DoublePolygon whiperCurve, MyVector whisker, MyVector v1, MyVector v2, MyVector v3) {
+    private void rotateBigWhiperCurveSegment(MyDoublePolygon whiperCurve, MyVector whisker, MyVector v1, MyVector v2, MyVector v3) {
 
         MyVector vecCB = MyVector.getVector(v1, v2);
         MyVector vecCA = MyVector.getVector(v1, v3);
         double angleCB_CA = MyVector.angleBetweenHandles(vecCB, vecCA);
         int angleSteps = (int) radiansToDegrees(angleCB_CA);
         double angleInc = angleCB_CA / angleSteps;
-
-        System.out.println("angle: " + angleSteps);
 
         double rotationAngle = 0.0;
         for (int i = 0; i <= angleSteps; i++) {
@@ -516,36 +524,6 @@ public class IRISVisualization extends JButton {
 
             whiperCurve.addPoint(pointOnCurve.x, pointOnCurve.y);
         }
-    }
-
-    private void drawWiperCurves(Graphics2D g2d) {
-
-        g2d.setColor(Color.BLUE.darker());
-        g2d.setStroke(new BasicStroke(1));
-        //drawHandleConnector(g2d, handleC, whiperC_CB);
-
-        drawOneSegmentWhiperCurve(smallWhiperCurve1, g2d);
-        drawOneSegmentWhiperCurve(smallWhiperCurve2, g2d);
-        drawOneSegmentWhiperCurve(smallWhiperCurve3, g2d);
-
-        drawOneSegmentWhiperCurve(bigWhiperCurve1, g2d);
-        drawOneSegmentWhiperCurve(bigWhiperCurve2, g2d);
-        drawOneSegmentWhiperCurve(bigWhiperCurve3, g2d);
-    }
-
-    private void drawOneSegmentWhiperCurve(DoublePolygon whiperCurve, Graphics2D g2d) {
-
-        Path2D.Double path = new Path2D.Double();
-        List<Point2D.Double> points = whiperCurve.getPoints();
-
-        path.moveTo(points.get(0).getX(), points.get(0).getY());
-
-        for (int i = 1; i < points.size(); i++) {
-            /// System.out.println("x: " + points.get(i).getX() + " y: " + points.get(i).getY());
-            path.lineTo(points.get(i).getX(), points.get(i).getY());
-        }
-
-        g2d.draw(path);
     }
 
     private double radiansToDegrees(double angleRadians) {
@@ -600,6 +578,7 @@ public class IRISVisualization extends JButton {
         return new MyVector(px, py, 10, "center");
     }
 
+    /// painting section ///////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     public void paint(Graphics g) {
 
@@ -637,7 +616,7 @@ public class IRISVisualization extends JButton {
         }
 
         if (drawWhiskers) {
-            drawWhiskers(g2d);
+            drawExtendWhiskers(g2d);
         }
 
         if (drawTriangle) {
@@ -646,7 +625,38 @@ public class IRISVisualization extends JButton {
 
         if (drawWhiperCurve) {
             drawWiperCurves(g2d);
+            drawWipers(g2d);
         }
+    }
+
+    private void drawWiperCurves(Graphics2D g2d) {
+
+        g2d.setColor(Color.BLUE.darker());
+        g2d.setStroke(new BasicStroke(1));
+        //drawHandleConnector(g2d, handleC, whiperC_CB);
+
+        drawOneSegmentWhiperCurve(smallWhiperCurve1, g2d);
+        drawOneSegmentWhiperCurve(smallWhiperCurve2, g2d);
+        drawOneSegmentWhiperCurve(smallWhiperCurve3, g2d);
+
+        drawOneSegmentWhiperCurve(bigWhiperCurve1, g2d);
+        drawOneSegmentWhiperCurve(bigWhiperCurve2, g2d);
+        drawOneSegmentWhiperCurve(bigWhiperCurve3, g2d);
+    }
+
+    private void drawOneSegmentWhiperCurve(MyDoublePolygon whiperCurve, Graphics2D g2d) {
+
+        Path2D.Double path = new Path2D.Double();
+        List<Point2D.Double> points = whiperCurve.getPoints();
+
+        path.moveTo(points.get(0).getX(), points.get(0).getY());
+
+        for (int i = 1; i < points.size(); i++) {
+            /// System.out.println("x: " + points.get(i).getX() + " y: " + points.get(i).getY());
+            path.lineTo(points.get(i).getX(), points.get(i).getY());
+        }
+
+        g2d.draw(path);
     }
 
     private void drawTriangle(Graphics2D g2d) {
@@ -666,7 +676,7 @@ public class IRISVisualization extends JButton {
         handleC.fill(g2d, drawAnnotation);
     }
 
-    private void drawWhiskers(Graphics2D g2d) {
+    private void drawExtendWhiskers(Graphics2D g2d) {
 
         g2d.setStroke(new BasicStroke(3));
         g2d.setColor(color3);
@@ -719,6 +729,19 @@ public class IRISVisualization extends JButton {
     private void drawHandleConnector(Graphics2D g2d, MyVector h1, MyVector h2) {
 
         g2d.draw(new Line2D.Double(h1.x, h1.y, h2.x, h2.y));
+    }
+
+    private void drawWipers(Graphics2D g2d) {
+
+        g2d.setColor(Color.BLUE);
+        g2d.setStroke(new BasicStroke(3));
+
+        whiperC_CB.fill(g2d, false);
+        drawHandleConnector(g2d, handleC, whiskerCB);
+        whiperC_CA .fill(g2d, false);
+        drawHandleConnector(g2d, handleC, whiskerCA);
+        whiperA_AC .fill(g2d, false);
+        drawHandleConnector(g2d, handleA, whiskerAC);
     }
 
     public static void main(String[] args) {
