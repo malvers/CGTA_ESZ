@@ -1,41 +1,41 @@
+import jdk.internal.org.objectweb.asm.Handle;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.geom.AffineTransform;
-import java.awt.geom.Ellipse2D;
-import java.awt.geom.Line2D;
-import java.awt.geom.Point2D;
+import java.awt.geom.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.util.List;
 
 public class IRISVisualization extends JButton {
 
     private final JFrame frame;
     private final BufferedImage irisPic;
-    private Handle whiskerBC;
-    private Handle whiskerAB;
-    private Handle whiskerCB;
-    private Handle whiskerAC;
-    private Handle whiskerCA;
-    private Handle whiskerBA;
+    private MyVector whiskerBC;
+    private MyVector whiskerAB;
+    private MyVector whiskerCB;
+    private MyVector whiskerAC;
+    private MyVector whiskerCA;
+    private MyVector whiskerBA;
     private final Color color1 = new Color(180, 0, 0);
     private Color color2 = new Color(0, 0, 80);
     private final Color color3 = new Color(80, 140, 0);
-    private Handle handleA;
-    private Handle handleB;
-    private Handle handleC;
-    private Handle midCA_BA;
-    private Handle midCB_AB;
-    private Handle midBC_AC;
+    private MyVector handleA;
+    private MyVector handleB;
+    private MyVector handleC;
+    private MyVector midCA_BA;
+    private MyVector midCB_AB;
+    private MyVector midBC_AC;
     private final Point2D.Double onMousePressed = new Point2D.Double();
     private final Point2D.Double dragShift = new Point2D.Double();
     private Point2D.Double sceneShift = new Point2D.Double();
     private boolean drawAnnotation = true;
-    private Handle towCA_BA;
-    private Handle towBC_AC;
-    private Handle towCB_AB;
-    private Handle centerCircle;
+    private MyVector towCA_BA;
+    private MyVector towBC_AC;
+    private MyVector towCB_AB;
+    private MyVector centerCircle;
     private double radiusCircle;
     private boolean drawCircle = false;
     private boolean drawLines = false;
@@ -50,8 +50,14 @@ public class IRISVisualization extends JButton {
     private int irisPicSize = 688;
     private int irisPicShiftX = 163;
     private int irisPicShifty = 186;
-    private Handle whiperC_CB;
+    private MyVector whiperC_CB;
     private double rotationAngle = 0;
+    private DoublePolygon bigWhiperCurve1 = new DoublePolygon();
+    private DoublePolygon bigWhiperCurve2 = new DoublePolygon();
+    private DoublePolygon bigWhiperCurve3 = new DoublePolygon();
+    private DoublePolygon smallWhiperCurve1 = new DoublePolygon();
+    private DoublePolygon smallWhiperCurve2 = new DoublePolygon();
+    private DoublePolygon smallWhiperCurve3 = new DoublePolygon();
 
     public IRISVisualization(JFrame f) {
 
@@ -64,9 +70,9 @@ public class IRISVisualization extends JButton {
         sceneShift.x = 80;
         sceneShift.y = 20;
 
-        handleA = new Handle(535, 395, handleSize, "A");
-        handleB = new Handle(358, 573, handleSize, "B");
-        handleC = new Handle(615, 635, handleSize, "C");
+        handleA = new MyVector(535, 395, handleSize, "A");
+        handleB = new MyVector(358, 573, handleSize, "B");
+        handleC = new MyVector(615, 635, handleSize, "C");
 
         readSettings();
 
@@ -250,8 +256,7 @@ public class IRISVisualization extends JButton {
                         break;
                     case KeyEvent.VK_D:
                         //printHandles();
-                        whiperC_CB = rotateWhiper(whiperC_CB);
-
+                        rotateWhipers();
                         break;
                     case KeyEvent.VK_H:
                         drawHelp = !drawHelp;
@@ -381,12 +386,12 @@ public class IRISVisualization extends JButton {
         handleC.selected = false;
     }
 
-    public static double calculateInnerRadiusTriangle(Handle A, Handle B, Handle C) {
+    public static double calculateInnerRadiusTriangle(MyVector A, MyVector B, MyVector C) {
 
         // Calculate side lengths
-        double a = Handle.getLength(B, C);
-        double b = Handle.getLength(C, A);
-        double c = Handle.getLength(A, B);
+        double a = MyVector.getLength(B, C);
+        double b = MyVector.getLength(C, A);
+        double c = MyVector.getLength(A, B);
 
         // Calculate the perimeter
         double perimeter = a + b + c;
@@ -414,20 +419,20 @@ public class IRISVisualization extends JButton {
         midBC_AC = calculateMidpoint(whiskerAC, whiskerBC);
         midCB_AB = calculateMidpoint(whiskerCB, whiskerAB);
 
-        Handle vecCA_BA = getVector(whiskerBA, whiskerCA);
-        Handle recCA_BA = vecCA_BA.flip();
+        MyVector vecCA_BA = MyVector.getVector(whiskerBA, whiskerCA);
+        MyVector recCA_BA = vecCA_BA.flip();
         recCA_BA.x = -recCA_BA.x;
         recCA_BA = recCA_BA.makeItThatLong(400);
         towCA_BA = midCA_BA.add(recCA_BA);
 
-        Handle vecBC_AC = getVector(whiskerBC, whiskerAC);
-        Handle recBC_AC = vecBC_AC.flip();
+        MyVector vecBC_AC = MyVector.getVector(whiskerBC, whiskerAC);
+        MyVector recBC_AC = vecBC_AC.flip();
         recBC_AC.x = -recBC_AC.x;
         recBC_AC.makeItThatLong(400);
         towBC_AC = midBC_AC.subtract(recBC_AC);
 
-        Handle vecCB_AB = getVector(whiskerCB, whiskerAB);
-        Handle recCB_AB = vecCB_AB.flip();
+        MyVector vecCB_AB = MyVector.getVector(whiskerCB, whiskerAB);
+        MyVector recCB_AB = vecCB_AB.flip();
         recCB_AB.x = -recCB_AB.x;
         recCB_AB.makeItThatLong(400);
         towCB_AB = midCB_AB.add(recCB_AB);
@@ -435,29 +440,115 @@ public class IRISVisualization extends JButton {
         centerCircle = getIntersectionPointGPT(midCB_AB, towCB_AB, midBC_AC, towBC_AC);
 
         if (centerCircle != null) {
-            radiusCircle = getVector(centerCircle, whiskerAB).getLength();
+            radiusCircle = MyVector.getVector(centerCircle, whiskerAB).getLength();
         }
 
-        calculateGoodVips();
+        rotateWhipers();
     }
 
-    private void calculateGoodVips() {
+    private void calculateWhipers() {
 
-        whiperC_CB = getVector(whiskerCB, handleC).add(handleC);
+        whiperC_CB = MyVector.getVector(whiskerCB, handleC).add(handleC);
     }
 
-    private void drawWipers(Graphics2D g2d) {
+    private void rotateWhipers() {
 
-        g2d.setColor(Color.MAGENTA.darker());
-        g2d.setStroke(new BasicStroke(2));
-        drawHandleConnector(g2d, handleC, whiperC_CB);
-    }
-    private Handle rotateWhiper(Handle whiper) {
-        rotationAngle += Math.PI/360;
-        return getVector(whiskerCB, handleC).rotate(rotationAngle).add(handleC);
+        bigWhiperCurve1 = new DoublePolygon();
+        bigWhiperCurve2 = new DoublePolygon();
+        bigWhiperCurve3 = new DoublePolygon();
+
+        smallWhiperCurve1 = new DoublePolygon();
+        smallWhiperCurve2 = new DoublePolygon();
+        smallWhiperCurve3 = new DoublePolygon();
+
+        rotateBigWhiperCurveSegment(bigWhiperCurve1, whiskerCB, handleC, handleB, handleA);
+
+        rotateSmallWhiperCurveSegment(smallWhiperCurve1, handleB, whiskerAB, whiskerCB);
+
+        rotateBigWhiperCurveSegment(bigWhiperCurve2, whiskerBA, handleB, handleA, handleC);
+
+        rotateSmallWhiperCurveSegment(smallWhiperCurve2, handleA, whiskerCA, whiskerBA);
+
+        rotateBigWhiperCurveSegment(bigWhiperCurve3, whiskerAC, handleA, handleC, handleB);
+
+        rotateSmallWhiperCurveSegment(smallWhiperCurve3, handleC, whiskerBC, whiskerAC);
     }
 
-    private Handle calculateExtendedPoint(Handle one, Handle two, Handle three) {
+    private void rotateSmallWhiperCurveSegment(DoublePolygon whiperCurve, MyVector v1, MyVector v2, MyVector v3) {
+
+        MyVector vec12 = MyVector.getVector(v1, v2);
+        MyVector vec13 = MyVector.getVector(v1, v3);
+        double angleVec = MyVector.angleBetweenHandles(vec12, vec13);
+        int angleSteps = (int) radiansToDegrees(angleVec);
+        double angleInc = angleVec / angleSteps;
+
+        System.out.println("angle: " + angleSteps);
+
+        double rotationAngle = 0.0;
+        for (int i = 0; i <= angleSteps; i++) {
+
+            MyVector pointOnCurve = MyVector.getVector(v2, v1).rotate(rotationAngle).add(v1);
+            rotationAngle += angleInc;
+
+            whiperCurve.addPoint(pointOnCurve.x, pointOnCurve.y);
+        }
+    }
+
+    private void rotateBigWhiperCurveSegment(DoublePolygon whiperCurve, MyVector whisker, MyVector v1, MyVector v2, MyVector v3) {
+
+        MyVector vecCB = MyVector.getVector(v1, v2);
+        MyVector vecCA = MyVector.getVector(v1, v3);
+        double angleCB_CA = MyVector.angleBetweenHandles(vecCB, vecCA);
+        int angleSteps = (int) radiansToDegrees(angleCB_CA);
+        double angleInc = angleCB_CA / angleSteps;
+
+        System.out.println("angle: " + angleSteps);
+
+        double rotationAngle = 0.0;
+        for (int i = 0; i <= angleSteps; i++) {
+
+            MyVector pointOnCurve = MyVector.getVector(whisker, v1).rotate(rotationAngle).add(v1);
+            rotationAngle += angleInc;
+
+            whiperCurve.addPoint(pointOnCurve.x, pointOnCurve.y);
+        }
+    }
+
+    private void drawWiperCurves(Graphics2D g2d) {
+
+        g2d.setColor(Color.BLUE.darker());
+        g2d.setStroke(new BasicStroke(1));
+        //drawHandleConnector(g2d, handleC, whiperC_CB);
+
+        drawOneSegmentWhiperCurve(smallWhiperCurve1, g2d);
+        drawOneSegmentWhiperCurve(smallWhiperCurve2, g2d);
+        drawOneSegmentWhiperCurve(smallWhiperCurve3, g2d);
+
+        drawOneSegmentWhiperCurve(bigWhiperCurve1, g2d);
+        drawOneSegmentWhiperCurve(bigWhiperCurve2, g2d);
+        drawOneSegmentWhiperCurve(bigWhiperCurve3, g2d);
+    }
+
+    private void drawOneSegmentWhiperCurve(DoublePolygon whiperCurve, Graphics2D g2d) {
+
+        Path2D.Double path = new Path2D.Double();
+        List<Point2D.Double> points = whiperCurve.getPoints();
+
+        path.moveTo(points.get(0).getX(), points.get(0).getY());
+
+        for (int i = 1; i < points.size(); i++) {
+            /// System.out.println("x: " + points.get(i).getX() + " y: " + points.get(i).getY());
+            path.lineTo(points.get(i).getX(), points.get(i).getY());
+        }
+
+        g2d.draw(path);
+    }
+
+    private double radiansToDegrees(double angleRadians) {
+        return angleRadians * (180.0 / Math.PI);
+    }
+
+    private MyVector calculateExtendedPoint(MyVector one, MyVector two, MyVector three) {
 
         double vector12_x = one.getX() - two.getX();
         double vector12_y = one.getY() - two.getY();
@@ -474,22 +565,17 @@ public class IRISVisualization extends JButton {
         vector13Scaled_y *= length12;
 
         String name = one.getName() + three.getName();
-        return new Handle(three.getX() - vector13Scaled_x, three.getY() - vector13Scaled_y, 6, name);
+        return new MyVector(three.getX() - vector13Scaled_x, three.getY() - vector13Scaled_y, 6, name);
     }
 
-    private Handle getVector(Handle h1, Handle h2) {
-
-        return new Handle(h1.x - h2.x, h1.y - h2.y, 2, "");
-    }
-
-    private Handle calculateMidpoint(Handle point1, Handle point2) {
+    private MyVector calculateMidpoint(MyVector point1, MyVector point2) {
 
         double midX = (point1.getX() + point2.getX()) / 2;
         double midY = (point1.getY() + point2.getY()) / 2;
-        return new Handle(midX, midY, 6, "");
+        return new MyVector(midX, midY, 6, "");
     }
 
-    private Handle getIntersectionPointGPT(Handle handle1Start, Handle handle1End, Handle handle2Start, Handle handle2End) {
+    private MyVector getIntersectionPointGPT(MyVector handle1Start, MyVector handle1End, MyVector handle2Start, MyVector handle2End) {
 
         // Get the coordinates of the handles
         double x1 = handle1Start.x, y1 = handle1Start.y;
@@ -507,7 +593,7 @@ public class IRISVisualization extends JButton {
         double px = ((x1 * y2 - y1 * x2) * (x3 - x4) - (x1 - x2) * (x3 * y4 - y3 * x4)) / det;
         double py = ((x1 * y2 - y1 * x2) * (y3 - y4) - (y1 - y2) * (x3 * y4 - y3 * x4)) / det;
 
-        return new Handle(px, py, 10, "center");
+        return new MyVector(px, py, 10, "center");
     }
 
     @Override
@@ -554,7 +640,7 @@ public class IRISVisualization extends JButton {
             drawTriangle(g2d);
         }
 
-        drawWipers(g2d);
+        drawWiperCurves(g2d);
     }
 
     private void drawTriangle(Graphics2D g2d) {
@@ -624,7 +710,7 @@ public class IRISVisualization extends JButton {
         g2d.draw(new Ellipse2D.Double(centerCircle.x - radiusCircle, centerCircle.y - radiusCircle, 2 * radiusCircle, 2 * radiusCircle));
     }
 
-    private void drawHandleConnector(Graphics2D g2d, Handle h1, Handle h2) {
+    private void drawHandleConnector(Graphics2D g2d, MyVector h1, MyVector h2) {
 
         g2d.draw(new Line2D.Double(h1.x, h1.y, h2.x, h2.y));
     }

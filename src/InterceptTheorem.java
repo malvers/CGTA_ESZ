@@ -15,8 +15,8 @@ public class InterceptTheorem extends JButton {
     private Color red = new Color(180, 0, 0);
     private Color blue = new Color(0, 0, 80);
     private Color green = new Color(80, 140, 0);
-    private Handle handle1 = null;
-    private Handle handle2 = null;
+    private MyVector handle1 = null;
+    private MyVector handle2 = null;
     private Point2D.Double pto1 = null;
     private Point2D.Double pto2 = null;
     private static int size = 800;
@@ -116,10 +116,10 @@ public class InterceptTheorem extends JButton {
 
         g2d.setColor(red);
         if (handle1 == null) {
-            handle1 = new Handle(pto1.x - 6, pto1.y - 6, 12, "");
+            handle1 = new MyVector(pto1.x - 6, pto1.y - 6, 12, "");
         }
         if (handle2 == null) {
-            handle2 = new Handle(pto2.x - 6, pto2.y - 6, 12, "");
+            handle2 = new MyVector(pto2.x - 6, pto2.y - 6, 12, "");
         }
 
         g2d.draw(leg1);
