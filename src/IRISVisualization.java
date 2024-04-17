@@ -46,7 +46,7 @@ public class IRISVisualization extends JButton {
     private boolean drawHelp = false;
     private boolean drawIrisPic = true;
     private boolean debugMode = true;
-
+    private boolean drawWhiperCurve = false;
     private int irisPicSize = 688;
     private int irisPicShiftX = 163;
     private int irisPicShifty = 186;
@@ -108,6 +108,8 @@ public class IRISVisualization extends JButton {
             os.writeInt(irisPicShifty);
             os.writeInt(irisPicSize);
 
+            os.writeBoolean(drawWhiperCurve);
+
 //            os.writeObject(handleA);
 //            os.writeObject(handleB);
 //            os.writeObject(handleC);
@@ -144,6 +146,8 @@ public class IRISVisualization extends JButton {
             irisPicShiftX = os.readInt();
             irisPicShifty = os.readInt();
             irisPicSize = os.readInt();
+
+            drawWhiperCurve = os.readBoolean();
 
 //            handleA = (Handle) os.readObject();
 //            handleB = (Handle) os.readObject();
@@ -236,14 +240,7 @@ public class IRISVisualization extends JButton {
 
 //                System.out.println("key: " + e.getKeyCode());
                 switch (e.getKeyCode()) {
-                    case KeyEvent.VK_W:
-                        if (e.isMetaDown()) {
-                            writeSettings();
-                            System.exit(0);
-                        } else {
-                            drawWhiskers = !drawWhiskers;
-                        }
-                        break;
+
                     case KeyEvent.VK_A:
                         drawAnnotation = !drawAnnotation;
                         break;
@@ -255,8 +252,10 @@ public class IRISVisualization extends JButton {
                         drawCircle = !drawCircle;
                         break;
                     case KeyEvent.VK_D:
-                        //printHandles();
-                        rotateWhipers();
+                        printHandles();
+                        break;
+                    case KeyEvent.VK_E:
+                        drawWhiskers = !drawWhiskers;
                         break;
                     case KeyEvent.VK_H:
                         drawHelp = !drawHelp;
@@ -279,10 +278,17 @@ public class IRISVisualization extends JButton {
                     case KeyEvent.VK_R:
 //                        sceneShift.x = 0;
 //                        sceneShift.y = 0;
-                        rotationAngle = 0;
                         break;
                     case KeyEvent.VK_T:
                         drawTriangle = !drawTriangle;
+                        break;
+                    case KeyEvent.VK_W:
+                        if (e.isMetaDown()) {
+                            writeSettings();
+                            System.exit(0);
+                        } else {
+                            drawWhiperCurve = !drawWhiperCurve;
+                        }
                         break;
                     case KeyEvent.VK_UP:
                     case KeyEvent.VK_DOWN:
@@ -482,8 +488,6 @@ public class IRISVisualization extends JButton {
         int angleSteps = (int) radiansToDegrees(angleVec);
         double angleInc = angleVec / angleSteps;
 
-        System.out.println("angle: " + angleSteps);
-
         double rotationAngle = 0.0;
         for (int i = 0; i <= angleSteps; i++) {
 
@@ -640,7 +644,9 @@ public class IRISVisualization extends JButton {
             drawTriangle(g2d);
         }
 
-        drawWiperCurves(g2d);
+        if (drawWhiperCurve) {
+            drawWiperCurves(g2d);
+        }
     }
 
     private void drawTriangle(Graphics2D g2d) {

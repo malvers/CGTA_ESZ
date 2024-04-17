@@ -46,6 +46,10 @@ public class Helper {
         g2d.drawString("Toggle circle", xPos + tab, yPos);
         yPos += dy;
 
+        g2d.drawString("E", xPos, yPos);
+        g2d.drawString("Toggle whiskers / extends", xPos + tab, yPos);
+        yPos += dy;
+
         g2d.drawString("H", xPos, yPos);
         g2d.drawString("Toggle this help page", xPos + tab, yPos);
         yPos += dy;
@@ -67,7 +71,7 @@ public class Helper {
         yPos += dy;
 
         g2d.drawString("W", xPos, yPos);
-        g2d.drawString("Toggle whiskers", xPos + tab, yPos);
+        g2d.drawString("Toggle whiper curve", xPos + tab, yPos);
         yPos += dy;
 
         g2d.drawString("Cmd W", xPos, yPos);
