@@ -121,4 +121,8 @@ class MyVector extends Ellipse2D.Double {
         double dy = o.y - t.y;
         return Math.sqrt(dx*dx + dy*dy);
     }
+
+    protected MyVector copy() {
+        return new MyVector(this.x, this.y, width, "");
+    }
 }

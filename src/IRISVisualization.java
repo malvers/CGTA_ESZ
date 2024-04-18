@@ -80,6 +80,7 @@ public class IRISVisualization extends JButton {
         irisPic = loadImage("/Users/malvers/IdeaProjects/CGTA_ESZ/src/Iris Mi free.png");
 
         doCalculations();
+        calculateWhipers();
     }
 
     private void writeSettings() {
@@ -160,6 +161,7 @@ public class IRISVisualization extends JButton {
     }
 
     private void mouseInit() {
+
         addMouseListener(new MouseAdapter() {
 
             @Override
@@ -181,6 +183,8 @@ public class IRISVisualization extends JButton {
                     handleB.selected = true;
                 } else if (handleC.contains(shiftMouse.x, shiftMouse.y)) {
                     handleC.selected = true;
+                } else if (MyVector.distanceToPointFromLine(e.getPoint(), sceneShift, handleC, whiperC_CB) < 4) {
+                    whiperC_CB.selected = true;
                 }
             }
 
@@ -193,6 +197,7 @@ public class IRISVisualization extends JButton {
                 dragShift.y = 0;
 
                 deselectAllHandles();
+                deselectAllWhipers();
             }
         });
 
@@ -200,6 +205,7 @@ public class IRISVisualization extends JButton {
     }
 
     private void handleMouseMotion() {
+
         addMouseMotionListener(new MouseMotionAdapter() {
 
             @Override
@@ -214,6 +220,26 @@ public class IRISVisualization extends JButton {
                 } else if (handleC.selected) {
                     handleC.x = e.getX() - sceneShift.x;
                     handleC.y = e.getY() - sceneShift.y;
+                } else if (whiperC_CB.selected) {
+
+                    MyVector tmp = whiperC_CB.subtract(handleC);
+
+                    double lenB = tmp.getLength();
+
+                    System.out.println("lenB: " + lenB );
+
+                    tmp.y = e.getX() - sceneShift.x;
+                    tmp.x = e.getY() - sceneShift.y;
+
+                    tmp = tmp.makeItThatLong(lenB);
+
+                    double lenA = tmp.getLength();
+
+                    whiperC_CB.x = -tmp.x + handleC.x;
+                    whiperC_CB.y = -tmp.y + handleC.y;
+
+                    System.out.println("lenA: " + lenA);
+
                 } else {
                     dragShift.x = -(onMousePressed.x - e.getX());
                     dragShift.y = -(onMousePressed.y - e.getY());
@@ -224,16 +250,13 @@ public class IRISVisualization extends JButton {
 
             @Override
             public void mouseMoved(MouseEvent e) {
+
                 if (!drawHelp) {
                     String title = "Conway's IRIS";
                     if (debugMode) {
                         title += " - x: " + e.getX() + " y: " + e.getY();
                     }
                     frame.setTitle(title);
-
-                    double dist = MyVector.distanceToPointFromLine(e.getPoint(), sceneShift, handleC, whiperC_CB);
-
-                    System.out.println("dist: " + dist);
                 }
             }
         });
@@ -283,8 +306,8 @@ public class IRISVisualization extends JButton {
                         }
                         break;
                     case KeyEvent.VK_R:
-//                        sceneShift.x = 0;
-//                        sceneShift.y = 0;
+                        sceneShift.x = 0;
+                        sceneShift.y = 0;
                         break;
                     case KeyEvent.VK_T:
                         drawTriangle = !drawTriangle;
@@ -399,6 +422,12 @@ public class IRISVisualization extends JButton {
         handleC.selected = false;
     }
 
+    private void deselectAllWhipers() {
+        whiperA_AC.selected = false;
+        whiperC_CA.selected = false;
+        whiperC_CB.selected = false;
+    }
+
     public static double calculateInnerRadiusTriangle(MyVector A, MyVector B, MyVector C) {
 
         // Calculate side lengths
@@ -455,8 +484,6 @@ public class IRISVisualization extends JButton {
         if (centerCircle != null) {
             radiusCircle = MyVector.getVector(centerCircle, whiskerAB).getLength();
         }
-
-        calculateWhipers();
     }
 
     private void calculateWhipers() {
@@ -464,10 +491,10 @@ public class IRISVisualization extends JButton {
         whiperC_CB = MyVector.getVector(whiskerCB, handleC).add(handleC);
         whiperC_CA = MyVector.getVector(whiskerCA, handleC).add(handleC);
         whiperA_AC = MyVector.getVector(whiskerAC, handleA).add(handleA);
-        rotateWhipers();
+        createWhiperCurve();
     }
 
-    private void rotateWhipers() {
+    private void createWhiperCurve() {
 
         bigWhiperCurve1 = new MyDoublePolygon();
         bigWhiperCurve2 = new MyDoublePolygon();
@@ -477,20 +504,20 @@ public class IRISVisualization extends JButton {
         smallWhiperCurve2 = new MyDoublePolygon();
         smallWhiperCurve3 = new MyDoublePolygon();
 
-        rotateBigWhiperCurveSegment(bigWhiperCurve1, whiskerCB, handleC, handleB, handleA);
+        createBigWhiperCurveSegment(bigWhiperCurve1, whiskerCB, handleC, handleB, handleA);
 
-        rotateSmallWhiperCurveSegment(smallWhiperCurve1, handleB, whiskerAB, whiskerCB);
+        createSmallWhiperCurveSegment(smallWhiperCurve1, handleB, whiskerAB, whiskerCB);
 
-        rotateBigWhiperCurveSegment(bigWhiperCurve2, whiskerBA, handleB, handleA, handleC);
+        createBigWhiperCurveSegment(bigWhiperCurve2, whiskerBA, handleB, handleA, handleC);
 
-        rotateSmallWhiperCurveSegment(smallWhiperCurve2, handleA, whiskerCA, whiskerBA);
+        createSmallWhiperCurveSegment(smallWhiperCurve2, handleA, whiskerCA, whiskerBA);
 
-        rotateBigWhiperCurveSegment(bigWhiperCurve3, whiskerAC, handleA, handleC, handleB);
+        createBigWhiperCurveSegment(bigWhiperCurve3, whiskerAC, handleA, handleC, handleB);
 
-        rotateSmallWhiperCurveSegment(smallWhiperCurve3, handleC, whiskerBC, whiskerAC);
+        createSmallWhiperCurveSegment(smallWhiperCurve3, handleC, whiskerBC, whiskerAC);
     }
 
-    private void rotateSmallWhiperCurveSegment(MyDoublePolygon whiperCurve, MyVector v1, MyVector v2, MyVector v3) {
+    private void createSmallWhiperCurveSegment(MyDoublePolygon whiperCurve, MyVector v1, MyVector v2, MyVector v3) {
 
         MyVector vec12 = MyVector.getVector(v1, v2);
         MyVector vec13 = MyVector.getVector(v1, v3);
@@ -508,7 +535,7 @@ public class IRISVisualization extends JButton {
         }
     }
 
-    private void rotateBigWhiperCurveSegment(MyDoublePolygon whiperCurve, MyVector whisker, MyVector v1, MyVector v2, MyVector v3) {
+    private void createBigWhiperCurveSegment(MyDoublePolygon whiperCurve, MyVector whisker, MyVector v1, MyVector v2, MyVector v3) {
 
         MyVector vecCB = MyVector.getVector(v1, v2);
         MyVector vecCA = MyVector.getVector(v1, v3);
@@ -737,11 +764,13 @@ public class IRISVisualization extends JButton {
         g2d.setStroke(new BasicStroke(3));
 
         whiperC_CB.fill(g2d, false);
-        drawHandleConnector(g2d, handleC, whiskerCB);
-        whiperC_CA .fill(g2d, false);
-        drawHandleConnector(g2d, handleC, whiskerCA);
-        whiperA_AC .fill(g2d, false);
-        drawHandleConnector(g2d, handleA, whiskerAC);
+        drawHandleConnector(g2d, handleC, whiperC_CB);
+
+        whiperC_CA.fill(g2d, false);
+        drawHandleConnector(g2d, handleC, whiperC_CA);
+
+        whiperA_AC.fill(g2d, false);
+        drawHandleConnector(g2d, handleA, whiperA_AC);
     }
 
     public static void main(String[] args) {
