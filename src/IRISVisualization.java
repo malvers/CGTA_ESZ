@@ -48,9 +48,9 @@ public class IRISVisualization extends JButton {
     private int irisPicSize = 688;
     private int irisPicShiftX = 163;
     private int irisPicShifty = 186;
-    private MyVector whiperC_CB;
-    private MyVector whiperA_AC;
-    private MyVector whiperC_CA;
+    private MyVector whiperCB;
+    private MyVector whiperAC;
+    private MyVector whiperBA;
     private MyDoublePolygon bigWhiperCurve1 = new MyDoublePolygon();
     private MyDoublePolygon bigWhiperCurve2 = new MyDoublePolygon();
     private MyDoublePolygon bigWhiperCurve3 = new MyDoublePolygon();
@@ -183,8 +183,8 @@ public class IRISVisualization extends JButton {
                     handleB.selected = true;
                 } else if (handleC.contains(shiftMouse.x, shiftMouse.y)) {
                     handleC.selected = true;
-                } else if (MyVector.distanceToPointFromLine(e.getPoint(), sceneShift, handleC, whiperC_CB) < 4) {
-                    whiperC_CB.selected = true;
+                } else if (MyVector.distanceToPointFromLine(e.getPoint(), sceneShift, handleC, whiperCB) < 4) {
+                    whiperCB.selected = true;
                 }
             }
 
@@ -196,6 +196,7 @@ public class IRISVisualization extends JButton {
                 dragShift.x = 0;
                 dragShift.y = 0;
 
+                calculateWhipers();
                 deselectAllHandles();
                 deselectAllWhipers();
             }
@@ -220,26 +221,8 @@ public class IRISVisualization extends JButton {
                 } else if (handleC.selected) {
                     handleC.x = e.getX() - sceneShift.x;
                     handleC.y = e.getY() - sceneShift.y;
-                } else if (whiperC_CB.selected) {
-
-                    MyVector tmp = whiperC_CB.subtract(handleC);
-
-                    double lenB = tmp.getLength();
-
-                    System.out.println("lenB: " + lenB );
-
-                    tmp.y = e.getX() - sceneShift.x;
-                    tmp.x = e.getY() - sceneShift.y;
-
-                    tmp = tmp.makeItThatLong(lenB);
-
-                    double lenA = tmp.getLength();
-
-                    whiperC_CB.x = -tmp.x + handleC.x;
-                    whiperC_CB.y = -tmp.y + handleC.y;
-
-                    System.out.println("lenA: " + lenA);
-
+                } else if (whiperCB.selected) {
+                    calculateTemporaryWhiper(e, whiperCB, handleC);
                 } else {
                     dragShift.x = -(onMousePressed.x - e.getX());
                     dragShift.y = -(onMousePressed.y - e.getY());
@@ -260,6 +243,21 @@ public class IRISVisualization extends JButton {
                 }
             }
         });
+    }
+
+    private void calculateTemporaryWhiper(MouseEvent e, MyVector whiper, MyVector handle) {
+
+        MyVector tmp = whiper.subtract(handle);
+
+        double lenB = tmp.getLength();
+
+        tmp.y = e.getX() - sceneShift.x;
+        tmp.x = e.getY() - sceneShift.y;
+
+        tmp = tmp.makeItThatLong(lenB);
+
+        whiper.x = -tmp.x + handle.x;
+        whiper.y = -tmp.y + handle.y;
     }
 
     private void keyInit() {
@@ -423,9 +421,9 @@ public class IRISVisualization extends JButton {
     }
 
     private void deselectAllWhipers() {
-        whiperA_AC.selected = false;
-        whiperC_CA.selected = false;
-        whiperC_CB.selected = false;
+        whiperAC.selected = false;
+        whiperBA.selected = false;
+        whiperCB.selected = false;
     }
 
     public static double calculateInnerRadiusTriangle(MyVector A, MyVector B, MyVector C) {
@@ -488,9 +486,9 @@ public class IRISVisualization extends JButton {
 
     private void calculateWhipers() {
 
-        whiperC_CB = MyVector.getVector(whiskerCB, handleC).add(handleC);
-        whiperC_CA = MyVector.getVector(whiskerCA, handleC).add(handleC);
-        whiperA_AC = MyVector.getVector(whiskerAC, handleA).add(handleA);
+        whiperAC = MyVector.getVector(whiskerAC, handleA).add(handleA);
+        whiperBA = MyVector.getVector(whiskerBA, handleB).add(handleB);
+        whiperCB = MyVector.getVector(whiskerCB, handleC).add(handleC);
         createWhiperCurve();
     }
 
@@ -763,14 +761,14 @@ public class IRISVisualization extends JButton {
         g2d.setColor(Color.BLUE);
         g2d.setStroke(new BasicStroke(3));
 
-        whiperC_CB.fill(g2d, false);
-        drawHandleConnector(g2d, handleC, whiperC_CB);
+        whiperAC.fill(g2d, false);
+        drawHandleConnector(g2d, handleA, whiperAC);
 
-        whiperC_CA.fill(g2d, false);
-        drawHandleConnector(g2d, handleC, whiperC_CA);
+        whiperBA.fill(g2d, false);
+        drawHandleConnector(g2d, handleB, whiperBA);
 
-        whiperA_AC.fill(g2d, false);
-        drawHandleConnector(g2d, handleA, whiperA_AC);
+        whiperCB.fill(g2d, false);
+        drawHandleConnector(g2d, handleC, whiperCB);
     }
 
     public static void main(String[] args) {
