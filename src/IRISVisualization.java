@@ -183,6 +183,10 @@ public class IRISVisualization extends JButton {
                     handleB.selected = true;
                 } else if (handleC.contains(shiftMouse.x, shiftMouse.y)) {
                     handleC.selected = true;
+                } else if (MyVector.distanceToPointFromLine(e.getPoint(), sceneShift, handleA, whiperAC) < 4) {
+                    whiperAC.selected = true;
+                } else if (MyVector.distanceToPointFromLine(e.getPoint(), sceneShift, handleB, whiperBA) < 4) {
+                    whiperBA.selected = true;
                 } else if (MyVector.distanceToPointFromLine(e.getPoint(), sceneShift, handleC, whiperCB) < 4) {
                     whiperCB.selected = true;
                 }
@@ -221,8 +225,16 @@ public class IRISVisualization extends JButton {
                 } else if (handleC.selected) {
                     handleC.x = e.getX() - sceneShift.x;
                     handleC.y = e.getY() - sceneShift.y;
+                } else if (whiperAC.selected) {
+                    calculateTemporaryWhiper(e, whiperAC, handleA);
+                } else if (whiperBA.selected) {
+                    calculateTemporaryWhiper(e, whiperBA, handleB);
                 } else if (whiperCB.selected) {
-                    calculateTemporaryWhiper(e, whiperCB, handleC);
+                    MyVector tmp = calculateTemporaryWhiper(e, whiperCB, handleC);
+                    if (tmp != null) {
+                        whiperCB.x = tmp.x;
+                        whiperCB.y = tmp.y;
+                    }
                 } else {
                     dragShift.x = -(onMousePressed.x - e.getX());
                     dragShift.y = -(onMousePressed.y - e.getY());
@@ -245,20 +257,68 @@ public class IRISVisualization extends JButton {
         });
     }
 
-    private void calculateTemporaryWhiper(MouseEvent e, MyVector whiper, MyVector handle) {
+    private MyVector calculateTemporaryWhiper(MouseEvent e, MyVector whiper, MyVector handle) {
 
         MyVector tmp = whiper.subtract(handle);
 
-        double lenB = tmp.getLength();
+        double len = tmp.getLength();
 
-        tmp.y = e.getX() - sceneShift.x;
-        tmp.x = e.getY() - sceneShift.y;
+        tmp.x = e.getX() - sceneShift.x;
+        tmp.y = e.getY() - sceneShift.y;
 
-        tmp = tmp.makeItThatLong(lenB);
+        whiper.x = tmp.x;
+        whiper.y = tmp.y;
 
-        whiper.x = -tmp.x + handle.x;
-        whiper.y = -tmp.y + handle.y;
+        return calculatCrosspointOnWhiperCurve(handle, tmp);
     }
+
+    private MyVector calculatCrosspointOnWhiperCurve(MyVector from, MyVector to) {
+
+        List<Point2D.Double> points = bigWhiperCurve1.getPoints();
+
+        for (int i = 0; i < points.size() - 1; i++) {
+
+            Point2D.Double p1 = points.get(i);
+            Point2D.Double p2 = points.get(i + 1);
+            MyVector ip = getIntersectionPoint(from, to, p1, p2);
+            if (ip != null) {
+                return ip;
+            }
+        }
+        return null;
+    }
+
+    private MyVector getIntersectionPoint(MyVector vec1Start, MyVector vec1End, Point2D.Double vec2Start, Point2D.Double vec2End) {
+
+        // Create Line2D objects for the input vectors
+        Line2D line1 = new Line2D.Double(vec1Start.x, vec1Start.y, vec1End.x, vec1End.y);
+        Line2D line2 = new Line2D.Double(vec2Start.getX(), vec2Start.getY(), vec2End.getX(), vec2End.getY());
+
+        // Check if the lines intersect
+        if (!line1.intersectsLine(line2)) {
+            return null; // No intersection
+        }
+
+        // Extract coordinates for each point
+        double x1 = vec1Start.x, y1 = vec1Start.y;
+        double x2 = vec1End.x, y2 = vec1End.y;
+        double x3 = vec2Start.getX(), y3 = vec2Start.getY();
+        double x4 = vec2End.getX(), y4 = vec2End.getY();
+
+        // Calculate determinant to check if lines are parallel
+        double det = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
+        if (det == 0) {
+            return null; // Parallel lines, no intersection
+        }
+
+        // Calculate intersection point coordinates
+        double px = ((x1 * y2 - y1 * x2) * (x3 - x4) - (x1 - x2) * (x3 * y4 - y3 * x4)) / det;
+        double py = ((x1 * y2 - y1 * x2) * (y3 - y4) - (y1 - y2) * (x3 * y4 - y3 * x4)) / det;
+
+        // Return the intersection point as a new MyVector
+        return new MyVector(px, py, 10, "");
+    }
+
 
     private void keyInit() {
 
