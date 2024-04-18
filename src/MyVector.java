@@ -40,17 +40,8 @@ class MyVector extends Ellipse2D.Double {
         return name;
     }
 
-    public MyVector add(MyVector in) {
-
-        return new MyVector(x + in.x, y + in.y, "");
-    }
-
     public MyVector flip() {
-        return new MyVector(y, x, "");
-    }
-
-    public MyVector multiply(double v) {
-        return new MyVector(x * v, y * v, "");
+        return new MyVector(y, x, name);
     }
 
     public MyVector rotate(double ang) {
@@ -60,14 +51,22 @@ class MyVector extends Ellipse2D.Double {
         return new MyVector(newX, newY, this.name);
     }
 
-    public MyVector subtract(MyVector in) {
+    public MyVector add(MyVector in) {
 
-        return new MyVector(x - in.x, y - in.y, "");
+        return new MyVector(x + in.x, y + in.y, name);
+    }
+
+    public MyVector subtract(MyVector in) {
+        return new MyVector(x - in.x, y - in.y, name);
+    }
+
+    public MyVector multiply(double v) {
+        return new MyVector(x * v, y * v, name);
     }
 
     protected static MyVector getVector(MyVector h1, MyVector h2) {
 
-        return new MyVector(h1.x - h2.x, h1.y - h2.y, "");
+        return new MyVector(h1.x - h2.x, h1.y - h2.y, "" + h1.name + "_" + h2.name);
     }
 
     public static double angleBetweenHandles(MyVector handle1, MyVector handle2) {
@@ -93,11 +92,11 @@ class MyVector extends Ellipse2D.Double {
         x = (x / len) * l;
         y = (y / len) * l;
 
-        return new MyVector(x, y , "");
+        return new MyVector(x, y, name);
     }
 
     protected double getLength() {
-        return Math.sqrt(x*x + y*y);
+        return Math.sqrt(x * x + y * y);
     }
 
     public static double distanceToPointFromLine(Point point, Point2D.Double sceneShift, MyVector handle1, MyVector handle2) {
@@ -131,17 +130,14 @@ class MyVector extends Ellipse2D.Double {
         return numerator / denominator;
     }
 
-
-
-
     protected static double getLength(MyVector o, MyVector t) {
 
         double dx = o.x - t.x;
         double dy = o.y - t.y;
-        return Math.sqrt(dx*dx + dy*dy);
+        return Math.sqrt(dx * dx + dy * dy);
     }
 
     protected MyVector copy() {
-        return new MyVector(this.x, this.y, "");
+        return new MyVector(this.x, this.y, name);
     }
 }

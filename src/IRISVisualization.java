@@ -11,12 +11,12 @@ public class IRISVisualization extends JButton {
 
     private final JFrame frame;
     private final BufferedImage irisPic;
-    private MyVector whiskerBC;
-    private MyVector whiskerAB;
-    private MyVector whiskerCB;
-    private MyVector whiskerAC;
-    private MyVector whiskerCA;
-    private MyVector whiskerBA;
+    private MyVector extendBC;
+    private MyVector extendAB;
+    private MyVector extendCB;
+    private MyVector extendAC;
+    private MyVector extendCA;
+    private MyVector extendBA;
     private final Color color1 = new Color(180, 0, 0);
     private Color color2 = new Color(0, 0, 80);
     private final Color color3 = new Color(80, 140, 0);
@@ -61,6 +61,7 @@ public class IRISVisualization extends JButton {
     private MyDoublePolygon smallWhiperCurve1 = new MyDoublePolygon();
     private MyDoublePolygon smallWhiperCurve2 = new MyDoublePolygon();
     private MyDoublePolygon smallWhiperCurve3 = new MyDoublePolygon();
+    private double whiperFactor = 1.0;
 
     public IRISVisualization(JFrame f) {
 
@@ -298,65 +299,6 @@ public class IRISVisualization extends JButton {
         });
     }
 
-    private MyVector calculateTemporaryWhiper(MouseEvent e, MyVector whiper, MyVector handle, MyDoublePolygon curve) {
-
-        MyVector tmp = whiper.subtract(handle);
-
-        tmp.x = e.getX() - sceneShift.x;
-        tmp.y = e.getY() - sceneShift.y;
-
-        tmp = MyVector.getVector(tmp, handle).makeItThatLong(1000).add(handle);
-
-        return calculatCrosspointOnWhiperCurve(handle, tmp, curve);
-    }
-
-    private MyVector calculatCrosspointOnWhiperCurve(MyVector from, MyVector to, MyDoublePolygon curve) {
-
-        List<Point2D.Double> points = curve.getPoints();
-
-        for (int i = 0; i < points.size() - 1; i++) {
-
-            Point2D.Double p1 = points.get(i);
-            Point2D.Double p2 = points.get(i + 1);
-            MyVector ip = getIntersectionPoint(from, to, p1, p2);
-            if (ip != null) {
-                return ip;
-            }
-        }
-        return null;
-    }
-
-    private MyVector getIntersectionPoint(MyVector vec1Start, MyVector vec1End, Point2D.Double vec2Start, Point2D.Double vec2End) {
-
-        // Create Line2D objects for the input vectors
-        Line2D line1 = new Line2D.Double(vec1Start.x, vec1Start.y, vec1End.x, vec1End.y);
-        Line2D line2 = new Line2D.Double(vec2Start.getX(), vec2Start.getY(), vec2End.getX(), vec2End.getY());
-
-        // Check if the lines intersect
-        if (!line1.intersectsLine(line2)) {
-            return null; // No intersection
-        }
-
-        // Extract coordinates for each point
-        double x1 = vec1Start.x, y1 = vec1Start.y;
-        double x2 = vec1End.x, y2 = vec1End.y;
-        double x3 = vec2Start.getX(), y3 = vec2Start.getY();
-        double x4 = vec2End.getX(), y4 = vec2End.getY();
-
-        // Calculate determinant to check if lines are parallel
-        double det = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
-        if (det == 0) {
-            return null; // Parallel lines, no intersection
-        }
-
-        // Calculate intersection point coordinates
-        double px = ((x1 * y2 - y1 * x2) * (x3 - x4) - (x1 - x2) * (x3 * y4 - y3 * x4)) / det;
-        double py = ((x1 * y2 - y1 * x2) * (y3 - y4) - (y1 - y2) * (x3 * y4 - y3 * x4)) / det;
-
-        // Return the intersection point as a new MyVector
-        return new MyVector(px, py, "");
-    }
-
     private void keyInit() {
 
         addKeyListener(new KeyAdapter() {
@@ -377,7 +319,10 @@ public class IRISVisualization extends JButton {
                         drawCircle = !drawCircle;
                         break;
                     case KeyEvent.VK_D:
-                        printHandles();
+//                        printHandles();
+                        whiperFactor = 0.5;
+                        doCalculations();
+                        calculateWhipers();
                         break;
                     case KeyEvent.VK_E:
                         drawWhiskers = !drawWhiskers;
@@ -401,6 +346,7 @@ public class IRISVisualization extends JButton {
                         }
                         break;
                     case KeyEvent.VK_R:
+                        whiperFactor = 1.0;
                         sceneShift.x = 0;
                         sceneShift.y = 0;
                         break;
@@ -428,10 +374,14 @@ public class IRISVisualization extends JButton {
                         }
                         break;
                     case 93: /// +
-                        irisPicSize++;
+                        whiperFactor += 0.01;
+                        doCalculations();
+                        calculateWhipers();
                         break;
                     case 47: /// -
-                        irisPicSize--;
+                        whiperFactor -= 0.01;
+                        doCalculations();
+                        calculateWhipers();
                         break;
                 }
 
@@ -523,6 +473,65 @@ public class IRISVisualization extends JButton {
         whiperCB.selected = false;
     }
 
+    private MyVector calculateTemporaryWhiper(MouseEvent e, MyVector whiper, MyVector handle, MyDoublePolygon curve) {
+
+        MyVector tmp = whiper.subtract(handle);
+
+        tmp.x = e.getX() - sceneShift.x;
+        tmp.y = e.getY() - sceneShift.y;
+
+        tmp = MyVector.getVector(tmp, handle).makeItThatLong(1000).add(handle);
+
+        return calculatCrosspointOnWhiperCurve(handle, tmp, curve);
+    }
+
+    private MyVector calculatCrosspointOnWhiperCurve(MyVector from, MyVector to, MyDoublePolygon curve) {
+
+        List<Point2D.Double> points = curve.getPoints();
+
+        for (int i = 0; i < points.size() - 1; i++) {
+
+            Point2D.Double p1 = points.get(i);
+            Point2D.Double p2 = points.get(i + 1);
+            MyVector ip = getIntersectionPoint(from, to, p1, p2);
+            if (ip != null) {
+                return ip;
+            }
+        }
+        return null;
+    }
+
+    private MyVector getIntersectionPoint(MyVector vec1Start, MyVector vec1End, Point2D.Double vec2Start, Point2D.Double vec2End) {
+
+        // Create Line2D objects for the input vectors
+        Line2D line1 = new Line2D.Double(vec1Start.x, vec1Start.y, vec1End.x, vec1End.y);
+        Line2D line2 = new Line2D.Double(vec2Start.getX(), vec2Start.getY(), vec2End.getX(), vec2End.getY());
+
+        // Check if the lines intersect
+        if (!line1.intersectsLine(line2)) {
+            return null; // No intersection
+        }
+
+        // Extract coordinates for each point
+        double x1 = vec1Start.x, y1 = vec1Start.y;
+        double x2 = vec1End.x, y2 = vec1End.y;
+        double x3 = vec2Start.getX(), y3 = vec2Start.getY();
+        double x4 = vec2End.getX(), y4 = vec2End.getY();
+
+        // Calculate determinant to check if lines are parallel
+        double det = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
+        if (det == 0) {
+            return null; // Parallel lines, no intersection
+        }
+
+        // Calculate intersection point coordinates
+        double px = ((x1 * y2 - y1 * x2) * (x3 - x4) - (x1 - x2) * (x3 * y4 - y3 * x4)) / det;
+        double py = ((x1 * y2 - y1 * x2) * (y3 - y4) - (y1 - y2) * (x3 * y4 - y3 * x4)) / det;
+
+        // Return the intersection point as a new MyVector
+        return new MyVector(px, py, "");
+    }
+
     public static double calculateInnerRadiusTriangle(MyVector A, MyVector B, MyVector C) {
 
         // Calculate side lengths
@@ -543,32 +552,50 @@ public class IRISVisualization extends JButton {
 
     private void doCalculations() {
 
-        whiskerBA = calculateExtendedPoint(handleB, handleC, handleA);
-        whiskerCA = calculateExtendedPoint(handleC, handleB, handleA);
+        extendAB = calculateExtendedPoint(handleA, handleC, handleB);
+        extendAB = extendAB.subtract(handleB).multiply(whiperFactor).add(handleB);
 
-        whiskerBC = calculateExtendedPoint(handleB, handleA, handleC);
-        whiskerAC = calculateExtendedPoint(handleA, handleB, handleC);
+        extendCB = calculateExtendedPoint(handleC, handleA, handleB);
+        MyVector tmp = MyVector.getVector(handleB, extendCB).multiply(whiperFactor);
+        double newLen = tmp.getLength();
+        extendCB = tmp.add(handleB);
 
-        whiskerAB = calculateExtendedPoint(handleA, handleC, handleB);
-        whiskerCB = calculateExtendedPoint(handleC, handleA, handleB);
+        /// TODO: fix shinking or extendin extentions
+        extendCA = calculateExtendedPoint(handleC, handleB, handleA);
+        tmp = MyVector.getVector(handleA, extendCA);
+        double oldLen = tmp.getLength();
+        //whiskerCA = tmp.add(handleA);
 
-        midCA_BA = calculateMidpoint(whiskerCA, whiskerBA);
-        midBC_AC = calculateMidpoint(whiskerAC, whiskerBC);
-        midCB_AB = calculateMidpoint(whiskerCB, whiskerAB);
+        System.out.println(whiperFactor + " ol: " + oldLen + " nl: " + newLen);
 
-        MyVector vecCA_BA = MyVector.getVector(whiskerBA, whiskerCA);
+        extendBA = calculateExtendedPoint(handleB, handleC, handleA);
+        //whiskerBA = whiskerBA.subtract(handleA).makeItThatLong(newLen).add(handleA);
+
+        extendBC = calculateExtendedPoint(handleB, handleA, handleC);
+//        whiskerBC = whiskerBC.subtract(handleC).multiply(whiperFactor).add(handleC);
+
+        extendAC = calculateExtendedPoint(handleA, handleB, handleC);
+//        whiskerAC = whiskerAC.subtract(handleC).multiply(whiperFactor).add(handleC);
+
+
+
+        midCA_BA = calculateMidpoint(extendCA, extendBA);
+        midBC_AC = calculateMidpoint(extendAC, extendBC);
+        midCB_AB = calculateMidpoint(extendCB, extendAB);
+
+        MyVector vecCA_BA = MyVector.getVector(extendBA, extendCA);
         MyVector recCA_BA = vecCA_BA.flip();
         recCA_BA.x = -recCA_BA.x;
         recCA_BA = recCA_BA.makeItThatLong(400);
         towCA_BA = midCA_BA.add(recCA_BA);
 
-        MyVector vecBC_AC = MyVector.getVector(whiskerBC, whiskerAC);
+        MyVector vecBC_AC = MyVector.getVector(extendBC, extendAC);
         MyVector recBC_AC = vecBC_AC.flip();
         recBC_AC.x = -recBC_AC.x;
         recBC_AC.makeItThatLong(400);
         towBC_AC = midBC_AC.subtract(recBC_AC);
 
-        MyVector vecCB_AB = MyVector.getVector(whiskerCB, whiskerAB);
+        MyVector vecCB_AB = MyVector.getVector(extendCB, extendAB);
         MyVector recCB_AB = vecCB_AB.flip();
         recCB_AB.x = -recCB_AB.x;
         recCB_AB.makeItThatLong(400);
@@ -577,19 +604,19 @@ public class IRISVisualization extends JButton {
         centerCircle = getIntersectionPointGPT(midCB_AB, towCB_AB, midBC_AC, towBC_AC);
 
         if (centerCircle != null) {
-            radiusCircle = MyVector.getVector(centerCircle, whiskerAB).getLength();
+            radiusCircle = MyVector.getVector(centerCircle, extendAB).getLength();
         }
     }
 
     private void calculateWhipers() {
 
-        whiperAC = MyVector.getVector(whiskerAC, handleA).add(handleA);
-        whiperBA = MyVector.getVector(whiskerBA, handleB).add(handleB);
-        whiperCB = MyVector.getVector(whiskerCB, handleC).add(handleC);
+        whiperAC = MyVector.getVector(extendAC, handleA).add(handleA);
+        whiperBA = MyVector.getVector(extendBA, handleB).add(handleB);
+        whiperCB = MyVector.getVector(extendCB, handleC).add(handleC);
 
-        whiperCA = MyVector.getVector(whiskerCA, handleA).add(handleA);
-        whiperBC = MyVector.getVector(whiskerBC, handleB).add(handleB);
-        whiperAB = MyVector.getVector(whiskerAB, handleB).add(handleB);
+        whiperCA = MyVector.getVector(extendCA, handleA).add(handleA);
+        whiperBC = MyVector.getVector(extendBC, handleB).add(handleB);
+        whiperAB = MyVector.getVector(extendAB, handleB).add(handleB);
 
         createWhiperCurve();
     }
@@ -604,17 +631,17 @@ public class IRISVisualization extends JButton {
         smallWhiperCurve2 = new MyDoublePolygon();
         smallWhiperCurve3 = new MyDoublePolygon();
 
-        createBigWhiperCurveSegment(bigWhiperCurve1, whiskerCB, handleC, handleB, handleA);
+        createBigWhiperCurveSegment(bigWhiperCurve1, extendCB, handleC, handleB, handleA);
 
-        createSmallWhiperCurveSegment(smallWhiperCurve1, handleB, whiskerAB, whiskerCB);
+        createSmallWhiperCurveSegment(smallWhiperCurve1, handleB, extendAB, extendCB);
 
-        createBigWhiperCurveSegment(bigWhiperCurve2, whiskerBA, handleB, handleA, handleC);
+        createBigWhiperCurveSegment(bigWhiperCurve2, extendBA, handleB, handleA, handleC);
 
-        createSmallWhiperCurveSegment(smallWhiperCurve2, handleA, whiskerCA, whiskerBA);
+        createSmallWhiperCurveSegment(smallWhiperCurve2, handleA, extendCA, extendBA);
 
-        createBigWhiperCurveSegment(bigWhiperCurve3, whiskerAC, handleA, handleC, handleB);
+        createBigWhiperCurveSegment(bigWhiperCurve3, extendAC, handleA, handleC, handleB);
 
-        createSmallWhiperCurveSegment(smallWhiperCurve3, handleC, whiskerBC, whiskerAC);
+        createSmallWhiperCurveSegment(smallWhiperCurve3, handleC, extendBC, extendAC);
     }
 
     private void createSmallWhiperCurveSegment(MyDoublePolygon whiperCurve, MyVector v1, MyVector v2, MyVector v3) {
@@ -663,8 +690,8 @@ public class IRISVisualization extends JButton {
         double vector12_y = one.getY() - two.getY();
         double length12 = Math.sqrt(Math.pow(vector12_x, 2) + Math.pow(vector12_y, 2));
 
-        double vector13_x = one.getX() - three.getX();
-        double vector13_y = one.getY() - three.getY();
+        double vector13_x = (one.getX() - three.getX());
+        double vector13_y = (one.getY() - three.getY());
         double length13 = Math.sqrt(Math.pow(vector13_x, 2) + Math.pow(vector13_y, 2));
 
         double vector13Scaled_x = vector13_x / length13;
@@ -718,10 +745,7 @@ public class IRISVisualization extends JButton {
             return;
         }
 
-        if (blackMode) {
-            g2d.setColor(Color.BLACK);
-            g2d.fillRect(0, 0, getWidth(), getHeight());
-        }
+        clearBackground(g2d);
 
         AffineTransform shiftTransform = AffineTransform.getTranslateInstance(sceneShift.x + dragShift.x, sceneShift.y + dragShift.y);
         g2d.setTransform(shiftTransform);
@@ -754,6 +778,16 @@ public class IRISVisualization extends JButton {
             drawWiperCurves(g2d);
             drawWipers(g2d);
         }
+    }
+
+    private void clearBackground(Graphics2D g2d) {
+        if (blackMode) {
+            g2d.setColor(Color.BLACK);
+
+        } else {
+            g2d.setColor(Color.WHITE);
+        }
+        g2d.fillRect(0, 0, getWidth(), getHeight());
     }
 
     private void drawWiperCurves(Graphics2D g2d) {
@@ -807,29 +841,29 @@ public class IRISVisualization extends JButton {
 
         g2d.setStroke(new BasicStroke(3));
         g2d.setColor(color3);
-        whiskerBA.fill(g2d, drawAnnotation);
-        whiskerCA.fill(g2d, drawAnnotation);
-        g2d.draw(new Line2D.Double(handleA.x, handleA.y, whiskerBA.x, whiskerBA.y));
-        g2d.draw(new Line2D.Double(handleA.x, handleA.y, whiskerCA.x, whiskerCA.y));
+        extendBA.fill(g2d, drawAnnotation);
+        extendCA.fill(g2d, drawAnnotation);
+        g2d.draw(new Line2D.Double(handleA.x, handleA.y, extendBA.x, extendBA.y));
+        g2d.draw(new Line2D.Double(handleA.x, handleA.y, extendCA.x, extendCA.y));
         g2d.setColor(color2);
-        whiskerBC.fill(g2d, drawAnnotation);
-        whiskerAC.fill(g2d, drawAnnotation);
-        g2d.draw(new Line2D.Double(handleC.x, handleC.y, whiskerBC.x, whiskerBC.y));
-        g2d.draw(new Line2D.Double(handleC.x, handleC.y, whiskerAC.x, whiskerAC.y));
+        extendBC.fill(g2d, drawAnnotation);
+        extendAC.fill(g2d, drawAnnotation);
+        g2d.draw(new Line2D.Double(handleC.x, handleC.y, extendBC.x, extendBC.y));
+        g2d.draw(new Line2D.Double(handleC.x, handleC.y, extendAC.x, extendAC.y));
         g2d.setColor(color1);
-        whiskerAB.fill(g2d, drawAnnotation);
-        whiskerCB.fill(g2d, drawAnnotation);
-        g2d.draw(new Line2D.Double(handleB.x, handleB.y, whiskerAB.x, whiskerAB.y));
-        g2d.draw(new Line2D.Double(handleB.x, handleB.y, whiskerCB.x, whiskerCB.y));
+        extendAB.fill(g2d, drawAnnotation);
+        extendCB.fill(g2d, drawAnnotation);
+        g2d.draw(new Line2D.Double(handleB.x, handleB.y, extendAB.x, extendAB.y));
+        g2d.draw(new Line2D.Double(handleB.x, handleB.y, extendCB.x, extendCB.y));
     }
 
     private void drawLines(Graphics2D g2d) {
 
         g2d.setStroke(new BasicStroke(1));
         g2d.setColor(Color.lightGray);
-        drawHandleConnector(g2d, whiskerCA, whiskerBA);
-        drawHandleConnector(g2d, whiskerBC, whiskerAC);
-        drawHandleConnector(g2d, whiskerCB, whiskerAB);
+        drawHandleConnector(g2d, extendCA, extendBA);
+        drawHandleConnector(g2d, extendBC, extendAC);
+        drawHandleConnector(g2d, extendCB, extendAB);
 
         midCA_BA.fill(g2d, drawAnnotation);
         midBC_AC.fill(g2d, drawAnnotation);
