@@ -4,9 +4,10 @@ import java.awt.geom.Point2D;
 
 class MyVector extends Ellipse2D.Double {
     private final String name;
+    private double d = 10;
     public boolean selected = false;
 
-    public MyVector(double p1, double p2, double d, String str) {
+    public MyVector(double p1, double p2, String str) {
 
         name = str;
         this.x = p1;
@@ -41,32 +42,32 @@ class MyVector extends Ellipse2D.Double {
 
     public MyVector add(MyVector in) {
 
-        return new MyVector(x + in.x, y + in.y, 6, "");
+        return new MyVector(x + in.x, y + in.y, "");
     }
 
     public MyVector flip() {
-        return new MyVector(y, x, 6, "");
+        return new MyVector(y, x, "");
     }
 
     public MyVector multiply(double v) {
-        return new MyVector(x * v, y * v, 10, "");
+        return new MyVector(x * v, y * v, "");
     }
 
     public MyVector rotate(double ang) {
 
         double newX = this.x * Math.cos(ang) - this.y * Math.sin(ang);
         double newY = this.x * Math.sin(ang) + this.y * Math.cos(ang);
-        return new MyVector(newX, newY, 6, this.name);
+        return new MyVector(newX, newY, this.name);
     }
 
     public MyVector subtract(MyVector in) {
 
-        return new MyVector(x - in.x, y - in.y, 6, "");
+        return new MyVector(x - in.x, y - in.y, "");
     }
 
     protected static MyVector getVector(MyVector h1, MyVector h2) {
 
-        return new MyVector(h1.x - h2.x, h1.y - h2.y, 2, "");
+        return new MyVector(h1.x - h2.x, h1.y - h2.y, "");
     }
 
     public static double angleBetweenHandles(MyVector handle1, MyVector handle2) {
@@ -92,7 +93,7 @@ class MyVector extends Ellipse2D.Double {
         x = (x / len) * l;
         y = (y / len) * l;
 
-        return new MyVector(x, y , 10, "");
+        return new MyVector(x, y , "");
     }
 
     protected double getLength() {
@@ -101,8 +102,24 @@ class MyVector extends Ellipse2D.Double {
 
     public static double distanceToPointFromLine(Point point, Point2D.Double sceneShift, MyVector handle1, MyVector handle2) {
 
-        double x = point.x - sceneShift.x;
-        double y = point.y - sceneShift.y;
+        // Adjust the point coordinates based on the scene shift
+        double adjustedX = point.x - sceneShift.x;
+        double adjustedY = point.y - sceneShift.y;
+
+        // Check if the adjusted point is within the bounding box defined by the two vectors
+        double minX = Math.min(handle1.x, handle2.x);
+        double minY = Math.min(handle1.y, handle2.y);
+        double maxX = Math.max(handle1.x, handle2.x);
+        double maxY = Math.max(handle1.y, handle2.y);
+
+        if (adjustedX < minX || adjustedX > maxX || adjustedY < minY || adjustedY > maxY) {
+            // Point is outside the bounding box, return some default value (e.g., -1)
+            return 1000;
+        }
+
+        // Calculate the distance to the line
+        double x = adjustedX;
+        double y = adjustedY;
         double x1 = handle1.x;
         double y1 = handle1.y;
         double x2 = handle2.x;
@@ -115,6 +132,8 @@ class MyVector extends Ellipse2D.Double {
     }
 
 
+
+
     protected static double getLength(MyVector o, MyVector t) {
 
         double dx = o.x - t.x;
@@ -123,6 +142,6 @@ class MyVector extends Ellipse2D.Double {
     }
 
     protected MyVector copy() {
-        return new MyVector(this.x, this.y, width, "");
+        return new MyVector(this.x, this.y, "");
     }
 }

@@ -116,10 +116,10 @@ public class InterceptTheorem extends JButton {
 
         g2d.setColor(red);
         if (handle1 == null) {
-            handle1 = new MyVector(pto1.x - 6, pto1.y - 6, 12, "");
+            handle1 = new MyVector(pto1.x - 6, pto1.y - 6, "");
         }
         if (handle2 == null) {
-            handle2 = new MyVector(pto2.x - 6, pto2.y - 6, 12, "");
+            handle2 = new MyVector(pto2.x - 6, pto2.y - 6, "");
         }
 
         g2d.draw(leg1);
