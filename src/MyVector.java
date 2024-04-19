@@ -4,7 +4,7 @@ import java.awt.geom.Point2D;
 
 class MyVector extends Ellipse2D.Double {
     private String name;
-    private double d = 10;
+    private double size = 10;
     public boolean selected = false;
 
     public MyVector(double p1, double p2, String str) {
@@ -12,8 +12,8 @@ class MyVector extends Ellipse2D.Double {
         name = str;
         this.x = p1;
         this.y = p2;
-        this.width = d;
-        this.height = d;
+        this.width = size;
+        this.height = size;
     }
 
     @Override
@@ -117,14 +117,12 @@ class MyVector extends Ellipse2D.Double {
         }
 
         // Calculate the distance to the line
-        double x = adjustedX;
-        double y = adjustedY;
         double x1 = handle1.x;
         double y1 = handle1.y;
         double x2 = handle2.x;
         double y2 = handle2.y;
 
-        double numerator = Math.abs((x2 - x1) * (y1 - y) - (x1 - x) * (y2 - y1));
+        double numerator = Math.abs((x2 - x1) * (y1 - adjustedY) - (x1 - adjustedX) * (y2 - y1));
         double denominator = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 
         return numerator / denominator;
@@ -143,5 +141,9 @@ class MyVector extends Ellipse2D.Double {
 
     public void setName(String ca) {
         name = ca;
+    }
+
+    public void setSize(int s) {
+        size = s;
     }
 }

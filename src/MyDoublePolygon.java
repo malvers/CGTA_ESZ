@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MyDoublePolygon {
-    private List<Point2D.Double> points;
+    private final List<Point2D.Double> points;
 
     public MyDoublePolygon() {
         points = new ArrayList<>();

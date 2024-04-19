@@ -9,6 +9,15 @@ import java.util.List;
 
 public class IRISVisualization extends JButton {
 
+    /*
+      IDEAS:
+
+      - adjust iris pic when moving handles
+      - calculate whipers realtime
+
+    */
+
+    private final static String defaulTitle = "Conway's IRIS - Press H for Help";
     private final JFrame frame;
     private final BufferedImage irisPic;
     private MyVector extendBC;
@@ -114,6 +123,7 @@ public class IRISVisualization extends JButton {
             os.writeInt(irisPicSize);
 
             os.writeBoolean(drawWhiperCurve);
+            os.writeBoolean(debugMode);
 
 //            os.writeObject(handleA);
 //            os.writeObject(handleB);
@@ -153,6 +163,7 @@ public class IRISVisualization extends JButton {
             irisPicSize = os.readInt();
 
             drawWhiperCurve = os.readBoolean();
+            debugMode = os.readBoolean();
 
 //            handleA = (Handle) os.readObject();
 //            handleB = (Handle) os.readObject();
@@ -289,7 +300,7 @@ public class IRISVisualization extends JButton {
             public void mouseMoved(MouseEvent e) {
 
                 if (!drawHelp) {
-                    String title = "Conway's IRIS";
+                    String title = "Conway's IRIS - Press H for Help";
                     if (debugMode) {
                         title += " - x: " + e.getX() + " y: " + e.getY();
                     }
@@ -319,7 +330,8 @@ public class IRISVisualization extends JButton {
                         drawCircle = !drawCircle;
                         break;
                     case KeyEvent.VK_D:
-//                        printHandles();
+                        debugMode = !debugMode;
+                        printHandles();
                         whiperFactor = 0.5;
                         doCalculations();
                         calculateWhipers();
@@ -374,14 +386,22 @@ public class IRISVisualization extends JButton {
                         }
                         break;
                     case 93: /// +
-                        whiperFactor += 0.01;
-                        doCalculations();
-                        calculateWhipers();
+                        if (e.isMetaDown()) {
+                            irisPicShifty++;
+                        } else {
+                            whiperFactor += 0.01;
+                            doCalculations();
+                            calculateWhipers();
+                        }
                         break;
                     case 47: /// -
-                        whiperFactor -= 0.01;
-                        doCalculations();
-                        calculateWhipers();
+                        if (e.isMetaDown()) {
+                            irisPicShifty--;
+                        } else {
+                            whiperFactor -= 0.01;
+                            doCalculations();
+                            calculateWhipers();
+                        }
                         break;
                 }
 
@@ -596,6 +616,7 @@ public class IRISVisualization extends JButton {
         midBC_AC = calculateMidpoint(extendAC, extendBC);
         midCB_AB = calculateMidpoint(extendCB, extendAB);
 
+        /// add perpendicular vetors to the midd vector to calculat the center of the circle
         MyVector vecCA_BA = MyVector.getVector(extendBA, extendCA);
         MyVector recCA_BA = vecCA_BA.flip();
         recCA_BA.x = -recCA_BA.x;
@@ -615,17 +636,17 @@ public class IRISVisualization extends JButton {
         towCB_AB = midCB_AB.add(recCB_AB);
 
         centerCircle = getIntersectionPointGPT(midCB_AB, towCB_AB, midBC_AC, towBC_AC);
+        centerCircle.setSize(4);
 
         if (centerCircle != null) {
             radiusCircle = MyVector.getVector(centerCircle, extendAB).getLength();
         }
     }
 
-    private MyVector adjustLength(double diffLen, MyVector extend, MyVector handle) {
+    private MyVector adjustLength(double deltaLength, MyVector extend, MyVector handle) {
 
         MyVector tmp = MyVector.getVector(extend, handle);
-        double len = tmp.getLength();
-        double newLen = Math.abs(len - diffLen);
+        double newLen = Math.abs(tmp.getLength() - deltaLength);
         tmp.makeItThatLong(newLen);
         return handle.add(tmp);
     }
@@ -958,7 +979,7 @@ public class IRISVisualization extends JButton {
             JFrame f = new JFrame();
             f.setSize(760, 760);
             f.add(new IRISVisualization(f));
-            f.setTitle("Conway's IRIS");
+            f.setTitle(defaulTitle);
             f.setVisible(true);
         });
     }

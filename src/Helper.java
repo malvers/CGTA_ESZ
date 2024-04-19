@@ -46,6 +46,10 @@ public class Helper {
         g2d.drawString("Toggle circle", xPos + tab, yPos);
         yPos += dy;
 
+        g2d.drawString("D", xPos, yPos);
+        g2d.drawString("Toggle debug mode", xPos + tab, yPos);
+        yPos += dy;
+
         g2d.drawString("E", xPos, yPos);
         g2d.drawString("Toggle whiskers / extends", xPos + tab, yPos);
         yPos += dy;
@@ -76,6 +80,10 @@ public class Helper {
 
         g2d.drawString("Cmd W", xPos, yPos);
         g2d.drawString("Quit the program", xPos + tab, yPos);
+        yPos += dy;
+
+        g2d.drawString("Inspiration by Mathologer", xPos, yPos);
+        g2d.drawString("youtu.be/XrTZwPD4O3k?si=KLvk4zhPGRQI_dPi", xPos + tab, yPos);
     }
 }
 
