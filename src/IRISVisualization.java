@@ -51,7 +51,7 @@ public class IRISVisualization extends JButton {
     private boolean drawHelp = false;
     private boolean drawIrisPic = true;
     private boolean debugMode = true;
-    private boolean drawWhiperCurve = false;
+    private boolean drawWhiperStuff = false;
     private int irisPicSize = 688;
     private int irisPicShiftX = 163;
     private int irisPicShifty = 186;
@@ -120,7 +120,7 @@ public class IRISVisualization extends JButton {
             os.writeInt(irisPicShifty);
             os.writeInt(irisPicSize);
 
-            os.writeBoolean(drawWhiperCurve);
+            os.writeBoolean(drawWhiperStuff);
             os.writeBoolean(debugMode);
 
 //            os.writeObject(handleA);
@@ -160,7 +160,7 @@ public class IRISVisualization extends JButton {
             irisPicShifty = os.readInt();
             irisPicSize = os.readInt();
 
-            drawWhiperCurve = os.readBoolean();
+            drawWhiperStuff = os.readBoolean();
             debugMode = os.readBoolean();
 
 //            handleA = (Handle) os.readObject();
@@ -225,6 +225,7 @@ public class IRISVisualization extends JButton {
                 dragShift.y = 0;
 
                 calculateWhipers();
+                setWhipersVisibility(true);
                 deselectAllHandles();
                 deselectAllWhipers();
             }
@@ -243,12 +244,15 @@ public class IRISVisualization extends JButton {
                 if (handleA.selected) {
                     handleA.x = e.getX() - sceneShift.x;
                     handleA.y = e.getY() - sceneShift.y;
+                    setWhipersVisibility(false);
                 } else if (handleB.selected) {
                     handleB.x = e.getX() - sceneShift.x;
                     handleB.y = e.getY() - sceneShift.y;
+                    setWhipersVisibility(false);
                 } else if (handleC.selected) {
                     handleC.x = e.getX() - sceneShift.x;
                     handleC.y = e.getY() - sceneShift.y;
+                    setWhipersVisibility(false);
                 } else if (whiperAC.selected) {
                     MyVector tmp = calculateTemporaryWhiper(e, whiperAC, handleA, bigWhiperCurve3);
                     if (tmp != null) {
@@ -267,7 +271,6 @@ public class IRISVisualization extends JButton {
                         whiperCB.x = tmp.x;
                         whiperCB.y = tmp.y;
                     }
-
                 } else if (whiperCA.selected) {
                     MyVector tmp = calculateTemporaryWhiper(e, whiperCA, handleA, smallWhiperCurve2);
                     if (tmp != null) {
@@ -291,7 +294,7 @@ public class IRISVisualization extends JButton {
                     dragShift.y = -(onMousePressed.y - e.getY());
                 }
                 doCalculations();
-                calculateWhipers();
+                createWhiperCurve();
                 repaint();
             }
 
@@ -307,6 +310,15 @@ public class IRISVisualization extends JButton {
                 }
             }
         });
+    }
+
+    private void setWhipersVisibility(boolean b) {
+        whiperAB.setVisible(b);
+        whiperAC.setVisible(b);
+        whiperBA.setVisible(b);
+        whiperBC.setVisible(b);
+        whiperCA.setVisible(b);
+        whiperCB.setVisible(b);
     }
 
     private void keyInit() {
@@ -369,7 +381,7 @@ public class IRISVisualization extends JButton {
                             writeSettings();
                             System.exit(0);
                         } else {
-                            drawWhiperCurve = !drawWhiperCurve;
+                            drawWhiperStuff = !drawWhiperStuff;
                         }
                         break;
                     case KeyEvent.VK_UP:
@@ -816,7 +828,7 @@ public class IRISVisualization extends JButton {
             drawTriangle(g2d);
         }
 
-        if (drawWhiperCurve) {
+        if (drawWhiperStuff) {
             drawWiperCurves(g2d);
             drawWipers(g2d);
         }
@@ -949,6 +961,9 @@ public class IRISVisualization extends JButton {
         whiperBC.fill(g2d, false);
         whiperAB.fill(g2d, false);
 
+        if (!whiperAC.getVisible()) {
+            return;
+        }
         setTranslucent(g2d, whiperAC, r, g, b);
         drawHandleConnector(g2d, handleA, whiperAC);
         setTranslucent(g2d, whiperBA, r, g, b);

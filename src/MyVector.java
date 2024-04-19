@@ -6,6 +6,7 @@ class MyVector extends Ellipse2D.Double {
     private String name;
     private double size = 10;
     public boolean selected = false;
+    private boolean visible = true;
 
     public MyVector(double p1, double p2, String str) {
 
@@ -25,6 +26,7 @@ class MyVector extends Ellipse2D.Double {
 
     public void fill(Graphics2D g2d, boolean drawAnnotation) {
 
+        if( !visible ) return;
         g2d.fill(new Ellipse2D.Double(x - width / 2, y - width / 2, width, width));
         if (drawAnnotation) {
             g2d.drawString(name, (int) x + 6, (int) y + 6);
@@ -145,5 +147,13 @@ class MyVector extends Ellipse2D.Double {
 
     public void setSize(int s) {
         size = s;
+    }
+
+    public void setVisible(boolean b) {
+        visible = b;
+    }
+
+    public boolean getVisible() {
+        return visible;
     }
 }
