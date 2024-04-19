@@ -11,9 +11,7 @@ public class IRISVisualization extends JButton {
 
     /*
       IDEAS:
-
       - adjust iris pic when moving handles
-      - calculate whipers realtime
 
     */
 
@@ -293,6 +291,7 @@ public class IRISVisualization extends JButton {
                     dragShift.y = -(onMousePressed.y - e.getY());
                 }
                 doCalculations();
+                calculateWhipers();
                 repaint();
             }
 
