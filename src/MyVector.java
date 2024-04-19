@@ -3,7 +3,7 @@ import java.awt.geom.Ellipse2D;
 import java.awt.geom.Point2D;
 
 class MyVector extends Ellipse2D.Double {
-    private final String name;
+    private String name;
     private double d = 10;
     public boolean selected = false;
 
@@ -66,7 +66,7 @@ class MyVector extends Ellipse2D.Double {
 
     protected static MyVector getVector(MyVector h1, MyVector h2) {
 
-        return new MyVector(h1.x - h2.x, h1.y - h2.y, "" + h1.name + "_" + h2.name);
+        return new MyVector(h1.x - h2.x, h1.y - h2.y, h1.name);
     }
 
     public static double angleBetweenHandles(MyVector handle1, MyVector handle2) {
@@ -139,5 +139,9 @@ class MyVector extends Ellipse2D.Double {
 
     protected MyVector copy() {
         return new MyVector(this.x, this.y, name);
+    }
+
+    public void setName(String ca) {
+        name = ca;
     }
 }

@@ -555,30 +555,43 @@ public class IRISVisualization extends JButton {
         extendAB = calculateExtendedPoint(handleA, handleC, handleB);
         extendAB = extendAB.subtract(handleB).multiply(whiperFactor).add(handleB);
 
+        /// calculate CB first
         extendCB = calculateExtendedPoint(handleC, handleA, handleB);
-        MyVector tmp = MyVector.getVector(handleB, extendCB).multiply(whiperFactor);
-        double newLen = tmp.getLength();
+
+        /// get a vector from B to CB. Alternatively one could have used B to AB. "Without loss of generality (WLOG)"
+        MyVector tmp = MyVector.getVector(extendCB, handleB);
+
+        /// measure lenth before scaling
+        double beforeLen = tmp.getLength();
+
+        tmp = tmp.multiply(whiperFactor);
+
+        /// measure lenth before scaling. If whiperFactor = 1 thei must be identical
+        double afterLen = tmp.getLength();
+
+        double diffLen = beforeLen - afterLen;
+
+        /// now add the scaled vector to B
         extendCB = tmp.add(handleB);
 
-        /// TODO: fix shinking or extendin extentions
+        /// now adjust all other length
         extendCA = calculateExtendedPoint(handleC, handleB, handleA);
-        tmp = MyVector.getVector(handleA, extendCA);
-        double oldLen = tmp.getLength();
-        //whiskerCA = tmp.add(handleA);
-
-        System.out.println(whiperFactor + " ol: " + oldLen + " nl: " + newLen);
+        extendCA = adjustLength(diffLen, extendCA, handleA);
+        extendCA.setName("CA");
 
         extendBA = calculateExtendedPoint(handleB, handleC, handleA);
-        //whiskerBA = whiskerBA.subtract(handleA).makeItThatLong(newLen).add(handleA);
+        extendBA = adjustLength(diffLen, extendBA, handleA);
+        extendBA.setName("BA");
 
         extendBC = calculateExtendedPoint(handleB, handleA, handleC);
-//        whiskerBC = whiskerBC.subtract(handleC).multiply(whiperFactor).add(handleC);
+        extendBC = adjustLength(diffLen, extendBC, handleC);
+        extendBC.setName("BC");
 
         extendAC = calculateExtendedPoint(handleA, handleB, handleC);
-//        whiskerAC = whiskerAC.subtract(handleC).multiply(whiperFactor).add(handleC);
+        extendAC = adjustLength(diffLen, extendAC, handleC);
+        extendAC.setName("AC");
 
-
-
+        /// calculate the middpoints between the extends
         midCA_BA = calculateMidpoint(extendCA, extendBA);
         midBC_AC = calculateMidpoint(extendAC, extendBC);
         midCB_AB = calculateMidpoint(extendCB, extendAB);
@@ -606,6 +619,15 @@ public class IRISVisualization extends JButton {
         if (centerCircle != null) {
             radiusCircle = MyVector.getVector(centerCircle, extendAB).getLength();
         }
+    }
+
+    private MyVector adjustLength(double diffLen, MyVector extend, MyVector handle) {
+
+        MyVector tmp = MyVector.getVector(extend, handle);
+        double len = tmp.getLength();
+        double newLen = Math.abs(len - diffLen);
+        tmp.makeItThatLong(newLen);
+        return handle.add(tmp);
     }
 
     private void calculateWhipers() {
