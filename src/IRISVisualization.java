@@ -10,14 +10,16 @@ import java.util.List;
 public class IRISVisualization extends JButton {
 
     /*
+
       IDEAS:
       - adjust iris pic when moving handles
+      - box arround whiper curve
 
     */
 
     private final static String defaulTitle = "Conway's IRIS - Press H for Help";
     private final JFrame frame;
-    private final BufferedImage irisPic;
+    private final BufferedImage irisPicture;
     private MyVector extendBC;
     private MyVector extendAB;
     private MyVector extendCB;
@@ -49,18 +51,18 @@ public class IRISVisualization extends JButton {
     private boolean drawWhiskers = false;
     private boolean drawTriangle = false;
     private boolean drawHelp = false;
-    private boolean drawIrisPic = true;
+    private boolean drawIrisPicture = true;
     private boolean debugMode = true;
     private boolean drawWhiperStuff = false;
     private int irisPicSize = 688;
+    private int zoomedSize;
     private int irisPicShiftX = 163;
-    private int irisPicShifty = 186;
+    private int irisPicShiftY = 186;
     private MyVector whiperCB;
     private MyVector whiperAC;
     private MyVector whiperBA;
     private MyVector whiperCA;
     private MyVector whiperBC;
-
     private MyVector whiperAB;
     private MyDoublePolygon bigWhiperCurve1 = new MyDoublePolygon();
     private MyDoublePolygon bigWhiperCurve2 = new MyDoublePolygon();
@@ -69,6 +71,9 @@ public class IRISVisualization extends JButton {
     private MyDoublePolygon smallWhiperCurve2 = new MyDoublePolygon();
     private MyDoublePolygon smallWhiperCurve3 = new MyDoublePolygon();
     private double whiperFactor = 1.0;
+    private Ellipse2D.Double irisCircle;
+    private Ellipse2D.Double irisCircleStore;
+    private double irisZoom = 1.0;
 
     public IRISVisualization(JFrame f) {
 
@@ -89,7 +94,7 @@ public class IRISVisualization extends JButton {
 
         adjustColorBlackMode();
 
-        irisPic = loadImage("/Users/malvers/IdeaProjects/CGTA_ESZ/src/Iris Mi free.png");
+        irisPicture = loadImage("/Users/malvers/IdeaProjects/CGTA_ESZ/src/Iris Mi free.png");
 
         doCalculations();
         calculateWhipers();
@@ -114,10 +119,10 @@ public class IRISVisualization extends JButton {
             os.writeBoolean(blackMode);
             os.writeBoolean(drawWhiskers);
             os.writeBoolean(drawTriangle);
-            os.writeBoolean(drawIrisPic);
+            os.writeBoolean(drawIrisPicture);
 
             os.writeInt(irisPicShiftX);
-            os.writeInt(irisPicShifty);
+            os.writeInt(irisPicShiftY);
             os.writeInt(irisPicSize);
 
             os.writeBoolean(drawWhiperStuff);
@@ -154,11 +159,11 @@ public class IRISVisualization extends JButton {
             blackMode = os.readBoolean();
             drawWhiskers = os.readBoolean();
             drawTriangle = os.readBoolean();
-            drawIrisPic = os.readBoolean();
+            drawIrisPicture = os.readBoolean();
 
-            irisPicShiftX = os.readInt();
-            irisPicShifty = os.readInt();
-            irisPicSize = os.readInt();
+            os.readInt();
+            os.readInt();
+            os.readInt();
 
             drawWhiperStuff = os.readBoolean();
             debugMode = os.readBoolean();
@@ -193,6 +198,8 @@ public class IRISVisualization extends JButton {
 
                 deselectAllHandles();
 
+                irisCircleStore = irisCircle;
+
                 if (handleA.contains(shiftMouse.x, shiftMouse.y)) {
                     handleA.selected = true;
                 } else if (handleB.contains(shiftMouse.x, shiftMouse.y)) {
@@ -219,6 +226,9 @@ public class IRISVisualization extends JButton {
             @Override
             public void mouseReleased(MouseEvent e) {
 
+                irisPicSize = zoomedSize;
+                irisZoom = 1.0;
+
                 sceneShift.x += dragShift.x;
                 sceneShift.y += dragShift.y;
                 dragShift.x = 0;
@@ -234,12 +244,127 @@ public class IRISVisualization extends JButton {
         handleMouseMotion();
     }
 
+    private void keyInit() {
+
+        addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+
+//                System.out.println("key: " + e.getKeyCode());
+                switch (e.getKeyCode()) {
+
+                    case KeyEvent.VK_A:
+                        drawAnnotation = !drawAnnotation;
+                        break;
+                    case KeyEvent.VK_B:
+                        blackMode = !blackMode;
+                        adjustColorBlackMode();
+                        break;
+                    case KeyEvent.VK_C:
+                        drawCircle = !drawCircle;
+                        break;
+                    case KeyEvent.VK_D:
+                        debugMode = !debugMode;
+                        printHandles();
+                        whiperFactor = 0.5;
+                        doCalculations();
+                        calculateWhipers();
+                        break;
+                    case KeyEvent.VK_E:
+                        drawWhiskers = !drawWhiskers;
+                        break;
+                    case KeyEvent.VK_H:
+                        drawHelp = !drawHelp;
+                        break;
+                    case KeyEvent.VK_I:
+                        drawIris = !drawIris;
+                        break;
+                    case KeyEvent.VK_L:
+                        drawLines = !drawLines;
+                        break;
+                    case KeyEvent.VK_P:
+                        boolean bm = blackMode;
+                        drawIrisPicture = !drawIrisPicture;
+                        if (drawIrisPicture) {
+                            blackMode = true;
+                        } else {
+                            blackMode = bm;
+                        }
+                        break;
+                    case KeyEvent.VK_R:
+                        whiperFactor = 1.0;
+                        sceneShift.x = 0;
+                        sceneShift.y = 0;
+                        doCalculations();
+                        calculateWhipers();
+                        break;
+                    case KeyEvent.VK_T:
+                        drawTriangle = !drawTriangle;
+                        break;
+                    case KeyEvent.VK_W:
+                        if (e.isMetaDown()) {
+                            writeSettings();
+                            System.exit(0);
+                        } else {
+                            drawWhiperStuff = !drawWhiperStuff;
+                        }
+                        break;
+                    case KeyEvent.VK_Z:
+                        if (e.isMetaDown()) {
+                            irisZoom += 0.1;
+                        } else {
+                            irisZoom -= 0.1;
+                        }
+                        break;
+                    case KeyEvent.VK_UP:
+                    case KeyEvent.VK_DOWN:
+                    case KeyEvent.VK_LEFT:
+                    case KeyEvent.VK_RIGHT:
+                        if (e.isMetaDown()) {
+                            moveIrisPic(e.getKeyCode(), 1);
+                        } else {
+                            moveHandles(e.getKeyCode(), 20);
+                            moveIrisPic(e.getKeyCode(), 20);
+                            doCalculations();
+                        }
+                        break;
+                    case 93: /// +
+                        if (e.isShiftDown()) {
+
+                        } else if (e.isMetaDown()) {
+
+                        } else {
+                            whiperFactor += 0.01;
+                            doCalculations();
+                            calculateWhipers();
+                        }
+                        break;
+                    case 47: /// -
+                        if (e.isShiftDown()) {
+
+                        } else if (e.isMetaDown()) {
+
+                        } else {
+                            whiperFactor -= 0.01;
+                            doCalculations();
+                            calculateWhipers();
+                        }
+                        break;
+                }
+
+                repaint();
+            }
+        });
+    }
+
     private void handleMouseMotion() {
 
         addMouseMotionListener(new MouseMotionAdapter() {
 
             @Override
             public void mouseDragged(MouseEvent e) {
+
+                irisZoom = irisCircle.getWidth() / irisCircleStore.getWidth();
 
                 if (handleA.selected) {
                     handleA.x = e.getX() - sceneShift.x;
@@ -321,106 +446,6 @@ public class IRISVisualization extends JButton {
         whiperCB.setVisible(b);
     }
 
-    private void keyInit() {
-
-        addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyPressed(KeyEvent e) {
-
-//                System.out.println("key: " + e.getKeyCode());
-                switch (e.getKeyCode()) {
-
-                    case KeyEvent.VK_A:
-                        drawAnnotation = !drawAnnotation;
-                        break;
-                    case KeyEvent.VK_B:
-                        blackMode = !blackMode;
-                        adjustColorBlackMode();
-                        break;
-                    case KeyEvent.VK_C:
-                        drawCircle = !drawCircle;
-                        break;
-                    case KeyEvent.VK_D:
-                        debugMode = !debugMode;
-                        printHandles();
-                        whiperFactor = 0.5;
-                        doCalculations();
-                        calculateWhipers();
-                        break;
-                    case KeyEvent.VK_E:
-                        drawWhiskers = !drawWhiskers;
-                        break;
-                    case KeyEvent.VK_H:
-                        drawHelp = !drawHelp;
-                        break;
-                    case KeyEvent.VK_I:
-                        drawIris = !drawIris;
-                        break;
-                    case KeyEvent.VK_L:
-                        drawLines = !drawLines;
-                        break;
-                    case KeyEvent.VK_P:
-                        boolean bm = blackMode;
-                        drawIrisPic = !drawIrisPic;
-                        if (drawIrisPic) {
-                            blackMode = true;
-                        } else {
-                            blackMode = bm;
-                        }
-                        break;
-                    case KeyEvent.VK_R:
-                        whiperFactor = 1.0;
-                        sceneShift.x = 0;
-                        sceneShift.y = 0;
-                        break;
-                    case KeyEvent.VK_T:
-                        drawTriangle = !drawTriangle;
-                        break;
-                    case KeyEvent.VK_W:
-                        if (e.isMetaDown()) {
-                            writeSettings();
-                            System.exit(0);
-                        } else {
-                            drawWhiperStuff = !drawWhiperStuff;
-                        }
-                        break;
-                    case KeyEvent.VK_UP:
-                    case KeyEvent.VK_DOWN:
-                    case KeyEvent.VK_LEFT:
-                    case KeyEvent.VK_RIGHT:
-                        if (e.isMetaDown()) {
-                            moveIrisPic(e.getKeyCode(), 1);
-                        } else {
-                            moveHandles(e.getKeyCode(), 20);
-                            moveIrisPic(e.getKeyCode(), 20);
-                            doCalculations();
-                        }
-                        break;
-                    case 93: /// +
-                        if (e.isMetaDown()) {
-                            irisPicShifty++;
-                        } else {
-                            whiperFactor += 0.01;
-                            doCalculations();
-                            calculateWhipers();
-                        }
-                        break;
-                    case 47: /// -
-                        if (e.isMetaDown()) {
-                            irisPicShifty--;
-                        } else {
-                            whiperFactor -= 0.01;
-                            doCalculations();
-                            calculateWhipers();
-                        }
-                        break;
-                }
-
-                repaint();
-            }
-        });
-    }
-
     private void printHandles() {
         handleA.print("A");
         handleB.print("B");
@@ -431,10 +456,10 @@ public class IRISVisualization extends JButton {
 
         switch (vKup) {
             case KeyEvent.VK_UP:
-                irisPicShifty -= inc;
+                irisPicShiftY -= inc;
                 break;
             case KeyEvent.VK_DOWN:
-                irisPicShifty += inc;
+                irisPicShiftY += inc;
                 break;
             case KeyEvent.VK_LEFT:
                 irisPicShiftX -= inc;
@@ -443,7 +468,7 @@ public class IRISVisualization extends JButton {
                 irisPicShiftX += inc;
                 break;
         }
-        System.out.println("psx: " + irisPicShiftX + " psy: " + irisPicShifty + " ps: " + irisPicSize);
+        System.out.println("psx: " + irisPicShiftX + " psy: " + irisPicShiftY + " ps: " + irisPicSize);
     }
 
     public static BufferedImage loadImage(String filePath) {
@@ -647,7 +672,6 @@ public class IRISVisualization extends JButton {
         towCB_AB = midCB_AB.add(recCB_AB);
 
         centerCircle = getIntersectionPointGPT(midCB_AB, towCB_AB, midBC_AC, towBC_AC);
-        centerCircle.setSize(4);
 
         if (centerCircle != null) {
             radiusCircle = MyVector.getVector(centerCircle, extendAB).getLength();
@@ -783,7 +807,9 @@ public class IRISVisualization extends JButton {
         double px = ((x1 * y2 - y1 * x2) * (x3 - x4) - (x1 - x2) * (x3 * y4 - y3 * x4)) / det;
         double py = ((x1 * y2 - y1 * x2) * (y3 - y4) - (y1 - y2) * (x3 * y4 - y3 * x4)) / det;
 
-        return new MyVector(px, py, "center");
+        MyVector tmp = new MyVector(px, py, "center");
+        tmp.setSize(1);
+        return tmp;
     }
 
     /// painting section ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -804,8 +830,8 @@ public class IRISVisualization extends JButton {
         AffineTransform shiftTransform = AffineTransform.getTranslateInstance(sceneShift.x + dragShift.x, sceneShift.y + dragShift.y);
         g2d.setTransform(shiftTransform);
 
-        if (drawIrisPic) {
-            g2d.drawImage(irisPic, irisPicShiftX, irisPicShifty, irisPicSize, irisPicSize, null);
+        if (drawIrisPicture) {
+            drawIrisPicture(g2d);
         }
 
         if (drawLines) {
@@ -832,6 +858,13 @@ public class IRISVisualization extends JButton {
             drawWiperCurves(g2d);
             drawWipers(g2d);
         }
+    }
+
+    private void drawIrisPicture(Graphics2D g2d) {
+
+        zoomedSize = (int) (irisPicSize * irisZoom);
+        int delta = (int) (((zoomedSize) / 2.0));
+        g2d.drawImage((Image) irisPicture, (int) (centerCircle.x - delta), (int) (centerCircle.y - delta), zoomedSize, zoomedSize, null);
     }
 
     private void clearBackground(Graphics2D g2d) {
@@ -930,12 +963,22 @@ public class IRISVisualization extends JButton {
     }
 
     private void drawIris(Graphics2D g2d) {
+
+        g2d.setStroke(new BasicStroke(2));
         g2d.setColor(Color.MAGENTA.darker().darker());
         double ir = calculateInnerRadiusTriangle(handleA, handleB, handleC);
-        g2d.draw(new Ellipse2D.Double(centerCircle.x - ir, centerCircle.y - ir, 2 * ir, 2 * ir));
+        irisCircle = new Ellipse2D.Double(centerCircle.x - ir, centerCircle.y - ir, 2 * ir, 2 * ir);
+        g2d.draw(irisCircle);
+
+//        g2d.setColor(Color.ORANGE);
+//        //irisCircle = new Ellipse2D.Double(centerCircle.x - ir, centerCircle.y - ir, 2 * ir, 2 * ir);
+//        if (irisCircleStore != null) {
+//            g2d.draw(irisCircleStore);
+//        }
     }
 
     private void drawCircle(Graphics2D g2d) {
+        g2d.setStroke(new BasicStroke(2));
         g2d.setColor(Color.MAGENTA.darker().darker());
         centerCircle.fill(g2d, drawAnnotation);
         g2d.draw(new Ellipse2D.Double(centerCircle.x - radiusCircle, centerCircle.y - radiusCircle, 2 * radiusCircle, 2 * radiusCircle));

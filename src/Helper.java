@@ -26,13 +26,9 @@ public class Helper {
         g2d.drawString("Move triangle left and right", xPos + tab, yPos);
         yPos += dy;
 
-//        g2d.drawString("Space bar", xPos, yPos);
-//        g2d.drawString(" ", xPos + tab, yPos);
-//        yPos += dy;
-//
-//        g2d.drawString("Numbers 0 - 9", xPos, yPos);
-//        g2d.drawString("", xPos + tab, yPos);
-//        yPos += dy;
+        g2d.drawString("+ / -", xPos, yPos);
+        g2d.drawString("Grow / shrink whiskers | extends", xPos + tab, yPos);
+        yPos += dy;
 
         g2d.drawString("A", xPos, yPos);
         g2d.drawString("Toggle annotations", xPos + tab, yPos);
@@ -51,7 +47,7 @@ public class Helper {
         yPos += dy;
 
         g2d.drawString("E", xPos, yPos);
-        g2d.drawString("Toggle whiskers / extends", xPos + tab, yPos);
+        g2d.drawString("Toggle whiskers | extends", xPos + tab, yPos);
         yPos += dy;
 
         g2d.drawString("H", xPos, yPos);
