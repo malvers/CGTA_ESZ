@@ -66,5 +66,11 @@ public class MyDoublePolygon {
         g2d.draw(new Line2D.Double(points.get(0).x, points.get(0).y, points.get(i).x, points.get(i).y));
     }
 
+    public void print() {
+        for (int i = 0; i < points.size(); i++) {
+            System.out.println("point " + i + " - x: " + points.get(i).x + " y: " + points.get(i).y);
+        }
+    }
+
     // Other methods such as area, perimeter, etc. could be added here
 }

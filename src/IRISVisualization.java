@@ -80,6 +80,7 @@ public class IRISVisualization extends JButton {
     private MyDoublePolygon boundingBoxPolygon;
     private MyDoublePolygon hugeCurve;
     private ArrayList<MyVector> boundingBoxCircle;
+    private ArrayList<MyDoublePolygon> debugList;
 
     public IRISVisualization(JFrame f) {
 
@@ -105,6 +106,7 @@ public class IRISVisualization extends JButton {
         doCalculations();
         calculateWhipers();
         boundingBoxCircle = new ArrayList<>();
+        debugList = new ArrayList<>();
     }
 
     private void writeSettings() {
@@ -965,6 +967,12 @@ public class IRISVisualization extends JButton {
         for (MyVector vector : boundingBoxCircle) {
             vector.fill(g2d, false);
         }
+
+        g2d.setStroke(new BasicStroke(1));
+        g2d.setColor(Color.CYAN);
+        for (MyDoublePolygon p : debugList) {
+            p.draw(g2d);
+        }
     }
 
     private void drawBoundingBoyWhiperCurve(Graphics2D g2d) {
@@ -993,7 +1001,7 @@ public class IRISVisualization extends JButton {
         getCenterOfBoundingPolygon();
         rotationAngle += Math.toRadians(5);
         rotateRectangle(boundingBoxWC, rotationAngle);
-        shakePolygon(boundingBoxPolygon);
+        shakePolygonExperimental(boundingBoxPolygon);
     }
 
     private void shakePolygon(MyDoublePolygon polygon) {
@@ -1040,6 +1048,86 @@ public class IRISVisualization extends JButton {
 //            //MyVector.circleFromPoints(boundingBoxCircle.get(0), boundingBoxCircle.get(0), boundingBoxCircle.get(0), radius);
 //            System.out.println("radius: " + radius);
 //        }
+
+        System.out.println("sp: " + (int) (Math.toDegrees(rotationAngle)) + " outside: " + np + " iter: " + count);
+    }
+
+    private void shakePolygonExperimental(MyDoublePolygon polygon) {
+
+        createHugeCurve();
+
+        MyDoublePolygon testPolygonOptimal = copyPolygons(boundingBoxPolygon);
+
+        int qStart = howManyPointsOutside(boundingBoxPolygon);
+        int qOptimal;
+        ;
+
+        List<Point2D.Double> boxPolygon = boundingBoxPolygon.getPoints();
+
+        double searchSize = 10;
+        double startX = boxPolygon.get(0).x - searchSize;
+        double startY = boxPolygon.get(0).y - searchSize;
+
+        double width = boxPolygon.get(1).x - boxPolygon.get(0).x;
+        double twiceSearchSize = 2 * searchSize;
+
+        System.out.println("outside start: " + qStart);
+        boundingBoxPolygon.print();
+        System.out.println("startX: " + startX + " startY: " + startY);
+
+        List<Point2D.Double> tester = new ArrayList<>(boxPolygon);
+
+        int count = 0;
+        for (double x = startX; x <= startX + searchSize; x += 1.0) {
+
+//            System.out.println("x: " + x);
+
+            for (double y = startY; y <= startY + searchSize; y += 1.0) {
+
+//                System.out.println("y: " + y);
+
+                count++;
+                tester.get(0).x = x;
+                tester.get(0).y = y;
+
+                tester.get(1).x = x + width;
+                tester.get(1).y = y;
+
+                tester.get(2).x = x + width;
+                tester.get(2).y = y + width;
+
+                tester.get(3).x = x;
+                tester.get(3).y = y + width;
+
+                MyDoublePolygon test = new MyDoublePolygon();
+                test.setPoints(tester);
+                debugList.add(test);
+
+//                System.out.println("count ");
+//                boundingBoxPolygon.print();
+
+                qOptimal = howManyPointsOutside(test);
+
+
+                if (qOptimal < qStart) {
+                    System.out.println("BINGO count " + count + " optimal: " + qOptimal);
+                    testPolygonOptimal = copyPolygons(test);
+                    qStart = qOptimal;
+                }
+            }
+
+        }
+        System.out.println("debug list size: " + debugList.size());
+        boundingBoxPolygon = copyPolygons(testPolygonOptimal);
+
+        int np = howManyPointsOutside(boundingBoxPolygon);
+
+        if (np < 25) {
+            System.out.println("adding to boundingBoxCircle " + np);
+            MyVector c = getCenterOfBoundingPolygon();
+            c.setSize(4);
+            boundingBoxCircle.add(c);
+        }
 
         System.out.println("sp: " + (int) (Math.toDegrees(rotationAngle)) + " outside: " + np + " iter: " + count);
     }
