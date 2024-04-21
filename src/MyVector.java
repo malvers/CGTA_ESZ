@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 class MyVector extends Ellipse2D.Double {
     private String name;
-    private double size = 10;
     public boolean selected = false;
     private boolean visible = true;
 
@@ -14,8 +13,8 @@ class MyVector extends Ellipse2D.Double {
         name = str;
         this.x = p1;
         this.y = p2;
-        this.width = size;
-        this.height = size;
+        this.width = 6;
+        this.height = 6;
     }
 
     public MyVector(Point2D.Double p) {
@@ -95,6 +94,7 @@ class MyVector extends Ellipse2D.Double {
         double newY = this.x * Math.sin(ang) + this.y * Math.cos(ang);
         return new MyVector(newX, newY, this.name);
     }
+
     public static Point2D.Double rotate(Point2D.Double point, double ang) {
 
         double newX = point.x * Math.cos(ang) - point.y * Math.sin(ang);
@@ -195,7 +195,8 @@ class MyVector extends Ellipse2D.Double {
     }
 
     public void setSize(int s) {
-        size = s;
+        width = s;
+        height = s;
     }
 
     public void setVisible(boolean b) {
