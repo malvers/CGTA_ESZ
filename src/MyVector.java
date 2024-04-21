@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Point2D;
+import java.util.ArrayList;
 
 class MyVector extends Ellipse2D.Double {
     private String name;
@@ -16,6 +17,48 @@ class MyVector extends Ellipse2D.Double {
         this.width = size;
         this.height = size;
     }
+
+    public MyVector(Point2D.Double p) {
+        x = p.x;
+        y = p.y;
+    }
+
+    public static void printArrayList(ArrayList<MyVector> list) {
+        for (MyVector vector : list) {
+            vector.print("al: ");
+        }
+    }
+
+    public static MyVector circleFromPoints(MyVector p1, MyVector p2, MyVector p3, double radius) {
+
+        double p2SquaredMag = p2.x * p2.x + p2.y * p2.y;
+        MyVector offset = new MyVector(p2SquaredMag, p2SquaredMag, "");
+
+        double bcX = (p1.x * p1.x + p1.y * p1.y - offset.x) / 2.0;
+        double bcY = (p1.x * p1.x + p1.y * p1.y - offset.y) / 2.0;
+        MyVector bc = new MyVector(bcX, bcY, "");
+
+        double cdX = (offset.x - p3.x * p3.x - p3.y * p3.y) / 2.0;
+        double cdY = (offset.y - p3.x * p3.x - p3.y * p3.y) / 2.0;
+        MyVector cd = new MyVector(cdX, cdY, "");
+
+        double det = (p1.x - p2.x) * (p2.y - p3.y) - (p2.x - p3.x) * (p1.y - p2.y);
+
+        // Use TOL instead of hardcoding the tolerance value
+        double TOL = 1e-8;
+        if (Math.abs(det) < TOL) {
+            throw new IllegalArgumentException("Points are collinear, cannot form a circle.");
+        }
+
+        double iDet = 1.0 / det;
+
+        double centerX = (bc.x * (p2.y - p3.y) - cd.x * (p1.y - p2.y)) * iDet;
+        double centerY = (cd.y * (p1.x - p2.x) - bc.y * (p2.x - p3.x)) * iDet;
+        radius = Math.sqrt((p2.x - centerX) * (p2.x - centerX) + (p2.y - centerY) * (p2.y - centerY));
+
+        return new MyVector(centerX, centerY, "");
+    }
+
 
     @Override
     public boolean contains(double x, double y) {
@@ -51,6 +94,12 @@ class MyVector extends Ellipse2D.Double {
         double newX = this.x * Math.cos(ang) - this.y * Math.sin(ang);
         double newY = this.x * Math.sin(ang) + this.y * Math.cos(ang);
         return new MyVector(newX, newY, this.name);
+    }
+    public static Point2D.Double rotate(Point2D.Double point, double ang) {
+
+        double newX = point.x * Math.cos(ang) - point.y * Math.sin(ang);
+        double newY = point.x * Math.sin(ang) + point.y * Math.cos(ang);
+        return new Point2D.Double(newX, newY);
     }
 
     public MyVector add(MyVector in) {

@@ -5,14 +5,15 @@ import java.awt.event.*;
 import java.awt.geom.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class IRISVisualization extends JButton {
 
     /*
 
       IDEAS:
-      - adjust iris pic when moving handles
       - box arround whiper curve
 
     */
@@ -29,9 +30,9 @@ public class IRISVisualization extends JButton {
     private final Color color1 = new Color(180, 0, 0);
     private Color color2 = new Color(0, 0, 80);
     private final Color color3 = new Color(80, 140, 0);
-    private MyVector handleA;
-    private MyVector handleB;
-    private MyVector handleC;
+    private final MyVector handleA;
+    private final MyVector handleB;
+    private final MyVector handleC;
     private MyVector midCA_BA;
     private MyVector midCB_AB;
     private MyVector midBC_AC;
@@ -74,6 +75,11 @@ public class IRISVisualization extends JButton {
     private Ellipse2D.Double irisCircle;
     private Ellipse2D.Double irisCircleStore;
     private double irisZoom = 1.0;
+    private Rectangle boundingBoxWC;
+    private double rotationAngle = 0;
+    private Polygon testPolygon;
+    private MyDoublePolygon hugeCurve;
+    private ArrayList<MyVector> boundingBoxCircle;
 
     public IRISVisualization(JFrame f) {
 
@@ -98,6 +104,7 @@ public class IRISVisualization extends JButton {
 
         doCalculations();
         calculateWhipers();
+        boundingBoxCircle = new ArrayList<>();
     }
 
     private void writeSettings() {
@@ -179,6 +186,7 @@ public class IRISVisualization extends JButton {
         }
     }
 
+    /// mouse handling /////////////////////////////////////////////////////////////////////////////////////////////////
     private void mouseInit() {
 
         addMouseListener(new MouseAdapter() {
@@ -242,119 +250,6 @@ public class IRISVisualization extends JButton {
         });
 
         handleMouseMotion();
-    }
-
-    private void keyInit() {
-
-        addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyPressed(KeyEvent e) {
-
-//                System.out.println("key: " + e.getKeyCode());
-                switch (e.getKeyCode()) {
-
-                    case KeyEvent.VK_A:
-                        drawAnnotation = !drawAnnotation;
-                        break;
-                    case KeyEvent.VK_B:
-                        blackMode = !blackMode;
-                        adjustColorBlackMode();
-                        break;
-                    case KeyEvent.VK_C:
-                        drawCircle = !drawCircle;
-                        break;
-                    case KeyEvent.VK_D:
-                        debugMode = !debugMode;
-                        printHandles();
-                        whiperFactor = 0.5;
-                        doCalculations();
-                        calculateWhipers();
-                        break;
-                    case KeyEvent.VK_E:
-                        drawWhiskers = !drawWhiskers;
-                        break;
-                    case KeyEvent.VK_H:
-                        drawHelp = !drawHelp;
-                        break;
-                    case KeyEvent.VK_I:
-                        drawIris = !drawIris;
-                        break;
-                    case KeyEvent.VK_L:
-                        drawLines = !drawLines;
-                        break;
-                    case KeyEvent.VK_P:
-                        boolean bm = blackMode;
-                        drawIrisPicture = !drawIrisPicture;
-                        if (drawIrisPicture) {
-                            blackMode = true;
-                        } else {
-                            blackMode = bm;
-                        }
-                        break;
-                    case KeyEvent.VK_R:
-                        whiperFactor = 1.0;
-                        sceneShift.x = 0;
-                        sceneShift.y = 0;
-                        doCalculations();
-                        calculateWhipers();
-                        break;
-                    case KeyEvent.VK_T:
-                        drawTriangle = !drawTriangle;
-                        break;
-                    case KeyEvent.VK_W:
-                        if (e.isMetaDown()) {
-                            writeSettings();
-                            System.exit(0);
-                        } else {
-                            drawWhiperStuff = !drawWhiperStuff;
-                        }
-                        break;
-                    case KeyEvent.VK_Z:
-                        if (e.isMetaDown()) {
-                            irisZoom += 0.1;
-                        } else {
-                            irisZoom -= 0.1;
-                        }
-                        break;
-                    case KeyEvent.VK_UP:
-                    case KeyEvent.VK_DOWN:
-                    case KeyEvent.VK_LEFT:
-                    case KeyEvent.VK_RIGHT:
-                        if (e.isMetaDown()) {
-                            moveIrisPic(e.getKeyCode(), 1);
-                        } else {
-                            moveHandles(e.getKeyCode(), 20);
-                            moveIrisPic(e.getKeyCode(), 20);
-                            doCalculations();
-                        }
-                        break;
-                    case 93: /// +
-                        if (e.isShiftDown()) {
-
-                        } else if (e.isMetaDown()) {
-
-                        } else {
-                            whiperFactor += 0.01;
-                            doCalculations();
-                            calculateWhipers();
-                        }
-                        break;
-                    case 47: /// -
-                        if (e.isShiftDown()) {
-
-                        } else if (e.isMetaDown()) {
-
-                        } else {
-                            whiperFactor -= 0.01;
-                            doCalculations();
-                            calculateWhipers();
-                        }
-                        break;
-                }
-
-                repaint();
-            }
-        });
     }
 
     private void handleMouseMotion() {
@@ -435,6 +330,198 @@ public class IRISVisualization extends JButton {
                 }
             }
         });
+    }
+
+    /// key handling ///////////////////////////////////////////////////////////////////////////////////////////////////
+    private void keyInit() {
+
+        addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+
+//                System.out.println("key: " + e.getKeyCode());
+                switch (e.getKeyCode()) {
+
+                    case KeyEvent.VK_SPACE:
+                        handleSpaceBar();
+                        break;
+                    case KeyEvent.VK_A:
+                        drawAnnotation = !drawAnnotation;
+                        break;
+                    case KeyEvent.VK_B:
+                        blackMode = !blackMode;
+                        adjustColorBlackMode();
+                        break;
+                    case KeyEvent.VK_C:
+                        drawCircle = !drawCircle;
+                        break;
+                    case KeyEvent.VK_D:
+                        debugMode = !debugMode;
+                        printHandles();
+                        doCalculations();
+                        calculateWhipers();
+                        break;
+                    case KeyEvent.VK_E:
+                        drawWhiskers = !drawWhiskers;
+                        break;
+                    case KeyEvent.VK_H:
+                        drawHelp = !drawHelp;
+                        break;
+                    case KeyEvent.VK_I:
+                        drawIris = !drawIris;
+                        break;
+                    case KeyEvent.VK_L:
+                        drawLines = !drawLines;
+                        break;
+                    case KeyEvent.VK_P:
+                        boolean bm = blackMode;
+                        drawIrisPicture = !drawIrisPicture;
+                        if (drawIrisPicture) {
+                            blackMode = true;
+                        } else {
+                            blackMode = bm;
+                        }
+                        break;
+                    case KeyEvent.VK_R:
+                        rotationAngle = 0.0;
+                        whiperFactor = 1.0;
+                        sceneShift.x = 0;
+                        sceneShift.y = 0;
+                        doCalculations();
+                        calculateWhipers();
+                        break;
+                    case KeyEvent.VK_S:
+                        screenshotCapture();
+                        break;
+                    case KeyEvent.VK_T:
+                        drawTriangle = !drawTriangle;
+                        break;
+                    case KeyEvent.VK_W:
+                        if (e.isMetaDown()) {
+                            writeSettings();
+                            System.exit(0);
+                        } else {
+                            drawWhiperStuff = !drawWhiperStuff;
+                        }
+                        break;
+                    case KeyEvent.VK_Z:
+                        if (e.isMetaDown()) {
+                            irisZoom += 0.1;
+                        } else {
+                            irisZoom -= 0.1;
+                        }
+                        break;
+                    case KeyEvent.VK_UP:
+                    case KeyEvent.VK_DOWN:
+                    case KeyEvent.VK_LEFT:
+                    case KeyEvent.VK_RIGHT:
+                        if (e.isMetaDown()) {
+                            moveIrisPic(e.getKeyCode(), 1);
+                        } else {
+                            shiftTestPolygon(e.getKeyCode());
+                        }
+                        break;
+                    case 93: /// +
+                        if (e.isShiftDown()) {
+
+                        } else if (e.isMetaDown()) {
+
+                        } else {
+                            whiperFactor += 0.01;
+                            doCalculations();
+                            calculateWhipers();
+                        }
+                        break;
+                    case 47: /// -
+                        if (e.isShiftDown()) {
+
+                        } else if (e.isMetaDown()) {
+
+                        } else {
+                            whiperFactor -= 0.01;
+                            doCalculations();
+                            calculateWhipers();
+                        }
+                        break;
+                }
+
+                repaint();
+            }
+        });
+    }
+
+    private void shiftTestPolygon(int vKup) {
+
+        int[] xPoints = testPolygon.xpoints;
+        int[] yPoints = testPolygon.ypoints;
+
+        int inc = 1;
+        for (int i = 0; i < testPolygon.npoints; i++) {
+
+            switch (vKup) {
+                case KeyEvent.VK_UP:
+                    yPoints[i] -= inc;
+                    break;
+                case KeyEvent.VK_DOWN:
+                    yPoints[i] += inc;
+                    break;
+                case KeyEvent.VK_LEFT:
+                    xPoints[i] -= inc;
+                    break;
+                case KeyEvent.VK_RIGHT:
+                    xPoints[i] += inc;
+                    break;
+            }
+        }
+        testPolygon.xpoints = xPoints;
+        testPolygon.ypoints = yPoints;
+
+        howManyPointsOutside(testPolygon);
+    }
+
+    private void shiftTestPolygonInt(int direction) {
+
+        int[] xPoints = testPolygon.xpoints;
+        int[] yPoints = testPolygon.ypoints;
+
+        int inc = 1;
+        for (int i = 0; i < testPolygon.npoints; i++) {
+
+            switch (direction) {
+                case 0:
+                    yPoints[i] -= inc;
+                    break;
+                case 1:
+//                    System.out.println("dir: 1");
+                    yPoints[i] += inc;
+                    break;
+                case 2:
+                    xPoints[i] -= inc;
+                    break;
+                case 3:
+                    xPoints[i] += inc;
+                    break;
+            }
+        }
+        testPolygon.xpoints = xPoints;
+        testPolygon.ypoints = yPoints;
+    }
+
+    private MyVector getCenterPolygon() {
+
+        int[] xPoints = testPolygon.xpoints;
+        int[] yPoints = testPolygon.ypoints;
+
+        MyVector lUpper = new MyVector(xPoints[0], yPoints[0], "");
+        MyVector rLower = new MyVector(xPoints[2], yPoints[2], "");
+
+        MyVector rUpper = new MyVector(xPoints[1], yPoints[1], "");
+        MyVector lLower = new MyVector(xPoints[3], yPoints[3], "");
+
+        MyVector v1 = MyVector.getVector(lUpper, rLower);
+        MyVector v2 = MyVector.getVector(rUpper, lUpper);
+
+        return getIntersectionPoint(lUpper, rLower, rUpper, lLower);
     }
 
     private void setWhipersVisibility(boolean b) {
@@ -538,17 +625,17 @@ public class IRISVisualization extends JButton {
 
         tmp = MyVector.getVector(tmp, handle).makeItThatLong(1000).add(handle);
 
-        return calculatCrosspointOnWhiperCurve(handle, tmp, curve);
+        return calculateCrossPointOnWhiperCurve(handle, tmp, curve);
     }
 
-    private MyVector calculatCrosspointOnWhiperCurve(MyVector from, MyVector to, MyDoublePolygon curve) {
+    private MyVector calculateCrossPointOnWhiperCurve(MyVector from, MyVector to, MyDoublePolygon curve) {
 
         List<Point2D.Double> points = curve.getPoints();
 
         for (int i = 0; i < points.size() - 1; i++) {
 
-            Point2D.Double p1 = points.get(i);
-            Point2D.Double p2 = points.get(i + 1);
+            MyVector p1 = new MyVector(points.get(i));
+            MyVector p2 = new MyVector(points.get(i + 1));
             MyVector ip = getIntersectionPoint(from, to, p1, p2);
             if (ip != null) {
                 return ip;
@@ -557,7 +644,7 @@ public class IRISVisualization extends JButton {
         return null;
     }
 
-    private MyVector getIntersectionPoint(MyVector vec1Start, MyVector vec1End, Point2D.Double vec2Start, Point2D.Double vec2End) {
+    private MyVector getIntersectionPoint(MyVector vec1Start, MyVector vec1End, MyVector vec2Start, MyVector vec2End) {
 
         // Create Line2D objects for the input vectors
         Line2D line1 = new Line2D.Double(vec1Start.x, vec1Start.y, vec1End.x, vec1End.y);
@@ -720,6 +807,16 @@ public class IRISVisualization extends JButton {
         createBigWhiperCurveSegment(bigWhiperCurve3, extendAC, handleA, handleC, handleB);
 
         createSmallWhiperCurveSegment(smallWhiperCurve3, handleC, extendBC, extendAC);
+
+        Point2D.Double extendX = getExtendsWhiperCurveX();
+        double distX = (extendX.y - extendX.x);
+        Point2D.Double extendY = getExtendsWhiperCurveY();
+        double distY = (extendY.y - extendY.x);
+
+        boundingBoxWC = new Rectangle((int) extendX.x, (int) extendY.x, (int) distX, (int) distY);
+
+        getCenter(boundingBoxWC);
+        rotateRectangle(boundingBoxWC, 0);
     }
 
     private void createSmallWhiperCurveSegment(MyDoublePolygon whiperCurve, MyVector v1, MyVector v2, MyVector v3) {
@@ -727,7 +824,7 @@ public class IRISVisualization extends JButton {
         MyVector vec12 = MyVector.getVector(v1, v2);
         MyVector vec13 = MyVector.getVector(v1, v3);
         double angleVec = MyVector.angleBetweenHandles(vec12, vec13);
-        int angleSteps = (int) radiansToDegrees(angleVec);
+        int angleSteps = (int) Math.toDegrees(angleVec);
         double angleInc = angleVec / angleSteps;
 
         double rotationAngle = 0.0;
@@ -745,7 +842,7 @@ public class IRISVisualization extends JButton {
         MyVector vecCB = MyVector.getVector(v1, v2);
         MyVector vecCA = MyVector.getVector(v1, v3);
         double angleCB_CA = MyVector.angleBetweenHandles(vecCB, vecCA);
-        int angleSteps = (int) radiansToDegrees(angleCB_CA);
+        int angleSteps = (int) Math.toDegrees(angleCB_CA);
         double angleInc = angleCB_CA / angleSteps;
 
         double rotationAngle = 0.0;
@@ -756,10 +853,6 @@ public class IRISVisualization extends JButton {
 
             whiperCurve.addPoint(pointOnCurve.x, pointOnCurve.y);
         }
-    }
-
-    private double radiansToDegrees(double angleRadians) {
-        return angleRadians * (180.0 / Math.PI);
     }
 
     private MyVector calculateExtendedPoint(MyVector one, MyVector two, MyVector three) {
@@ -858,6 +951,336 @@ public class IRISVisualization extends JButton {
             drawWiperCurves(g2d);
             drawWipers(g2d);
         }
+
+        drawBoundingBoyWC(g2d);
+
+        for (MyVector vector : boundingBoxCircle) {
+            vector.fill(g2d, false);
+        }
+    }
+
+    private void drawBoundingBoyWC(Graphics2D g2d) {
+
+        g2d.setColor(Color.RED);
+
+        AffineTransform oldTransform = g2d.getTransform();
+        AffineTransform newTransform = new AffineTransform();
+
+        double shiftX = boundingBoxWC.getCenterX();
+        double shiftY = boundingBoxWC.getCenterY();
+
+        MyVector centerBoundingBox = new MyVector(shiftX, shiftY, "cbb");
+        centerBoundingBox.fill(g2d, false);
+
+        g2d.setColor(Color.MAGENTA);
+        centerCircle.fill(g2d, false);
+
+//        System.out.println("angle: " + Math.toDegrees(rotationAngle) + " shiftX: " + shiftX + " shiftY: " + shiftY + " bw: " + boundingBoxWC.width + " bw: " + boundingBoxWC.height);
+
+//        newTransform.translate(-shiftX, -shiftY);
+//        newTransform.rotate(rotationAngle);
+//        newTransform.translate(+shiftX, +shiftY);
+//        g2d.setTransform(newTransform);
+
+        //g2d.draw(boundingBoxWC);
+
+        g2d.setColor(Color.green);
+        getCenterPolygon().fill(g2d, true);
+        g2d.draw(testPolygon);
+
+        g2d.setTransform(oldTransform);
+    }
+
+    private void handleSpaceBar() {
+        getCenterPolygon();
+        rotationAngle += Math.toRadians(5);
+        rotateRectangle(boundingBoxWC, rotationAngle);
+        shakePolygon(testPolygon);
+    }
+
+    private void shakePolygon(Polygon polygon) {
+
+        createHugeCurve();
+
+        Polygon testPolygonOptimal = copyPolygons(testPolygon);
+
+        int start = howManyPointsOutside(testPolygon);
+        int optimal = Integer.MAX_VALUE;
+        Random random = new Random();
+
+        int count = 0;
+        while (optimal > 20) {
+
+//        for (int i = 0; i < 200000; i++) {
+
+            count++;
+            if (count % 1000000 == 0) {
+                break;
+            }
+            shiftTestPolygonInt(random.nextInt(4));
+
+            optimal = howManyPointsOutside(testPolygon);
+
+            if (optimal < start) {
+                testPolygonOptimal = copyPolygons(testPolygon);
+                start = optimal;
+            }
+        }
+        testPolygon = copyPolygons(testPolygonOptimal);
+
+        int np = howManyPointsOutside(testPolygon);
+
+        if (np < 25) {
+            boundingBoxCircle.add(getCenterPolygon());
+        }
+
+        //MyVector.printArrayList(boundingBoxCircle);
+
+        if (boundingBoxCircle.size() > 2) {
+            double radius = -1;
+            //MyVector.circleFromPoints(boundingBoxCircle.get(0), boundingBoxCircle.get(0), boundingBoxCircle.get(0), radius);
+            System.out.println("radius: " + radius);
+        }
+
+        System.out.println("sp: " + (int) (Math.toDegrees(rotationAngle)) + " outside: " + np + " iter: " + count);
+    }
+
+    private void createHugeCurve() {
+
+        hugeCurve = new MyDoublePolygon();
+
+        hugeCurve.addCurve(bigWhiperCurve1);
+        hugeCurve.addCurve(bigWhiperCurve2);
+        hugeCurve.addCurve(bigWhiperCurve3);
+        hugeCurve.addCurve(smallWhiperCurve1);
+        hugeCurve.addCurve(smallWhiperCurve2);
+        hugeCurve.addCurve(smallWhiperCurve3);
+    }
+
+    private Polygon copyPolygons(Polygon from) {
+
+        Polygon to = new Polygon();
+        for (int i = 0; i < from.npoints; i++) {
+            to.addPoint(from.xpoints[i], from.ypoints[i]);
+        }
+        return to;
+    }
+
+    private void printPolygon(Polygon p, String text) {
+
+        System.out.println("printPolygon: " + text);
+        for (int i = 0; i < p.npoints; i++) {
+            System.out.println("x: " + p.xpoints[i] + " y: " + p.ypoints[i]);
+
+        }
+    }
+
+    private int howManyPointsOutside(Polygon outer) {
+
+        if (hugeCurve == null) {
+            return -1;
+        }
+        int count = 0;
+        for (int i = 0; i < hugeCurve.getNumPoints(); i += 1) {
+
+            if (!outer.contains(hugeCurve.getPoints().get(i).x, hugeCurve.getPoints().get(i).y)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public void screenshotCapture() {
+
+        // Create a BufferedImage to hold the screenshot
+        BufferedImage screenshot = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_RGB);
+
+        // Create a graphics context from the BufferedImage
+        Graphics2D g2d = screenshot.createGraphics();
+
+        this.paint(g2d);
+
+        g2d.dispose();
+
+        // Save the screenshot to a file
+        File outputFile = new File("/Users/malvers/Desktop/IRIS/screenshot_" + ((int) Math.toDegrees(rotationAngle)) + ".png");
+        try {
+            ImageIO.write(screenshot, "png", outputFile);
+            System.out.println("Screenshot saved as: " + outputFile.getAbsolutePath());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void rotateRectangle(Rectangle rectangle, double angle) {
+
+        double centerX = rectangle.getCenterX();
+        double centerY = rectangle.getCenterY();
+
+        MyVector center = new MyVector(centerX, centerY, "");
+        MyVector c1 = new MyVector(rectangle.x, rectangle.y, "");
+        MyVector c2 = new MyVector(rectangle.x + rectangle.width, rectangle.y, "");
+        MyVector c3 = new MyVector(rectangle.x, rectangle.y + rectangle.height, "");
+        MyVector c4 = new MyVector(rectangle.x + rectangle.width, rectangle.y + rectangle.width, "");
+
+        MyVector c1r = MyVector.getVector(c1, center).rotate(angle).add(center);
+        MyVector c2r = MyVector.getVector(c2, center).rotate(angle).add(center);
+        MyVector c4r = MyVector.getVector(c3, center).rotate(angle).add(center);
+        MyVector c3r = MyVector.getVector(c4, center).rotate(angle).add(center);
+
+        testPolygon = new Polygon();
+        testPolygon.addPoint((int) c1r.x, (int) c1r.y);
+        testPolygon.addPoint((int) c2r.x, (int) c2r.y);
+        testPolygon.addPoint((int) c3r.x, (int) c3r.y);
+        testPolygon.addPoint((int) c4r.x, (int) c4r.y);
+
+        howManyPointsOutside(testPolygon);
+    }
+
+    public static Rectangle constructRectangle(MyVector p1, MyVector p2, MyVector p3, MyVector p4) {
+        // Find extreme coordinates
+        double minX = Math.min(Math.min(Math.min(p1.x, p2.x), p3.x), p4.x);
+        double maxX = Math.max(Math.max(Math.max(p1.x, p2.x), p3.x), p4.x);
+        double minY = Math.min(Math.min(Math.min(p1.y, p2.y), p3.y), p4.y);
+        double maxY = Math.max(Math.max(Math.max(p1.y, p2.y), p3.y), p4.y);
+
+        // Calculate width and height
+        double width = maxX - minX;
+        double height = maxY - minY;
+
+        // Create and return the rectangle
+        return new Rectangle((int) minX, (int) minY, (int) width, (int) height);
+    }
+
+    private Point2D.Double getCenter(Rectangle rect) {
+
+        double centerX = rect.getX() + rect.getWidth() / 2;
+        double centerY = rect.getY() + rect.getHeight() / 2;
+        return new Point2D.Double(centerX, centerY);
+    }
+
+    private Point2D.Double getExtendsWhiperCurveX() {
+
+        double min = Double.MAX_VALUE;
+        double max = 0;
+
+        List<Point2D.Double> points = bigWhiperCurve1.getPoints();
+        for (int i = 0; i < points.size(); i++) {
+            if (points.get(i).x < min) {
+                min = points.get(i).x;
+            }
+            if (points.get(i).x > max) {
+                max = points.get(i).x;
+            }
+        }
+        points = bigWhiperCurve2.getPoints();
+        for (int i = 0; i < points.size(); i++) {
+            if (points.get(i).x < min) {
+                min = points.get(i).x;
+            }
+            if (points.get(i).x > max) {
+                max = points.get(i).x;
+            }
+        }
+        points = bigWhiperCurve3.getPoints();
+        for (int i = 0; i < points.size(); i++) {
+            if (points.get(i).x < min) {
+                min = points.get(i).x;
+            }
+            if (points.get(i).x > max) {
+                max = points.get(i).x;
+            }
+        }
+        points = smallWhiperCurve1.getPoints();
+        for (int i = 0; i < points.size(); i++) {
+            if (points.get(i).x < min) {
+                min = points.get(i).x;
+            }
+            if (points.get(i).x > max) {
+                max = points.get(i).x;
+            }
+        }
+        points = smallWhiperCurve2.getPoints();
+        for (int i = 0; i < points.size(); i++) {
+            if (points.get(i).x < min) {
+                min = points.get(i).x;
+            }
+            if (points.get(i).x > max) {
+                max = points.get(i).x;
+            }
+        }
+        points = smallWhiperCurve3.getPoints();
+        for (int i = 0; i < points.size(); i++) {
+            if (points.get(i).x < min) {
+                min = points.get(i).x;
+            }
+            if (points.get(i).x > max) {
+                max = points.get(i).x;
+            }
+        }
+        return new Point2D.Double(min, max);
+    }
+
+    private Point2D.Double getExtendsWhiperCurveY() {
+
+        double min = Double.MAX_VALUE;
+        double max = 0;
+
+        List<Point2D.Double> points = bigWhiperCurve1.getPoints();
+        for (int i = 0; i < points.size(); i++) {
+            if (points.get(i).y < min) {
+                min = points.get(i).y;
+            }
+            if (points.get(i).y > max) {
+                max = points.get(i).y;
+            }
+        }
+        points = bigWhiperCurve2.getPoints();
+        for (int i = 0; i < points.size(); i++) {
+            if (points.get(i).y < min) {
+                min = points.get(i).y;
+            }
+            if (points.get(i).y > max) {
+                max = points.get(i).y;
+            }
+        }
+        points = bigWhiperCurve3.getPoints();
+        for (int i = 0; i < points.size(); i++) {
+            if (points.get(i).y < min) {
+                min = points.get(i).y;
+            }
+            if (points.get(i).y > max) {
+                max = points.get(i).y;
+            }
+        }
+        points = smallWhiperCurve1.getPoints();
+        for (int i = 0; i < points.size(); i++) {
+            if (points.get(i).y < min) {
+                min = points.get(i).y;
+            }
+            if (points.get(i).y > max) {
+                max = points.get(i).y;
+            }
+        }
+        points = smallWhiperCurve2.getPoints();
+        for (int i = 0; i < points.size(); i++) {
+            if (points.get(i).y < min) {
+                min = points.get(i).y;
+            }
+            if (points.get(i).y > max) {
+                max = points.get(i).y;
+            }
+        }
+        points = smallWhiperCurve3.getPoints();
+        for (int i = 0; i < points.size(); i++) {
+            if (points.get(i).y < min) {
+                min = points.get(i).y;
+            }
+            if (points.get(i).y > max) {
+                max = points.get(i).y;
+            }
+        }
+        return new Point2D.Double(min, max);
     }
 
     private void drawIrisPicture(Graphics2D g2d) {
