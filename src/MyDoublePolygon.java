@@ -11,12 +11,12 @@ public class MyDoublePolygon {
         points = new ArrayList<>();
     }
 
-    public void addPoint(double x, double y) {
-        points.add(new Point2D.Double(x, y));
-    }
-
     public List<Point2D.Double> getPoints() {
         return points;
+    }
+
+    public void addPoint(double x, double y) {
+        points.add(new Point2D.Double(x, y));
     }
 
     public boolean contains(double x, double y) {
@@ -49,7 +49,7 @@ public class MyDoublePolygon {
         points.add(point);
     }
 
-    private Point2D.Double getPoint(int i) {
+    protected Point2D.Double getPoint(int i) {
 
         return points.get(i);
     }
@@ -67,8 +67,9 @@ public class MyDoublePolygon {
     }
 
     public void print() {
+        System.out.println();
         for (int i = 0; i < points.size(); i++) {
-            System.out.println("point " + i + " - x: " + points.get(i).x + " y: " + points.get(i).y);
+            System.out.print((i + "x: " + points.get(i).x + " " + i+ "y: " + points.get(i).y));
         }
     }
 

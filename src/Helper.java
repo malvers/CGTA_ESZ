@@ -35,6 +35,10 @@ public class Helper {
         yPos += dy;
 
         g2d.drawString("B", xPos, yPos);
+        g2d.drawString("Toggle bounding box whiper curve", xPos + tab, yPos);
+        yPos += dy;
+
+        g2d.drawString("command B", xPos, yPos);
         g2d.drawString("Toggle black mode", xPos + tab, yPos);
         yPos += dy;
 
@@ -63,7 +67,7 @@ public class Helper {
         yPos += dy;
 
         g2d.drawString("R", xPos, yPos);
-        g2d.drawString("Reste position", xPos + tab, yPos);
+        g2d.drawString("Reste scene shit to zero", xPos + tab, yPos);
         yPos += dy;
 
         g2d.drawString("T", xPos, yPos);
@@ -74,7 +78,7 @@ public class Helper {
         g2d.drawString("Toggle whiper curve", xPos + tab, yPos);
         yPos += dy;
 
-        g2d.drawString("Cmd W", xPos, yPos);
+        g2d.drawString("command W", xPos, yPos);
         g2d.drawString("Quit the program", xPos + tab, yPos);
         yPos += dy;
 

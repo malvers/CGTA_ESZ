@@ -2,6 +2,7 @@ import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
+import java.util.Random;
 
 class MyVector extends Ellipse2D.Double {
     private String name;
@@ -13,8 +14,8 @@ class MyVector extends Ellipse2D.Double {
         name = str;
         this.x = p1;
         this.y = p2;
-        this.width = 6;
-        this.height = 6;
+        this.width = 8;
+        this.height = 8;
     }
 
     public MyVector(Point2D.Double p) {
@@ -57,7 +58,6 @@ class MyVector extends Ellipse2D.Double {
 
         return new MyVector(centerX, centerY, "");
     }
-
 
     @Override
     public boolean contains(double x, double y) {
@@ -190,6 +190,21 @@ class MyVector extends Ellipse2D.Double {
         return new MyVector(this.x, this.y, name);
     }
 
+    public static ArrayList<MyVector> scatterPointsAround(MyVector center, double radius) {
+
+        ArrayList<MyVector> points = new ArrayList<>();
+        Random random = new Random();
+
+        for (int i = 0; i < 100; i++) {
+            double angle = random.nextDouble() * 2 * Math.PI;
+            double distance = Math.sqrt(random.nextDouble()) * radius;
+            double x = center.x + distance * Math.cos(angle);
+            double y = center.y + distance * Math.sin(angle);
+            points.add(new MyVector(x, y, ""));
+        }
+
+        return points;
+    }
     public void setName(String ca) {
         name = ca;
     }
