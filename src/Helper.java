@@ -8,8 +8,7 @@ public class Helper {
         g2d.fillRect(0, 0, 1600, 1600);
 
         int fs = 26;
-//        Font font = new Font("SansSerif", Font.PLAIN, fs);
-        Font font = new Font("Arial", Font.PLAIN, fs);
+        Font font = new Font("Raleway", Font.PLAIN, fs);
         g2d.setFont(font);
         g2d.setColor(Color.DARK_GRAY);
 

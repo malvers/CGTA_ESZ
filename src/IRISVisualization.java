@@ -7,6 +7,7 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
 public class IRISVisualization extends JButton {
@@ -203,6 +204,10 @@ public class IRISVisualization extends JButton {
             @Override
             public void mousePressed(MouseEvent e) {
 
+                if (drawHelp) {
+                    return;
+                }
+
                 onMousePressed.x = e.getX();
                 onMousePressed.y = e.getY();
 
@@ -243,6 +248,10 @@ public class IRISVisualization extends JButton {
             @Override
             public void mouseReleased(MouseEvent e) {
 
+                if (drawHelp) {
+                    return;
+                }
+
                 irisPicSize = zoomedSize;
                 irisZoom = 1.0;
 
@@ -268,7 +277,13 @@ public class IRISVisualization extends JButton {
             @Override
             public void mouseDragged(MouseEvent e) {
 
-                irisZoom = irisCircle.getWidth() / irisCircleStore.getWidth();
+                if (drawHelp) {
+                    return;
+                }
+
+                if (irisCircleStore != null && irisCircle != null) {
+                    irisZoom = irisCircle.getWidth() / irisCircleStore.getWidth();
+                }
 
                 if (handleA.selected) {
                     handleA.x = e.getX() - sceneShift.x;
@@ -462,7 +477,7 @@ public class IRISVisualization extends JButton {
 
     private void shiftTestPolygon(int vKup) {
 
-        List<Point2D.Double> points = boundingBoxPolygon.getPoints();
+        ArrayList<Point2D.Double> points = boundingBoxPolygon.getPoints();
 
         double inc = 1;
         for (int i = 0; i < boundingBoxPolygon.getNumPoints(); i++) {
@@ -489,7 +504,7 @@ public class IRISVisualization extends JButton {
 
     private void shiftTestPolygonDouble(int direction) {
 
-        List<Point2D.Double> points = boundingBoxPolygon.getPoints();
+        ArrayList<Point2D.Double> points = boundingBoxPolygon.getPoints();
 
         double inc = 0.6;
         for (int i = 0; i < boundingBoxPolygon.getNumPoints(); i++) {
@@ -514,7 +529,7 @@ public class IRISVisualization extends JButton {
 
     private void shiftTestPolygonExperimental(double x, double y) {
 
-        List<Point2D.Double> points = boundingBoxPolygon.getPoints();
+        ArrayList<Point2D.Double> points = boundingBoxPolygon.getPoints();
 
         for (int i = 0; i < boundingBoxPolygon.getNumPoints(); i++) {
 
@@ -717,12 +732,12 @@ public class IRISVisualization extends JButton {
         /// get a vector from B to CB. Alternatively one could have used B to AB. "Without loss of generality (WLOG)"
         MyVector tmp = MyVector.getVector(extendCB, handleB);
 
-        /// measure lenth before scaling
+        /// measure length before scaling
         double beforeLen = tmp.getLength();
 
         tmp = tmp.multiply(whiperFactor);
 
-        /// measure lenth before scaling. If whiperFactor = 1 thei must be identical
+        /// measure length before scaling. If whiperFactor = 1 they must be identical
         double afterLen = tmp.getLength();
 
         double diffLen = beforeLen - afterLen;
@@ -730,7 +745,7 @@ public class IRISVisualization extends JButton {
         /// now add the scaled vector to B
         extendCB = tmp.add(handleB);
 
-        /// now adjust all other length
+        /// now adjust all others length
         extendCA = calculateExtendedPoint(handleC, handleB, handleA);
         extendCA = adjustLength(diffLen, extendCA, handleA);
         extendCA.setName("CA");
@@ -772,7 +787,7 @@ public class IRISVisualization extends JButton {
         towCB_AB = midCB_AB.add(recCB_AB);
 
         centerCircle = getIntersectionPointGPT(midCB_AB, towCB_AB, midBC_AC, towBC_AC);
-        centerCircle.setSize(4);
+        Objects.requireNonNull(centerCircle).setSize(4);
 
         if (centerCircle != null) {
             radiusCircle = MyVector.getVector(centerCircle, extendAB).getLength();
@@ -829,7 +844,6 @@ public class IRISVisualization extends JButton {
 
         boundingBoxWC = new Rectangle((int) extendX.x, (int) extendY.x, (int) distX, (int) distY);
 
-        getCenter(boundingBoxWC);
         rotateRectangle(boundingBoxWC, 0);
     }
 
@@ -920,6 +934,7 @@ public class IRISVisualization extends JButton {
     }
 
     /// painting section ///////////////////////////////////////////////////////////////////////////////////////////////
+
     @Override
     public void paint(Graphics g) {
 
@@ -966,102 +981,36 @@ public class IRISVisualization extends JButton {
             drawWipers(g2d);
         }
 
+        /// under development ////////////////////////////
+        drawDebugList(g2d);
+        //////////////////////////////////////////////////
+
         if (drawBoundingBox) {
             drawBoundingBoyWhiperCurve(g2d);
         }
 
         /// under development ////////////////////////////
-
-//        g2d.setColor(Color.YELLOW);
-//        for (MyVector vector : boundingBoxInnerRotationPath) {
-//            vector.fill(g2d, false);
-//        }
-
-//        g2d.setStroke(new BasicStroke(1));
-//        g2d.setColor(Color.CYAN);
-//        for (MyDoublePolygon p : debugList) {
-//            p.print();
-//            p.draw(g2d);
-//        }
-    }
-
-    private void drawBoundingBoyWhiperCurve(Graphics2D g2d) {
-
-        g2d.setColor(Color.RED);
-
-        double shiftX = boundingBoxWC.getCenterX();
-        double shiftY = boundingBoxWC.getCenterY();
-
-        MyVector centerBoundingBoxRect = new MyVector(shiftX, shiftY, "cbb");
-        centerBoundingBoxRect.fill(g2d, false);
-
-        g2d.setColor(Color.MAGENTA);
-        centerCircle.fill(g2d, false);
-
-        g2d.setColor(Color.RED);
-        g2d.draw(boundingBoxWC);
-
-        g2d.setColor(Color.GREEN);
-        getCenterOfBoundingPolygon().fill(g2d, true);
-
-        boundingBoxPolygon.draw(g2d);
+        g2d.setColor(Color.YELLOW);
+        for (MyVector vector : boundingBoxInnerRotationPath) {
+            vector.setSize(2);
+            vector.fill(g2d, false);
+        }
+        //////////////////////////////////////////////////
     }
 
     private void handleSpaceBar() {
-        getCenterOfBoundingPolygon();
-        rotationAngle += Math.toRadians(5);
-        rotateRectangle(boundingBoxWC, rotationAngle);
-        //shakePolygonExperimental(boundingBoxPolygon);
+
+        for (int i = 0; i <= 1; i++) {
+            rotationAngle += Math.toRadians(1);
+            rotateRectangle(boundingBoxWC, rotationAngle);
+            optimizePolygonPosition(i);
+            repaint();
+        }
     }
 
-    private void shakePolygon(MyDoublePolygon polygon) {
+    private void optimizePolygonPosition(int i) {
 
-        createHugeCurve();
-
-        MyDoublePolygon testPolygonOptimal = copyPolygons(boundingBoxPolygon);
-
-        int start = howManyPointsOutside(boundingBoxPolygon);
-        int optimal = Integer.MAX_VALUE;
-        Random random = new Random();
-
-        int count = 0;
-        while (optimal > 20) {
-
-//        for (int i = 0; i < 200000; i++) {
-
-            count++;
-            if (count % 1000000 == 0) {
-                break;
-            }
-            shiftTestPolygonDouble(random.nextInt(4));
-
-            optimal = howManyPointsOutside(boundingBoxPolygon);
-
-            if (optimal < start) {
-                testPolygonOptimal = copyPolygons(boundingBoxPolygon);
-                start = optimal;
-            }
-        }
-        boundingBoxPolygon = copyPolygons(testPolygonOptimal);
-
-        int np = howManyPointsOutside(boundingBoxPolygon);
-
-        if (np < 25) {
-            System.out.println("adding to boundingBoxCircle " + np);
-            MyVector c = getCenterOfBoundingPolygon();
-            c.setSize(4);
-            boundingBoxInnerRotationPath.add(c);
-        }
-//        if (boundingBoxCircle.size() > 2) {
-//            double radius = -1;
-//            //MyVector.circleFromPoints(boundingBoxCircle.get(0), boundingBoxCircle.get(0), boundingBoxCircle.get(0), radius);
-//            System.out.println("radius: " + radius);
-//        }
-        System.out.println("sp: " + (int) (Math.toDegrees(rotationAngle)) + " outside: " + np + " iter: " + count);
-    }
-
-    private void shakePolygonExperimental(MyDoublePolygon polygon) {
-
+        System.out.println("optimizePolygonPosition: " + i);
         /// puzzle the single 6 curves together to one huge one
         createHugeCurve();
 
@@ -1070,54 +1019,82 @@ public class IRISVisualization extends JButton {
         int qStart = howManyPointsOutside(boundingBoxPolygon);
         int qOptimal;
 
-        List<Point2D.Double> testPolygon = new ArrayList<>(boundingBoxPolygon.getPoints());
-
-        double widthHalf = (testPolygonOptimal.getPoint(1).x - testPolygonOptimal.getPoint(0).y) / 2.0;
+        double widthHalf = testPolygonOptimal.getWidth() / 2.0;
 
         double searchSize = 10;
 
-        ArrayList<MyVector> scatter = MyVector.scatterPointsAround(getCenterOfBoundingPolygon(), searchSize);
+        int numPoints = 1000;
 
+        MyVector center = getCenterOfBoundingPolygon();
+        ArrayList<MyVector> scatter = MyVector.scatterPointsAround(center, searchSize, numPoints);
+
+        debugList = new ArrayList<>();
+
+        int count = 0;
         for (MyVector scatterPoint : scatter) {
 
-            testPolygon.get(0).x = scatterPoint.x - widthHalf;
-            testPolygon.get(0).y = scatterPoint.y - widthHalf;
+            double displaceX = center.x - scatterPoint.x;
+            double displaceY = center.y - scatterPoint.y;
 
-            testPolygon.get(1).x = scatterPoint.x + widthHalf;
-            testPolygon.get(1).y = scatterPoint.y - widthHalf;
+            ArrayList<Point2D.Double> testPolygon = new ArrayList<>();
+            testPolygon.add(new Point2D.Double());
+            testPolygon.add(new Point2D.Double());
+            testPolygon.add(new Point2D.Double());
+            testPolygon.add(new Point2D.Double());
 
-            testPolygon.get(2).x = scatterPoint.x + widthHalf;
-            testPolygon.get(2).y = scatterPoint.y + widthHalf;
+            testPolygon.get(0).x = boundingBoxPolygon.getPoint(0).x + displaceX;
+            testPolygon.get(0).y = boundingBoxPolygon.getPoint(0).y + displaceY;
 
-            testPolygon.get(3).x = scatterPoint.x - widthHalf;
-            testPolygon.get(3).y = scatterPoint.y + widthHalf;
+            testPolygon.get(1).x = boundingBoxPolygon.getPoint(1).x + displaceX;
+            testPolygon.get(1).y = boundingBoxPolygon.getPoint(1).y + displaceY;
 
-            MyDoublePolygon debug = new MyDoublePolygon();
+            testPolygon.get(2).x = boundingBoxPolygon.getPoint(2).x + displaceX;
+            testPolygon.get(2).y = boundingBoxPolygon.getPoint(2).y + displaceY;
+
+            testPolygon.get(3).x = boundingBoxPolygon.getPoint(3).x + displaceX;
+            testPolygon.get(3).y = boundingBoxPolygon.getPoint(3).y + displaceY;
+
+            MyDoublePolygon debug = new MyDoublePolygon("debug " + count);
             debug.setPoints(testPolygon);
-            debugList.add(debug);
+//            debugList.add(debug);
 
-            qOptimal = howManyPointsOutside(boundingBoxPolygon);
+            qOptimal = howManyPointsOutside(debug);
+
+            count++;
 
             if (qOptimal < qStart) {
-                System.out.println("BINGO optimal: " + qOptimal);
+                //System.out.println("BINGO optimal: " + qOptimal + " start: " + qStart);
                 boundingBoxPolygon.setPoints(testPolygon);
-                testPolygonOptimal = copyPolygons(boundingBoxPolygon);
+                testPolygonOptimal = copyPolygons(debug);
                 qStart = qOptimal;
             }
         }
-
-        System.out.println("debug list size: " + debugList.size());
         boundingBoxPolygon = copyPolygons(testPolygonOptimal);
-//        int np = howManyPointsOutside(boundingBoxPolygon);
+        MyVector c = getCenterOfBoundingPolygon();
+        c.setSize(4);
+        boundingBoxInnerRotationPath.add(c);
+    }
 
-//        if (np < 25) {
-//            System.out.println("adding to boundingBoxCircle " + np);
-//            MyVector c = getCenterOfBoundingPolygon();
-//            c.setSize(4);
-//            boundingBoxInnerRotationPath.add(c);
-//        }
+    private void drawDebugList(Graphics2D g2d) {
 
-//        System.out.println("sp: " + (int) (Math.toDegrees(rotationAngle)) + " outside: " + np + " iter: " + count);
+        if (debugList.size() <= 0) {
+            return;
+        }
+        Stroke stroke = g2d.getStroke();
+        g2d.setStroke(new BasicStroke(1));
+        g2d.setColor(new Color(128, 128, 128, 10));
+        for (MyDoublePolygon polygon : debugList) {
+            polygon.draw(g2d);
+        }
+
+        g2d.setStroke(stroke);
+    }
+
+    private void printDebugList() {
+        System.out.println("\n\nprint debug list - size: " + debugList.size());
+        for (MyDoublePolygon polygon : debugList) {
+            polygon.print();
+        }
     }
 
     private void createHugeCurve() {
@@ -1140,15 +1117,6 @@ public class IRISVisualization extends JButton {
             to.addPoint(pointsFrom.get(i).x, pointsFrom.get(i).y);
         }
         return to;
-    }
-
-    private void printPolygon(Polygon p, String text) {
-
-        System.out.println("printPolygon: " + text);
-        for (int i = 0; i < p.npoints; i++) {
-            System.out.println("x: " + p.xpoints[i] + " y: " + p.ypoints[i]);
-
-        }
     }
 
     private int howManyPointsOutside(MyDoublePolygon outer) {
@@ -1210,10 +1178,11 @@ public class IRISVisualization extends JButton {
         boundingBoxPolygon.addPoint((int) c3r.x, (int) c3r.y);
         boundingBoxPolygon.addPoint((int) c4r.x, (int) c4r.y);
 
-        howManyPointsOutside(boundingBoxPolygon);
+        //howManyPointsOutside(boundingBoxPolygon);
     }
 
     public static Rectangle constructRectangle(MyVector p1, MyVector p2, MyVector p3, MyVector p4) {
+
         // Find extreme coordinates
         double minX = Math.min(Math.min(Math.min(p1.x, p2.x), p3.x), p4.x);
         double maxX = Math.max(Math.max(Math.max(p1.x, p2.x), p3.x), p4.x);
@@ -1241,57 +1210,57 @@ public class IRISVisualization extends JButton {
         double max = 0;
 
         List<Point2D.Double> points = bigWhiperCurve1.getPoints();
-        for (int i = 0; i < points.size(); i++) {
-            if (points.get(i).x < min) {
-                min = points.get(i).x;
+        for (Point2D.Double point1 : points) {
+            if (point1.x < min) {
+                min = point1.x;
             }
-            if (points.get(i).x > max) {
-                max = points.get(i).x;
+            if (point1.x > max) {
+                max = point1.x;
             }
         }
         points = bigWhiperCurve2.getPoints();
-        for (int i = 0; i < points.size(); i++) {
-            if (points.get(i).x < min) {
-                min = points.get(i).x;
+        for (Point2D.Double element : points) {
+            if (element.x < min) {
+                min = element.x;
             }
-            if (points.get(i).x > max) {
-                max = points.get(i).x;
+            if (element.x > max) {
+                max = element.x;
             }
         }
         points = bigWhiperCurve3.getPoints();
-        for (int i = 0; i < points.size(); i++) {
-            if (points.get(i).x < min) {
-                min = points.get(i).x;
+        for (Point2D.Double item : points) {
+            if (item.x < min) {
+                min = item.x;
             }
-            if (points.get(i).x > max) {
-                max = points.get(i).x;
+            if (item.x > max) {
+                max = item.x;
             }
         }
         points = smallWhiperCurve1.getPoints();
-        for (int i = 0; i < points.size(); i++) {
-            if (points.get(i).x < min) {
-                min = points.get(i).x;
+        for (Point2D.Double value : points) {
+            if (value.x < min) {
+                min = value.x;
             }
-            if (points.get(i).x > max) {
-                max = points.get(i).x;
+            if (value.x > max) {
+                max = value.x;
             }
         }
         points = smallWhiperCurve2.getPoints();
-        for (int i = 0; i < points.size(); i++) {
-            if (points.get(i).x < min) {
-                min = points.get(i).x;
+        for (Point2D.Double aDouble : points) {
+            if (aDouble.x < min) {
+                min = aDouble.x;
             }
-            if (points.get(i).x > max) {
-                max = points.get(i).x;
+            if (aDouble.x > max) {
+                max = aDouble.x;
             }
         }
         points = smallWhiperCurve3.getPoints();
-        for (int i = 0; i < points.size(); i++) {
-            if (points.get(i).x < min) {
-                min = points.get(i).x;
+        for (Point2D.Double point : points) {
+            if (point.x < min) {
+                min = point.x;
             }
-            if (points.get(i).x > max) {
-                max = points.get(i).x;
+            if (point.x > max) {
+                max = point.x;
             }
         }
         return new Point2D.Double(min, max);
@@ -1303,57 +1272,57 @@ public class IRISVisualization extends JButton {
         double max = 0;
 
         List<Point2D.Double> points = bigWhiperCurve1.getPoints();
-        for (int i = 0; i < points.size(); i++) {
-            if (points.get(i).y < min) {
-                min = points.get(i).y;
+        for (Point2D.Double point1 : points) {
+            if (point1.y < min) {
+                min = point1.y;
             }
-            if (points.get(i).y > max) {
-                max = points.get(i).y;
+            if (point1.y > max) {
+                max = point1.y;
             }
         }
         points = bigWhiperCurve2.getPoints();
-        for (int i = 0; i < points.size(); i++) {
-            if (points.get(i).y < min) {
-                min = points.get(i).y;
+        for (Point2D.Double element : points) {
+            if (element.y < min) {
+                min = element.y;
             }
-            if (points.get(i).y > max) {
-                max = points.get(i).y;
+            if (element.y > max) {
+                max = element.y;
             }
         }
         points = bigWhiperCurve3.getPoints();
-        for (int i = 0; i < points.size(); i++) {
-            if (points.get(i).y < min) {
-                min = points.get(i).y;
+        for (Point2D.Double item : points) {
+            if (item.y < min) {
+                min = item.y;
             }
-            if (points.get(i).y > max) {
-                max = points.get(i).y;
+            if (item.y > max) {
+                max = item.y;
             }
         }
         points = smallWhiperCurve1.getPoints();
-        for (int i = 0; i < points.size(); i++) {
-            if (points.get(i).y < min) {
-                min = points.get(i).y;
+        for (Point2D.Double value : points) {
+            if (value.y < min) {
+                min = value.y;
             }
-            if (points.get(i).y > max) {
-                max = points.get(i).y;
+            if (value.y > max) {
+                max = value.y;
             }
         }
         points = smallWhiperCurve2.getPoints();
-        for (int i = 0; i < points.size(); i++) {
-            if (points.get(i).y < min) {
-                min = points.get(i).y;
+        for (Point2D.Double aDouble : points) {
+            if (aDouble.y < min) {
+                min = aDouble.y;
             }
-            if (points.get(i).y > max) {
-                max = points.get(i).y;
+            if (aDouble.y > max) {
+                max = aDouble.y;
             }
         }
         points = smallWhiperCurve3.getPoints();
-        for (int i = 0; i < points.size(); i++) {
-            if (points.get(i).y < min) {
-                min = points.get(i).y;
+        for (Point2D.Double point : points) {
+            if (point.y < min) {
+                min = point.y;
             }
-            if (points.get(i).y > max) {
-                max = points.get(i).y;
+            if (point.y > max) {
+                max = point.y;
             }
         }
         return new Point2D.Double(min, max);
@@ -1374,6 +1343,29 @@ public class IRISVisualization extends JButton {
             g2d.setColor(Color.WHITE);
         }
         g2d.fillRect(0, 0, getWidth(), getHeight());
+    }
+
+    private void drawBoundingBoyWhiperCurve(Graphics2D g2d) {
+
+        g2d.setColor(Color.RED);
+
+        double shiftX = boundingBoxWC.getCenterX();
+        double shiftY = boundingBoxWC.getCenterY();
+
+        MyVector centerBoundingBoxRect = new MyVector(shiftX, shiftY, "cbb");
+        centerBoundingBoxRect.fill(g2d, false);
+
+        g2d.setColor(Color.MAGENTA);
+        centerCircle.fill(g2d, false);
+
+        g2d.setColor(Color.RED);
+        g2d.draw(boundingBoxWC);
+
+        g2d.setStroke(new BasicStroke(2));
+        g2d.setColor(Color.GREEN);
+        getCenterOfBoundingPolygon().fill(g2d, true);
+
+        boundingBoxPolygon.draw(g2d);
     }
 
     private void drawWiperCurves(Graphics2D g2d) {

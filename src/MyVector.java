@@ -77,7 +77,7 @@ class MyVector extends Ellipse2D.Double {
 
     public void print(String s) {
 
-        System.out.println(s + " name: " + " x: " + x + " y: " + y);
+        System.out.println("name: " + s + " x: " + x + " y: " + y);
     }
 
     public String getName() {
@@ -190,12 +190,12 @@ class MyVector extends Ellipse2D.Double {
         return new MyVector(this.x, this.y, name);
     }
 
-    public static ArrayList<MyVector> scatterPointsAround(MyVector center, double radius) {
+    public static ArrayList<MyVector> scatterPointsAround(MyVector center, double radius, int numPoints) {
 
         ArrayList<MyVector> points = new ArrayList<>();
         Random random = new Random();
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < numPoints; i++) {
             double angle = random.nextDouble() * 2 * Math.PI;
             double distance = Math.sqrt(random.nextDouble()) * radius;
             double x = center.x + distance * Math.cos(angle);

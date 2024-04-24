@@ -1,17 +1,34 @@
 import java.awt.*;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Formatter;
 import java.util.List;
 
 public class MyDoublePolygon {
-    private List<Point2D.Double> points;
+    private ArrayList<Point2D.Double> points;
+
+    private String name = "";
+
+    public MyDoublePolygon(String s) {
+        name = s;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public MyDoublePolygon() {
         points = new ArrayList<>();
     }
 
-    public List<Point2D.Double> getPoints() {
+    public ArrayList<Point2D.Double> getPoints() {
         return points;
     }
 
@@ -54,11 +71,19 @@ public class MyDoublePolygon {
         return points.get(i);
     }
 
-    public void setPoints(List<Point2D.Double> pointsIn) {
-        points = pointsIn;
+    public void setPoints(ArrayList<Point2D.Double> pointsIn) {
+        points = new ArrayList<Point2D.Double>(pointsIn);
+    }
+
+    protected double getWidth() {
+
+        double dx = points.get(1).x - points.get(0).x;
+        double dy = points.get(1).y - points.get(0).y;
+        return Math.sqrt(dx*dx + dy*dy);
     }
 
     public void draw(Graphics2D g2d) {
+
         int i;
         for (i = 0; i < points.size() - 1; i++) {
             g2d.draw(new Line2D.Double(points.get(i).x, points.get(i).y, points.get(i + 1).x, points.get(i + 1).y));
@@ -67,11 +92,14 @@ public class MyDoublePolygon {
     }
 
     public void print() {
-        System.out.println();
-        for (int i = 0; i < points.size(); i++) {
-            System.out.print((i + "x: " + points.get(i).x + " " + i+ "y: " + points.get(i).y));
-        }
-    }
 
-    // Other methods such as area, perimeter, etc. could be added here
+        System.out.print("\n" + name + " -> ");
+        for (int i = 0; i < points.size(); i++) {
+            DecimalFormat formatter = new DecimalFormat("#000.00");
+            String xs = formatter.format(points.get(i).x);
+            String ys = formatter.format(points.get(i).y);
+            System.out.print((" | " + i + " x: " + xs + " " + i + " y: " + ys + " "));
+        }
+        System.out.print(" | - width: " + getWidth());
+    }
 }
