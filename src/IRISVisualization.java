@@ -286,14 +286,17 @@ public class IRISVisualization extends JButton {
                 }
 
                 if (handleA.selected) {
+                    boundingBoxInnerRotationPath = new ArrayList<>();
                     handleA.x = e.getX() - sceneShift.x;
                     handleA.y = e.getY() - sceneShift.y;
                     setWhipersVisibility(false);
                 } else if (handleB.selected) {
+                    boundingBoxInnerRotationPath = new ArrayList<>();
                     handleB.x = e.getX() - sceneShift.x;
                     handleB.y = e.getY() - sceneShift.y;
                     setWhipersVisibility(false);
                 } else if (handleC.selected) {
+                    boundingBoxInnerRotationPath = new ArrayList<>();
                     handleC.x = e.getX() - sceneShift.x;
                     handleC.y = e.getY() - sceneShift.y;
                     setWhipersVisibility(false);
@@ -976,26 +979,42 @@ public class IRISVisualization extends JButton {
             drawTriangle(g2d);
         }
 
-        if (drawWhiperStuff) {
-            drawWiperCurves(g2d);
-            drawWipers(g2d);
-        }
-
-        /// under development ////////////////////////////
         drawDebugList(g2d);
-        //////////////////////////////////////////////////
 
+        /// under development
         if (drawBoundingBox) {
             drawBoundingBoyWhiperCurve(g2d);
         }
 
-        /// under development ////////////////////////////
-        g2d.setColor(Color.YELLOW);
-        for (MyVector vector : boundingBoxInnerRotationPath) {
-            vector.setSize(2);
-            vector.fill(g2d, false);
+        /// under development
+        drawBoundingBoxRotationPath(g2d);
+
+        if (drawWhiperStuff) {
+            drawWiperCurves(g2d);
+            drawWipers(g2d);
         }
-        //////////////////////////////////////////////////
+    }
+
+    private void drawBoundingBoxRotationPath(Graphics2D g2d) {
+
+        if(boundingBoxInnerRotationPath.size() > 0) {
+
+            g2d.setColor(Color.GREEN);
+            Path2D.Double path = new Path2D.Double();
+            double x = boundingBoxInnerRotationPath.get(0).x;
+            double y = boundingBoxInnerRotationPath.get(0).y;
+            path.moveTo(x, y);
+            for (int i = 1; i < boundingBoxInnerRotationPath.size(); i++) {
+                x = boundingBoxInnerRotationPath.get(i).x;
+                y = boundingBoxInnerRotationPath.get(i).y;
+                path.lineTo(x, y);
+            }
+            g2d.draw(path);
+        }
+//        for (MyVector vector : boundingBoxInnerRotationPath) {
+//            vector.setSize(1);
+//            vector.fill(g2d, false);
+//        }
     }
 
     private void handleSpaceBar() {
@@ -1008,59 +1027,44 @@ public class IRISVisualization extends JButton {
         }
     }
 
-    private void optimizePolygonPosition(int i) {
+    private void optimizePolygonPosition(int count) {
 
-        System.out.println("optimizePolygonPosition: " + i);
         /// puzzle the single 6 curves together to one huge one
         createHugeCurve();
 
-        MyDoublePolygon testPolygonOptimal = copyPolygons(boundingBoxPolygon);
-
         int qStart = howManyPointsOutside(boundingBoxPolygon);
-        int qOptimal;
+        int qOptimal = Integer.MAX_VALUE;
 
-        double widthHalf = testPolygonOptimal.getWidth() / 2.0;
+        double searchSize = 20;
 
-        double searchSize = 10;
-
-        int numPoints = 1000;
+        int numPoints = 10000;
 
         MyVector center = getCenterOfBoundingPolygon();
         ArrayList<MyVector> scatter = MyVector.scatterPointsAround(center, searchSize, numPoints);
 
         debugList = new ArrayList<>();
 
-        int count = 0;
+        MyDoublePolygon testPolygonOptimal = new MyDoublePolygon();
+
         for (MyVector scatterPoint : scatter) {
+
+            testPolygonOptimal = copyPolygons(boundingBoxPolygon);
 
             double displaceX = center.x - scatterPoint.x;
             double displaceY = center.y - scatterPoint.y;
 
-            ArrayList<Point2D.Double> testPolygon = new ArrayList<>();
-            testPolygon.add(new Point2D.Double());
-            testPolygon.add(new Point2D.Double());
-            testPolygon.add(new Point2D.Double());
-            testPolygon.add(new Point2D.Double());
+            ArrayList<Point2D.Double> testPolygon = createTestPolygon();
 
-            testPolygon.get(0).x = boundingBoxPolygon.getPoint(0).x + displaceX;
-            testPolygon.get(0).y = boundingBoxPolygon.getPoint(0).y + displaceY;
-
-            testPolygon.get(1).x = boundingBoxPolygon.getPoint(1).x + displaceX;
-            testPolygon.get(1).y = boundingBoxPolygon.getPoint(1).y + displaceY;
-
-            testPolygon.get(2).x = boundingBoxPolygon.getPoint(2).x + displaceX;
-            testPolygon.get(2).y = boundingBoxPolygon.getPoint(2).y + displaceY;
-
-            testPolygon.get(3).x = boundingBoxPolygon.getPoint(3).x + displaceX;
-            testPolygon.get(3).y = boundingBoxPolygon.getPoint(3).y + displaceY;
+            for (int i = 0; i < 4; i++) {
+                testPolygon.get(i).x = boundingBoxPolygon.getPoint(i).x + displaceX;
+                testPolygon.get(i).y = boundingBoxPolygon.getPoint(i).y + displaceY;
+            }
 
             MyDoublePolygon debug = new MyDoublePolygon("debug " + count);
             debug.setPoints(testPolygon);
-//            debugList.add(debug);
+            debugList.add(debug);
 
             qOptimal = howManyPointsOutside(debug);
-
-            count++;
 
             if (qOptimal < qStart) {
                 //System.out.println("BINGO optimal: " + qOptimal + " start: " + qStart);
@@ -1073,6 +1077,17 @@ public class IRISVisualization extends JButton {
         MyVector c = getCenterOfBoundingPolygon();
         c.setSize(4);
         boundingBoxInnerRotationPath.add(c);
+
+        System.out.println(count + " optimizePolygonPosition: " + qOptimal);
+    }
+
+    private ArrayList<Point2D.Double> createTestPolygon() {
+        ArrayList<Point2D.Double> testPolygon = new ArrayList<>();
+        testPolygon.add(new Point2D.Double());
+        testPolygon.add(new Point2D.Double());
+        testPolygon.add(new Point2D.Double());
+        testPolygon.add(new Point2D.Double());
+        return testPolygon;
     }
 
     private void drawDebugList(Graphics2D g2d) {
@@ -1082,11 +1097,12 @@ public class IRISVisualization extends JButton {
         }
         Stroke stroke = g2d.getStroke();
         g2d.setStroke(new BasicStroke(1));
-        g2d.setColor(new Color(128, 128, 128, 10));
-        for (MyDoublePolygon polygon : debugList) {
-            polygon.draw(g2d);
+        if (debugMode) {
+            g2d.setColor(new Color(128, 128, 128, 10));
+            for (MyDoublePolygon polygon : debugList) {
+                polygon.draw(g2d);
+            }
         }
-
         g2d.setStroke(stroke);
     }
 
@@ -1361,7 +1377,7 @@ public class IRISVisualization extends JButton {
         g2d.setColor(Color.RED);
         g2d.draw(boundingBoxWC);
 
-        g2d.setStroke(new BasicStroke(2));
+        g2d.setStroke(new BasicStroke(1));
         g2d.setColor(Color.GREEN);
         getCenterOfBoundingPolygon().fill(g2d, true);
 
