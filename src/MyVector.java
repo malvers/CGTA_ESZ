@@ -1,15 +1,17 @@
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Point2D;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Random;
 
 class MyVector extends Ellipse2D.Double {
     private String name;
-    public boolean selected = false;
+    protected boolean selected = false;
     private boolean visible = true;
+    private int id = -1;
 
-    public MyVector(double p1, double p2, String str) {
+    protected MyVector(double p1, double p2, String str) {
 
         name = str;
         this.x = p1;
@@ -18,18 +20,20 @@ class MyVector extends Ellipse2D.Double {
         this.height = 8;
     }
 
-    public MyVector(Point2D.Double p) {
-        x = p.x;
-        y = p.y;
+    protected MyVector(Point2D.Double p) {
+        this.x = p.x;
+        this.y = p.y;
+        this.width = 8;
+        this.height = 8;
     }
 
-    public static void printArrayList(ArrayList<MyVector> list) {
+    protected static void printArrayList(ArrayList<MyVector> list) {
         for (MyVector vector : list) {
             vector.print("al: ");
         }
     }
 
-    public static MyVector circleFromPoints(MyVector p1, MyVector p2, MyVector p3, double radius) {
+    protected static MyVector circleFromPoints(MyVector p1, MyVector p2, MyVector p3, double radius) {
 
         double p2SquaredMag = p2.x * p2.x + p2.y * p2.y;
         MyVector offset = new MyVector(p2SquaredMag, p2SquaredMag, "");
@@ -61,12 +65,13 @@ class MyVector extends Ellipse2D.Double {
 
     @Override
     public boolean contains(double x, double y) {
+
         double xx = x + width / 2;
         double yy = y + width / 2;
         return super.contains(xx, yy);
     }
 
-    public void fill(Graphics2D g2d, boolean drawAnnotation) {
+    protected void fill(Graphics2D g2d, boolean drawAnnotation) {
 
         if( !visible ) return;
         g2d.fill(new Ellipse2D.Double(x - width / 2, y - width / 2, width, width));
@@ -74,44 +79,52 @@ class MyVector extends Ellipse2D.Double {
             g2d.drawString(name, (int) x + 6, (int) y + 6);
         }
     }
+    protected void fill(Graphics2D g2d) {
+        fill(g2d, false);
+    }
 
-    public void print(String s) {
+    protected void print(String s) {
 
         System.out.println("name: " + s + " x: " + x + " y: " + y);
     }
 
-    public String getName() {
+    protected void print() {
+
+        print("");
+    }
+
+    protected String getName() {
         return name;
     }
 
-    public MyVector flip() {
+    protected MyVector flip() {
         return new MyVector(y, x, name);
     }
 
-    public MyVector rotate(double ang) {
+    protected MyVector rotate(double ang) {
 
         double newX = this.x * Math.cos(ang) - this.y * Math.sin(ang);
         double newY = this.x * Math.sin(ang) + this.y * Math.cos(ang);
         return new MyVector(newX, newY, this.name);
     }
 
-    public static Point2D.Double rotate(Point2D.Double point, double ang) {
+    protected static Point2D.Double rotate(Point2D.Double point, double ang) {
 
         double newX = point.x * Math.cos(ang) - point.y * Math.sin(ang);
         double newY = point.x * Math.sin(ang) + point.y * Math.cos(ang);
         return new Point2D.Double(newX, newY);
     }
 
-    public MyVector add(MyVector in) {
+    protected MyVector add(MyVector in) {
 
         return new MyVector(x + in.x, y + in.y, name);
     }
 
-    public MyVector subtract(MyVector in) {
+    protected MyVector subtract(MyVector in) {
         return new MyVector(x - in.x, y - in.y, name);
     }
 
-    public MyVector multiply(double v) {
+    protected MyVector multiply(double v) {
         return new MyVector(x * v, y * v, name);
     }
 
@@ -120,7 +133,7 @@ class MyVector extends Ellipse2D.Double {
         return new MyVector(h1.x - h2.x, h1.y - h2.y, h1.name);
     }
 
-    public static double angleBetweenHandles(MyVector handle1, MyVector handle2) {
+    protected static double angleBetweenHandles(MyVector handle1, MyVector handle2) {
 
         // Calculate the dot product of the two Handles
         double dotProduct = handle1.x * handle2.x + handle1.y * handle2.y;
@@ -136,7 +149,7 @@ class MyVector extends Ellipse2D.Double {
         return Math.acos(cosAngle);
     }
 
-    public MyVector makeItThatLong(double l) {
+    protected MyVector makeItThatLong(double l) {
 
         double len = getLength();
 
@@ -150,7 +163,7 @@ class MyVector extends Ellipse2D.Double {
         return Math.sqrt(x * x + y * y);
     }
 
-    public static double distanceToPointFromLine(Point point, Point2D.Double sceneShift, MyVector handle1, MyVector handle2) {
+    protected static double distanceToPointFromLine(Point point, Point2D.Double sceneShift, MyVector handle1, MyVector handle2) {
 
         // Adjust the point coordinates based on the scene shift
         double adjustedX = point.x - sceneShift.x;
@@ -190,7 +203,7 @@ class MyVector extends Ellipse2D.Double {
         return new MyVector(this.x, this.y, name);
     }
 
-    public static ArrayList<MyVector> scatterPointsAround(MyVector center, double radius, int numPoints) {
+    protected static ArrayList<MyVector> scatterPointsAround(MyVector center, double radius, int numPoints) {
 
         ArrayList<MyVector> points = new ArrayList<>();
         Random random = new Random();
@@ -205,20 +218,38 @@ class MyVector extends Ellipse2D.Double {
 
         return points;
     }
-    public void setName(String ca) {
+
+    protected void setName(String ca) {
         name = ca;
     }
 
-    public void setSize(int s) {
+    protected void setSize(int s) {
         width = s;
         height = s;
     }
 
-    public void setVisible(boolean b) {
+    protected void setVisible(boolean b) {
         visible = b;
     }
 
-    public boolean getVisible() {
+    protected boolean getVisible() {
         return visible;
+    }
+
+    protected void setNameToPosition() {
+
+        DecimalFormat formatter = new DecimalFormat("#000.00");
+        String xs = formatter.format(x);
+        String ys = formatter.format(y);
+
+        name = "x: " + xs + " y: " + ys;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int index) {
+        this.id = index;
     }
 }

@@ -1,3 +1,6 @@
+import fr.inria.optimization.cmaes.CMAEvolutionStrategy;
+import fr.inria.optimization.cmaes.fitness.IObjectiveFunction;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -8,20 +11,20 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.Random;
 
-public class IRISVisualization extends JButton {
+public class IRISVisualization extends JButton implements IObjectiveFunction, Runnable {
 
     /*
 
       BUGS:
       - last curve segment
+      - flipped triangle
 
       IDEAS:
       - rotate box around whiper curve
 
       IMPROVEMENTS:
-      - work on
+      -
 
     */
 
@@ -89,6 +92,8 @@ public class IRISVisualization extends JButton {
     private MyDoublePolygon hugeCurve;
     private ArrayList<MyVector> boundingBoxInnerRotationPath;
     private ArrayList<MyDoublePolygon> debugList;
+    private List<MyVector> intersectionPointsHugeCurveBoundingBox;
+    private ArrayList<MyDoublePolygon> qualityPolygons;
 
     public IRISVisualization(JFrame f) {
 
@@ -114,6 +119,7 @@ public class IRISVisualization extends JButton {
         calculateWhipers();
         boundingBoxInnerRotationPath = new ArrayList<>();
         debugList = new ArrayList<>();
+        qualityPolygons = new ArrayList<>();
     }
 
     private void writeSettings() {
@@ -176,7 +182,7 @@ public class IRISVisualization extends JButton {
             drawWhiskers = os.readBoolean();
             drawTriangle = os.readBoolean();
             drawIrisPicture = os.readBoolean();
-            //drawBoundingBox = os.readBoolean();
+            drawBoundingBox = os.readBoolean();
 
             os.readInt();
             os.readInt();
@@ -341,7 +347,7 @@ public class IRISVisualization extends JButton {
                     dragShift.y = -(onMousePressed.y - e.getY());
                 }
                 doCalculations();
-                createWhiperCurve();
+                createWhiperCurves();
                 repaint();
             }
 
@@ -370,7 +376,7 @@ public class IRISVisualization extends JButton {
                 switch (e.getKeyCode()) {
 
                     case KeyEvent.VK_SPACE:
-                        handleSpaceBar();
+                        handleSpaceBar(e);
                         break;
                     case KeyEvent.VK_A:
                         drawAnnotation = !drawAnnotation;
@@ -432,6 +438,9 @@ public class IRISVisualization extends JButton {
                             drawWhiperStuff = !drawWhiperStuff;
                         }
                         break;
+                    case KeyEvent.VK_X:
+                        handleExperimental();
+                        break;
                     case KeyEvent.VK_Z:
                         if (e.isMetaDown()) {
                             irisZoom += 0.1;
@@ -448,6 +457,7 @@ public class IRISVisualization extends JButton {
                         } else {
                             shiftTestPolygon(e.getKeyCode());
                         }
+                        qualityFunction();
                         break;
                     case 93: /// +
                         if (e.isShiftDown()) {
@@ -482,7 +492,7 @@ public class IRISVisualization extends JButton {
 
         ArrayList<Point2D.Double> points = boundingBoxPolygon.getPoints();
 
-        double inc = 1;
+        double inc = 0.1;
         for (int i = 0; i < boundingBoxPolygon.getNumPoints(); i++) {
 
             switch (vKup) {
@@ -586,7 +596,6 @@ public class IRISVisualization extends JButton {
                 irisPicShiftX += inc;
                 break;
         }
-        System.out.println("psx: " + irisPicShiftX + " psy: " + irisPicShiftY + " ps: " + irisPicSize);
     }
 
     public static BufferedImage loadImage(String filePath) {
@@ -815,10 +824,10 @@ public class IRISVisualization extends JButton {
         whiperBC = MyVector.getVector(extendBC, handleB).add(handleB);
         whiperAB = MyVector.getVector(extendAB, handleB).add(handleB);
 
-        createWhiperCurve();
+        createWhiperCurves();
     }
 
-    private void createWhiperCurve() {
+    private void createWhiperCurves() {
 
         bigWhiperCurve1 = new MyDoublePolygon();
         bigWhiperCurve2 = new MyDoublePolygon();
@@ -848,6 +857,8 @@ public class IRISVisualization extends JButton {
         boundingBoxWC = new Rectangle((int) extendX.x, (int) extendY.x, (int) distX, (int) distY);
 
         rotateRectangle(boundingBoxWC, 0);
+
+        createHugeCurve();
     }
 
     private void createSmallWhiperCurveSegment(MyDoublePolygon whiperCurve, MyVector v1, MyVector v2, MyVector v3) {
@@ -989,15 +1000,57 @@ public class IRISVisualization extends JButton {
         /// under development
         drawBoundingBoxRotationPath(g2d);
 
+        if (intersectionPointsHugeCurveBoundingBox != null && drawBoundingBox) {
+            g2d.setColor(Color.CYAN);
+            for (MyVector v : intersectionPointsHugeCurveBoundingBox) {
+                //v.setNameToPosition();
+                v.setSize(6);
+                v.fill(g2d, false);
+            }
+        }
+
         if (drawWhiperStuff) {
             drawWiperCurves(g2d);
             drawWipers(g2d);
         }
+
+        /// under development
+        g2d.setColor(Color.BLUE);
+        for (MyDoublePolygon p : qualityPolygons) p.fill(g2d);
+    }
+
+    private double qualityFunction() {
+
+        System.out.println("\nqualityFunction ...");
+
+        qualityPolygons = new ArrayList<>();
+        intersectionPointsHugeCurveBoundingBox = hugeCurve.getIntersectionPoints(boundingBoxPolygon);
+
+        double quality = 0.0;
+        int count = 0;
+
+        for (int i = 0; i < intersectionPointsHugeCurveBoundingBox.size() - 1; i += 2) {
+
+            MyVector isp1 = intersectionPointsHugeCurveBoundingBox.get(i);
+            MyVector isp2 = intersectionPointsHugeCurveBoundingBox.get(i + 1);
+            isp1.setName(isp1.getName() + " i: " + count);
+            isp2.setName(isp2.getName() + " i: " + (count + 1));
+            count++;
+            int from = isp1.getId();
+            int to = isp2.getId();
+            MyDoublePolygon polygon = hugeCurve.getSubPolygon(from, to);
+            double area = polygon.calculateArea();
+            qualityPolygons.add(polygon);
+            quality += area;
+            //System.out.println( "area: " + area + " from: " + from + " to: " + to);
+        }
+        System.out.println("quality: " + quality);
+        return quality;
     }
 
     private void drawBoundingBoxRotationPath(Graphics2D g2d) {
 
-        if(boundingBoxInnerRotationPath.size() > 0) {
+        if (boundingBoxInnerRotationPath.size() > 0) {
 
             g2d.setColor(Color.GREEN);
             Path2D.Double path = new Path2D.Double();
@@ -1017,25 +1070,29 @@ public class IRISVisualization extends JButton {
 //        }
     }
 
-    private void handleSpaceBar() {
+    private void handleSpaceBar(KeyEvent e) {
 
         for (int i = 0; i <= 1; i++) {
-            rotationAngle += Math.toRadians(1);
+            double inc = 1.0;
+            if (e.isShiftDown()) {
+                rotationAngle -= Math.toRadians(inc);
+            } else {
+                rotationAngle += Math.toRadians(inc);
+            }
             rotateRectangle(boundingBoxWC, rotationAngle);
             optimizePolygonPosition(i);
-            repaint();
+            qualityFunction();
         }
     }
 
     private void optimizePolygonPosition(int count) {
 
         /// puzzle the single 6 curves together to one huge one
-        createHugeCurve();
 
         int qStart = howManyPointsOutside(boundingBoxPolygon);
         int qOptimal = Integer.MAX_VALUE;
 
-        double searchSize = 20;
+        double searchSize = 16;
 
         int numPoints = 10000;
 
@@ -1117,12 +1174,14 @@ public class IRISVisualization extends JButton {
 
         hugeCurve = new MyDoublePolygon();
 
-        hugeCurve.addCurve(bigWhiperCurve1);
-        hugeCurve.addCurve(bigWhiperCurve2);
-        hugeCurve.addCurve(bigWhiperCurve3);
         hugeCurve.addCurve(smallWhiperCurve1);
+        hugeCurve.addCurve(bigWhiperCurve1);
         hugeCurve.addCurve(smallWhiperCurve2);
+        hugeCurve.addCurve(bigWhiperCurve2);
         hugeCurve.addCurve(smallWhiperCurve3);
+        hugeCurve.addCurve(bigWhiperCurve3);
+
+        Point2D.Double p = bigWhiperCurve1.getPoint(0);
     }
 
     private MyDoublePolygon copyPolygons(MyDoublePolygon from) {
@@ -1363,19 +1422,19 @@ public class IRISVisualization extends JButton {
 
     private void drawBoundingBoyWhiperCurve(Graphics2D g2d) {
 
-        g2d.setColor(Color.RED);
-
         double shiftX = boundingBoxWC.getCenterX();
         double shiftY = boundingBoxWC.getCenterY();
 
         MyVector centerBoundingBoxRect = new MyVector(shiftX, shiftY, "cbb");
+
+        g2d.setColor(Color.RED);
         centerBoundingBoxRect.fill(g2d, false);
 
         g2d.setColor(Color.MAGENTA);
         centerCircle.fill(g2d, false);
 
         g2d.setColor(Color.RED);
-        g2d.draw(boundingBoxWC);
+        ///g2d.draw(boundingBoxWC);
 
         g2d.setStroke(new BasicStroke(1));
         g2d.setColor(Color.GREEN);
@@ -1390,13 +1449,7 @@ public class IRISVisualization extends JButton {
         g2d.setStroke(new BasicStroke(1));
         //drawHandleConnector(g2d, handleC, whiperC_CB);
 
-        drawOneSegmentWhiperCurve(smallWhiperCurve1, g2d);
-        drawOneSegmentWhiperCurve(smallWhiperCurve2, g2d);
-        drawOneSegmentWhiperCurve(smallWhiperCurve3, g2d);
-
-        drawOneSegmentWhiperCurve(bigWhiperCurve1, g2d);
-        drawOneSegmentWhiperCurve(bigWhiperCurve2, g2d);
-        drawOneSegmentWhiperCurve(bigWhiperCurve3, g2d);
+        hugeCurve.draw(g2d);
     }
 
     private void drawOneSegmentWhiperCurve(MyDoublePolygon whiperCurve, Graphics2D g2d) {
@@ -1405,9 +1458,7 @@ public class IRISVisualization extends JButton {
         List<Point2D.Double> points = whiperCurve.getPoints();
 
         path.moveTo(points.get(0).getX(), points.get(0).getY());
-
         for (int i = 1; i < points.size(); i++) {
-            /// System.out.println("x: " + points.get(i).getX() + " y: " + points.get(i).getY());
             path.lineTo(points.get(i).getX(), points.get(i).getY());
         }
 
@@ -1546,5 +1597,40 @@ public class IRISVisualization extends JButton {
             f.setTitle(defaultTitle);
             f.setVisible(true);
         });
+    }
+
+    /// implementations for CMAE
+    @Override
+    public double valueOf(double[] doubles) {
+        return qualityFunction();
+    }
+
+    @Override
+    public boolean isFeasible(double[] doubles) {
+        return true; // everything is possible
+    }
+
+    private void handleExperimental() {
+        startExperiment();
+    }
+
+    private boolean runIt = false;
+
+    public void startExperiment() {
+        new Thread(this).start();
+        runIt = !runIt;
+    }
+
+    @Override
+    public void run() {
+
+        while (runIt) {
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("running ...");
+        }
     }
 }
