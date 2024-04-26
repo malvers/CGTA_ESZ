@@ -1,39 +1,2414 @@
  CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
-(6,13)-CMA-ES(mu_eff=4.0), Ver="0.99.40", dimension=22, 0 diagonal iter., randomSeed=1714052896143 (Thu Apr 25 15:48:16 CEST 2024)
+(6,12)-CMA-ES(mu_eff=4.0), Ver="0.99.40", dimension=20, 0 diagonal iter., randomSeed=1714126013696 (Fri Apr 26 12:06:53 CEST 2024)
 Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
-    1(13),     13: 1.9831617855513903e+02 (+0e+00,3e+02) | 19: 1.9e-01  3: 1.9e-01 | 1.9e-01 1.9e-01   1.00   |  0.0  0.0 
-  151(13),   1963: 1.7291633139953337e+01 (-1e-02,1e-01) |  2: 1.5e-02  5: 7.9e-03 | 6.2e-03 9.9e-03   3.58   |  0.2  0.1 
-  301(13),   3913: 1.4497334216238762e+01 (+0e+00,2e-01) |  4: 1.5e-02 18: 5.2e-03 | 3.3e-03 7.7e-03   7.65   |  0.2  0.1 
-  451(13),   5863: 1.2243237044673550e+01 (-5e-02,3e-01) |  7: 1.6e-02  0: 5.2e-03 | 3.1e-03 9.0e-03   9.15   |  0.3  0.1 
-  601(13),   7813: 9.9499684255824580e+00 (+0e+00,4e-01) |  9: 1.8e-02  0: 4.5e-03 | 2.8e-03 9.7e-03  11.16   |  0.3  0.1 
-  751(13),   9763: 7.8668347620795220e+00 (+0e+00,2e-01) | 11: 1.5e-02  0: 3.4e-03 | 2.0e-03 8.7e-03  13.33   |  0.4  0.1 
-  901(13),  11713: 5.8344637536859480e+00 (-4e-02,1e-01) | 13: 1.5e-02  0: 2.8e-03 | 1.7e-03 8.8e-03  15.31   |  0.4  0.2 
- 1051(13),  13663: 3.7878321314678813e+00 (+0e+00,2e-01) | 15: 1.4e-02  0: 2.3e-03 | 1.4e-03 8.4e-03  17.61   |  0.5  0.2 
- 1201(13),  15613: 1.9375816562505312e+00 (-4e-03,3e-01) | 17: 1.4e-02  0: 2.5e-03 | 1.4e-03 1.0e-02  17.86   |  0.5  0.2 
- 1351(13),  17563: 5.5938511477363710e-01 (-1e-02,3e-01) | 19: 1.3e-02  0: 2.2e-03 | 1.1e-03 9.7e-03  20.53   |  0.5  0.2 
- 1501(13),  19513: 6.8560626350708430e-02 (-3e-03,2e-02) | 21: 1.1e-02  0: 8.5e-04 | 4.2e-04 4.3e-03  37.40   |  0.6  0.2 
- 1651(13),  21463: 1.0549062977127261e-04 (-8e-06,1e-04) | 21: 1.8e-03  0: 7.2e-05 | 3.9e-05 4.0e-04  53.54   |  0.6  0.2 
- 1801(13),  23413: 2.1738222300579070e-09 (-9e-10,3e-09) | 21: 8.7e-06  0: 3.9e-07 | 2.0e-07 2.3e-06  51.40   |  0.6  0.2 
- 1807(13),  23492: 7.6107114756122200e-10 (-1e-10,2e-09) | 21: 6.1e-06  0: 2.7e-07 | 1.4e-07 1.7e-06  50.20   |  0.6  0.2 
+    1(12),     12: 1.6863109529969970e+02 (+0e+00,2e+02) |  0: 1.9e-01  4: 1.9e-01 | 1.9e-01 1.9e-01   1.00   |  0.0  0.0 
+  151(12),   1812: 1.4573933392322388e+01 (+0e+00,4e-01) |  3: 1.8e-02 10: 9.1e-03 | 7.1e-03 1.2e-02   3.97   |  0.1  0.0 
+  301(12),   3612: 1.1754233275455990e+01 (-6e-02,2e-01) |  5: 1.7e-02  0: 5.4e-03 | 3.7e-03 9.5e-03   8.14   |  0.2  0.1 
+  451(12),   5412: 9.3217102288079160e+00 (-9e-02,3e-01) |  8: 2.0e-02  0: 4.4e-03 | 3.1e-03 1.0e-02  10.85   |  0.2  0.1 
+  601(12),   7212: 7.0884630985209200e+00 (-5e-02,3e-01) | 10: 1.6e-02  0: 3.6e-03 | 2.3e-03 9.5e-03  12.04   |  0.2  0.1 
+  751(12),   9012: 5.0166661868586720e+00 (-3e-02,1e-01) | 12: 1.3e-02  0: 2.6e-03 | 1.5e-03 7.9e-03  14.49   |  0.3  0.1 
+  901(12),  10812: 3.0064204085971250e+00 (+0e+00,3e-01) | 14: 1.7e-02  0: 3.4e-03 | 2.0e-03 1.2e-02  14.81   |  0.3  0.2 
+ 1051(12),  12612: 1.0926326894832559e+00 (-3e-02,3e-01) | 16: 1.8e-02  2: 3.0e-03 | 1.6e-03 1.2e-02  18.81   |  0.3  0.2 
+ 1201(12),  14412: 1.9552642337679282e-01 (+0e+00,3e-02) | 18: 9.2e-03  2: 1.2e-03 | 6.7e-04 5.9e-03  22.77   |  0.4  0.2 
+ 1351(12),  16212: 3.7054222411879750e-03 (+0e+00,4e-03) | 19: 7.7e-03  0: 3.5e-04 | 2.0e-04 2.0e-03  47.89   |  0.4  0.2 
+ 1501(12),  18012: 1.0111171807882395e-07 (-1e-08,1e-07) | 19: 6.8e-05  0: 2.6e-06 | 1.5e-06 1.7e-05  53.77   |  0.4  0.2 
+ 1556(12),  18673: 5.5751572125588660e-10 (+0e+00,2e-09) | 19: 7.6e-06  4: 2.7e-07 | 1.6e-07 2.0e-06  55.47   |  0.4  0.2 
 Terminated due to
-  Fitness: Objective function value dropped below the target function value 1.0E-9 (iter=1807,eval=23491)
-best function value 6.44877797204746E-10 at evaluation 23492
+  Fitness: Objective function value dropped below the target function value 1.0E-9 (iter=1556,eval=18672)
+best function value 5.575157212558866E-10 at evaluation 18665
+0 v: 0.9999995855960357
+1 v: 0.9999998786168411
+2 v: 1.0000000222440146
+3 v: 0.9999997674331617
+4 v: 0.9999997384936046
+5 v: 0.9999997327117063
+6 v: 0.9999999142307552
+7 v: 0.9999997188316925
+8 v: 1.0000004680011376
+9 v: 1.0000002484291766
+10 v: 1.0000001193628472
+11 v: 1.0000000665650022
+12 v: 0.9999996144454216
+13 v: 0.999999890920449
+14 v: 0.9999995615241637
+15 v: 0.999999187896848
+16 v: 0.9999981217385705
+17 v: 0.99999572369391
+18 v: 0.9999906672750728
+19 v: 0.9999810336486958
  CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
-(6,13)-CMA-ES(mu_eff=4.0), Ver="0.99.40", dimension=22, 0 diagonal iter., randomSeed=1714053490369 (Thu Apr 25 15:58:10 CEST 2024)
+(6,12)-CMA-ES(mu_eff=4.0), Ver="0.99.40", dimension=20, 0 diagonal iter., randomSeed=1714126044816 (Fri Apr 26 12:07:24 CEST 2024)
 Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
-    1(13),     13: 1.8708481344421352e+02 (+0e+00,2e+02) |  0: 1.9e-01 13: 1.8e-01 | 1.8e-01 1.8e-01   1.00   |  0.0  0.0 
-  151(13),   1963: 1.7443780066834215e+01 (+0e+00,4e-01) |  2: 1.9e-02 19: 9.7e-03 | 8.0e-03 1.2e-02   3.55   |  0.2  0.0 
-  301(13),   3913: 1.4505401153740000e+01 (+0e+00,4e-01) |  4: 1.8e-02 10: 6.2e-03 | 4.5e-03 9.7e-03   7.01   |  0.2  0.1 
-  451(13),   5863: 1.2130756314534425e+01 (+0e+00,3e-01) |  7: 1.5e-02 18: 4.8e-03 | 3.0e-03 8.6e-03   8.83   |  0.3  0.1 
-  601(13),   7813: 1.0005864900261255e+01 (+0e+00,1e-01) |  9: 1.1e-02  0: 3.1e-03 | 1.9e-03 6.6e-03  10.27   |  0.3  0.1 
-  751(13),   9763: 7.9410788676501820e+00 (-2e-02,2e-01) | 11: 1.4e-02  0: 3.3e-03 | 1.8e-03 7.8e-03  12.90   |  0.4  0.1 
-  901(13),  11713: 5.9550828139334940e+00 (-5e-02,5e-01) | 13: 2.1e-02  0: 4.1e-03 | 2.3e-03 1.2e-02  15.80   |  0.4  0.1 
- 1051(13),  13663: 4.1605988176994220e+00 (-3e-02,1e-01) | 15: 1.4e-02  0: 2.6e-03 | 1.5e-03 9.0e-03  15.62   |  0.4  0.2 
- 1201(13),  15613: 2.0800570875798440e+00 (-6e-02,3e-01) | 17: 2.2e-02  0: 3.9e-03 | 2.1e-03 1.5e-02  18.24   |  0.5  0.2 
- 1351(13),  17563: 5.2087664413095760e-01 (-1e-02,6e-02) | 19: 9.4e-03  0: 1.8e-03 | 9.1e-04 7.6e-03  18.53   |  0.5  0.2 
- 1501(13),  19513: 5.2806006069405290e-02 (-4e-03,1e-02) | 21: 1.1e-02  0: 8.9e-04 | 4.7e-04 4.3e-03  32.60   |  0.5  0.2 
- 1651(13),  21463: 7.0863562584699570e-05 (+0e+00,1e-04) | 21: 1.6e-03  0: 6.3e-05 | 3.4e-05 3.4e-04  55.55   |  0.5  0.2 
- 1790(13),  23271: 6.7547561323047070e-10 (-9e-11,2e-09) | 21: 7.4e-06  0: 2.8e-07 | 1.4e-07 1.7e-06  60.31   |  0.6  0.2 
+    1(12),     12: 3.5313136603199587e+02 (+0e+00,3e+02) |  3: 1.9e-01  8: 1.9e-01 | 1.9e-01 1.9e-01   1.00   |  0.0  0.0 
+  151(12),   1812: 1.9318124495254618e-04 (-2e-05,3e-04) | 19: 3.7e-04 11: 3.0e-04 | 2.7e-04 4.1e-04   1.56   |  0.1  0.0 
+  278(12),   3337: 8.0229892666812710e-10 (-8e-11,2e-09) | 19: 7.2e-07 10: 5.3e-07 | 4.6e-07 9.2e-07   1.71   |  0.1  0.1 
 Terminated due to
-  Fitness: Objective function value dropped below the target function value 1.0E-9 (iter=1790,eval=23270)
-best function value 5.893986476404456E-10 at evaluation 23271
+  Fitness: Objective function value dropped below the target function value 1.0E-9 (iter=278,eval=3336)
+best function value 7.217219293858278E-10 at evaluation 3337
+0 v: 8.724280287175238E-7
+1 v: -9.84662043446934E-7
+2 v: 3.712776912631236E-7
+3 v: -5.931877678967538E-7
+4 v: 7.708522989117472E-7
+5 v: -8.958208727577268E-7
+6 v: 8.194091656697845E-7
+7 v: -4.635026753654637E-8
+8 v: 8.391298168612067E-7
+9 v: -2.0370041411592194E-7
+10 v: -5.573585072995683E-7
+11 v: 3.740372753571618E-7
+12 v: -7.360899954021273E-7
+13 v: 1.71851814769359E-7
+14 v: 3.9418241386766383E-7
+15 v: 5.832286561110445E-7
+16 v: -2.3414678554602827E-7
+17 v: -4.880380983841567E-7
+18 v: -6.086332538141307E-7
+19 v: 1.238426187378933
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(6,12)-CMA-ES(mu_eff=4.0), Ver="0.99.40", dimension=20, 0 diagonal iter., randomSeed=1714126071035 (Fri Apr 26 12:07:51 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1(12),     12: 4.4239792771376045e+02 (+0e+00,3e+02) |  3: 1.9e-01 11: 1.9e-01 | 1.9e-01 1.9e-01   1.00   |  0.0  0.0 
+  151(12),   1812: 2.9647743553464070e-04 (-4e-05,3e-04) | 19: 5.4e-04 17: 3.6e-04 | 3.3e-04 5.1e-04   1.68   |  0.1  0.0 
+  301(12),   3612: 1.3967544105860624e-10 (+0e+00,3e-10) | 19: 5.8e-07 17: 2.7e-07 | 2.4e-07 5.0e-07   2.45   |  0.1  0.1 
+  411(12),   4933: 1.3237619183632348e-15 (-5e-16,4e-15) | 19: 2.5e-09 17: 9.8e-10 | 8.5e-10 2.2e-09   3.00   |  0.2  0.1 
+Terminated due to
+  TolFun: function value changes below stopTolFun=1.0E-12 (iter=411,eval=4932)
+best function value 7.773942373154732E-16 at evaluation 4933
+0 v: 6.382103137610269E-10
+1 v: -2.3982759209040685E-10
+2 v: -5.967232289110672E-10
+3 v: 2.2103009099649303E-10
+4 v: 3.7660824103894316E-10
+5 v: 6.636295277057871E-10
+6 v: -1.1672953987424515E-9
+7 v: -9.73210418340984E-10
+8 v: -2.774508260107377E-10
+9 v: 6.171328783372363E-10
+10 v: -1.0052356879626468E-10
+11 v: 1.4012679036534856E-9
+12 v: -7.480231352235934E-10
+13 v: -1.9894789395768147E-10
+14 v: 3.518329672574422E-10
+15 v: -7.609204456730008E-10
+16 v: -2.406525180299897E-10
+17 v: 4.698641920047983E-10
+18 v: 1.2037099614546164E-11
+19 v: 0.3166524990544136
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714127085578 (Fri Apr 26 12:24:45 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.1095361587810840e+03 (+0e+00,0e+00) |  1: 6.2e-01  0: 6.2e-01 | 6.7e-01 6.7e-01   1.00   | 10.6  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: 300.2769379388849
+1 v: 300.22702232234525
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714128754295 (Fri Apr 26 12:52:34 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.1430355654662090e+03 (+0e+00,7e+02) |  1: 1.7e-01  0: 1.6e-01 | 1.7e-01 1.7e-01   1.00   | 12.3  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: -4.336161093796493
+1 v: 16.421147965302836
+0 v: -4.336161093796493
+1 v: 16.421147965302836
+0 v: -4.336161093796493
+1 v: 16.421147965302836
+0 v: -4.336161093796493
+1 v: 16.421147965302836
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714128948440 (Fri Apr 26 12:55:48 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714128956876 (Fri Apr 26 12:55:56 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.7124980756923250e+03 (+0e+00,2e+03) |  1: 1.5e-01  0: 1.5e-01 | 1.6e-01 1.6e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: -5.071288946841023
+1 v: 6.237837453805092
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714128969861 (Fri Apr 26 12:56:09 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.5715274477892600e+03 (+0e+00,1e+03) |  1: 1.5e-01  0: 1.5e-01 | 1.6e-01 1.6e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: -5.994096046397215
+1 v: 0.6264743781506814
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714128976870 (Fri Apr 26 12:56:16 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.8478002011102800e+03 (+0e+00,2e+03) |  1: 1.8e-01  0: 1.8e-01 | 1.8e-01 1.8e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: -10.527144451745338
+1 v: 26.781005306634995
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714129032034 (Fri Apr 26 12:57:12 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714129034405 (Fri Apr 26 12:57:14 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.8328691161750610e+01 (+0e+00,1e+03) |  0: 1.8e-01  0: 1.7e-01 | 1.8e-01 1.8e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: 5.708745902495615
+1 v: -8.197642906902932
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714129041363 (Fri Apr 26 12:57:21 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.1567038887214620e+03 (+0e+00,1e+03) |  0: 1.7e-01  0: 1.7e-01 | 1.8e-01 1.8e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: 25.788681062123793
+1 v: -15.045042499893626
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714129112519 (Fri Apr 26 12:58:32 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714129118399 (Fri Apr 26 12:58:38 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1900893062892646e+02 (+0e+00,1e+03) |  1: 2.1e-01  0: 2.1e-01 | 2.1e-01 2.1e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: 31.554712882700034
+1 v: 27.274334134965635
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714129255466 (Fri Apr 26 13:00:55 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714129366309 (Fri Apr 26 13:02:46 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714129378779 (Fri Apr 26 13:02:58 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714129386352 (Fri Apr 26 13:03:06 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.0607413750766500e+03 (+0e+00,4e+03) |  1: 2.2e-01  0: 2.1e-01 | 2.1e-01 2.1e-01   1.00   |  0.0  0.0 
+0 v: 4.1499222093023524
+1 v: 4.006348018923705
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714129395246 (Fri Apr 26 13:03:15 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.3526561123846260e+03 (+0e+00,3e+03) |  0: 1.8e-01  0: 1.7e-01 | 1.8e-01 1.8e-01   1.00   |  0.0  0.0 
+0 v: 4.95749672011342
+1 v: 4.800613365449634
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714129401500 (Fri Apr 26 13:03:21 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.0214336492966030e+03 (+0e+00,4e+03) |  1: 1.3e-01  0: 1.3e-01 | 1.4e-01 1.4e-01   1.00   |  0.0  0.0 
+0 v: 5.157368150347434
+1 v: 4.959870809312589
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714129439752 (Fri Apr 26 13:03:59 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714129445551 (Fri Apr 26 13:04:05 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.1442123268435530e+02 (+0e+00,1e+04) |  0: 2.0e-01  0: 1.8e-01 | 2.0e-01 2.0e-01   1.00   |  0.0  0.0 
+0 v: 5.116071722652408
+1 v: 4.823752822258507
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714129584029 (Fri Apr 26 13:06:24 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714129589780 (Fri Apr 26 13:06:29 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.7460294046322815e+00 (+0e+00,4e+01) |  1: 2.3e-01  0: 2.1e-01 | 2.2e-01 2.2e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: -13.330300750579543
+1 v: -3.7741620709321526
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714129787053 (Fri Apr 26 13:09:47 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714129790556 (Fri Apr 26 13:09:50 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.5413628597460047e+01 (+0e+00,1e+01) |  0: 1.8e-01  0: 1.7e-01 | 1.8e-01 1.8e-01   1.00   |  0.5  0.0 
+0 v: -0.0016178278456286455
+1 v: 0.18505966246843658
+0 v: -0.0016178278456286455
+1 v: 0.18505966246843658
+0 v: -0.0016178278456286455
+1 v: 0.18505966246843658
+0 v: -0.0016178278456286455
+1 v: 0.18505966246843658
+0 v: -0.0016178278456286455
+1 v: 0.18505966246843658
+0 v: -0.0016178278456286455
+1 v: 0.18505966246843658
+0 v: -0.0016178278456286455
+1 v: 0.18505966246843658
+0 v: -0.0016178278456286455
+1 v: 0.18505966246843658
+0 v: -0.0016178278456286455
+1 v: 0.18505966246843658
+0 v: -0.0016178278456286455
+1 v: 0.18505966246843658
+0 v: -0.0016178278456286455
+1 v: 0.18505966246843658
+0 v: -0.0016178278456286455
+1 v: 0.18505966246843658
+0 v: -0.0016178278456286455
+1 v: 0.18505966246843658
+0 v: -0.0016178278456286455
+1 v: 0.18505966246843658
+0 v: -0.0016178278456286455
+1 v: 0.18505966246843658
+0 v: -0.0016178278456286455
+1 v: 0.18505966246843658
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: -0.0016178278456286455
+1 v: 0.18505966246843658
+0 v: -0.0016178278456286455
+1 v: 0.18505966246843658
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: -0.0016178278456286455
+1 v: 0.18505966246843658
+0 v: -0.0016178278456286455
+1 v: 0.18505966246843658
+0 v: -0.0016178278456286455
+1 v: 0.18505966246843658
+0 v: -0.0016178278456286455
+1 v: 0.18505966246843658
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: -0.0016178278456286455
+1 v: 0.18505966246843658
+0 v: -0.0016178278456286455
+1 v: 0.18505966246843658
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714129802936 (Fri Apr 26 13:10:02 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.7127950136025574e+04 (+0e+00,6e+02) |  1: 3.2e-01  0: 2.6e-01 | 2.6e-01 2.6e-01   1.00   |  0.4  0.0 
+0 v: -0.22179411297357277
+1 v: 0.32472047259772474
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714129998436 (Fri Apr 26 13:13:18 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714130001170 (Fri Apr 26 13:13:21 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.2631690054524370e+01 (+0e+00,3e+01) |  0: 1.4e-01  0: 1.4e-01 | 1.5e-01 1.5e-01   1.00   |  0.5  0.0 
+0 v: -0.12356091633646414
+1 v: -0.09106627312795501
+0 v: -0.08400031803207311
+1 v: -0.21956181213551873
+0 v: -0.08400031803207311
+1 v: -0.21956181213551873
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714130003006 (Fri Apr 26 13:13:23 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.6862112398739555e+01 (+0e+00,4e+01) |  0: 3.5e-01  0: 2.8e-01 | 2.8e-01 2.8e-01   1.00   |  0.2  0.0 
+0 v: 0.3118529600137279
+1 v: 0.27305880927314824
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714130035400 (Fri Apr 26 13:13:55 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714130039564 (Fri Apr 26 13:13:59 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714130039739 (Fri Apr 26 13:13:59 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.5413628597460047e+01 (+0e+00,2e+01) |  0: 1.7e-01  0: 1.6e-01 | 1.7e-01 1.7e-01   1.00   |  0.4  0.0 
+0 v: -0.027251293962174253
+1 v: 0.17273483015133537
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714130098705 (Fri Apr 26 13:14:58 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714130102120 (Fri Apr 26 13:15:02 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714130102302 (Fri Apr 26 13:15:02 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3717283853347908e+01 (+0e+00,1e+01) |  1: 2.3e-01  0: 2.1e-01 | 2.2e-01 2.2e-01   1.00   |  0.3  0.0 
+0 v: -0.14480575169166982
+1 v: -0.2851291469670925
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714130200214 (Fri Apr 26 13:16:40 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714130202678 (Fri Apr 26 13:16:42 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714130202680 (Fri Apr 26 13:16:42 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.5956308667296980e+01 (+0e+00,6e+01) |  1: 2.4e-01  0: 2.1e-01 | 2.2e-01 2.2e-01   1.00   |  0.5  0.0 
+0 v: 0.05066058111182401
+1 v: 0.33486967579120236
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714130253370 (Fri Apr 26 13:17:33 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.0834510374843380e+00 (+0e+00,4e+01) |  1: 1.8e-01  0: 1.6e-01 | 1.8e-01 1.8e-01   1.00   |  0.5  0.0 
+0 v: -0.013163537530852443
+1 v: -0.2530813721939164
+0 v: -0.013163537530852443
+1 v: -0.2530813721939164
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714130254530 (Fri Apr 26 13:17:34 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.7862914130804710e+01 (+0e+00,2e+01) |  0: 1.6e-01  0: 1.6e-01 | 1.7e-01 1.7e-01   1.00   |  0.4  0.0 
+0 v: -0.1297687359879318
+1 v: 0.037039613920658125
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714130306896 (Fri Apr 26 13:18:26 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714130310180 (Fri Apr 26 13:18:30 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714130310349 (Fri Apr 26 13:18:30 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5166364188477019e+01 (+0e+00,1e+01) |  0: 2.4e-01  0: 2.0e-01 | 2.2e-01 2.2e-01   1.00   |  0.4  0.0 
+0 v: -0.2682525822446424
+1 v: 0.06203396606457197
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714130467799 (Fri Apr 26 13:21:07 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714130472147 (Fri Apr 26 13:21:12 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714130472281 (Fri Apr 26 13:21:12 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.8190244014287600e+01 (+0e+00,1e+01) |  1: 2.0e-01  0: 1.8e-01 | 2.0e-01 2.0e-01   1.00   |  0.4  0.0 
+0 v: 0.05351101049440126
+1 v: -0.2109212941071571
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714130564891 (Fri Apr 26 13:22:44 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714130717313 (Fri Apr 26 13:25:17 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714130755464 (Fri Apr 26 13:25:55 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714130796415 (Fri Apr 26 13:26:36 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714130830538 (Fri Apr 26 13:27:10 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.8351351509413940e+03 (+0e+00,2e+02) |  1: 2.2e-01  0: 1.8e-01 | 2.0e-01 2.0e-01   1.00   |  0.5  0.0 
+0 v: -0.017033942829817513
+1 v: 0.34433799031247614
+0 v: -0.017033942829817513
+1 v: 0.34433799031247614
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: -0.017033942829817513
+1 v: 0.34433799031247614
+0 v: -0.017033942829817513
+1 v: 0.34433799031247614
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: -0.017033942829817513
+1 v: 0.34433799031247614
+0 v: -0.017033942829817513
+1 v: 0.34433799031247614
+0 v: -0.017033942829817513
+1 v: 0.34433799031247614
+0 v: -0.017033942829817513
+1 v: 0.34433799031247614
+0 v: -0.017033942829817513
+1 v: 0.34433799031247614
+0 v: -0.017033942829817513
+1 v: 0.34433799031247614
+0 v: -0.017033942829817513
+1 v: 0.34433799031247614
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: -0.017033942829817513
+1 v: 0.34433799031247614
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: -0.017033942829817513
+1 v: 0.34433799031247614
+0 v: -0.017033942829817513
+1 v: 0.34433799031247614
+0 v: -0.017033942829817513
+1 v: 0.34433799031247614
+0 v: -0.82979183575151
+1 v: -0.7280950676080011
+0 v: 0.20443964523614055
+1 v: -0.5351922207368237
+0 v: 0.09285364524474828
+1 v: -1.4540056479617276
+0 v: 0.18592087748834032
+1 v: -0.016289861606428202
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+0 v: 1.3681109596981895
+1 v: 0.20492292381474791
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714130994090 (Fri Apr 26 13:29:54 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714131029291 (Fri Apr 26 13:30:29 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714131046019 (Fri Apr 26 13:30:46 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714131125433 (Fri Apr 26 13:32:05 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714131155613 (Fri Apr 26 13:32:35 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714132335917 (Fri Apr 26 13:52:15 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714132565754 (Fri Apr 26 13:56:05 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714132574963 (Fri Apr 26 13:56:14 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.1000000000000000e+01 (+0e+00,0e+00) |  1: 2.3e-01  0: 2.0e-01 | 2.1e-01 2.1e-01   1.00   |  0.5  0.0 
+0 v: -0.05709194507510132
+1 v: -0.30053901755697976
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: 0.5781276140913066
+1 v: -0.40414592665694204
+0 v: 0.37637918617204646
+1 v: -0.5303080500389659
+0 v: 0.4609799434168209
+1 v: -0.365059548751575
+0 v: 0.4609799434168209
+1 v: -0.365059548751575
+0 v: 0.4609799434168209
+1 v: -0.365059548751575
+0 v: 0.9346659199216654
+1 v: 0.011582191567804184
+0 v: 2.265024859253493
+1 v: 0.06737283396531232
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+0 v: 2.06732876362896
+1 v: -2.671963832256985E-4
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714132622940 (Fri Apr 26 13:57:02 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714132641422 (Fri Apr 26 13:57:21 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714132650310 (Fri Apr 26 13:57:30 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714132650563 (Fri Apr 26 13:57:30 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.2000000000000000e+01 (+0e+00,1e+00) |  1: 2.8e-01  0: 2.8e-01 | 2.6e-01 2.6e-01   1.00   |  0.3  0.0 
+0 v: 0.26310640372242683
+1 v: 0.26765360372816144
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714132655040 (Fri Apr 26 13:57:35 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.1000000000000000e+01 (+0e+00,2e+00) |  1: 1.7e-01  0: 1.6e-01 | 1.8e-01 1.8e-01   1.00   |  0.5  0.0 
+0 v: 0.04381560789182822
+1 v: -0.124353067241556
+0 v: 0.04381560789182822
+1 v: -0.124353067241556
+0 v: 0.25273983353704016
+1 v: 0.023389915446439313
+0 v: 0.25273983353704016
+1 v: 0.023389915446439313
+0 v: 0.25273983353704016
+1 v: 0.023389915446439313
+0 v: 0.25273983353704016
+1 v: 0.023389915446439313
+0 v: 0.25273983353704016
+1 v: 0.023389915446439313
+0 v: 0.25273983353704016
+1 v: 0.023389915446439313
+0 v: 0.25273983353704016
+1 v: 0.023389915446439313
+0 v: 0.25273983353704016
+1 v: 0.023389915446439313
+0 v: 0.25273983353704016
+1 v: 0.023389915446439313
+0 v: 0.25273983353704016
+1 v: 0.023389915446439313
+0 v: 0.25273983353704016
+1 v: 0.023389915446439313
+0 v: 0.25273983353704016
+1 v: 0.023389915446439313
+0 v: 0.25273983353704016
+1 v: 0.023389915446439313
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: 0.25273983353704016
+1 v: 0.023389915446439313
+0 v: 0.25273983353704016
+1 v: 0.023389915446439313
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: 0.25273983353704016
+1 v: 0.023389915446439313
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: 0.25273983353704016
+1 v: 0.023389915446439313
+0 v: 0.25273983353704016
+1 v: 0.023389915446439313
+0 v: 0.25273983353704016
+1 v: 0.023389915446439313
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: 0.25273983353704016
+1 v: 0.023389915446439313
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: 2.1844826421248085
+1 v: 1.646329811246046
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714132858409 (Fri Apr 26 14:00:58 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714132863038 (Fri Apr 26 14:01:03 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0000000000000000e+01 (+0e+00,3e+00) |  1: 2.2e-01  0: 1.9e-01 | 2.1e-01 2.1e-01   1.00   |  0.5  0.0 
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+0 v: 0.02025405907350298
+1 v: 0.23435926495606185
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714132960462 (Fri Apr 26 14:02:40 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714132963702 (Fri Apr 26 14:02:43 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1000000000000000e+01 (+0e+00,2e+00) |  0: 1.8e-01  0: 1.7e-01 | 1.8e-01 1.8e-01   1.00   |  0.5  0.0 
+0 v: 0.1905186052552907
+1 v: -0.00932191707613966
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+0 v: -0.17056929860933262
+1 v: 0.2546168354172589
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714133055877 (Fri Apr 26 14:04:15 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714133061089 (Fri Apr 26 14:04:21 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.0000000000000000e+00 (+0e+00,7e+00) |  1: 2.3e-01  0: 2.1e-01 | 2.1e-01 2.1e-01   1.00   |  0.5  0.0 
+0 v: -0.048968291707633387
+1 v: 0.34867823322177316
+0 v: -0.048968291707633387
+1 v: 0.34867823322177316
+0 v: -0.048968291707633387
+1 v: 0.34867823322177316
+0 v: -0.048968291707633387
+1 v: 0.34867823322177316
+0 v: -0.048968291707633387
+1 v: 0.34867823322177316
+0 v: -0.048968291707633387
+1 v: 0.34867823322177316
+0 v: -0.048968291707633387
+1 v: 0.34867823322177316
+0 v: -0.048968291707633387
+1 v: 0.34867823322177316
+0 v: -0.048968291707633387
+1 v: 0.34867823322177316
+0 v: -0.048968291707633387
+1 v: 0.34867823322177316
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: -0.048968291707633387
+1 v: 0.34867823322177316
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: -0.048968291707633387
+1 v: 0.34867823322177316
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: -0.048968291707633387
+1 v: 0.34867823322177316
+0 v: -0.048968291707633387
+1 v: 0.34867823322177316
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: -0.048968291707633387
+1 v: 0.34867823322177316
+0 v: -0.048968291707633387
+1 v: 0.34867823322177316
+0 v: -0.048968291707633387
+1 v: 0.34867823322177316
+0 v: -0.048968291707633387
+1 v: 0.34867823322177316
+0 v: -0.048968291707633387
+1 v: 0.34867823322177316
+0 v: -0.048968291707633387
+1 v: 0.34867823322177316
+0 v: -0.048968291707633387
+1 v: 0.34867823322177316
+0 v: -0.048968291707633387
+1 v: 0.34867823322177316
+0 v: -0.048968291707633387
+1 v: 0.34867823322177316
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714133073312 (Fri Apr 26 14:04:33 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5100000000000000e+02 (+0e+00,1e+00) |  0: 3.2e-01  0: 2.5e-01 | 2.6e-01 2.6e-01   1.00   |  0.1  0.0 
+0 v: 0.365565146179298
+1 v: -0.14358720908194939
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714146473725 (Fri Apr 26 17:47:53 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714146480931 (Fri Apr 26 17:48:00 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.1000000000000000e+01 (+0e+00,2e+00) |  1: 1.9e-01  0: 1.7e-01 | 1.9e-01 1.9e-01   1.00   |  0.5  0.0 
+0 v: -0.0589897937804936
+1 v: -0.25306702620953025
+0 v: -0.0589897937804936
+1 v: -0.25306702620953025
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: -0.6920117021754921
+1 v: -0.4374108634666205
+0 v: -0.45257152419909896
+1 v: 0.19947331216410835
+0 v: -0.45257152419909896
+1 v: 0.19947331216410835
+0 v: -0.45257152419909896
+1 v: 0.19947331216410835
+0 v: -0.45257152419909896
+1 v: 0.19947331216410835
+0 v: -0.45257152419909896
+1 v: 0.19947331216410835
+0 v: -0.45257152419909896
+1 v: 0.19947331216410835
+0 v: -0.45257152419909896
+1 v: 0.19947331216410835
+0 v: -0.45257152419909896
+1 v: 0.19947331216410835
+0 v: -0.45257152419909896
+1 v: 0.19947331216410835
+0 v: -0.45257152419909896
+1 v: 0.19947331216410835
+0 v: -0.45257152419909896
+1 v: 0.19947331216410835
+0 v: -0.45257152419909896
+1 v: 0.19947331216410835
+0 v: -0.45257152419909896
+1 v: 0.19947331216410835
+0 v: -0.45257152419909896
+1 v: 0.19947331216410835
+0 v: -0.45257152419909896
+1 v: 0.19947331216410835
+0 v: -0.45257152419909896
+1 v: 0.19947331216410835
+0 v: -0.45257152419909896
+1 v: 0.19947331216410835
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714146491329 (Fri Apr 26 17:48:11 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.9900000000000000e+02 (+0e+00,0e+00) |  1: 2.1e-01  0: 2.0e-01 | 2.1e-01 2.1e-01   1.00   |  0.3  0.0 
+0 v: 0.1580824094717586
+1 v: 0.2430016289788311
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714146740498 (Fri Apr 26 17:52:20 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714146746902 (Fri Apr 26 17:52:26 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714146778477 (Fri Apr 26 17:52:58 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714146786672 (Fri Apr 26 17:53:06 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.2000000000000000e+01 (+0e+00,1e+00) |  0: 2.4e-01  0: 2.1e-01 | 2.2e-01 2.2e-01   1.00   |  0.5  0.0 
+0 v: 0.30676492283904366
+1 v: 0.011624707045953843
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+0 v: 0.2500074353027497
+1 v: -0.10457289931327389
+0 v: 0.7901678884368581
+1 v: -0.30616309700784006
+0 v: 1.0307340867561625
+1 v: -0.26011497990897525
+0 v: 1.8860387579572913
+1 v: -0.8868062542342142
+0 v: 1.8860387579572913
+1 v: -0.8868062542342142
+0 v: 1.8860387579572913
+1 v: -0.8868062542342142
+0 v: 1.1512776553804995
+1 v: -0.7277275077377332
+0 v: 1.1512776553804995
+1 v: -0.7277275077377332
+0 v: 1.1512776553804995
+1 v: -0.7277275077377332
+0 v: 1.1512776553804995
+1 v: -0.7277275077377332
+0 v: 1.1512776553804995
+1 v: -0.7277275077377332
+0 v: 1.1512776553804995
+1 v: -0.7277275077377332
+0 v: 1.1512776553804995
+1 v: -0.7277275077377332
+0 v: 1.1512776553804995
+1 v: -0.7277275077377332
+0 v: 1.1512776553804995
+1 v: -0.7277275077377332
+0 v: 1.1512776553804995
+1 v: -0.7277275077377332
+0 v: 1.1512776553804995
+1 v: -0.7277275077377332
+0 v: 1.1512776553804995
+1 v: -0.7277275077377332
+0 v: 1.1512776553804995
+1 v: -0.7277275077377332
+0 v: 1.1512776553804995
+1 v: -0.7277275077377332
+0 v: 1.1512776553804995
+1 v: -0.7277275077377332
+0 v: 1.1512776553804995
+1 v: -0.7277275077377332
+0 v: 1.1512776553804995
+1 v: -0.7277275077377332
+0 v: 1.1512776553804995
+1 v: -0.7277275077377332
+0 v: 1.1512776553804995
+1 v: -0.7277275077377332
+0 v: 1.1512776553804995
+1 v: -0.7277275077377332
+0 v: 1.1512776553804995
+1 v: -0.7277275077377332
+0 v: 1.1512776553804995
+1 v: -0.7277275077377332
+0 v: 1.1512776553804995
+1 v: -0.7277275077377332
+0 v: 1.1512776553804995
+1 v: -0.7277275077377332
+0 v: 1.1512776553804995
+1 v: -0.7277275077377332
+0 v: 1.1512776553804995
+1 v: -0.7277275077377332
+0 v: 1.1512776553804995
+1 v: -0.7277275077377332
+0 v: 1.1512776553804995
+1 v: -0.7277275077377332
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714146897365 (Fri Apr 26 17:54:57 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714146900448 (Fri Apr 26 17:55:00 CEST 2024)
+best: 10.0
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0000000000000000e+01 (+0e+00,7e+00) |  1: 3.1e-01  0: 2.7e-01 | 2.8e-01 2.8e-01   1.00   |  0.5  0.0 
+0 v: 0.1010030339370339
+1 v: 0.451631617269603
+best: 10.0
+0 v: 0.1010030339370339
+1 v: 0.451631617269603
+best: 10.0
+0 v: 0.1010030339370339
+1 v: 0.451631617269603
+best: 10.0
+0 v: 0.1010030339370339
+1 v: 0.451631617269603
+best: 10.0
+0 v: 0.1010030339370339
+1 v: 0.451631617269603
+best: 10.0
+0 v: 0.1010030339370339
+1 v: 0.451631617269603
+best: 10.0
+0 v: 0.1010030339370339
+1 v: 0.451631617269603
+best: 10.0
+0 v: 0.1010030339370339
+1 v: 0.451631617269603
+best: 10.0
+0 v: 0.1010030339370339
+1 v: 0.451631617269603
+best: 10.0
+0 v: 0.1010030339370339
+1 v: 0.451631617269603
+best: 10.0
+0 v: 0.1010030339370339
+1 v: 0.451631617269603
+best: 10.0
+0 v: 0.1010030339370339
+1 v: 0.451631617269603
+best: 10.0
+0 v: 0.1010030339370339
+1 v: 0.451631617269603
+best: 10.0
+0 v: 0.1010030339370339
+1 v: 0.451631617269603
+best: 10.0
+0 v: 0.1010030339370339
+1 v: 0.451631617269603
+best: 10.0
+0 v: 0.1010030339370339
+1 v: 0.451631617269603
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714146908916 (Fri Apr 26 17:55:08 CEST 2024)
+best: 91.0
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.1000000000000000e+01 (+0e+00,0e+00) |  1: 2.2e-01  0: 2.1e-01 | 2.1e-01 2.1e-01   1.00   |  0.2  0.0 
+0 v: -0.02733807793896454
+1 v: -0.27194655395651296
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714146938166 (Fri Apr 26 17:55:38 CEST 2024)
+best: 74.0
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.4000000000000000e+01 (+0e+00,2e+00) |  0: 1.8e-01  0: 1.7e-01 | 1.9e-01 1.9e-01   1.00   |  0.5  0.0 
+0 v: 0.2633060461083265
+1 v: -0.12422738865402319
+best: 71.0
+0 v: 0.34938179944004855
+1 v: 0.008062447238904064
+best: 68.0
+0 v: 0.3801673529250342
+1 v: -0.09615561349189759
+best: 66.0
+0 v: 0.5145252336298468
+1 v: -0.026815545743694782
+best: 63.0
+0 v: 0.5281366793945745
+1 v: 0.040022089491909635
+best: 63.0
+0 v: 0.5281366793945745
+1 v: 0.040022089491909635
+best: 63.0
+0 v: 0.5281366793945745
+1 v: 0.040022089491909635
+best: 63.0
+0 v: 0.5281366793945745
+1 v: 0.040022089491909635
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+best: 63.0
+0 v: 0.5281366793945745
+1 v: 0.040022089491909635
+best: 63.0
+0 v: 0.5281366793945745
+1 v: 0.040022089491909635
+best: 56.0
+0 v: 1.017784751339683
+1 v: 0.37094523458543394
+best: 42.0
+0 v: 0.3779751980387692
+1 v: 0.28493895692521937
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+best: 34.0
+0 v: 0.6492894946437905
+1 v: 0.4270226013792936
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714147263570 (Fri Apr 26 18:01:03 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714147273175 (Fri Apr 26 18:01:13 CEST 2024)
+best: 75.0
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.5000000000000000e+01 (+0e+00,1e+00) |  1: 1.6e-01  0: 1.6e-01 | 1.7e-01 1.7e-01   1.00   |  0.5  0.0 
+0 v: 0.17508162984819362
+1 v: -0.16846381406802524
+best: 74.0
+0 v: 0.1627180746898535
+1 v: 0.009574573246478313
+best: 72.0
+0 v: 0.15097843575600717
+1 v: -0.284455055846694
+best: 67.0
+0 v: 0.17349678017094666
+1 v: -0.21487020430124523
+best: 62.0
+0 v: 0.18292423223393756
+1 v: -0.3597804588065818
+best: 60.0
+0 v: 0.17236429951217958
+1 v: -0.19914403199404457
+best: 60.0
+0 v: 0.17236429951217958
+1 v: -0.19914403199404457
+best: 60.0
+0 v: 0.17236429951217958
+1 v: -0.19914403199404457
+best: 60.0
+0 v: 0.17236429951217958
+1 v: -0.19914403199404457
+best: 60.0
+0 v: 0.17236429951217958
+1 v: -0.19914403199404457
+best: 60.0
+0 v: 0.17236429951217958
+1 v: -0.19914403199404457
+best: 60.0
+0 v: 0.17236429951217958
+1 v: -0.19914403199404457
+best: 60.0
+0 v: 0.17236429951217958
+1 v: -0.19914403199404457
+best: 60.0
+0 v: 0.17236429951217958
+1 v: -0.19914403199404457
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+best: 60.0
+0 v: 0.17236429951217958
+1 v: -0.19914403199404457
+best: 60.0
+0 v: 0.17236429951217958
+1 v: -0.19914403199404457
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+best: 60.0
+0 v: 0.17236429951217958
+1 v: -0.19914403199404457
+best: 60.0
+0 v: 0.17236429951217958
+1 v: -0.19914403199404457
+best: 60.0
+0 v: 0.17236429951217958
+1 v: -0.19914403199404457
+best: 60.0
+0 v: 0.17236429951217958
+1 v: -0.19914403199404457
+best: 60.0
+0 v: 0.17236429951217958
+1 v: -0.19914403199404457
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+best: 60.0
+0 v: 0.17236429951217958
+1 v: -0.19914403199404457
+best: 60.0
+0 v: 0.17236429951217958
+1 v: -0.19914403199404457
+best: 60.0
+0 v: 0.17236429951217958
+1 v: -0.19914403199404457
+best: 60.0
+0 v: 0.17236429951217958
+1 v: -0.19914403199404457
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714147286158 (Fri Apr 26 18:01:26 CEST 2024)
+best: 73.0
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.3000000000000000e+01 (+0e+00,2e+00) |  0: 1.7e-01  0: 1.7e-01 | 1.8e-01 1.8e-01   1.00   |  0.3  0.0 
+0 v: 0.07581929648593516
+1 v: 0.20301518385475964
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714147533970 (Fri Apr 26 18:05:33 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714147536428 (Fri Apr 26 18:05:36 CEST 2024)
+best: 9.597597425586655E-5
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.5975974255866550e-05 (+0e+00,1e-01) |  1: 1.7e-01  0: 1.7e-01 | 1.8e-01 1.8e-01   1.00   |  0.5  0.0 
+best: 9.597597425586655E-5
+best: 9.597597425586655E-5
+best: 9.597597425586655E-5
+best: 9.597597425586655E-5
+best: 7.240700895179456E-5
+best: 7.70546430808408E-6
+best: 7.642745583984536E-6
+best: 5.410462105125171E-6
+best: 3.314756873690521E-6
+best: 3.314756873690521E-6
+best: 3.0540811382160244E-6
+best: 3.0540811382160244E-6
+best: 3.0540811382160244E-6
+best: 1.4126518405163056E-6
+best: 1.4126518405163056E-6
+best: 1.5358079831443797E-7
+best: 1.5358079831443797E-7
+best: 1.5151095338266633E-8
+best: 1.5151095338266633E-8
+best: 1.5151095338266633E-8
+best: 5.9194493568203855E-9
+best: 5.220019207903558E-9
+best: 2.187223841785197E-9
+best: 6.728305525533052E-10
+best: 6.728305525533052E-10
+0 v: -0.11892387254029176
+1 v: 0.11889793356281474
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714147639256 (Fri Apr 26 18:07:19 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714147642326 (Fri Apr 26 18:07:22 CEST 2024)
+best: 0.0014570054358483025
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4570054358483025e-03 (+0e+00,8e-02) |  0: 1.9e-01  0: 1.8e-01 | 1.9e-01 1.9e-01   1.00   |  0.0  0.0 
+best: 0.0014570054358483025
+best: 9.466445135679609E-6
+best: 9.080893512857996E-6
+best: 9.080893512857996E-6
+best: 9.080893512857996E-6
+best: 2.891999375483462E-6
+best: 1.63992160266475E-6
+best: 1.63992160266475E-6
+best: 1.63992160266475E-6
+best: 6.997395680234016E-7
+best: 3.637050932652971E-11
+best: 3.637050932652971E-11
+0 v: 0.18091500503539704
+1 v: -0.18092103583213764
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714147671498 (Fri Apr 26 18:07:51 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714147673821 (Fri Apr 26 18:07:53 CEST 2024)
+best: 1.0736440169353274E-6
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0736440169353274e-06 (+0e+00,3e-04) |  0: 1.4e-01  0: 1.4e-01 | 1.5e-01 1.5e-01   1.00   |  0.0  0.0 
+best: 8.417365153027487E-8
+best: 8.417365153027487E-8
+best: 8.417365153027487E-8
+best: 7.904295462973013E-8
+best: 2.4372658134124242E-8
+best: 9.037705027855555E-10
+best: 9.037705027855555E-10
+0 v: 0.007070217288799842
+1 v: 0.004252030001993226
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714147759488 (Fri Apr 26 18:09:19 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714147762385 (Fri Apr 26 18:09:22 CEST 2024)
+best: 3.421198550286218E-5
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.4211985502862180e-05 (+0e+00,5e-03) |  1: 2.1e-01  0: 1.9e-01 | 2.1e-01 2.1e-01   1.00   |  0.0  0.0 
+best: 3.879171937149861E-8
+best: 3.879171937149861E-8
+best: 3.879171937149861E-8
+best: 3.879171937149861E-8
+best: 2.5071150864536385E-8
+best: 4.173941288012882E-9
+best: 4.173941288012882E-9
+best: 4.173941288012882E-9
+best: 3.2628750773935003E-9
+best: 3.2628750773935003E-9
+best: 2.7391348829593462E-9
+best: 1.3588889082755602E-12
+best: 1.3588889082755602E-12
+0 v: 3.202670222274967E-5
+1 v: 0.0363981872650326
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714147849318 (Fri Apr 26 18:10:49 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714147852337 (Fri Apr 26 18:10:52 CEST 2024)
+best: 5.555838413968367E-7
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.5558384139683670e-07 (+0e+00,3e-04) |  0: 2.4e-01  0: 2.0e-01 | 2.2e-01 2.2e-01   1.00   |  0.0  0.0 
+best: 5.555838413968367E-7
+best: 5.555838413968367E-7
+best: 5.555838413968367E-7
+best: 5.555838413968367E-7
+best: 1.2577277817813885E-7
+best: 1.2577277817813885E-7
+best: 5.560584459976059E-10
+best: 5.560584459976059E-10
+ best: 2.3580891543739518E-5
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714147855479 (Fri Apr 26 18:10:55 CEST 2024)
+best: 5.4751759281997286E-5
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.4751759281997286e-05 (+0e+00,1e-02) |  0: 2.0e-01  0: 1.9e-01 | 2.0e-01 2.0e-01   1.00   |  0.0  0.0 
+best: 1.9998197723008365E-6
+best: 2.4467405729303103E-8
+best: 2.4467405729303103E-8
+best: 2.7832507424101523E-9
+best: 2.7832507424101523E-9
+best: 1.0839178477954149E-12
+best: 1.0839178477954149E-12
+ best: 1.0411137535329244E-6
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714147856832 (Fri Apr 26 18:10:56 CEST 2024)
+best: 5.133128353603148E-6
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.1331283536031480e-06 (+0e+00,2e-02) |  0: 1.8e-01  0: 1.7e-01 | 1.8e-01 1.8e-01   1.00   |  0.0  0.0 
+best: 5.133128353603148E-6
+best: 3.846220906235166E-7
+best: 2.0893528730072586E-7
+best: 2.0893528730072586E-7
+best: 2.0893528730072586E-7
+best: 2.0893528730072586E-7
+best: 2.0893528730072586E-7
+best: 2.0893528730072586E-7
+best: 2.0893528730072586E-7
+best: 2.0893528730072586E-7
+best: 1.7262195060873385E-8
+best: 1.7262195060873385E-8
+best: 1.0937608179104785E-8
+best: 4.869956951351907E-10
+best: 4.869956951351907E-10
+ best: 2.2067978954475888E-5
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714147858633 (Fri Apr 26 18:10:58 CEST 2024)
+best: 1.4049657696458602E-6
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4049657696458602e-06 (+0e+00,1e-03) |  0: 1.6e-01  0: 1.5e-01 | 1.7e-01 1.7e-01   1.00   |  0.0  0.0 
+best: 4.236643775828937E-8
+best: 4.236643775828937E-8
+best: 4.236643775828937E-8
+best: 4.236643775828937E-8
+best: 4.236643775828937E-8
+best: 4.236643775828937E-8
+best: 3.1196699639890773E-8
+best: 3.1196699639890773E-8
+best: 3.1196699639890773E-8
+best: 9.315958276252894E-9
+best: 3.8854650866705725E-9
+best: 3.8854650866705725E-9
+best: 1.2019224059113715E-9
+best: 1.2019224059113715E-9
+best: 1.2019224059113715E-9
+best: 3.411320393361002E-10
+best: 3.411320393361002E-10
+ best: 1.8469760132067234E-5
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714147862387 (Fri Apr 26 18:11:02 CEST 2024)
+best: 2.693266291210477E-7
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.6932662912104770e-07 (+0e+00,5e-03) |  0: 1.5e-01  0: 1.4e-01 | 1.6e-01 1.6e-01   1.00   |  0.0  0.0 
+best: 6.899930636873335E-8
+best: 6.899930636873335E-8
+best: 6.899930636873335E-8
+best: 6.899930636873335E-8
+best: 6.899930636873335E-8
+best: 6.899930636873335E-8
+best: 6.108779573744149E-8
+best: 6.108779573744149E-8
+best: 6.108779573744149E-8
+best: 6.108779573744149E-8
+best: 6.108779573744149E-8
+best: 3.0629993422760584E-9
+best: 3.0629993422760584E-9
+best: 3.0629993422760584E-9
+best: 3.0629993422760584E-9
+best: 3.0629993422760584E-9
+best: 3.0629993422760584E-9
+best: 3.0629993422760584E-9
+best: 1.8147930429904267E-9
+best: 1.8147930429904267E-9
+best: 1.8147930429904267E-9
+best: 1.45943903975359E-11
+best: 1.45943903975359E-11
+ best: 3.8202605143544725E-6
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714147934196 (Fri Apr 26 18:12:14 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714147936700 (Fri Apr 26 18:12:16 CEST 2024)
+best: 0.0015060521062776127
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5060521062776127e-03 (+0e+00,4e-02) |  1: 1.5e-01  0: 1.5e-01 | 1.6e-01 1.6e-01   1.00   |  0.0  0.0 
+best: 0.0015060521062776127
+best: 2.9419721891135405E-4
+best: 2.9419721891135405E-4
+best: 1.2699799115047477E-4
+best: 1.2699799115047477E-4
+best: 5.303270075276019E-6
+best: 5.303270075276019E-6
+best: 5.303270075276019E-6
+best: 5.303270075276019E-6
+best: 5.303270075276019E-6
+best: 5.303270075276019E-6
+best: 5.303270075276019E-6
+best: 5.303270075276019E-6
+best: 5.303270075276019E-6
+best: 3.5052324922847408E-6
+best: 3.5052324922847408E-6
+best: 3.5052324922847408E-6
+best: 3.5052324922847408E-6
+best: 3.1523557486660417E-7
+best: 3.1523557486660417E-7
+best: 5.520391788783415E-8
+best: 5.520391788783415E-8
+best: 5.520391788783415E-8
+best: 4.6889118062335056E-8
+best: 4.6889118062335056E-8
+best: 4.6889118062335056E-8
+best: 4.6889118062335056E-8
+best: 4.6889118062335056E-8
+best: 4.6889118062335056E-8
+best: 4.6889118062335056E-8
+best: 4.6889118062335056E-8
+best: 2.8768587679425017E-8
+best: 5.574930173503155E-9
+best: 5.574930173503155E-9
+best: 5.574930173503155E-9
+best: 5.574930173503155E-9
+best: 5.574930173503155E-9
+best: 1.240766473855423E-9
+best: 1.240766473855423E-9
+best: 6.723203090293665E-10
+best: 2.8279792395190804E-10
+ best: 2.8279792395190804E-10
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714147958253 (Fri Apr 26 18:12:38 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714147962485 (Fri Apr 26 18:12:42 CEST 2024)
+best: 999656.9182528908
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.9965691825289080e+05 (+0e+00,6e+02) |  1: 3.5e-01  0: 2.6e-01 | 2.7e-01 2.7e-01   1.00   |  0.0  0.0 
+best: 999176.1669026546
+best: 998437.3159363377
+best: 997582.571963947
+best: 996098.9839588179
+best: 990645.1895130625
+best: 987445.8703508575
+best: 984885.2125815693
+best: 973971.4635833909
+best: 960610.42674521
+best: 942193.4186292159
+best: 934208.2973878919
+best: 909229.5115880218
+best: 870196.3934756852
+best: 848627.6120870218
+best: 776220.8624471745
+best: 735133.1783108878
+best: 696824.9629529415
+best: 534660.6327968185
+best: 498196.88345422386
+best: 224871.47426272635
+best: 163964.8240800762
+ best: 163964.8240800762
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714147974561 (Fri Apr 26 18:12:54 CEST 2024)
+best: 999505.823628235
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.9950582362823500e+05 (+0e+00,9e+02) |  0: 2.5e-01  0: 2.5e-01 | 2.4e-01 2.4e-01   1.00   |  0.0  0.0 
+best: 999111.2497597005
+best: 999065.0328214347
+best: 998398.6944560589
+best: 997681.3188464892
+best: 996482.3183759799
+best: 994075.9518930893
+best: 991718.871257878
+best: 988595.090367222
+best: 971836.0277286934
+best: 943893.2268212722
+best: 912324.1408142995
+best: 846618.228226159
+best: 736323.1937063503
+best: 736323.1937063503
+best: 659534.7560475387
+best: 535203.2085350384
+best: 456336.4819953289
+best: 267334.66138211446
+best: 106054.08362917748
+ best: 106054.08362917748
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714147995758 (Fri Apr 26 18:13:15 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714147998232 (Fri Apr 26 18:13:18 CEST 2024)
+best: 9984.08194947789
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.9840819494778900e+03 (+0e+00,5e+01) |  0: 2.1e-01  0: 1.8e-01 | 2.0e-01 2.0e-01   1.00   |  0.0  0.0 
+best: 9924.223592829016
+best: 9881.76618507823
+best: 9765.216439479429
+best: 9691.253088007512
+best: 9691.253088007512
+best: 9569.36716610084
+best: 9358.264209602896
+best: 9014.547690379306
+best: 8834.659966140649
+best: 8347.42634148115
+best: 7889.16424325263
+best: 6339.959828926615
+best: 6339.959828926615
+best: 5014.231331521108
+best: 4292.542439631588
+best: 3285.2445762582956
+best: 30.605448734297106
+best: 30.605448734297106
+best: 30.605448734297106
+best: 30.605448734297106
+best: 30.605448734297106
+best: 30.605448734297106
+best: 30.605448734297106
+best: 30.605448734297106
+best: 30.605448734297106
+best: 30.605448734297106
+best: 30.605448734297106
+best: 30.605448734297106
+best: 30.605448734297106
+best: 30.605448734297106
+best: 30.605448734297106
+best: 4.931564961862122
+best: 4.931564961862122
+best: 4.931564961862122
+best: 4.931564961862122
+best: 4.931564961862122
+best: 4.931564961862122
+best: 4.931564961862122
+best: 4.931564961862122
+best: 4.931564961862122
+best: 4.931564961862122
+best: 4.931564961862122
+best: 4.931564961862122
+best: 4.931564961862122
+best: 1.8508653081557882
+best: 0.08478967203705098
+best: 0.08478967203705098
+best: 0.08478967203705098
+best: 0.08478967203705098
+best: 0.08478967203705098
+best: 0.08478967203705098
+best: 0.08478967203705098
+best: 0.08478967203705098
+best: 0.08478967203705098
+best: 0.08478967203705098
+best: 0.08478967203705098
+best: 0.08478967203705098
+best: 0.08478967203705098
+best: 0.08478967203705098
+best: 0.08478967203705098
+best: 0.08478967203705098
+best: 0.025235056026848578
+best: 0.025235056026848578
+best: 0.025235056026848578
+best: 0.025235056026848578
+best: 0.025235056026848578
+best: 0.025235056026848578
+best: 0.025235056026848578
+best: 0.025235056026848578
+best: 0.025235056026848578
+best: 0.025235056026848578
+best: 0.025235056026848578
+best: 0.025235056026848578
+best: 0.025235056026848578
+best: 0.025235056026848578
+best: 0.025235056026848578
+best: 0.025235056026848578
+best: 0.00240567017498997
+best: 0.00240567017498997
+best: 0.00240567017498997
+best: 0.00240567017498997
+best: 0.00240567017498997
+best: 0.00240567017498997
+best: 0.00240567017498997
+best: 0.00240567017498997
+best: 0.00240567017498997
+best: 0.0011753382651264557
+best: 0.0011753382651264557
+best: 0.0011753382651264557
+best: 0.0011753382651264557
+best: 1.122079130656471E-4
+best: 1.122079130656471E-4
+best: 1.122079130656471E-4
+best: 1.122079130656471E-4
+best: 1.122079130656471E-4
+best: 1.122079130656471E-4
+best: 1.122079130656471E-4
+best: 1.122079130656471E-4
+best: 1.122079130656471E-4
+best: 1.122079130656471E-4
+best: 1.122079130656471E-4
+best: 1.122079130656471E-4
+best: 1.122079130656471E-4
+best: 1.122079130656471E-4
+best: 1.122079130656471E-4
+best: 8.542543791219872E-5
+best: 8.542543791219872E-5
+best: 1.944544580526466E-5
+best: 1.944544580526466E-5
+best: 1.944544580526466E-5
+best: 1.944544580526466E-5
+best: 1.904191721348649E-5
+best: 1.904191721348649E-5
+best: 1.2566163384773235E-5
+best: 1.2566163384773235E-5
+best: 1.2566163384773235E-5
+best: 1.2566163384773235E-5
+best: 1.2566163384773235E-5
+best: 1.2566163384773235E-5
+best: 1.2566163384773235E-5
+best: 1.2566163384773235E-5
+best: 1.2566163384773235E-5
+best: 2.8923166564242768E-6
+best: 2.8923166564242768E-6
+best: 2.8923166564242768E-6
+best: 2.8923166564242768E-6
+best: 1.503300744029762E-6
+best: 1.503300744029762E-6
+best: 1.503300744029762E-6
+best: 1.503300744029762E-6
+best: 1.503300744029762E-6
+best: 9.201883448969263E-7
+best: 9.201883448969263E-7
+best: 9.201883448969263E-7
+best: 9.201883448969263E-7
+best: 9.201883448969263E-7
+best: 9.201883448969263E-7
+best: 9.201883448969263E-7
+best: 5.6506861889844E-7
+best: 5.6506861889844E-7
+best: 1.3334075977540705E-7
+best: 1.3334075977540705E-7
+best: 1.3334075977540705E-7
+best: 1.3334075977540705E-7
+best: 1.3334075977540705E-7
+best: 1.3334075977540705E-7
+best: 1.3334075977540705E-7
+best: 1.3334075977540705E-7
+best: 3.858290521590621E-9
+best: 3.858290521590621E-9
+  151( 6),    906: 4.0285739785896570e-08 (-4e-08,7e-07) |  1: 4.0e-05  0: 7.5e-09 | 7.6e-09 2.2e-04 5414.52   |  0.1  0.0 
+best: 3.858290521590621E-9
+best: 3.858290521590621E-9
+best: 3.858290521590621E-9
+best: 3.858290521590621E-9
+best: 3.858290521590621E-9
+best: 3.858290521590621E-9
+best: 3.858290521590621E-9
+best: 3.858290521590621E-9
+best: 3.858290521590621E-9
+best: 3.858290521590621E-9
+best: 3.858290521590621E-9
+best: 3.858290521590621E-9
+best: 3.858290521590621E-9
+best: 2.6168782544861027E-10
+best: 2.6168782544861027E-10
+ best: 2.6168782544861027E-10
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714148074674 (Fri Apr 26 18:14:34 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714148077676 (Fri Apr 26 18:14:37 CEST 2024)
+best: 9967.467513072332
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.9674675130723320e+03 (+0e+00,8e+01) |  0: 2.1e-01  0: 1.9e-01 | 2.0e-01 2.0e-01   1.00   |  0.0  0.0 
+best: 9964.422148037544
+best: 9938.323926618601
+best: 9900.662616248119
+best: 9798.923934901588
+best: 9736.246401396078
+best: 9562.111355096264
+best: 9191.165599326167
+best: 9191.165599326167
+best: 8909.30745248684
+best: 8450.160232533872
+best: 7641.103382760727
+best: 6636.061096793422
+best: 3475.125437198924
+best: 1408.445993308069
+best: 188.981261490031
+best: 188.981261490031
+best: 188.981261490031
+best: 188.981261490031
+best: 53.33873566026929
+best: 53.33873566026929
+best: 53.33873566026929
+best: 53.33873566026929
+best: 0.8025416276488946
+best: 0.8025416276488946
+best: 0.8025416276488946
+best: 0.8025416276488946
+best: 0.8025416276488946
+best: 0.8025416276488946
+best: 0.8025416276488946
+best: 0.8025416276488946
+best: 0.8025416276488946
+best: 0.8025416276488946
+best: 0.8025416276488946
+best: 0.8025416276488946
+best: 0.8025416276488946
+best: 0.8025416276488946
+best: 0.599493978912566
+best: 0.5158620039551514
+best: 0.5158620039551514
+best: 0.020390402324025274
+best: 0.020390402324025274
+best: 0.020390402324025274
+best: 0.020390402324025274
+best: 0.020390402324025274
+best: 0.020390402324025274
+best: 0.006900018906008563
+best: 0.001464135933237325
+best: 0.001464135933237325
+best: 0.001464135933237325
+best: 0.001464135933237325
+best: 0.001464135933237325
+best: 0.001464135933237325
+best: 0.001464135933237325
+best: 0.001464135933237325
+best: 0.001464135933237325
+best: 0.001464135933237325
+best: 0.001464135933237325
+best: 0.001464135933237325
+best: 0.001464135933237325
+best: 0.001464135933237325
+best: 0.0013170865390079835
+best: 0.0013170865390079835
+best: 0.0013170865390079835
+best: 0.0013170865390079835
+best: 0.0013170865390079835
+best: 0.0013170865390079835
+best: 0.0013170865390079835
+best: 9.627557364940275E-4
+best: 1.375968616281221E-4
+best: 1.375968616281221E-4
+best: 1.0896198191279829E-4
+best: 1.0896198191279829E-4
+best: 1.0896198191279829E-4
+best: 1.0896198191279829E-4
+best: 1.0896198191279829E-4
+best: 1.0896198191279829E-4
+best: 1.0896198191279829E-4
+best: 1.0896198191279829E-4
+best: 1.0896198191279829E-4
+best: 1.0896198191279829E-4
+best: 1.0896198191279829E-4
+best: 5.813713808325394E-5
+best: 5.813713808325394E-5
+best: 5.813713808325394E-5
+best: 5.813713808325394E-5
+best: 5.813713808325394E-5
+best: 5.813713808325394E-5
+best: 5.813713808325394E-5
+best: 5.813713808325394E-5
+best: 1.8048859627647952E-5
+best: 1.8048859627647952E-5
+best: 1.8048859627647952E-5
+best: 1.8048859627647952E-5
+best: 2.4048373021696398E-6
+best: 2.4048373021696398E-6
+best: 2.4048373021696398E-6
+best: 2.4048373021696398E-6
+best: 2.4048373021696398E-6
+best: 2.4048373021696398E-6
+best: 2.4048373021696398E-6
+best: 2.4048373021696398E-6
+best: 2.4048373021696398E-6
+best: 2.4048373021696398E-6
+best: 2.4048373021696398E-6
+best: 2.4048373021696398E-6
+best: 2.4048373021696398E-6
+best: 1.698774663857066E-6
+best: 1.2561438864785877E-6
+best: 1.2561438864785877E-6
+best: 1.2561438864785877E-6
+best: 1.2561438864785877E-6
+best: 1.2561438864785877E-6
+best: 1.2561438864785877E-6
+best: 1.2561438864785877E-6
+best: 8.856395591755275E-8
+best: 8.856395591755275E-8
+best: 8.856395591755275E-8
+best: 8.856395591755275E-8
+best: 8.856395591755275E-8
+best: 8.856395591755275E-8
+best: 8.856395591755275E-8
+best: 4.7041083796720455E-8
+best: 4.7041083796720455E-8
+best: 4.7041083796720455E-8
+best: 4.7041083796720455E-8
+best: 3.090495545212653E-8
+best: 3.090495545212653E-8
+best: 5.8633553064995246E-9
+best: 5.8633553064995246E-9
+best: 5.8633553064995246E-9
+best: 5.8633553064995246E-9
+best: 5.8633553064995246E-9
+best: 5.8633553064995246E-9
+best: 5.8633553064995246E-9
+best: 5.8633553064995246E-9
+best: 1.7264372715182045E-9
+best: 1.7264372715182045E-9
+best: 1.7264372715182045E-9
+best: 1.7264372715182045E-9
+best: 1.7264372715182045E-9
+best: 1.7264372715182045E-9
+best: 1.7264372715182045E-9
+best: 1.7264372715182045E-9
+best: 1.7264372715182045E-9
+best: 1.7264372715182045E-9
+best: 3.125256568054743E-10
+best: 3.125256568054743E-10
+ best: 3.125256568054743E-10
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714148133656 (Fri Apr 26 18:15:33 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714148139695 (Fri Apr 26 18:15:39 CEST 2024)
+best: 199.64027060977799
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.9964027060977799e+02 (+0e+00,4e-01) |  1: 2.0e-01  0: 2.0e-01 | 2.0e-01 2.0e-01   1.00   |  0.0  0.0 
+best: 199.37588961470215
+best: 198.81922340001404
+best: 198.73089516002386
+best: 198.0132879078928
+best: 197.49684632966654
+best: 196.66183875220256
+best: 195.99237386616258
+best: 193.27288779936566
+best: 187.04615711558537
+best: 183.94328124883515
+best: 171.76577222181913
+best: 141.93454295767845
+best: 137.0393691915138
+best: 111.86757221924772
+best: 111.86757221924772
+best: 59.467968334118915
+best: 59.467968334118915
+best: 38.44892126168942
+best: 32.444512846862416
+best: 32.444512846862416
+best: 32.444512846862416
+best: 32.444512846862416
+best: 16.123294581514134
+best: 16.123294581514134
+best: 16.123294581514134
+best: 16.123294581514134
+best: 11.120710587381629
+best: 11.120710587381629
+best: 11.120710587381629
+best: 9.382088884848585
+best: 9.382088884848585
+best: 9.382088884848585
+best: 9.382088884848585
+best: 9.051438998889116
+best: 6.126002197681633
+best: 6.126002197681633
+best: 4.679535587816559
+best: 3.907446943747343
+best: 2.7946099261803403
+best: 0.5596779181990208
+best: 0.5596779181990208
+best: 0.5596779181990208
+best: 0.5596779181990208
+best: 0.5596779181990208
+best: 0.5596779181990208
+best: 0.448425423690797
+best: 0.448425423690797
+best: 0.448425423690797
+best: 0.448425423690797
+best: 0.448425423690797
+best: 0.2489122319082649
+best: 0.2489122319082649
+best: 0.2441755415937312
+best: 0.2441755415937312
+best: 0.13378609841385836
+best: 0.11096593752075629
+best: 0.11096593752075629
+best: 0.11096593752075629
+best: 0.0867324079859774
+best: 0.0867324079859774
+best: 0.0867324079859774
+best: 0.039881046464688735
+best: 0.039881046464688735
+best: 0.039881046464688735
+best: 0.03961058083508297
+best: 0.024809206519508548
+best: 0.023339729778686515
+best: 0.023339729778686515
+best: 0.019328876081009447
+best: 0.019328876081009447
+best: 0.010735229550758063
+best: 0.007957033377959846
+best: 0.002319934339752342
+best: 0.002319934339752342
+best: 0.002319934339752342
+best: 0.002319934339752342
+best: 0.002319934339752342
+best: 0.0017425538423884142
+best: 0.0017425538423884142
+best: 0.0017425538423884142
+best: 0.0011519650106494134
+best: 9.722732795887383E-4
+best: 8.331859717052097E-4
+best: 8.331859717052097E-4
+best: 8.283112208430012E-4
+best: 7.005553649720253E-4
+best: 7.005553649720253E-4
+best: 4.132461836869408E-4
+best: 3.779021091063646E-4
+best: 3.779021091063646E-4
+best: 3.779021091063646E-4
+best: 2.7353744356262453E-4
+best: 2.7353744356262453E-4
+best: 2.147740464378179E-4
+best: 1.4300638503322817E-4
+best: 1.4300638503322817E-4
+best: 1.4300638503322817E-4
+best: 1.4300638503322817E-4
+best: 1.4300638503322817E-4
+best: 9.922580611973276E-5
+best: 7.937504147016583E-5
+best: 7.937504147016583E-5
+best: 7.59643769423134E-5
+best: 7.59643769423134E-5
+best: 5.633890458302465E-5
+best: 3.7650236074458424E-5
+best: 2.482814309072407E-5
+best: 2.040007244275038E-5
+best: 1.0756138812779147E-5
+best: 1.0756138812779147E-5
+best: 4.315901827524743E-6
+best: 1.5744267712748816E-6
+best: 1.5744267712748816E-6
+best: 1.5744267712748816E-6
+best: 1.5744267712748816E-6
+best: 1.5744267712748816E-6
+best: 1.5744267712748816E-6
+best: 1.5744267712748816E-6
+best: 1.5744267712748816E-6
+best: 1.5744267712748816E-6
+best: 1.5744267712748816E-6
+best: 1.5744267712748816E-6
+best: 1.1661957430754379E-6
+best: 1.1661957430754379E-6
+best: 1.1661957430754379E-6
+best: 1.1661957430754379E-6
+best: 6.228879903295354E-7
+best: 6.228879903295354E-7
+best: 6.228879903295354E-7
+best: 6.228879903295354E-7
+best: 2.5070777260801985E-7
+best: 2.5070777260801985E-7
+best: 2.5070777260801985E-7
+best: 2.5070777260801985E-7
+best: 1.3777885728749038E-7
+best: 1.3777885728749038E-7
+best: 1.3777885728749038E-7
+best: 1.3777885728749038E-7
+best: 1.3777885728749038E-7
+best: 1.3777885728749038E-7
+best: 1.206225744403144E-7
+best: 8.154700208352682E-8
+best: 6.660071851061535E-8
+best: 6.660071851061535E-8
+best: 3.7275115845584774E-8
+best: 1.9664153677816876E-8
+best: 1.9664153677816876E-8
+best: 1.93416390596121E-8
+best: 1.93416390596121E-8
+best: 1.2431938244195994E-8
+  151( 6),    906: 1.2431938244195994e-08 (+0e+00,5e-08) |  1: 1.0e-08  0: 1.0e-08 | 1.1e-08 2.3e-05   1.13   |  0.1  0.0 
+best: 1.2431938244195994E-8
+best: 8.410839310253518E-9
+best: 8.410839310253518E-9
+best: 8.410839310253518E-9
+best: 8.410839310253518E-9
+best: 6.686783537677373E-9
+best: 6.183818961209474E-9
+best: 6.183818961209474E-9
+best: 5.662756861142541E-9
+best: 3.2271489899198886E-9
+best: 3.2271489899198886E-9
+best: 3.2271489899198886E-9
+best: 3.2271489899198886E-9
+best: 1.379021296541615E-9
+best: 1.379021296541615E-9
+best: 1.379021296541615E-9
+best: 1.379021296541615E-9
+best: 8.498620416922331E-10
+best: 6.739776710759281E-10
+ best: 1.120410914673549E-19
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714148227975 (Fri Apr 26 18:17:07 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714148415022 (Fri Apr 26 18:20:15 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714148496189 (Fri Apr 26 18:21:36 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714148565948 (Fri Apr 26 18:22:45 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714148642329 (Fri Apr 26 18:24:02 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714148662284 (Fri Apr 26 18:24:22 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714149198628 (Fri Apr 26 18:33:18 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714149201886 (Fri Apr 26 18:33:21 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.0000000000000000e+00 (+0e+00,3e+00) |  0: 1.2e-01  0: 1.1e-01 | 1.1e-01 1.1e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ best: 0.003894287198132565
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714149250474 (Fri Apr 26 18:34:10 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714149253633 (Fri Apr 26 18:34:13 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.0000000000000000e+00 (+0e+00,4e+00) |  0: 1.3e-01  0: 1.1e-01 | 1.1e-01 1.1e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ best: 0.02247524219628702
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714149267056 (Fri Apr 26 18:34:27 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.6000000000000000e+01 (+0e+00,0e+00) |  1: 1.4e-01  0: 1.1e-01 | 1.2e-01 1.2e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ best: 1.7341385724443845
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714149331636 (Fri Apr 26 18:35:31 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714149336644 (Fri Apr 26 18:35:36 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.7000000000000000e+01 (+0e+00,0e+00) |  1: 8.8e-02  0: 8.7e-02 | 9.3e-02 9.3e-02   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ best: 0.9171707296681276
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714149621677 (Fri Apr 26 18:40:21 CEST 2024)

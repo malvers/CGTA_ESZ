@@ -41,10 +41,13 @@ public class MyDoublePolygon {
         for (int i = 0, j = numPoints - 1; i < numPoints; j = i++) {
             Point2D.Double p1 = points.get(i);
             Point2D.Double p2 = points.get(j);
-            if (((p1.y > y) != (p2.y > y)) &&
-                    (x < (p2.x - p1.x) * (y - p1.y) / (p2.y - p1.y) + p1.x)) {
+
+            if ((p1.y > y) != (p2.y > y) && x < (p2.x - p1.x) * (y - p1.y) / (p2.y - p1.y) + p1.x) {
                 contains = !contains;
             }
+//            if (((p1.y > y) != (p2.y > y)) && (x < (p2.x - p1.x) * (y - p1.y) / (p2.y - p1.y) + p1.x)) {
+//                contains = !contains;
+//            }
         }
         return contains;
     }
@@ -70,7 +73,12 @@ public class MyDoublePolygon {
     }
 
     public void setPoints(ArrayList<Point2D.Double> pointsIn) {
-        points = new ArrayList<Point2D.Double>(pointsIn);
+        points = new ArrayList<>();
+        for (int i = 0; i < pointsIn.size(); i++) {
+            Point2D.Double pNew = new Point2D.Double();
+            pNew.setLocation(pointsIn.get(i));
+            points.add(pNew);
+        }
     }
 
     protected double getWidth() {
@@ -112,7 +120,7 @@ public class MyDoublePolygon {
             String ys = formatter.format(points.get(i).y);
             System.out.print((" | " + i + " x: " + xs + " " + i + " y: " + ys + " "));
         }
-        System.out.print(" | - width: " + getWidth());
+//        System.out.print(" | - width: " + getWidth());
     }
 
     public List<MyVector> getIntersectionPoints(MyDoublePolygon otherPolygon) {
