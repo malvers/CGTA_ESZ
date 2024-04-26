@@ -18,11 +18,11 @@ public class Helper {
         int tab = 350;
 
         g2d.drawString("Arrow up / down", xPos, yPos);
-        g2d.drawString("move triangle up and down", xPos + tab, yPos);
+        g2d.drawString("move bounding box up and down", xPos + tab, yPos);
         yPos += dy;
 
         g2d.drawString("Arrow left / right", xPos, yPos);
-        g2d.drawString("Move triangle left and right", xPos + tab, yPos);
+        g2d.drawString("Move bounding box left and right", xPos + tab, yPos);
         yPos += dy;
 
         g2d.drawString("+ / -", xPos, yPos);
@@ -33,11 +33,15 @@ public class Helper {
         g2d.drawString("Toggle annotations", xPos + tab, yPos);
         yPos += dy;
 
+        g2d.drawString("0", xPos, yPos);
+        g2d.drawString("Reset", xPos + tab, yPos);
+        yPos += dy;
+
         g2d.drawString("B", xPos, yPos);
         g2d.drawString("Toggle bounding box whiper curve", xPos + tab, yPos);
         yPos += dy;
 
-        g2d.drawString("command B", xPos, yPos);
+        g2d.drawString("Command B", xPos, yPos);
         g2d.drawString("Toggle black mode", xPos + tab, yPos);
         yPos += dy;
 
@@ -66,7 +70,11 @@ public class Helper {
         yPos += dy;
 
         g2d.drawString("R", xPos, yPos);
-        g2d.drawString("Reste scene shit to zero", xPos + tab, yPos);
+        g2d.drawString("Rotate bounding box 1° clockwise", xPos + tab, yPos);
+        yPos += dy;
+
+        g2d.drawString("Shift R", xPos, yPos);
+        g2d.drawString("Rotate bounding box 1° counterclockwise", xPos + tab, yPos);
         yPos += dy;
 
         g2d.drawString("T", xPos, yPos);
@@ -77,10 +85,12 @@ public class Helper {
         g2d.drawString("Toggle whiper curve", xPos + tab, yPos);
         yPos += dy;
 
-        g2d.drawString("command W", xPos, yPos);
+        g2d.drawString("Command W", xPos, yPos);
         g2d.drawString("Quit the program", xPos + tab, yPos);
         yPos += dy;
 
+        /// Credits
+        yPos += dy;
         g2d.drawString("Inspiration by Mathologer", xPos, yPos);
         g2d.drawString("youtu.be/XrTZwPD4O3k?si=KLvk4zhPGRQI_dPi", xPos + tab, yPos);
     }

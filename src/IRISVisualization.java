@@ -1,4 +1,3 @@
-import fr.inria.optimization.cmaes.CMAEvolutionStrategy;
 import fr.inria.optimization.cmaes.fitness.IObjectiveFunction;
 
 import javax.imageio.ImageIO;
@@ -40,9 +39,9 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
     private final Color color1 = new Color(180, 0, 0);
     private Color color2 = new Color(0, 0, 80);
     private final Color color3 = new Color(80, 140, 0);
-    private final MyVector handleA;
-    private final MyVector handleB;
-    private final MyVector handleC;
+    private MyVector handleA;
+    private MyVector handleB;
+    private MyVector handleC;
     private MyVector midCA_BA;
     private MyVector midCB_AB;
     private MyVector midBC_AC;
@@ -151,9 +150,9 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
             os.writeBoolean(debugMode);
             os.writeBoolean(drawBoundingBox);
 
-//            os.writeObject(handleA);
-//            os.writeObject(handleB);
-//            os.writeObject(handleC);
+            os.writeObject(handleA);
+            os.writeObject(handleB);
+            os.writeObject(handleC);
 
             os.close();
             f.close();
@@ -182,21 +181,22 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
             drawWhiskers = os.readBoolean();
             drawTriangle = os.readBoolean();
             drawIrisPicture = os.readBoolean();
-            drawBoundingBox = os.readBoolean();
 
-            os.readInt();
-            os.readInt();
-            os.readInt();
+            irisPicShiftX = os.readInt();
+            irisPicShiftY = os.readInt();
+            irisPicSize = os.readInt();
 
             drawWhiperStuff = os.readBoolean();
             debugMode = os.readBoolean();
+            drawBoundingBox = os.readBoolean();
 
-//            handleA = (Handle) os.readObject();
-//            handleB = (Handle) os.readObject();
-//            handleC = (Handle) os.readObject();
+            handleA = (MyVector) os.readObject();
+            handleB = (MyVector) os.readObject();
+            handleC = (MyVector) os.readObject();
 
             os.close();
             f.close();
+
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -375,6 +375,27 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 //                System.out.println("key: " + e.getKeyCode());
                 switch (e.getKeyCode()) {
 
+                    case KeyEvent.VK_0:
+                        rotationAngle = 0.0;
+                        whiperFactor = 1.0;
+                        sceneShift.x = 0;
+                        sceneShift.y = 0;
+                        doCalculations();
+                        calculateWhipers();
+                        break;
+                    case KeyEvent.VK_UP:
+                    case KeyEvent.VK_DOWN:
+                    case KeyEvent.VK_LEFT:
+                    case KeyEvent.VK_RIGHT:
+                        if (e.isMetaDown()) {
+                            moveIrisPic(e.getKeyCode(), 1);
+                        } else {
+                            double inc = 0.1;
+                            if(e.isShiftDown()) inc = 1.0;
+                            shiftTestPolygon(e.getKeyCode(), inc);
+                        }
+                        qualityFunction();
+                        break;
                     case KeyEvent.VK_SPACE:
                         handleSpaceBar(e);
                         break;
@@ -417,12 +438,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                         }
                         break;
                     case KeyEvent.VK_R:
-                        rotationAngle = 0.0;
-                        whiperFactor = 1.0;
-                        sceneShift.x = 0;
-                        sceneShift.y = 0;
-                        doCalculations();
-                        calculateWhipers();
+                        rotateBoundingBox(e);
                         break;
                     case KeyEvent.VK_S:
                         screenshotCapture();
@@ -447,17 +463,6 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                         } else {
                             irisZoom -= 0.1;
                         }
-                        break;
-                    case KeyEvent.VK_UP:
-                    case KeyEvent.VK_DOWN:
-                    case KeyEvent.VK_LEFT:
-                    case KeyEvent.VK_RIGHT:
-                        if (e.isMetaDown()) {
-                            moveIrisPic(e.getKeyCode(), 1);
-                        } else {
-                            shiftTestPolygon(e.getKeyCode());
-                        }
-                        qualityFunction();
                         break;
                     case 93: /// +
                         if (e.isShiftDown()) {
@@ -488,11 +493,10 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         });
     }
 
-    private void shiftTestPolygon(int vKup) {
+    private void shiftTestPolygon(int vKup, double inc) {
 
         ArrayList<Point2D.Double> points = boundingBoxPolygon.getPoints();
 
-        double inc = 0.1;
         for (int i = 0; i < boundingBoxPolygon.getNumPoints(); i++) {
 
             switch (vKup) {
@@ -1073,16 +1077,21 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
     private void handleSpaceBar(KeyEvent e) {
 
         for (int i = 0; i <= 1; i++) {
-            double inc = 1.0;
-            if (e.isShiftDown()) {
-                rotationAngle -= Math.toRadians(inc);
-            } else {
-                rotationAngle += Math.toRadians(inc);
-            }
-            rotateRectangle(boundingBoxWC, rotationAngle);
+            rotateBoundingBox(e);
             optimizePolygonPosition(i);
             qualityFunction();
         }
+    }
+
+    private void rotateBoundingBox(KeyEvent e) {
+
+        double inc = 1.0;
+        if (e.isShiftDown()) {
+            rotationAngle -= Math.toRadians(inc);
+        } else {
+            rotationAngle += Math.toRadians(inc);
+        }
+        rotateRectangle(boundingBoxWC, rotationAngle);
     }
 
     private void optimizePolygonPosition(int count) {
