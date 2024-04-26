@@ -366,6 +366,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
     }
 
     /// key handling ///////////////////////////////////////////////////////////////////////////////////////////////////
+
     private void keyInit() {
 
         addKeyListener(new KeyAdapter() {
@@ -391,7 +392,9 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                             moveIrisPic(e.getKeyCode(), 1);
                         } else {
                             double inc = 0.1;
-                            if(e.isShiftDown()) inc = 1.0;
+                            if (e.isShiftDown()) {
+                                inc = 1.0;
+                            }
                             shiftTestPolygon(e.getKeyCode(), inc);
                         }
                         qualityFunction();
@@ -688,37 +691,6 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         return null;
     }
 
-    private MyVector getIntersectionPoint(MyVector vec1Start, MyVector vec1End, MyVector vec2Start, MyVector vec2End) {
-
-        // Create Line2D objects for the input vectors
-        Line2D line1 = new Line2D.Double(vec1Start.x, vec1Start.y, vec1End.x, vec1End.y);
-        Line2D line2 = new Line2D.Double(vec2Start.getX(), vec2Start.getY(), vec2End.getX(), vec2End.getY());
-
-        // Check if the lines intersect
-        if (!line1.intersectsLine(line2)) {
-            return null; // No intersection
-        }
-
-        // Extract coordinates for each point
-        double x1 = vec1Start.x, y1 = vec1Start.y;
-        double x2 = vec1End.x, y2 = vec1End.y;
-        double x3 = vec2Start.getX(), y3 = vec2Start.getY();
-        double x4 = vec2End.getX(), y4 = vec2End.getY();
-
-        // Calculate determinant to check if lines are parallel
-        double det = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
-        if (det == 0) {
-            return null; // Parallel lines, no intersection
-        }
-
-        // Calculate intersection point coordinates
-        double px = ((x1 * y2 - y1 * x2) * (x3 - x4) - (x1 - x2) * (x3 * y4 - y3 * x4)) / det;
-        double py = ((x1 * y2 - y1 * x2) * (y3 - y4) - (y1 - y2) * (x3 * y4 - y3 * x4)) / det;
-
-        // Return the intersection point as a new MyVector
-        return new MyVector(px, py, "");
-    }
-
     public static double calculateInnerRadiusTriangle(MyVector A, MyVector B, MyVector C) {
 
         // Calculate side lengths
@@ -928,13 +900,45 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         return new MyVector(midX, midY, "");
     }
 
-    private MyVector getIntersectionPointGPT(MyVector handle1Start, MyVector handle1End, MyVector handle2Start, MyVector handle2End) {
+    /// TODO: why three functions (also MyDoublePolygon.getIntersectionPoint)
+    private MyVector getIntersectionPoint(MyVector vec1Start, MyVector vec1End, MyVector vec2Start, MyVector vec2End) {
+
+        // Create Line2D objects for the input vectors
+        Line2D line1 = new Line2D.Double(vec1Start.x, vec1Start.y, vec1End.x, vec1End.y);
+        Line2D line2 = new Line2D.Double(vec2Start.getX(), vec2Start.getY(), vec2End.getX(), vec2End.getY());
+
+        // Check if the lines intersect
+        if (!line1.intersectsLine(line2)) {
+            return null; // No intersection
+        }
+
+        // Extract coordinates for each point
+        double x1 = vec1Start.x, y1 = vec1Start.y;
+        double x2 = vec1End.x, y2 = vec1End.y;
+        double x3 = vec2Start.getX(), y3 = vec2Start.getY();
+        double x4 = vec2End.getX(), y4 = vec2End.getY();
+
+        // Calculate determinant to check if lines are parallel
+        double det = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
+        if (det == 0) {
+            return null; // Parallel lines, no intersection
+        }
+
+        // Calculate intersection point coordinates
+        double px = ((x1 * y2 - y1 * x2) * (x3 - x4) - (x1 - x2) * (x3 * y4 - y3 * x4)) / det;
+        double py = ((x1 * y2 - y1 * x2) * (y3 - y4) - (y1 - y2) * (x3 * y4 - y3 * x4)) / det;
+
+        // Return the intersection point as a new MyVector
+        return new MyVector(px, py, "");
+    }
+
+    private MyVector getIntersectionPointGPT(MyVector v1Start, MyVector v1End, MyVector v2Start, MyVector v2End) {
 
         // Get the coordinates of the handles
-        double x1 = handle1Start.x, y1 = handle1Start.y;
-        double x2 = handle1End.x, y2 = handle1End.y;
-        double x3 = handle2Start.x, y3 = handle2Start.y;
-        double x4 = handle2End.x, y4 = handle2End.y;
+        double x1 = v1Start.x, y1 = v1Start.y;
+        double x2 = v1End.x, y2 = v1End.y;
+        double x3 = v2Start.x, y3 = v2Start.y;
+        double x4 = v2End.x, y4 = v2End.y;
 
         // Calculate the determinant to check for parallel lines
         double det = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
@@ -949,6 +953,119 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         MyVector tmp = new MyVector(px, py, "center");
         tmp.setSize(1);
         return tmp;
+    }
+
+    /// optimizing section /////////////////////////////////////////////////////////////////////////////////////////////
+
+    private void handleSpaceBar(KeyEvent e) {
+
+        for (int i = 0; i <= 1; i++) {
+            rotateBoundingBox(e);
+            optimizePolygonPositionBruteForce(i);
+            qualityFunction();
+        }
+    }
+
+    private void rotateBoundingBox(KeyEvent e) {
+
+        double inc = 1.0;
+        if (e.isShiftDown()) {
+            rotationAngle -= Math.toRadians(inc);
+        } else {
+            rotationAngle += Math.toRadians(inc);
+        }
+        rotateRectangle(boundingBoxWC, rotationAngle);
+    }
+
+    private void optimizePolygonPositionBruteForce(int count) {
+
+        /// puzzle the single 6 curves together to one huge one
+
+        int qStart = howManyPointsOutside(boundingBoxPolygon);
+        int qOptimal = Integer.MAX_VALUE;
+
+        double searchSize = 16;
+
+        int numPoints = 10000;
+
+        MyVector center = getCenterOfBoundingPolygon();
+        ArrayList<MyVector> scatter = MyVector.scatterPointsAround(center, searchSize, numPoints);
+
+        debugList = new ArrayList<>();
+
+        MyDoublePolygon testPolygonOptimal = new MyDoublePolygon();
+
+        for (MyVector scatterPoint : scatter) {
+
+            testPolygonOptimal = copyPolygons(boundingBoxPolygon);
+
+            double displaceX = center.x - scatterPoint.x;
+            double displaceY = center.y - scatterPoint.y;
+
+            ArrayList<Point2D.Double> testPolygon = createTestPolygon();
+
+            for (int i = 0; i < 4; i++) {
+                testPolygon.get(i).x = boundingBoxPolygon.getPoint(i).x + displaceX;
+                testPolygon.get(i).y = boundingBoxPolygon.getPoint(i).y + displaceY;
+            }
+
+            MyDoublePolygon debug = new MyDoublePolygon("debug " + count);
+            debug.setPoints(testPolygon);
+            debugList.add(debug);
+
+            qOptimal = howManyPointsOutside(debug);
+
+            if (qOptimal < qStart) {
+                //System.out.println("BINGO optimal: " + qOptimal + " start: " + qStart);
+                boundingBoxPolygon.setPoints(testPolygon);
+                testPolygonOptimal = copyPolygons(debug);
+                qStart = qOptimal;
+            }
+        }
+        boundingBoxPolygon = copyPolygons(testPolygonOptimal);
+        MyVector c = getCenterOfBoundingPolygon();
+        c.setSize(4);
+        boundingBoxInnerRotationPath.add(c);
+
+        System.out.println(count + " optimizePolygonPosition: " + qOptimal);
+    }
+
+    private ArrayList<Point2D.Double> createTestPolygon() {
+        ArrayList<Point2D.Double> testPolygon = new ArrayList<>();
+        testPolygon.add(new Point2D.Double());
+        testPolygon.add(new Point2D.Double());
+        testPolygon.add(new Point2D.Double());
+        testPolygon.add(new Point2D.Double());
+        return testPolygon;
+    }
+
+    private double qualityFunction() {
+
+        System.out.println("\nqualityFunction ...");
+
+        qualityPolygons = new ArrayList<>();
+        intersectionPointsHugeCurveBoundingBox = hugeCurve.getIntersectionPoints(boundingBoxPolygon);
+
+        double quality = 0.0;
+        int count = 0;
+
+        for (int i = 0; i < intersectionPointsHugeCurveBoundingBox.size() - 1; i += 2) {
+
+            MyVector isp1 = intersectionPointsHugeCurveBoundingBox.get(i);
+            MyVector isp2 = intersectionPointsHugeCurveBoundingBox.get(i + 1);
+            isp1.setName(isp1.getName() + " i: " + count);
+            isp2.setName(isp2.getName() + " i: " + (count + 1));
+            count++;
+            int from = isp1.getId();
+            int to = isp2.getId();
+            MyDoublePolygon polygon = hugeCurve.getSubPolygon(from, to);
+            double area = polygon.calculateArea();
+            qualityPolygons.add(polygon);
+            quality += area;
+            //System.out.println( "area: " + area + " from: " + from + " to: " + to);
+        }
+        System.out.println("quality: " + quality);
+        return quality;
     }
 
     /// painting section ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -1023,35 +1140,6 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         for (MyDoublePolygon p : qualityPolygons) p.fill(g2d);
     }
 
-    private double qualityFunction() {
-
-        System.out.println("\nqualityFunction ...");
-
-        qualityPolygons = new ArrayList<>();
-        intersectionPointsHugeCurveBoundingBox = hugeCurve.getIntersectionPoints(boundingBoxPolygon);
-
-        double quality = 0.0;
-        int count = 0;
-
-        for (int i = 0; i < intersectionPointsHugeCurveBoundingBox.size() - 1; i += 2) {
-
-            MyVector isp1 = intersectionPointsHugeCurveBoundingBox.get(i);
-            MyVector isp2 = intersectionPointsHugeCurveBoundingBox.get(i + 1);
-            isp1.setName(isp1.getName() + " i: " + count);
-            isp2.setName(isp2.getName() + " i: " + (count + 1));
-            count++;
-            int from = isp1.getId();
-            int to = isp2.getId();
-            MyDoublePolygon polygon = hugeCurve.getSubPolygon(from, to);
-            double area = polygon.calculateArea();
-            qualityPolygons.add(polygon);
-            quality += area;
-            //System.out.println( "area: " + area + " from: " + from + " to: " + to);
-        }
-        System.out.println("quality: " + quality);
-        return quality;
-    }
-
     private void drawBoundingBoxRotationPath(Graphics2D g2d) {
 
         if (boundingBoxInnerRotationPath.size() > 0) {
@@ -1072,88 +1160,6 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 //            vector.setSize(1);
 //            vector.fill(g2d, false);
 //        }
-    }
-
-    private void handleSpaceBar(KeyEvent e) {
-
-        for (int i = 0; i <= 1; i++) {
-            rotateBoundingBox(e);
-            optimizePolygonPosition(i);
-            qualityFunction();
-        }
-    }
-
-    private void rotateBoundingBox(KeyEvent e) {
-
-        double inc = 1.0;
-        if (e.isShiftDown()) {
-            rotationAngle -= Math.toRadians(inc);
-        } else {
-            rotationAngle += Math.toRadians(inc);
-        }
-        rotateRectangle(boundingBoxWC, rotationAngle);
-    }
-
-    private void optimizePolygonPosition(int count) {
-
-        /// puzzle the single 6 curves together to one huge one
-
-        int qStart = howManyPointsOutside(boundingBoxPolygon);
-        int qOptimal = Integer.MAX_VALUE;
-
-        double searchSize = 16;
-
-        int numPoints = 10000;
-
-        MyVector center = getCenterOfBoundingPolygon();
-        ArrayList<MyVector> scatter = MyVector.scatterPointsAround(center, searchSize, numPoints);
-
-        debugList = new ArrayList<>();
-
-        MyDoublePolygon testPolygonOptimal = new MyDoublePolygon();
-
-        for (MyVector scatterPoint : scatter) {
-
-            testPolygonOptimal = copyPolygons(boundingBoxPolygon);
-
-            double displaceX = center.x - scatterPoint.x;
-            double displaceY = center.y - scatterPoint.y;
-
-            ArrayList<Point2D.Double> testPolygon = createTestPolygon();
-
-            for (int i = 0; i < 4; i++) {
-                testPolygon.get(i).x = boundingBoxPolygon.getPoint(i).x + displaceX;
-                testPolygon.get(i).y = boundingBoxPolygon.getPoint(i).y + displaceY;
-            }
-
-            MyDoublePolygon debug = new MyDoublePolygon("debug " + count);
-            debug.setPoints(testPolygon);
-            debugList.add(debug);
-
-            qOptimal = howManyPointsOutside(debug);
-
-            if (qOptimal < qStart) {
-                //System.out.println("BINGO optimal: " + qOptimal + " start: " + qStart);
-                boundingBoxPolygon.setPoints(testPolygon);
-                testPolygonOptimal = copyPolygons(debug);
-                qStart = qOptimal;
-            }
-        }
-        boundingBoxPolygon = copyPolygons(testPolygonOptimal);
-        MyVector c = getCenterOfBoundingPolygon();
-        c.setSize(4);
-        boundingBoxInnerRotationPath.add(c);
-
-        System.out.println(count + " optimizePolygonPosition: " + qOptimal);
-    }
-
-    private ArrayList<Point2D.Double> createTestPolygon() {
-        ArrayList<Point2D.Double> testPolygon = new ArrayList<>();
-        testPolygon.add(new Point2D.Double());
-        testPolygon.add(new Point2D.Double());
-        testPolygon.add(new Point2D.Double());
-        testPolygon.add(new Point2D.Double());
-        return testPolygon;
     }
 
     private void drawDebugList(Graphics2D g2d) {
