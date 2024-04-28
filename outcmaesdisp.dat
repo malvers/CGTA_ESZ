@@ -2412,3 +2412,1926 @@ Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min S
  best: 0.9171707296681276
  CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
 (3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714149621677 (Fri Apr 26 18:40:21 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714199605631 (Sat Apr 27 08:33:25 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714199616512 (Sat Apr 27 08:33:36 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.2000000000000000e+01 (+0e+00,1e+00) |  0: 1.4e-01  0: 1.4e-01 | 1.3e-01 1.3e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ best: 0.34875344373940576
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714199678009 (Sat Apr 27 08:34:38 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714199682742 (Sat Apr 27 08:34:42 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.3654958582544605e+03 (+0e+00,0e+00) |  0: 1.4e-01  0: 1.3e-01 | 1.3e-01 1.3e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ best: 48368.978018757574
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714199782501 (Sat Apr 27 08:36:22 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714199787573 (Sat Apr 27 08:36:27 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.3654958582544605e+03 (+0e+00,0e+00) |  0: 1.6e-01  0: 1.4e-01 | 1.3e-01 1.3e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ best: 2907.120686596885
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714199915579 (Sat Apr 27 08:38:35 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714199919855 (Sat Apr 27 08:38:39 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.3654958582544605e+03 (+0e+00,0e+00) |  1: 1.4e-01  0: 1.4e-01 | 1.3e-01 1.3e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ best: 0.010726045854784812
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714200036563 (Sat Apr 27 08:40:36 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714200040352 (Sat Apr 27 08:40:40 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.0740483359816240e+03 (+0e+00,0e+00) |  1: 1.2e-01  0: 1.2e-01 | 1.2e-01 1.2e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 0.077649098996784 y: 0.15193750314128548
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714200070391 (Sat Apr 27 08:41:10 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714200074157 (Sat Apr 27 08:41:14 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.0740483359816240e+03 (+0e+00,0e+00) |  0: 1.1e-01  0: 1.0e-01 | 1.1e-01 1.1e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 0.1233763758714749 y: 0.0732935659164603 best so fare: 6074.048335981624
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714200116680 (Sat Apr 27 08:41:56 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.0128272392670620e+01 (+0e+00,0e+00) |  1: 1.2e-01  0: 1.1e-01 | 1.1e-01 1.1e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 0.04042817692839015 y: 0.10489593685527983 best so fare: 70.12827239267062
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714200123666 (Sat Apr 27 08:42:03 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.0128272392670620e+01 (+0e+00,0e+00) |  1: 9.7e-02  0: 9.1e-02 | 9.8e-02 9.8e-02   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 9.470338222155624E-5 y: 0.08179223475124547 best so fare: 70.12827239267062
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714200514962 (Sat Apr 27 08:48:34 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714200580037 (Sat Apr 27 08:49:40 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714200624380 (Sat Apr 27 08:50:24 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714200762274 (Sat Apr 27 08:52:42 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714200864026 (Sat Apr 27 08:54:24 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714201310435 (Sat Apr 27 09:01:50 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714219017952 (Sat Apr 27 13:56:57 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714219028346 (Sat Apr 27 13:57:08 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.7585507110716900e+03 (+0e+00,0e+00) |  0: 9.8e-04  0: 9.0e-04 | 9.7e-04 9.7e-04   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 1.0121222023033144E-4 y: 3.0726584253660914E-4 best so fare: 4758.55071107169
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714219351199 (Sat Apr 27 14:02:31 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714219356040 (Sat Apr 27 14:02:36 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.5632613621836354e+03 (+0e+00,0e+00) |  0: 1.5e-03  0: 1.2e-03 | 1.3e-03 1.3e-03   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: -0.5909756734650355 y: -0.3252843825496604 best so fare: 212.54122755761637
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714219530753 (Sat Apr 27 14:05:30 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714219533652 (Sat Apr 27 14:05:33 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5839786590616532e+03 (+0e+00,0e+00) |  1: 9.7e-04  0: 8.8e-04 | 9.6e-04 9.6e-04   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: -0.28845039387554294 y: 0.40213947547175444 best so fare: 120.98835582047468
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714219593862 (Sat Apr 27 14:06:33 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714219600426 (Sat Apr 27 14:06:40 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5839786590616532e+03 (+0e+00,0e+00) |  0: 8.1e-04  0: 8.1e-04 | 8.6e-04 8.6e-04   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 2.7535216067167895E-4 y: 7.429629349735016E-4 best so fare: 1583.9786590616532
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714219647598 (Sat Apr 27 14:07:27 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714219709662 (Sat Apr 27 14:08:29 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714219716328 (Sat Apr 27 14:08:36 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.0953071421682730e+03 (+0e+00,0e+00) |  0: 9.4e-04  0: 8.8e-04 | 9.5e-04 9.5e-04   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: -0.5570004292396791 y: 0.21865735166193687 best so fare: 550.981118368527
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714219728332 (Sat Apr 27 14:08:48 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.7702305150630050e+03 (+0e+00,0e+00) |  1: 1.2e-03  0: 1.1e-03 | 1.1e-03 1.1e-03   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 6.520722068853388E-5 y: -0.0016768533187010723 best so fare: 5770.230515063005
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714219731601 (Sat Apr 27 14:08:51 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.7702305150630050e+03 (+0e+00,0e+00) |  1: 1.5e-03  0: 1.2e-03 | 1.3e-03 1.3e-03   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: -0.4174853070709834 y: -0.567807520224471 best so fare: 451.7198876984621
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714219732406 (Sat Apr 27 14:08:52 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.8038457524604380e+03 (+0e+00,0e+00) |  1: 1.2e-03  0: 1.0e-03 | 1.1e-03 1.1e-03   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: -9.77866460054976E-4 y: 0.005331866252813502 best so fare: 5788.503096575463
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714219733005 (Sat Apr 27 14:08:53 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.8038457524604380e+03 (+0e+00,0e+00) |  1: 1.0e-03  0: 9.5e-04 | 1.0e-03 1.0e-03   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: -0.16063113955660435 y: 0.6156262026040646 best so fare: 5140.142326377481
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714219733611 (Sat Apr 27 14:08:53 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.7702305150630050e+03 (+0e+00,0e+00) |  1: 1.2e-03  0: 1.1e-03 | 1.1e-03 1.1e-03   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 0.3089481192683027 y: 0.1862570126802754 best so fare: 5763.64967950392
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714219734120 (Sat Apr 27 14:08:54 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.7658435169189110e+03 (+0e+00,0e+00) |  1: 1.7e-03  0: 1.3e-03 | 1.4e-03 1.4e-03   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: -0.9737852733447764 y: 0.6629412691373717 best so fare: 427.1858023897512
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714219734674 (Sat Apr 27 14:08:54 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.7758801542960830e+03 (+0e+00,0e+00) |  1: 1.3e-03  0: 1.1e-03 | 1.2e-03 1.2e-03   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 0.048109681055768946 y: -0.19750057972876253 best so fare: 5763.64967950392
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714219770955 (Sat Apr 27 14:09:30 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.0740483359816240e+03 (+0e+00,0e+00) |  1: 1.1e-03  0: 8.6e-04 | 9.5e-04 9.5e-04   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 0.09171248326276352 y: 0.6704412328685099 best so fare: 4714.926365016854
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714219788577 (Sat Apr 27 14:09:48 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714219793047 (Sat Apr 27 14:09:53 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.2215856855565835e+03 (+0e+00,0e+00) |  0: 1.5e-01  0: 1.1e-01 | 1.2e-01 1.2e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 222.3973299607738 y: 22.233008806131 best so fare: 0.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714219900488 (Sat Apr 27 14:11:40 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714219940622 (Sat Apr 27 14:12:20 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714220069546 (Sat Apr 27 14:14:29 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714220119989 (Sat Apr 27 14:15:19 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714220140479 (Sat Apr 27 14:15:40 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.0128272392670620e+01 (+0e+00,0e+00) |  0: 1.2e-01  0: 1.1e-01 | 1.1e-01 1.1e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 13.041594330046214 y: -31.250891704205408 best so fare: 0.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714220215477 (Sat Apr 27 14:16:55 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.2215856855565835e+03 (+0e+00,0e+00) |  1: 8.8e-02  0: 8.3e-02 | 8.9e-02 8.9e-02   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 6.156104139350831 y: -22.65005208235963 best so fare: 0.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714220218907 (Sat Apr 27 14:16:58 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1690705168206710e+04 (+0e+00,0e+00) |  1: 7.3e-02  0: 7.2e-02 | 7.9e-02 7.9e-02   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 1.8475804231253448 y: -8.295550515728348 best so fare: 0.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714220219559 (Sat Apr 27 14:16:59 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4157467027078164e+04 (+0e+00,4e+02) |  1: 1.6e-01  0: 1.5e-01 | 1.4e-01 1.4e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: -4.939227607918265 y: -0.7625361083709769 best so fare: 0.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714220220214 (Sat Apr 27 14:17:00 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5069231546537980e+04 (+0e+00,4e+02) |  1: 1.7e-01  0: 1.3e-01 | 1.4e-01 1.4e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 6.933932218410954 y: 21.602792300932457 best so fare: 0.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714220220889 (Sat Apr 27 14:17:00 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.4024898404871490e+03 (+0e+00,2e+02) |  0: 1.1e-01  0: 9.7e-02 | 1.0e-01 1.0e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 20.742362375788673 y: 8.544600517354276 best so fare: 0.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714220222297 (Sat Apr 27 14:17:02 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.4011712414092470e+03 (+0e+00,0e+00) |  0: 1.1e-01  0: 1.1e-01 | 1.1e-01 1.1e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: -24.85037107645893 y: 6.074728606915778 best so fare: 0.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714220222912 (Sat Apr 27 14:17:02 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.4771119261790080e+03 (+0e+00,6e+01) |  0: 1.5e-01  0: 1.5e-01 | 1.4e-01 1.4e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 5.652585712831828 y: 0.2029673550968698 best so fare: 0.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714220223252 (Sat Apr 27 14:17:03 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.7700469426570853e+03 (+0e+00,4e+01) |  0: 1.1e-01  0: 9.9e-02 | 1.0e-01 1.0e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 43.486492659826055 y: -0.7597128922631399 best so fare: 0.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714220223466 (Sat Apr 27 14:17:03 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.3952944431565120e+03 (+0e+00,0e+00) |  0: 8.6e-02  0: 8.6e-02 | 8.9e-02 8.9e-02   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 8.001602700877337 y: 4.646218989819548 best so fare: 0.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714220223769 (Sat Apr 27 14:17:03 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.7502397262698140e+03 (+0e+00,7e+02) |  1: 9.8e-02  0: 9.6e-02 | 9.9e-02 9.9e-02   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 10.164332824934212 y: 0.43722921506930795 best so fare: 0.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714220224061 (Sat Apr 27 14:17:04 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1891924334733783e+04 (+0e+00,1e+03) |  0: 9.8e-02  0: 9.2e-02 | 9.8e-02 9.8e-02   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: -4.135206739904923 y: -0.8337026153742999 best so fare: 0.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714220224589 (Sat Apr 27 14:17:04 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0571076197853872e+04 (+0e+00,0e+00) |  0: 9.3e-02  0: 8.9e-02 | 8.6e-02 8.6e-02   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: -6.458918644281728 y: 2.8292627457324535 best so fare: 0.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714220225115 (Sat Apr 27 14:17:05 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.7430713379513110e+03 (+0e+00,0e+00) |  1: 7.4e-02  0: 7.3e-02 | 8.0e-02 8.0e-02   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 19.379039312339856 y: 23.891432953264783 best so fare: 0.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714220225655 (Sat Apr 27 14:17:05 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6476228343012690e+04 (+0e+00,3e+01) |  1: 1.4e-01  0: 1.2e-01 | 1.2e-01 1.2e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 0.3584621056203204 y: 3.773785368449365 best so fare: 0.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714220226475 (Sat Apr 27 14:17:06 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.7735756203773000e+04 (+0e+00,6e+02) |  1: 7.2e-02  0: 7.2e-02 | 7.8e-02 7.8e-02   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 4.085765283347956 y: -1.9272730909589613 best so fare: 0.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714220233204 (Sat Apr 27 14:17:13 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.8051102050495967e+04 (+0e+00,2e+03) |  1: 9.5e-02  0: 9.5e-02 | 9.4e-02 9.4e-02   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 4.53047261817371 y: -2.5355683462436853 best so fare: 0.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714220714926 (Sat Apr 27 14:25:14 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714220723243 (Sat Apr 27 14:25:23 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.0000000000000000e+01 (+0e+00,1e+00) |  0: 1.0e-01  0: 9.7e-02 | 1.0e-01 1.0e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: -0.9386223309189632 y: 0.26586619627430813 best so fare: 27.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714220868162 (Sat Apr 27 14:27:48 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.0000000000000000e+00 (+0e+00,1e+00) |  1: 8.0e-02  0: 7.8e-02 | 8.3e-02 8.3e-02   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 0.07804046427891792 y: -0.09137207428830676 best so fare: 6.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714220874681 (Sat Apr 27 14:27:54 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.0000000000000000e+00 (+0e+00,2e+00) |  0: 9.8e-02  0: 8.6e-02 | 9.2e-02 9.2e-02   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 0.1673024745398381 y: 0.04975842546486276 best so fare: 7.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714220878414 (Sat Apr 27 14:27:58 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.0000000000000000e+00 (+0e+00,4e+00) |  0: 1.8e-01  0: 1.4e-01 | 1.5e-01 1.5e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 0.29394061680620326 y: -0.012826848452715778 best so fare: 9.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714221040901 (Sat Apr 27 14:30:40 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1000000000000000e+01 (+0e+00,2e+00) |  0: 1.3e-01  0: 1.1e-01 | 1.1e-01 1.1e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 0.3090385620606335 y: 0.026229992633268102 best so fare: 8.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714221096205 (Sat Apr 27 14:31:36 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714221105611 (Sat Apr 27 14:31:45 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1000000000000000e+01 (+0e+00,2e+00) |  1: 1.2e-01  0: 1.0e-01 | 1.1e-01 1.1e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 0.09302070310729567 y: 0.14806047246571818 best so fare: 4.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714221220707 (Sat Apr 27 14:33:40 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714221334603 (Sat Apr 27 14:35:34 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714221342570 (Sat Apr 27 14:35:42 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1000000000000000e+01 (+0e+00,2e+00) |  1: 1.2e-01  0: 1.0e-01 | 1.1e-01 1.1e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 0.013995814161417736 y: 0.13736408644251089 best so fare: 7.0 po: 275
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714221366800 (Sat Apr 27 14:36:06 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.9000000000000000e+01 (+0e+00,1e+00) |  1: 9.6e-02  0: 9.4e-02 | 9.6e-02 9.6e-02   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: -0.8720146080722254 y: -0.3329834538866444 best so fare: 18.0 po: 364
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714221453847 (Sat Apr 27 14:37:33 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.0000000000000000e+00 (+0e+00,4e+00) |  0: 1.2e-01  0: 1.0e-01 | 1.1e-01 1.1e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: -0.10382849209569807 y: 0.009773481787568369 best so fare: 5.0 po: 364
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714221456336 (Sat Apr 27 14:37:36 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.0000000000000000e+00 (+0e+00,3e+00) |  1: 1.4e-01  0: 1.3e-01 | 1.3e-01 1.3e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 0.0720155414946953 y: -0.10327144860545748 best so fare: 6.0 po: 364
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714221456920 (Sat Apr 27 14:37:36 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.0000000000000000e+00 (+0e+00,4e+00) |  0: 1.0e-01  0: 9.4e-02 | 9.7e-02 9.7e-02   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 0.17598776700532648 y: 0.10936682055654066 best so fare: 5.0 po: 364
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714221457510 (Sat Apr 27 14:37:37 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.0000000000000000e+00 (+0e+00,3e+00) |  0: 1.4e-01  0: 1.2e-01 | 1.2e-01 1.2e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: -0.16942722345123845 y: -0.10891839750383339 best so fare: 8.0 po: 364
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714221459083 (Sat Apr 27 14:37:39 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.0000000000000000e+00 (+0e+00,4e+00) |  1: 1.4e-01  0: 1.3e-01 | 1.2e-01 1.2e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 0.11148802785702455 y: -0.2139175301358529 best so fare: 5.0 po: 364
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714221460075 (Sat Apr 27 14:37:40 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.0000000000000000e+00 (+0e+00,2e+00) |  1: 8.8e-02  0: 8.5e-02 | 9.1e-02 9.1e-02   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 0.023926509294593376 y: -0.09158411123173105 best so fare: 7.0 po: 155
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714221460447 (Sat Apr 27 14:37:40 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.0000000000000000e+00 (+0e+00,2e+00) |  1: 7.1e-02  0: 7.0e-02 | 7.5e-02 7.5e-02   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: -0.022230278976802922 y: 0.15480840708771781 best so fare: 8.0 po: 364
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714221460801 (Sat Apr 27 14:37:40 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.0000000000000000e+00 (+0e+00,1e+00) |  1: 1.2e-01  0: 1.0e-01 | 1.1e-01 1.1e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 0.03435952704126737 y: -0.16962467406667897 best so fare: 7.0 po: 364
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714221461215 (Sat Apr 27 14:37:41 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.0000000000000000e+00 (+0e+00,4e+00) |  0: 7.7e-02  0: 7.5e-02 | 8.2e-02 8.2e-02   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: -0.03206092561878381 y: 0.024196951112360338 best so fare: 9.0 po: 364
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714221461655 (Sat Apr 27 14:37:41 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.0000000000000000e+00 (+0e+00,4e+00) |  1: 8.9e-02  0: 8.1e-02 | 9.0e-02 9.0e-02   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 0.2516172785003274 y: -0.5211765369725316 best so fare: 6.0 po: 364
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714231795346 (Sat Apr 27 17:29:55 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714232080637 (Sat Apr 27 17:34:40 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714232854355 (Sat Apr 27 17:47:34 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714232932751 (Sat Apr 27 17:48:52 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714232977376 (Sat Apr 27 17:49:37 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714233035680 (Sat Apr 27 17:50:35 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714233158120 (Sat Apr 27 17:52:38 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714233215151 (Sat Apr 27 17:53:35 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714233543457 (Sat Apr 27 17:59:03 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714233585519 (Sat Apr 27 17:59:45 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714233827681 (Sat Apr 27 18:03:47 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714233986313 (Sat Apr 27 18:06:26 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714234022184 (Sat Apr 27 18:07:02 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714234374330 (Sat Apr 27 18:12:54 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714234497174 (Sat Apr 27 18:14:57 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714234560360 (Sat Apr 27 18:16:00 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714234630049 (Sat Apr 27 18:17:10 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714234791569 (Sat Apr 27 18:19:51 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714234909498 (Sat Apr 27 18:21:49 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714234992566 (Sat Apr 27 18:23:12 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714285629005 (Sun Apr 28 08:27:09 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714285752052 (Sun Apr 28 08:29:12 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714285878316 (Sun Apr 28 08:31:18 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714285992127 (Sun Apr 28 08:33:12 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714286028190 (Sun Apr 28 08:33:48 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714286095587 (Sun Apr 28 08:34:55 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714286368061 (Sun Apr 28 08:39:28 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714287046230 (Sun Apr 28 08:50:46 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714287422375 (Sun Apr 28 08:57:02 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714287629825 (Sun Apr 28 09:00:29 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714287722615 (Sun Apr 28 09:02:02 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714287773026 (Sun Apr 28 09:02:53 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714287777471 (Sun Apr 28 09:02:57 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.0000000000000000e+00 (+0e+00,0e+00) |  1: 8.7e-02  0: 8.2e-02 | 9.0e-02 9.0e-02   1.00   |  0.5  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714287791888 (Sun Apr 28 09:03:11 CEST 2024)
+ x: 0.0 y: 0.0 best so fare: NaN po: 5
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.0000000000000000e+00 (+0e+00,0e+00) |  1: 1.1e-01  0: 1.0e-01 | 1.0e-01 1.0e-01   1.00   |  0.3  0.0 
+ x: -0.11398782963630126 y: 0.14909302073143194 best so fare: 5.0 po: 5
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714287795664 (Sun Apr 28 09:03:15 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.0000000000000000e+01 (+0e+00,1e+00) |  0: 9.6e-02  0: 9.3e-02 | 9.4e-02 9.4e-02   1.00   |  0.5  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714287964511 (Sun Apr 28 09:06:04 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714287969981 (Sun Apr 28 09:06:09 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.9000000000000000e+01 (+0e+00,1e+00) |  1: 1.0e-01  0: 9.8e-02 | 1.0e-01 1.0e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 0.28161027311181236 y: 0.2806524868291501 best so fare: 22.0 po: 364
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714288130765 (Sun Apr 28 09:08:50 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714288136382 (Sun Apr 28 09:08:56 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.9000000000000000e+01 (+0e+00,1e+00) |  0: 1.0e-01  0: 1.0e-01 | 1.0e-01 1.0e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 0.18333027823295367 y: -0.05474765662385794 best so fare: 15.0 po: 364
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714288334900 (Sun Apr 28 09:12:14 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714288341943 (Sun Apr 28 09:12:21 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2500000000000000e+02 (+0e+00,1e+00) |  0: 1.5e-01  0: 1.3e-01 | 1.3e-01 1.3e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 0.27250202044506 y: 0.6831156719044125 best so fare: 75.0 po: 364
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714288371131 (Sun Apr 28 09:12:51 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714288374921 (Sun Apr 28 09:12:54 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.4010000000000000e+03 (+0e+00,0e+00) |  0: 1.2e-01  0: 1.0e-01 | 1.1e-01 1.1e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 0.6384522024591349 y: -0.43101359404133094 best so fare: 961.0 po: 40000
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714288418406 (Sun Apr 28 09:13:38 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.6000000000000000e+01 (+0e+00,4e+01) |  1: 1.4e-01  0: 1.1e-01 | 1.2e-01 1.2e-01   1.00   |  0.0  0.0 
+ x: 0.13194457845935514 y: -0.2186170034377874 best so fare: 0.0 po: 36
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714288499485 (Sun Apr 28 09:14:59 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714288503934 (Sun Apr 28 09:15:03 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.4010000000000000e+03 (+0e+00,1e+02) |  1: 9.3e-02  0: 9.2e-02 | 9.6e-02 9.6e-02   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 1.587175784349027 y: 0.06561885623807441 best so fare: 14.0 po: 282.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714288598372 (Sun Apr 28 09:16:38 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714288602164 (Sun Apr 28 09:16:42 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.3040000000000000e+03 (+0e+00,1e+02) |  0: 1.3e-01  0: 1.2e-01 | 1.2e-01 1.2e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 0.3032065801370885 y: 0.08312075319212404 best so fare: 3.0 po: 50.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714288797869 (Sun Apr 28 09:19:57 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714288801350 (Sun Apr 28 09:20:01 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.3040000000000000e+03 (+0e+00,1e+02) |  1: 2.0e-01  0: 1.7e-01 | 1.7e-01 1.7e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: -0.3424992764638628 y: -0.49432803502131134 best so fare: 37.0 po: 48.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714288827593 (Sun Apr 28 09:20:27 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714288831505 (Sun Apr 28 09:20:31 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.3040000000000000e+03 (+0e+00,1e+02) |  0: 1.1e-01  0: 1.1e-01 | 1.1e-01 1.1e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: -0.5940067184359341 y: -1.3084605335089812 best so fare: 39.0 po: 50.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714288908302 (Sun Apr 28 09:21:48 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714288911118 (Sun Apr 28 09:21:51 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.4010000000000000e+03 (+0e+00,0e+00) |  1: 1.1e-01  0: 1.0e-01 | 1.0e-01 1.0e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: -182.9448618287364 y: 109.76406145777105 best so fare: 25.0 po: 184.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714288974265 (Sun Apr 28 09:22:54 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714288981862 (Sun Apr 28 09:23:01 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.9000000000000000e+03 (+0e+00,1e+02) |  0: 8.2e-02  0: 7.6e-02 | 8.1e-02 8.1e-02   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 1.4555528473093287 y: 0.11355516063851925 best so fare: 17.0 po: 71.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+ CMA-ES error: no initial standard deviation specified, use setInitialStandardDeviations()
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714289043146 (Sun Apr 28 09:24:03 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714289047615 (Sun Apr 28 09:24:07 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.6000000000000000e+03 (+0e+00,2e+02) |  0: 3.1e-01  0: 2.7e-01 | 2.8e-01 2.8e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 1.6405221289083278 y: 1.0094377431405226 best so fare: 41.0 po: 63.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714289177190 (Sun Apr 28 09:26:17 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714289183289 (Sun Apr 28 09:26:23 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.8440000000000000e+03 (+0e+00,1e+02) |  1: 1.5e-01  0: 1.5e-01 | 1.6e-01 1.6e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 0.8128200614864761 y: 1.4634230086819038 best so fare: 44.0 po: 61.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714289256650 (Sun Apr 28 09:27:36 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714289259169 (Sun Apr 28 09:27:39 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.8440000000000000e+03 (+0e+00,3e+02) |  0: 3.3e-01  0: 2.5e-01 | 2.6e-01 2.6e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 0.9383541214376593 y: 0.4816599473438424 best so fare: 42.0 po: 61.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714289596198 (Sun Apr 28 09:33:16 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714289599476 (Sun Apr 28 09:33:19 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: -8.7616000000000000e+04 (+0e+00,6e+02) |  1: 3.1e-01  0: 2.7e-01 | 2.8e-01 2.8e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 1.554709627138899 y: 0.18022781431256857 best so fare: NaN po: NaN
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714289673085 (Sun Apr 28 09:34:33 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714289710213 (Sun Apr 28 09:35:10 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714289841456 (Sun Apr 28 09:37:21 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714289844821 (Sun Apr 28 09:37:24 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.8440000000000000e+03 (+0e+00,3e+02) |  0: 1.4e-01  0: 1.3e-01 | 1.5e-01 1.5e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: 0.8885167391041485 y: 0.8333239499511708 best so fare: 40.0 po: 62.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714289946844 (Sun Apr 28 09:39:06 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714289952093 (Sun Apr 28 09:39:12 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.7210000000000000e+03 (+0e+00,2e+02) |  1: 2.0e-01  0: 2.0e-01 | 2.1e-01 2.1e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: -8.888637348327206 y: 3.450476855768891 best so fare: 36.0 po: 78.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290008257 (Sun Apr 28 09:40:08 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.0840000000000000e+03 (+0e+00,2e+02) |  1: 1.4e-01  0: 1.4e-01 | 1.5e-01 1.5e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ x: -38.371295922131154 y: 17.14053286599806 best so fare: 47.0 po: 127.0
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290323010 (Sun Apr 28 09:45:23 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290327377 (Sun Apr 28 09:45:27 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.7210000000000000e+03 (+0e+00,1e+02) |  1: 2.0e-01  0: 2.0e-01 | 2.0e-01 2.0e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290365535 (Sun Apr 28 09:46:05 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.9690000000000000e+03 (+0e+00,2e+03) |  1: 1.5e-01  0: 1.5e-01 | 1.6e-01 1.6e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290366877 (Sun Apr 28 09:46:06 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0240000000000000e+03 (+0e+00,1e+03) |  1: 1.6e-01  0: 1.5e-01 | 1.6e-01 1.6e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290368129 (Sun Apr 28 09:46:08 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.2900000000000000e+02 (+0e+00,1e+03) |  1: 2.1e-01  0: 2.0e-01 | 2.1e-01 2.1e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290368777 (Sun Apr 28 09:46:08 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.3040000000000000e+03 (+0e+00,2e+03) |  0: 1.9e-01  0: 1.8e-01 | 2.0e-01 2.0e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290369247 (Sun Apr 28 09:46:09 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.2250000000000000e+03 (+0e+00,2e+03) |  0: 1.7e-01  0: 1.6e-01 | 1.8e-01 1.8e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290369535 (Sun Apr 28 09:46:09 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.2410000000000000e+03 (+0e+00,2e+03) |  0: 1.6e-01  0: 1.6e-01 | 1.7e-01 1.7e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290369760 (Sun Apr 28 09:46:09 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.4890000000000000e+03 (+0e+00,3e+03) |  1: 1.7e-01  0: 1.6e-01 | 1.7e-01 1.7e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290369969 (Sun Apr 28 09:46:09 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.7440000000000000e+03 (+0e+00,2e+03) |  1: 2.9e-01  0: 2.2e-01 | 2.5e-01 2.5e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290370204 (Sun Apr 28 09:46:10 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0201000000000000e+04 (+0e+00,2e+03) |  1: 1.8e-01  0: 1.6e-01 | 1.8e-01 1.8e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290370404 (Sun Apr 28 09:46:10 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.1840000000000000e+03 (+0e+00,3e+02) |  0: 1.5e-01  0: 1.5e-01 | 1.6e-01 1.6e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290370635 (Sun Apr 28 09:46:10 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.7240000000000000e+03 (+0e+00,2e+03) |  0: 2.1e-01  0: 2.0e-01 | 2.0e-01 2.0e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290370926 (Sun Apr 28 09:46:10 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.2160000000000000e+03 (+0e+00,2e+03) |  1: 1.8e-01  0: 1.7e-01 | 1.8e-01 1.8e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290371165 (Sun Apr 28 09:46:11 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1236000000000000e+04 (+0e+00,2e+03) |  0: 1.6e-01  0: 1.4e-01 | 1.5e-01 1.5e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290371607 (Sun Apr 28 09:46:11 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3456000000000000e+04 (+0e+00,2e+03) |  0: 1.8e-01  0: 1.8e-01 | 1.9e-01 1.9e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290371932 (Sun Apr 28 09:46:11 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5376000000000000e+04 (+0e+00,2e+03) |  0: 1.9e-01  0: 1.8e-01 | 1.9e-01 1.9e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290372154 (Sun Apr 28 09:46:12 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.7161000000000000e+04 (+0e+00,1e+03) |  0: 2.0e-01  0: 1.9e-01 | 2.0e-01 2.0e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290372384 (Sun Apr 28 09:46:12 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.8769000000000000e+04 (+0e+00,2e+03) |  0: 2.0e-01  0: 1.9e-01 | 2.0e-01 2.0e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290372589 (Sun Apr 28 09:46:12 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.1025000000000000e+04 (+0e+00,2e+03) |  0: 3.8e-01  0: 3.2e-01 | 3.2e-01 3.2e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290373685 (Sun Apr 28 09:46:13 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.3409000000000000e+04 (+0e+00,1e+03) |  1: 2.0e-01  0: 1.8e-01 | 1.9e-01 1.9e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290373902 (Sun Apr 28 09:46:13 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.7689000000000000e+04 (+0e+00,3e+03) |  1: 3.1e-01  0: 2.8e-01 | 2.8e-01 2.8e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290374134 (Sun Apr 28 09:46:14 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.7956000000000000e+04 (+0e+00,5e+03) |  0: 3.2e-01  0: 2.6e-01 | 2.6e-01 2.6e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290374313 (Sun Apr 28 09:46:14 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.3104000000000000e+04 (+0e+00,3e+03) |  1: 2.4e-01  0: 2.2e-01 | 2.2e-01 2.2e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290374610 (Sun Apr 28 09:46:14 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.5796000000000000e+04 (+0e+00,4e+02) |  0: 2.5e-01  0: 2.1e-01 | 2.2e-01 2.2e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290374822 (Sun Apr 28 09:46:14 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.4964000000000000e+04 (+0e+00,5e+03) |  0: 1.8e-01  0: 1.7e-01 | 1.8e-01 1.8e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290375078 (Sun Apr 28 09:46:15 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.0276000000000000e+04 (+0e+00,4e+03) |  0: 2.3e-01  0: 2.0e-01 | 2.1e-01 2.1e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290375322 (Sun Apr 28 09:46:15 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.1616000000000000e+04 (+0e+00,8e+02) |  0: 2.4e-01  0: 2.3e-01 | 2.3e-01 2.3e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290375548 (Sun Apr 28 09:46:15 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.6896000000000000e+04 (+0e+00,3e+03) |  1: 1.5e-01  0: 1.4e-01 | 1.5e-01 1.5e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290375797 (Sun Apr 28 09:46:15 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.0276000000000000e+04 (+0e+00,2e+03) |  1: 2.3e-01  0: 2.1e-01 | 2.2e-01 2.2e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290376039 (Sun Apr 28 09:46:16 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.2761000000000000e+04 (+0e+00,1e+03) |  0: 2.0e-01  0: 1.9e-01 | 2.0e-01 2.0e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290376285 (Sun Apr 28 09:46:16 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1664000000000000e+04 (+0e+00,1e+03) |  0: 2.9e-01  0: 2.5e-01 | 2.5e-01 2.5e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290377233 (Sun Apr 28 09:46:17 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.5610000000000000e+03 (+0e+00,2e+03) |  1: 2.4e-01  0: 2.4e-01 | 2.3e-01 2.3e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290435493 (Sun Apr 28 09:47:15 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.8360000000000000e+03 (+0e+00,2e+03) |  1: 1.7e-01  0: 1.5e-01 | 1.7e-01 1.7e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290562596 (Sun Apr 28 09:49:22 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290568689 (Sun Apr 28 09:49:28 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.6000000000000000e+03 (+0e+00,4e+02) |  0: 2.3e-01  0: 2.0e-01 | 2.1e-01 2.1e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290919541 (Sun Apr 28 09:55:19 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714290923363 (Sun Apr 28 09:55:23 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.5000000000000000e+03 (+0e+00,2e+02) |  0: 1.5e-01  0: 1.4e-01 | 1.6e-01 1.6e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714291207129 (Sun Apr 28 10:00:07 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714291210844 (Sun Apr 28 10:00:10 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.7210000000000000e+03 (+0e+00,2e+02) |  0: 2.1e-01  0: 2.0e-01 | 2.0e-01 2.0e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714293191115 (Sun Apr 28 10:33:11 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714293561527 (Sun Apr 28 10:39:21 CEST 2024)

@@ -34,22 +34,18 @@ public class MyDoublePolygon {
         points.add(new Point2D.Double(x, y));
     }
 
-    public boolean contains(double x, double y) {
+    public int contains(double x, double y) {
 
         int numPoints = points.size();
-        boolean contains = false;
-        for (int i = 0, j = numPoints - 1; i < numPoints; j = i++) {
+        for (int i = 0; i < numPoints; i++) {
             Point2D.Double p1 = points.get(i);
-            Point2D.Double p2 = points.get(j);
+            Point2D.Double p2 = points.get((i + 1) % numPoints);
 
             if ((p1.y > y) != (p2.y > y) && x < (p2.x - p1.x) * (y - p1.y) / (p2.y - p1.y) + p1.x) {
-                contains = !contains;
+                return i;
             }
-//            if (((p1.y > y) != (p2.y > y)) && (x < (p2.x - p1.x) * (y - p1.y) / (p2.y - p1.y) + p1.x)) {
-//                contains = !contains;
-//            }
         }
-        return contains;
+        return -1;
     }
 
     public int getNumPoints() {
@@ -111,8 +107,9 @@ public class MyDoublePolygon {
         g2d.fillPolygon(xPoints, yPoints, points.size());
     }
 
-    public void print() {
+    public void print(String s) {
 
+        name = s;
         System.out.print("\n" + name + " -> ");
         for (int i = 0; i < points.size(); i++) {
             DecimalFormat formatter = new DecimalFormat("#000.00");
@@ -202,5 +199,14 @@ public class MyDoublePolygon {
         MyDoublePolygon polygon = new MyDoublePolygon();
         polygon.setPoints(poly);
         return polygon;
+    }
+
+    public MyVector getCenter() {
+
+        double width = points.get(1).x - points.get(0).x;
+        double x = points.get(0).x + (width/2.0);
+        double y = points.get(0).y + (width/2.0);
+
+        return new MyVector(x, y, "");
     }
 }
