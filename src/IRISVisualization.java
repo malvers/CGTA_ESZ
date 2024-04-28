@@ -103,6 +103,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
     private IRISVisualization fitFun;
     private CMAEvolutionStrategy cmaes;
     private long runningDelay = 0;
+    private BufferedImage heatMap;
 
     /// constructor ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -210,9 +211,9 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
             handleB = (MyVector) os.readObject();
             handleC = (MyVector) os.readObject();
 
-            hw = (HelperWindow) os.readObject();
-            hw.setVisible(true);
-            hw.clear();
+//            hw = (HelperWindow) os.readObject();
+//            hw.setVisible(true);
+//            hw.clear();
 
             os.close();
             f.close();
@@ -242,6 +243,65 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         }
     }
 
+    private void handleSpaceBar(KeyEvent e) {
+        createHeatMap();
+    }
+
+    private void createHeatMap() {
+
+        println("create heat map: " + (getWidth() * getHeight()));
+
+        initBoundingBoxPolygonTest();
+
+        double min = Double.MAX_VALUE;
+        double max = 0.0;
+        double wbb = boundingBoxTest.getWidth();
+
+        double values[][] = new double[getWidth()][getHeight()];
+
+        int count = 0;
+        for (int x = 0; x < getWidth(); x++) {
+            for (int y = 0; y < getHeight(); y++) {
+
+                boundingBoxTest.getPoint(0).x = x;
+                boundingBoxTest.getPoint(0).y = y;
+
+                boundingBoxTest.getPoint(1).x = x + wbb;
+                boundingBoxTest.getPoint(1).y = y;
+
+                boundingBoxTest.getPoint(2).x = x + wbb;
+                boundingBoxTest.getPoint(2).y = y + wbb;
+
+                boundingBoxTest.getPoint(3).x = x;
+                boundingBoxTest.getPoint(3).y = y + wbb;
+
+                double q = experimentalQuality(boundingBoxTest);
+
+                values[x][y] = q;
+
+                if (q < min) {
+                    min = q;
+                }
+                if (q > max) {
+                    max = q;
+                }
+                if (count % 100000 == 0) {
+                    println("count: " + count);
+                }
+                count++;
+            }
+        }
+
+        heatMap = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_ARGB);
+        println(count + " min: " + min + " max: " + max);
+        for (int x = 0; x < getWidth(); x++) {
+            for (int y = 0; y < getHeight(); y++) {
+                Color color = ColorSpectrum.getColorSpectrum(values[x][y], min, max);
+                heatMap.setRGB(x, y, color.getRGB());
+            }
+        }
+    }
+
     /// mouse handling /////////////////////////////////////////////////////////////////////////////////////////////////
 
     private void mouseInit() {
@@ -251,7 +311,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
             @Override
             public void mousePressed(MouseEvent e) {
 
-                println("experimental quality: " + experimentalQuality(boundingBox));
+                println("experimental quality: lll" + experimentalQuality(boundingBox));
 
                 Point2D.Double pd = new Point2D.Double(e.getX(), e.getY());
 
@@ -297,8 +357,8 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
                 initBoundingBoxPolygonTest();
                 createHugeCurve();
-//                println("\nq:  " + qualityFunction());
-                println("points outside: " + numberPointsOutside());
+
+                println("points outside: " + (int) numberPointsOutside());
             }
 
             @Override
@@ -1034,6 +1094,10 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         AffineTransform shiftTransform = AffineTransform.getTranslateInstance(sceneShift.x + dragShift.x, sceneShift.y + dragShift.y);
         g2d.setTransform(shiftTransform);
 
+        if (heatMap != null) {
+            g2d.drawImage(heatMap, 0, 0, null);
+        }
+
         if (drawIrisPicture) {
             drawIrisPicture(g2d);
         }
@@ -1553,12 +1617,6 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         //qualityFunction();
     }
 
-    private void handleSpaceBar(KeyEvent e) {
-        ///bruteForce360(e);
-        hw = new HelperWindow();
-        hw.println("Hello World!");
-    }
-
     private void bruteForce360(KeyEvent e) {
         for (int i = 0; i <= 360; i++) {
             rotateBoundingBox(e);
@@ -1724,13 +1782,13 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
     private double experimentalQuality(MyDoublePolygon theBox) {
 
-        if (boundingBoxTest == null) {
-            initBoundingBoxPolygonTest();
-        }
-
-        if (hugeCurve == null) {
-            createHugeCurve();
-        }
+//        if (boundingBoxTest == null) {
+//            initBoundingBoxPolygonTest();
+//        }
+//
+//        if (hugeCurve == null) {
+//            createHugeCurve();
+//        }
 
         ArrayList<Point2D.Double> points = hugeCurve.getPoints();
 
@@ -1744,7 +1802,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                 sumDist += closestDistanceToBoundingBox(hcp);
             }
         }
-        return sumDist * sumDist;
+        return sumDist;
     }
 
     @Override
