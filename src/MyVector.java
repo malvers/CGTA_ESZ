@@ -163,17 +163,17 @@ class MyVector extends Ellipse2D.Double {
         return Math.sqrt(x * x + y * y);
     }
 
-    protected static double distanceToPointFromLine(Point point, Point2D.Double sceneShift, MyVector handle1, MyVector handle2) {
+    protected static double distanceToPointFromLine(Point p1, Point2D.Double p2, MyVector v1, MyVector v2) {
 
         // Adjust the point coordinates based on the scene shift
-        double adjustedX = point.x - sceneShift.x;
-        double adjustedY = point.y - sceneShift.y;
+        double adjustedX = p1.x - p2.x;
+        double adjustedY = p1.y - p2.y;
 
         // Check if the adjusted point is within the bounding box defined by the two vectors
-        double minX = Math.min(handle1.x, handle2.x);
-        double minY = Math.min(handle1.y, handle2.y);
-        double maxX = Math.max(handle1.x, handle2.x);
-        double maxY = Math.max(handle1.y, handle2.y);
+        double minX = Math.min(v1.x, v2.x);
+        double minY = Math.min(v1.y, v2.y);
+        double maxX = Math.max(v1.x, v2.x);
+        double maxY = Math.max(v1.y, v2.y);
 
         if (adjustedX < minX || adjustedX > maxX || adjustedY < minY || adjustedY > maxY) {
             // Point is outside the bounding box, return some default value (e.g., -1)
@@ -181,10 +181,10 @@ class MyVector extends Ellipse2D.Double {
         }
 
         // Calculate the distance to the line
-        double x1 = handle1.x;
-        double y1 = handle1.y;
-        double x2 = handle2.x;
-        double y2 = handle2.y;
+        double x1 = v1.x;
+        double y1 = v1.y;
+        double x2 = v2.x;
+        double y2 = v2.y;
 
         double numerator = Math.abs((x2 - x1) * (y1 - adjustedY) - (x1 - adjustedX) * (y2 - y1));
         double denominator = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MyDoublePolygon {
-    private ArrayList<Point2D.Double> points;
+    private ArrayList<MyVector> points;
 
     private String name = "";
 
@@ -34,18 +34,20 @@ public class MyDoublePolygon {
         points.add(new Point2D.Double(x, y));
     }
 
-    public int contains(double x, double y) {
+    public boolean contains(double x, double y) {
 
         int numPoints = points.size();
-        for (int i = 0; i < numPoints; i++) {
+        boolean inside = false;
+        for (int i = 0, j = numPoints - 1; i < numPoints; j = i++) {
             Point2D.Double p1 = points.get(i);
-            Point2D.Double p2 = points.get((i + 1) % numPoints);
-
-            if ((p1.y > y) != (p2.y > y) && x < (p2.x - p1.x) * (y - p1.y) / (p2.y - p1.y) + p1.x) {
-                return i;
+            Point2D.Double p2 = points.get(j);
+            if ((p1.y < y && p2.y >= y || p2.y < y && p1.y >= y) && (p1.x <= x || p2.x <= x)) {
+                if (p1.x + (y - p1.y) / (p2.y - p1.y) * (p2.x - p1.x) < x) {
+                    inside = !inside;
+                }
             }
         }
-        return -1;
+        return inside;
     }
 
     public int getNumPoints() {

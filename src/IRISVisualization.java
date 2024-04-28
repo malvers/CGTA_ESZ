@@ -223,6 +223,11 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
             @Override
             public void mousePressed(MouseEvent e) {
 
+                if (!hugeCurve.contains(e.getX(), e.getY())) {
+
+                    println("dist: " + distanceToClosestIndex(e.getX(), e.getY()));
+                }
+
                 if (drawHelp) {
                     return;
                 }
@@ -266,7 +271,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                 initBoundingBoxPolygonTest();
                 createHugeCurve();
 //                println("\nq:  " + qualityFunction());
-                println("po: " + numberPointsOutside());
+                println("points outside: " + numberPointsOutside());
             }
 
             @Override
@@ -403,6 +408,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         double x = -(onMousePressed.x - e.getX());
         double y = -(onMousePressed.y - e.getY());
         setPositionBoundingBox(x, y);
+        experimentalQuality();
     }
 
     /// key handling ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -501,7 +507,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                     case KeyEvent.VK_Q:
 //                        initBoundingBoxPolygonTest();
 //                        createHugeCurve();
-                        lnprintln("points outside: " + Math.sqrt(numberPointsOutside()));
+                        experimentalQuality();
                         break;
                     case KeyEvent.VK_S:
                         screenshotCapture();
@@ -1620,7 +1626,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
     private void shiftBoundingBoxPolygon(int vKup, double inc) {
 
-        boundingBox.print("shiftBoundingBoxPolygon");
+        //boundingBox.print("shiftBoundingBoxPolygon");
 
         for (int i = 0; i < boundingBox.getNumPoints(); i++) {
 
@@ -1640,8 +1646,8 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
             }
         }
         println();
-        println("points outside: " + numberPointsOutside());
-        //println("quality:        " + qualityFunction());
+        println("points outside: " + Math.sqrt(numberPointsOutside()));
+        experimentalQuality();
     }
 
     private double numberPointsOutside() {
@@ -1657,7 +1663,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         int count = 0;
         for (int i = 0; i < hugeCurve.getNumPoints(); i += 1) {
 
-            if (outer.contains(hugeCurve.getPoints().get(i).x, hugeCurve.getPoints().get(i).y) != -1) {
+            if (outer.contains(hugeCurve.getPoints().get(i).x, hugeCurve.getPoints().get(i).y)) {
                 count++;
             }
         }
@@ -1670,13 +1676,39 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         if (hugeCurve == null) {
             createHugeCurve();
         }
-        for (int i = 0; i < hugeCurve.getNumPoints(); i += 1) {
 
-            Point2D.Double hcp = hugeCurve.getPoints().get(i);
-            if (boundingBox.contains(hcp.x, hcp.y) != -1) {
+        ArrayList<Point2D.Double> points = hugeCurve.getPoints();
 
+        double sumDist = 0.0;
+        for (int i = 0; i < hugeCurve.getNumPoints(); i++) {
+
+            Point2D.Double hcp = points.get(i);
+
+            if (!boundingBox.contains(hcp.x, hcp.y)) {
+                double dist = distanceToClosestIndex(hcp.x, hcp.y);
+                println("outside i: " + i + " dist: " + dist + " x: " + hcp.x +  " y: " + hcp.y);
             }
         }
+    }
+    private double closestDistanceToBoundingBox(double x, double y) {
+
+        //boundingBox.
+        return -1.0;
+    }
+
+    private double distanceToClosestIndex(double x, double y) {
+
+        int numPoints = hugeCurve.getNumPoints();
+
+        double minDistance = Double.POSITIVE_INFINITY;
+        for (int i = 0; i < numPoints; i++) {
+            Point2D.Double vertex = hugeCurve.getPoints().get(i);
+            double distance = vertex.distance(x, y);
+            if (distance < minDistance) {
+                minDistance = distance;
+            }
+        }
+        return minDistance;
     }
 
     MyDoublePolygon boundingBoxTest = null;
@@ -1688,7 +1720,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
             boundingBox.getPoint(i).x = boundingBoxTest.getPoint(i).x + x;
             boundingBox.getPoint(i).y = boundingBoxTest.getPoint(i).y + y;
         }
-        println("points outside: " + numberPointsOutside());
+        //println("points outside: " + numberPointsOutside());
     }
 
     @Override
@@ -1747,10 +1779,10 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
         boundingBoxTest = new MyDoublePolygon();
         boundingBoxTest.setPoints(boundingBox.getPoints());
-        boundingBoxTest.print("bounding box test");
+        //boundingBoxTest.print("bounding box test");
 
         boundingBoxOptimal = new MyDoublePolygon();
-        boundingBoxOptimal.print("bounding box optimal");
+        //boundingBoxOptimal.print("bounding box optimal");
     }
 
     private boolean runIt = false;

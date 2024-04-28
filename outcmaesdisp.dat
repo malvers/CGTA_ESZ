@@ -4335,3 +4335,53 @@ Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min S
 (3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714293191115 (Sun Apr 28 10:33:11 CEST 2024)
  CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
 (3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714293561527 (Sun Apr 28 10:39:21 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714293734250 (Sun Apr 28 10:42:14 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714293923640 (Sun Apr 28 10:45:23 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714294085630 (Sun Apr 28 10:48:05 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714294269522 (Sun Apr 28 10:51:09 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714294481607 (Sun Apr 28 10:54:41 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714294563402 (Sun Apr 28 10:56:03 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714294731514 (Sun Apr 28 10:58:51 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714294916377 (Sun Apr 28 11:01:56 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714295226938 (Sun Apr 28 11:07:06 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714295313938 (Sun Apr 28 11:08:33 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714295871461 (Sun Apr 28 11:17:51 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714295991706 (Sun Apr 28 11:19:51 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714296141369 (Sun Apr 28 11:22:21 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714296170408 (Sun Apr 28 11:22:50 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714296229336 (Sun Apr 28 11:23:49 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714296265378 (Sun Apr 28 11:24:25 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714296372752 (Sun Apr 28 11:26:12 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714296434044 (Sun Apr 28 11:27:14 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714296665403 (Sun Apr 28 11:31:05 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714296869301 (Sun Apr 28 11:34:29 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714297005344 (Sun Apr 28 11:36:45 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714297114916 (Sun Apr 28 11:38:34 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714297203098 (Sun Apr 28 11:40:03 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714297246708 (Sun Apr 28 11:40:46 CEST 2024)
+ CMA-ES warning: File 'CMAEvolutionStrategy.properties' not found, no options read
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714297332132 (Sun Apr 28 11:42:12 CEST 2024)
