@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MyDoublePolygon {
-    private ArrayList<MyVector> points;
+    private ArrayList<Point2D.Double> points;
 
     private String name = "";
 
