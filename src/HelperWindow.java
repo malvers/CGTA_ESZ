@@ -12,7 +12,7 @@ public class HelperWindow extends JFrame {
         setSize(600, 1010);
         scrollPane = new JScrollPane(textArea);
         textArea.setFont(new Font("Courier", Font.PLAIN, 16));
-        textArea.setBackground(new Color(41,41,41));
+        textArea.setBackground(new Color(41, 41, 41));
         textArea.setForeground(Color.WHITE);
         add(scrollPane);
     }
@@ -20,5 +20,10 @@ public class HelperWindow extends JFrame {
     protected void println(String s) {
         textArea.append(s + "\n");
         JScrollBar verticalScrollBar = scrollPane.getVerticalScrollBar();
-        verticalScrollBar.setValue(verticalScrollBar.getMaximum());    }
+        verticalScrollBar.setValue(verticalScrollBar.getMaximum() + 10);
+    }
+
+    public void clear() {
+        textArea.setText("");
+    }
 }

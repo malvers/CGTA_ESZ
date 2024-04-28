@@ -212,6 +212,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
             hw = (HelperWindow) os.readObject();
             hw.setVisible(true);
+            hw.clear();
 
             os.close();
             f.close();
@@ -250,7 +251,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
             @Override
             public void mousePressed(MouseEvent e) {
 
-                println("ex q: " + experimentalQuality(boundingBox));
+                println("experimental quality: " + experimentalQuality(boundingBox));
 
                 Point2D.Double pd = new Point2D.Double(e.getX(), e.getY());
 
@@ -434,7 +435,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         double x = -(onMousePressed.x - e.getX());
         double y = -(onMousePressed.y - e.getY());
         setPositionBoundingBox(x, y);
-        println("Moving exp q: " + experimentalQuality(boundingBox));
+        println("experimental quality: " + experimentalQuality(boundingBox));
     }
 
     /// key handling ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1554,6 +1555,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
     private void handleSpaceBar(KeyEvent e) {
         ///bruteForce360(e);
+        hw = new HelperWindow();
         hw.println("Hello World!");
     }
 
@@ -1812,6 +1814,8 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
             repaint();
         }
+
+        cmaes.setFitnessOfMeanX(fitFun.valueOf(cmaes.getMeanX()));
 
         double[] best = cmaes.getBestSolution().getX();
 

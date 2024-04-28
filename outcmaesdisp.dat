@@ -5652,3 +5652,69 @@ Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min S
 (3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714307925947 (Sun Apr 28 14:38:45 CEST 2024)
 (3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714307965711 (Sun Apr 28 14:39:25 CEST 2024)
 (3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714308010097 (Sun Apr 28 14:40:10 CEST 2024)
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714308263215 (Sun Apr 28 14:44:23 CEST 2024)
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714308266928 (Sun Apr 28 14:44:26 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3491285406626906e+05 (+0e+00,2e+02) |  1: 7.4e-02  0: 7.0e-02 | 7.4e-02 7.4e-02   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714308352775 (Sun Apr 28 14:45:52 CEST 2024)
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714308391895 (Sun Apr 28 14:46:31 CEST 2024)
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714308433512 (Sun Apr 28 14:47:13 CEST 2024)
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714308473917 (Sun Apr 28 14:47:53 CEST 2024)
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714308511250 (Sun Apr 28 14:48:31 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.7766358131642786e+06 (+0e+00,0e+00) |  0: 1.2e-01  0: 1.1e-01 | 1.1e-01 1.1e-01   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714308595325 (Sun Apr 28 14:49:55 CEST 2024)
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714308599241 (Sun Apr 28 14:49:59 CEST 2024)
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.5936505352318500e+05 (+0e+00,5e+02) |  0: 8.4e-02  0: 8.1e-02 | 8.6e-02 8.6e-02   1.00   |  0.0  0.0 
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+ CMA-ES warning: flat fitness landscape, consider reformulation of fitness, step-size increased
+(3,6)-CMA-ES(mu_eff=2.3), Ver="0.99.40", dimension=2, 0 diagonal iter., randomSeed=1714308823642 (Sun Apr 28 14:53:43 CEST 2024)
