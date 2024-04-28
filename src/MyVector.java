@@ -163,7 +163,7 @@ class MyVector extends Ellipse2D.Double {
         return Math.sqrt(x * x + y * y);
     }
 
-    protected static double distanceToPointFromLine(Point p1, Point2D.Double p2, MyVector v1, MyVector v2) {
+    protected static double distanceToPointFromLine(Point2D.Double p1, Point2D.Double p2, MyVector v1, MyVector v2) {
 
         // Adjust the point coordinates based on the scene shift
         double adjustedX = p1.x - p2.x;
@@ -175,10 +175,11 @@ class MyVector extends Ellipse2D.Double {
         double maxX = Math.max(v1.x, v2.x);
         double maxY = Math.max(v1.y, v2.y);
 
-        if (adjustedX < minX || adjustedX > maxX || adjustedY < minY || adjustedY > maxY) {
-            // Point is outside the bounding box, return some default value (e.g., -1)
-            return 1000;
-        }
+        /// TODO: check again for whipers etc.
+//        if (adjustedX < minX || adjustedX > maxX || adjustedY < minY || adjustedY > maxY) {
+//            // Point is outside the bounding box OF THE VECTOR, return some default value (e.g., -1)
+//            return 1000;
+//        }
 
         // Calculate the distance to the line
         double x1 = v1.x;
