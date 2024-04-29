@@ -8470,3 +8470,1531 @@ Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min S
     1( 6),      6: 9.6100435739316640e+02 (+0e+00,1e+03) |  0: 8.1e+00  0: 7.2e+00 | 6.8e+00 6.8e+00   1.00   |  0.0  0.0 
 Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
     1( 6),      6: 1.3915521851065650e+03 (+0e+00,7e+02) |  0: 5.0e+00  0: 4.8e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.4155952477670200e+01 (+0e+00,3e+02) |  1: 3.4e+00  0: 3.3e+00 | 3.6e+00 3.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6464687931393328e+02 (+0e+00,4e+02) |  0: 5.5e+00  0: 5.4e+00 | 5.4e+00 5.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.0081367838351110e+02 (+0e+00,6e+02) |  1: 4.5e+00  0: 4.5e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.0206920356434500e+02 (+0e+00,6e+02) |  1: 8.4e+00  0: 7.8e+00 | 7.7e+00 7.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.3233402367628500e+02 (+0e+00,7e+02) |  0: 5.7e+00  0: 4.9e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2868471265660899e+03 (+0e+00,1e+03) |  1: 5.2e+00  0: 4.8e+00 | 5.1e+00 5.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2344831108282785e+03 (+0e+00,7e+02) |  1: 6.9e+00  0: 6.4e+00 | 6.3e+00 6.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1339763704791906e+03 (+0e+00,1e+03) |  0: 7.2e+00  0: 5.7e+00 | 6.0e+00 6.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5719024064247778e+03 (+0e+00,6e+02) |  0: 4.5e+00  0: 4.1e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5969389985664975e+03 (+0e+00,8e+02) |  1: 4.3e+00  0: 4.2e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1076509869951408e+03 (+0e+00,1e+03) |  1: 6.3e+00  0: 5.1e+00 | 5.6e+00 5.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1959483286875723e+03 (+0e+00,7e+02) |  0: 5.5e+00  0: 5.5e+00 | 5.2e+00 5.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.5342472174060060e+02 (+0e+00,9e+02) |  1: 4.4e+00  0: 4.1e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.9038501110088680e+02 (+0e+00,5e+02) |  0: 4.3e+00  0: 4.1e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.9328965714926716e+02 (+0e+00,5e+02) |  1: 6.0e+00  0: 5.2e+00 | 5.5e+00 5.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.7563609047669615e+02 (+0e+00,5e+02) |  0: 6.7e+00  0: 5.5e+00 | 5.8e+00 5.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.0907382727329120e+01 (+0e+00,2e+02) |  1: 4.7e+00  0: 4.2e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.9400188823346640e+01 (+0e+00,9e+01) |  0: 3.5e+00  0: 3.4e+00 | 3.8e+00 3.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.9972148867522860e+01 (+0e+00,3e+02) |  1: 3.8e+00  0: 3.7e+00 | 4.1e+00 4.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.9406187337864020e+02 (+0e+00,4e+02) |  1: 3.9e+00  0: 3.8e+00 | 4.1e+00 4.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.7787703956844570e+02 (+0e+00,4e+02) |  1: 6.5e+00  0: 5.4e+00 | 5.8e+00 5.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.4963311349684090e+02 (+0e+00,3e+02) |  1: 6.9e+00  0: 5.3e+00 | 5.9e+00 5.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.6969563148523740e+02 (+0e+00,6e+02) |  0: 4.9e+00  0: 4.6e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.9808389046674970e+02 (+0e+00,1e+03) |  0: 8.5e+00  0: 7.1e+00 | 7.5e+00 7.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2479811795867665e+03 (+0e+00,9e+02) |  1: 8.9e+00  0: 7.4e+00 | 7.6e+00 7.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0843617828202832e+03 (+0e+00,1e+03) |  1: 8.0e+00  0: 6.7e+00 | 6.6e+00 6.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2421984789820670e+03 (+0e+00,1e+03) |  0: 8.3e+00  0: 7.2e+00 | 7.4e+00 7.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3830085570613094e+03 (+0e+00,5e+02) |  0: 5.6e+00  0: 5.3e+00 | 5.4e+00 5.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3888874674142310e+03 (+0e+00,5e+02) |  1: 4.7e+00  0: 4.5e+00 | 4.8e+00 4.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2647799211624797e+03 (+0e+00,1e+03) |  0: 4.8e+00  0: 4.6e+00 | 4.8e+00 4.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2279286542155003e+03 (+0e+00,3e+02) |  0: 3.8e+00  0: 3.6e+00 | 4.0e+00 4.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.8408098551586210e+02 (+0e+00,6e+02) |  1: 6.6e+00  0: 6.0e+00 | 6.1e+00 6.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.9484150139032727e+02 (+0e+00,8e+02) |  1: 5.4e+00  0: 4.7e+00 | 5.1e+00 5.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.3627452325128390e+02 (+0e+00,4e+02) |  0: 4.3e+00  0: 4.1e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.9512682919882510e+01 (+0e+00,2e+02) |  1: 4.2e+00  0: 4.1e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.4007757657297020e+01 (+0e+00,1e+02) |  1: 3.6e+00  0: 3.6e+00 | 3.9e+00 3.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.9706754619011800e+01 (+0e+00,3e+02) |  0: 5.9e+00  0: 5.8e+00 | 5.6e+00 5.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.0418064267445390e+02 (+0e+00,5e+02) |  1: 6.8e+00  0: 5.5e+00 | 6.0e+00 6.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.6711643635711010e+02 (+0e+00,9e+02) |  1: 7.5e+00  0: 7.0e+00 | 7.0e+00 7.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.4362121365099930e+02 (+0e+00,7e+02) |  0: 5.1e+00  0: 4.6e+00 | 5.0e+00 5.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0571135839001240e+03 (+0e+00,8e+02) |  0: 4.3e+00  0: 4.2e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3106309090890102e+03 (+0e+00,5e+02) |  0: 5.1e+00  0: 5.1e+00 | 5.2e+00 5.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5338472751878894e+03 (+0e+00,6e+02) |  0: 4.0e+00  0: 4.0e+00 | 4.3e+00 4.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3716049703683475e+03 (+0e+00,9e+02) |  0: 7.0e+00  0: 5.5e+00 | 6.0e+00 6.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6331436238071756e+01 (+0e+00,4e+02) |  0: 4.8e+00  0: 4.6e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.2083092542586556e+02 (+0e+00,3e+02) |  0: 5.2e+00  0: 4.6e+00 | 5.1e+00 5.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.7932428098738610e+02 (+0e+00,3e+02) |  1: 4.1e+00  0: 3.9e+00 | 4.3e+00 4.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.1974559467353100e+02 (+0e+00,5e+02) |  0: 7.9e+00  0: 7.0e+00 | 6.7e+00 6.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1723163518467695e+03 (+0e+00,8e+02) |  1: 5.3e+00  0: 4.6e+00 | 5.0e+00 5.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3722575911136296e+03 (+0e+00,6e+02) |  0: 3.9e+00  0: 3.9e+00 | 4.2e+00 4.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3289039096954155e+03 (+0e+00,7e+02) |  0: 6.5e+00  0: 5.6e+00 | 5.8e+00 5.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6526669092568213e+03 (+0e+00,4e+02) |  1: 3.6e+00  0: 3.5e+00 | 3.9e+00 3.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5414975077193449e+03 (+0e+00,7e+02) |  0: 4.1e+00  0: 4.0e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0289346732669717e+03 (+0e+00,1e+03) |  1: 9.0e+00  0: 7.4e+00 | 7.8e+00 7.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4657628000857500e+03 (+0e+00,5e+02) |  1: 4.1e+00  0: 4.1e+00 | 4.3e+00 4.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.9951346741202680e+02 (+0e+00,8e+02) |  1: 7.6e+00  0: 5.9e+00 | 6.4e+00 6.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.9052646653549160e+02 (+0e+00,1e+03) |  1: 7.2e+00  0: 5.6e+00 | 6.1e+00 6.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.7957907895705770e+02 (+0e+00,6e+02) |  0: 7.5e+00  0: 5.7e+00 | 6.3e+00 6.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.3718400083049966e+02 (+0e+00,5e+02) |  1: 6.8e+00  0: 5.5e+00 | 5.9e+00 5.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.2891342332714365e+02 (+0e+00,4e+02) |  1: 4.3e+00  0: 4.1e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.0756957107317560e+01 (+0e+00,2e+02) |  0: 4.4e+00  0: 4.1e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.7186801589792650e+01 (+0e+00,2e+02) |  1: 3.8e+00  0: 3.8e+00 | 4.1e+00 4.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.6114315329188450e+01 (+0e+00,4e+02) |  1: 8.1e+00  0: 6.7e+00 | 6.8e+00 6.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.9136635449013850e+02 (+0e+00,4e+02) |  0: 3.5e+00  0: 3.5e+00 | 3.8e+00 3.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.1596361426539440e+02 (+0e+00,8e+02) |  0: 8.6e+00  0: 7.4e+00 | 7.6e+00 7.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.3551977007743310e+02 (+0e+00,5e+02) |  0: 4.3e+00  0: 4.0e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.5608260022849040e+02 (+0e+00,5e+02) |  0: 7.7e+00  0: 6.5e+00 | 6.5e+00 6.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.4915206713427280e+02 (+0e+00,1e+03) |  0: 9.4e+00  0: 7.9e+00 | 8.1e+00 8.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1207828937208826e+03 (+0e+00,6e+02) |  0: 6.8e+00  0: 5.5e+00 | 5.9e+00 5.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1326254849992445e+03 (+0e+00,1e+03) |  0: 7.4e+00  0: 6.9e+00 | 6.6e+00 6.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.9235243169003788e+01 (+0e+00,3e+02) |  1: 4.6e+00  0: 4.4e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5719507756661130e+02 (+0e+00,4e+02) |  0: 6.5e+00  0: 5.3e+00 | 5.7e+00 5.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.4341431440394230e+02 (+0e+00,7e+02) |  1: 7.6e+00  0: 6.7e+00 | 6.6e+00 6.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.9669581087006580e+02 (+0e+00,7e+02) |  1: 5.0e+00  0: 4.9e+00 | 5.1e+00 5.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.4998261514496800e+02 (+0e+00,9e+02) |  0: 7.5e+00  0: 7.1e+00 | 7.0e+00 7.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2310219331110886e+03 (+0e+00,1e+03) |  0: 4.4e+00  0: 4.3e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1570541064272048e+01 (+0e+00,2e+02) |  1: 4.3e+00  0: 4.3e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0658975042707905e+02 (+0e+00,5e+02) |  0: 5.6e+00  0: 5.2e+00 | 5.4e+00 5.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.1156083624514900e+02 (+0e+00,8e+02) |  0: 6.6e+00  0: 5.4e+00 | 5.9e+00 5.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.3260578240264700e+02 (+0e+00,7e+02) |  1: 7.0e+00  0: 6.2e+00 | 6.3e+00 6.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0034369105658205e+03 (+0e+00,9e+02) |  0: 4.9e+00  0: 4.8e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3384991676832578e+03 (+0e+00,6e+02) |  1: 5.6e+00  0: 4.9e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2797576041347183e+03 (+0e+00,1e+03) |  1: 7.7e+00  0: 6.3e+00 | 6.5e+00 6.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5215659641455832e+03 (+0e+00,7e+02) |  1: 4.7e+00  0: 4.2e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3579600336266476e+03 (+0e+00,8e+02) |  1: 5.8e+00  0: 5.6e+00 | 5.6e+00 5.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5666809382202720e+03 (+0e+00,8e+02) |  1: 5.0e+00  0: 4.8e+00 | 5.0e+00 5.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5148533802946795e+03 (+0e+00,6e+02) |  0: 4.0e+00  0: 3.7e+00 | 4.0e+00 4.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2666655047097174e+03 (+0e+00,7e+02) |  1: 4.1e+00  0: 4.1e+00 | 4.3e+00 4.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.4721474197854420e+02 (+0e+00,8e+02) |  0: 8.2e+00  0: 6.9e+00 | 6.9e+00 6.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.4134776743557420e+02 (+0e+00,6e+02) |  1: 5.3e+00  0: 4.8e+00 | 5.1e+00 5.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2873369759365957e+02 (+0e+00,7e+02) |  1: 9.3e+00  0: 7.4e+00 | 7.8e+00 7.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.2704524653253392e+02 (+0e+00,9e+02) |  1: 4.3e+00  0: 4.2e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4273499142367193e+01 (+0e+00,4e+02) |  0: 6.3e+00  0: 6.1e+00 | 5.9e+00 5.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.5452086864734724e+01 (+0e+00,2e+02) |  1: 3.4e+00  0: 3.4e+00 | 3.8e+00 3.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.9145318716947600e+01 (+0e+00,2e+02) |  1: 3.8e+00  0: 3.7e+00 | 4.0e+00 4.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.6729239327599280e+01 (+0e+00,4e+02) |  0: 7.1e+00  0: 6.9e+00 | 6.4e+00 6.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.0992016242658930e+02 (+0e+00,9e+02) |  0: 5.0e+00  0: 4.8e+00 | 5.1e+00 5.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.0171265036160120e+02 (+0e+00,8e+02) |  0: 6.5e+00  0: 5.3e+00 | 5.8e+00 5.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0160933260671792e+03 (+0e+00,5e+02) |  0: 4.8e+00  0: 4.5e+00 | 4.8e+00 4.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0555552900383125e+03 (+0e+00,2e+03) |  0: 6.1e+00  0: 5.1e+00 | 5.6e+00 5.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2589809215476657e+03 (+0e+00,1e+03) |  0: 4.8e+00  0: 4.2e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4965935038121047e+03 (+0e+00,6e+02) |  0: 4.2e+00  0: 4.2e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0739866458499096e+03 (+0e+00,1e+03) |  1: 7.6e+00  0: 6.4e+00 | 6.4e+00 6.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4767164408489446e+03 (+0e+00,7e+02) |  1: 5.4e+00  0: 5.0e+00 | 5.2e+00 5.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4167509838743085e+03 (+0e+00,8e+02) |  0: 5.1e+00  0: 4.9e+00 | 5.0e+00 5.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2445759053176669e+03 (+0e+00,8e+02) |  1: 4.1e+00  0: 4.0e+00 | 4.3e+00 4.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0820132682278065e+03 (+0e+00,5e+02) |  0: 4.4e+00  0: 4.2e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.0019891243328110e+02 (+0e+00,9e+02) |  1: 5.3e+00  0: 4.6e+00 | 5.1e+00 5.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.3992082636918030e+02 (+0e+00,7e+02) |  1: 4.8e+00  0: 4.6e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3803942241094904e+02 (+0e+00,4e+02) |  0: 4.4e+00  0: 4.4e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.3300326562469660e+01 (+0e+00,2e+02) |  1: 5.5e+00  0: 5.0e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.7293739730661970e+01 (+0e+00,1e+02) |  0: 3.6e+00  0: 3.6e+00 | 3.9e+00 3.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.7464693553120217e+01 (+0e+00,3e+02) |  1: 4.6e+00  0: 4.3e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.8374827348900800e+02 (+0e+00,5e+02) |  1: 5.1e+00  0: 4.5e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.4287589665414106e+02 (+0e+00,7e+02) |  0: 4.5e+00  0: 4.4e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.6294058592659775e+02 (+0e+00,8e+02) |  0: 8.6e+00  0: 7.3e+00 | 7.7e+00 7.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0330107943874643e+03 (+0e+00,6e+02) |  0: 4.7e+00  0: 4.5e+00 | 4.8e+00 4.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1328053856258405e+03 (+0e+00,6e+02) |  0: 6.3e+00  0: 6.0e+00 | 5.9e+00 5.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1923877859221925e+03 (+0e+00,1e+03) |  0: 5.7e+00  0: 4.9e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4841327714316758e+03 (+0e+00,6e+02) |  0: 4.5e+00  0: 4.1e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4129329152806856e+03 (+0e+00,6e+02) |  1: 5.4e+00  0: 5.3e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5399654195984533e+03 (+0e+00,4e+02) |  0: 4.8e+00  0: 4.4e+00 | 4.8e+00 4.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3114072617750608e+03 (+0e+00,8e+02) |  1: 6.1e+00  0: 5.3e+00 | 5.6e+00 5.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.8490771326215660e+02 (+0e+00,1e+03) |  1: 6.8e+00  0: 5.4e+00 | 5.8e+00 5.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.7956044099309740e+02 (+0e+00,8e+02) |  1: 5.6e+00  0: 4.9e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.7213882288338970e+02 (+0e+00,4e+02) |  1: 6.5e+00  0: 5.3e+00 | 5.8e+00 5.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.8369691144161330e+02 (+0e+00,1e+03) |  1: 4.3e+00  0: 4.1e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5817089512353522e+02 (+0e+00,3e+02) |  0: 4.4e+00  0: 4.3e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.5544289806806330e+00 (+0e+00,2e+02) |  0: 5.6e+00  0: 5.1e+00 | 5.4e+00 5.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.3778143861132435e+00 (+0e+00,8e+01) |  0: 3.4e+00  0: 3.4e+00 | 3.7e+00 3.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.0176687020540170e+01 (+0e+00,5e+02) |  1: 4.4e+00  0: 4.3e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6444563231589845e+02 (+0e+00,5e+02) |  0: 5.8e+00  0: 5.0e+00 | 5.4e+00 5.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.3212655634979660e+02 (+0e+00,4e+02) |  1: 4.7e+00  0: 4.3e+00 | 4.8e+00 4.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.8722574070880330e+02 (+0e+00,7e+02) |  1: 5.4e+00  0: 5.2e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0401403059752101e+03 (+0e+00,6e+02) |  1: 6.5e+00  0: 5.8e+00 | 6.0e+00 6.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.2409991741451100e+02 (+0e+00,1e+03) |  0: 1.3e+01  0: 1.3e+01 | 1.1e+01 1.1e+01   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5952138416495313e+03 (+0e+00,4e+02) |  1: 3.6e+00  0: 3.4e+00 | 3.8e+00 3.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5851266455243187e+03 (+0e+00,4e+02) |  1: 3.6e+00  0: 3.6e+00 | 3.9e+00 3.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6156955161269240e+03 (+0e+00,2e+02) |  1: 4.0e+00  0: 3.8e+00 | 4.2e+00 4.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4756197360184171e+03 (+0e+00,1e+03) |  1: 4.0e+00  0: 4.0e+00 | 4.2e+00 4.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.3693792335094420e+02 (+0e+00,2e+03) |  0: 8.6e+00  0: 8.6e+00 | 7.6e+00 7.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0136250414842783e+03 (+0e+00,8e+02) |  1: 7.7e+00  0: 6.0e+00 | 6.4e+00 6.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.8487022586229410e+02 (+0e+00,8e+02) |  1: 6.8e+00  0: 5.3e+00 | 5.8e+00 5.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.6270827538256450e+02 (+0e+00,6e+02) |  1: 4.0e+00  0: 3.9e+00 | 4.2e+00 4.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.0646550203987255e+02 (+0e+00,7e+02) |  1: 5.6e+00  0: 4.8e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.5030898214911020e+02 (+0e+00,1e+02) |  1: 3.5e+00  0: 3.5e+00 | 3.8e+00 3.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3645777188777455e+01 (+0e+00,3e+02) |  0: 5.2e+00  0: 4.8e+00 | 5.1e+00 5.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.5199465759019517e+01 (+0e+00,2e+02) |  0: 4.6e+00  0: 4.3e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.6589767516395120e+00 (+0e+00,4e+02) |  0: 5.2e+00  0: 5.1e+00 | 5.2e+00 5.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4078654951086460e+02 (+0e+00,4e+02) |  0: 4.8e+00  0: 4.6e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.9525029142684850e+02 (+0e+00,5e+02) |  0: 6.8e+00  0: 5.5e+00 | 5.9e+00 5.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0680440172613629e+02 (+0e+00,2e+02) |  1: 5.0e+00  0: 4.7e+00 | 5.0e+00 5.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2789235217497153e+02 (+0e+00,6e+02) |  0: 6.0e+00  0: 5.4e+00 | 5.7e+00 5.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.4740292725251280e+02 (+0e+00,8e+02) |  0: 5.7e+00  0: 5.1e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.7688586843490930e+02 (+0e+00,8e+02) |  1: 4.7e+00  0: 4.2e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.0602811264459350e+02 (+0e+00,9e+02) |  0: 4.7e+00  0: 4.2e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.5957942970397210e+02 (+0e+00,7e+02) |  0: 8.1e+00  0: 7.2e+00 | 7.3e+00 7.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3250103521362255e+03 (+0e+00,8e+02) |  0: 5.2e+00  0: 4.9e+00 | 5.2e+00 5.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5542852144893775e+03 (+0e+00,4e+02) |  0: 5.6e+00  0: 5.0e+00 | 5.4e+00 5.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3437539307280115e+03 (+0e+00,8e+02) |  1: 5.5e+00  0: 4.9e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1559078127576372e+03 (+0e+00,2e+03) |  1: 6.4e+00  0: 6.3e+00 | 6.0e+00 6.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2790883698280668e+03 (+0e+00,7e+02) |  1: 6.7e+00  0: 5.9e+00 | 5.9e+00 5.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2686265639974486e+03 (+0e+00,6e+02) |  1: 3.8e+00  0: 3.7e+00 | 4.1e+00 4.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1761101612152365e+03 (+0e+00,7e+02) |  0: 5.2e+00  0: 4.5e+00 | 5.0e+00 5.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.2338826628587290e+02 (+0e+00,8e+02) |  1: 6.9e+00  0: 6.6e+00 | 6.3e+00 6.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.4258505764713283e+02 (+0e+00,8e+02) |  1: 4.8e+00  0: 4.5e+00 | 4.8e+00 4.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.1695133073773416e+00 (+0e+00,6e+02) |  1: 7.5e+00  0: 7.3e+00 | 6.6e+00 6.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.8407998140738840e+01 (+0e+00,3e+02) |  0: 6.4e+00  0: 5.7e+00 | 5.9e+00 5.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.7941704627776915e+01 (+0e+00,2e+02) |  0: 3.4e+00  0: 3.4e+00 | 3.7e+00 3.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.6612970022586940e+01 (+0e+00,3e+02) |  0: 3.4e+00  0: 3.4e+00 | 3.7e+00 3.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.6250342804306950e+02 (+0e+00,4e+02) |  0: 3.9e+00  0: 3.9e+00 | 4.2e+00 4.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.4678567325903540e+02 (+0e+00,5e+02) |  0: 5.6e+00  0: 4.8e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.9554295714742410e+02 (+0e+00,3e+02) |  1: 3.8e+00  0: 3.7e+00 | 4.1e+00 4.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.6202310409037090e+02 (+0e+00,7e+02) |  0: 8.4e+00  0: 6.6e+00 | 6.9e+00 6.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.3903576740957400e+02 (+0e+00,9e+02) |  0: 9.0e+00  0: 7.7e+00 | 7.9e+00 7.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.4521694880938440e+01 (+0e+00,2e+02) |  1: 4.5e+00  0: 4.1e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5038879288456290e+02 (+0e+00,8e+02) |  1: 5.3e+00  0: 5.1e+00 | 5.2e+00 5.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.5606705960384720e+02 (+0e+00,6e+02) |  0: 7.4e+00  0: 6.5e+00 | 6.5e+00 6.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.2270507550134830e+02 (+0e+00,6e+02) |  0: 3.8e+00  0: 3.8e+00 | 4.1e+00 4.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2302715480897620e+03 (+0e+00,4e+02) |  1: 5.2e+00  0: 4.6e+00 | 5.0e+00 5.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1740304807358918e+03 (+0e+00,6e+02) |  0: 4.5e+00  0: 4.2e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6533772184178902e+03 (+0e+00,8e+02) |  1: 6.5e+00  0: 5.1e+00 | 5.6e+00 5.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6582585170815275e+03 (+0e+00,6e+02) |  1: 3.8e+00  0: 3.6e+00 | 4.0e+00 4.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6228698833582405e+03 (+0e+00,9e+02) |  1: 7.5e+00  0: 6.2e+00 | 6.5e+00 6.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3372465379756286e+03 (+0e+00,1e+03) |  0: 5.9e+00  0: 5.1e+00 | 5.4e+00 5.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3455373146712445e+03 (+0e+00,4e+02) |  1: 5.4e+00  0: 5.1e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2178506442689425e+03 (+0e+00,4e+02) |  1: 5.3e+00  0: 5.0e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1478216184322000e+03 (+0e+00,5e+02) |  0: 4.0e+00  0: 3.9e+00 | 4.2e+00 4.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.8435230677000650e+02 (+0e+00,5e+02) |  0: 4.1e+00  0: 4.1e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.3133253209523190e+02 (+0e+00,7e+02) |  1: 4.2e+00  0: 4.0e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.6902814694025625e+02 (+0e+00,5e+02) |  1: 3.7e+00  0: 3.6e+00 | 3.9e+00 3.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.0680745563011930e+01 (+0e+00,4e+02) |  1: 4.1e+00  0: 4.0e+00 | 4.3e+00 4.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.2507021704843740e+00 (+0e+00,2e+02) |  1: 3.7e+00  0: 3.6e+00 | 4.0e+00 4.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.9583442987357180e+01 (+0e+00,5e+02) |  1: 4.1e+00  0: 3.8e+00 | 4.2e+00 4.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.2706394140768893e+02 (+0e+00,4e+02) |  1: 4.3e+00  0: 4.1e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.9160167708910210e+02 (+0e+00,7e+02) |  0: 7.4e+00  0: 6.0e+00 | 6.3e+00 6.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.1070092199633180e+02 (+0e+00,8e+02) |  0: 9.0e+00  0: 8.5e+00 | 8.2e+00 8.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.5298798071821080e+02 (+0e+00,4e+02) |  0: 7.5e+00  0: 6.2e+00 | 6.3e+00 6.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.8661201419988700e+02 (+0e+00,9e+02) |  0: 7.2e+00  0: 6.1e+00 | 6.2e+00 6.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0805194189722295e+03 (+0e+00,1e+03) |  0: 6.6e+00  0: 5.7e+00 | 5.9e+00 5.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0590186247145368e+03 (+0e+00,9e+02) |  0: 8.4e+00  0: 7.7e+00 | 7.7e+00 7.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5658234862164145e+03 (+0e+00,8e+02) |  1: 4.9e+00  0: 4.4e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4757305338410197e+03 (+0e+00,9e+02) |  0: 4.6e+00  0: 4.5e+00 | 4.8e+00 4.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1083241548460567e+03 (+0e+00,7e+02) |  1: 6.1e+00  0: 5.2e+00 | 5.5e+00 5.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3763254125548974e+03 (+0e+00,6e+02) |  0: 4.5e+00  0: 4.1e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1305828102682888e+03 (+0e+00,5e+02) |  0: 3.8e+00  0: 3.7e+00 | 4.1e+00 4.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.5751006016764353e+02 (+0e+00,1e+03) |  1: 8.9e+00  0: 7.8e+00 | 7.7e+00 7.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.8293884885524920e+02 (+0e+00,8e+02) |  1: 3.9e+00  0: 3.9e+00 | 4.2e+00 4.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.0068330055943130e+01 (+0e+00,1e+03) |  1: 6.3e+00  0: 5.8e+00 | 5.8e+00 5.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.7114022236724335e+02 (+0e+00,4e+02) |  0: 7.9e+00  0: 6.0e+00 | 6.3e+00 6.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.2035111358164784e+01 (+0e+00,3e+02) |  1: 4.5e+00  0: 4.3e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.0600918409722870e+00 (+0e+00,2e+02) |  0: 5.6e+00  0: 5.5e+00 | 5.5e+00 5.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.5498923176100100e+01 (+0e+00,6e+02) |  0: 6.6e+00  0: 5.6e+00 | 5.9e+00 5.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.5020010191227306e+02 (+0e+00,1e+03) |  0: 4.4e+00  0: 4.1e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.8227447599545050e+02 (+0e+00,8e+02) |  1: 7.9e+00  0: 6.8e+00 | 6.7e+00 6.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1921589080646256e+03 (+0e+00,6e+02) |  1: 3.3e+00  0: 3.2e+00 | 3.5e+00 3.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2473152008655125e+03 (+0e+00,9e+02) |  1: 4.5e+00  0: 4.4e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1095664520015250e+03 (+0e+00,8e+02) |  0: 7.2e+00  0: 6.4e+00 | 6.3e+00 6.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3125973407655224e+03 (+0e+00,1e+03) |  0: 5.7e+00  0: 5.0e+00 | 5.4e+00 5.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6229798036169127e+03 (+0e+00,3e+02) |  1: 5.0e+00  0: 4.5e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4340527993681014e+03 (+0e+00,4e+02) |  1: 5.2e+00  0: 4.6e+00 | 5.0e+00 5.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2648623330849227e+03 (+0e+00,7e+02) |  0: 6.9e+00  0: 6.8e+00 | 6.4e+00 6.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2937507187788160e+03 (+0e+00,1e+03) |  0: 4.6e+00  0: 4.3e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.6778942457745190e+02 (+0e+00,1e+03) |  0: 6.5e+00  0: 6.1e+00 | 6.0e+00 6.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.8444136047325540e+02 (+0e+00,3e+02) |  0: 5.3e+00  0: 5.1e+00 | 5.0e+00 5.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.5675882404111330e+02 (+0e+00,4e+02) |  1: 8.1e+00  0: 6.8e+00 | 6.6e+00 6.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4296053547907516e+02 (+0e+00,3e+02) |  0: 6.8e+00  0: 5.4e+00 | 5.9e+00 5.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.5568166328138060e+01 (+0e+00,3e+02) |  1: 4.0e+00  0: 4.0e+00 | 4.3e+00 4.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.2923062535727550e+01 (+0e+00,6e+01) |  1: 4.2e+00  0: 4.1e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.0325491507287470e+01 (+0e+00,2e+02) |  0: 3.8e+00  0: 3.8e+00 | 4.2e+00 4.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4663431540379167e+02 (+0e+00,5e+02) |  1: 7.8e+00  0: 6.8e+00 | 6.7e+00 6.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.2005213825969260e+02 (+0e+00,4e+02) |  0: 3.7e+00  0: 3.7e+00 | 4.0e+00 4.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.7758156686263540e+02 (+0e+00,7e+02) |  1: 5.4e+00  0: 4.9e+00 | 5.0e+00 5.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.1005059800862680e+02 (+0e+00,1e+03) |  0: 6.9e+00  0: 6.8e+00 | 6.4e+00 6.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.2920467541055780e+02 (+0e+00,1e+03) |  0: 6.2e+00  0: 5.1e+00 | 5.5e+00 5.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.8544188264513410e+02 (+0e+00,1e+03) |  0: 8.3e+00  0: 7.4e+00 | 7.3e+00 7.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3218952975339325e+03 (+0e+00,5e+02) |  1: 5.8e+00  0: 5.7e+00 | 5.6e+00 5.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4237812260778455e+03 (+0e+00,8e+02) |  0: 7.2e+00  0: 5.6e+00 | 6.1e+00 6.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6837608820187786e+03 (+0e+00,6e+02) |  1: 3.3e+00  0: 3.3e+00 | 3.7e+00 3.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3488111743174195e+03 (+0e+00,6e+02) |  1: 5.8e+00  0: 5.1e+00 | 5.5e+00 5.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3990957993374805e+03 (+0e+00,1e+03) |  0: 5.4e+00  0: 4.6e+00 | 5.0e+00 5.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.3942601939512000e+02 (+0e+00,1e+03) |  1: 6.5e+00  0: 5.4e+00 | 5.8e+00 5.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.0855782908617600e+02 (+0e+00,1e+03) |  1: 5.9e+00  0: 5.0e+00 | 5.4e+00 5.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.5265042569060574e+02 (+0e+00,6e+02) |  1: 7.1e+00  0: 6.0e+00 | 6.2e+00 6.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0138035903846261e+02 (+0e+00,8e+02) |  0: 6.8e+00  0: 5.6e+00 | 6.0e+00 6.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4060439358484527e+02 (+0e+00,3e+02) |  0: 3.8e+00  0: 3.7e+00 | 4.0e+00 4.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.1422132273078090e+01 (+0e+00,2e+02) |  0: 3.7e+00  0: 3.6e+00 | 3.9e+00 3.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2163420591922037e+01 (+0e+00,3e+02) |  0: 6.4e+00  0: 5.7e+00 | 5.9e+00 5.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.0015358019436920e+01 (+0e+00,4e+02) |  0: 6.8e+00  0: 5.9e+00 | 6.1e+00 6.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.9030960936386230e+02 (+0e+00,2e+02) |  0: 4.6e+00  0: 4.4e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.6647205890063300e+02 (+0e+00,3e+02) |  1: 6.8e+00  0: 5.8e+00 | 6.0e+00 6.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.0867019560425590e+02 (+0e+00,1e+03) |  0: 5.2e+00  0: 5.0e+00 | 5.0e+00 5.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0596679538086485e+03 (+0e+00,6e+02) |  0: 6.2e+00  0: 5.1e+00 | 5.6e+00 5.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4512329646191122e+03 (+0e+00,6e+02) |  0: 6.2e+00  0: 5.8e+00 | 5.8e+00 5.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5382257517815940e+03 (+0e+00,3e+02) |  1: 4.2e+00  0: 4.1e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3502973019946385e+03 (+0e+00,2e+03) |  1: 5.9e+00  0: 5.1e+00 | 5.4e+00 5.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2791347168000887e+03 (+0e+00,8e+02) |  1: 7.1e+00  0: 5.9e+00 | 6.1e+00 6.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1547810467616835e+03 (+0e+00,1e+03) |  1: 7.6e+00  0: 6.3e+00 | 6.4e+00 6.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4437884026630804e+03 (+0e+00,6e+02) |  0: 4.0e+00  0: 3.7e+00 | 4.1e+00 4.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0329849746738225e+03 (+0e+00,7e+02) |  0: 4.3e+00  0: 4.3e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.5045142476373314e+02 (+0e+00,8e+02) |  1: 8.9e+00  0: 7.4e+00 | 7.7e+00 7.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.9073746460604720e+02 (+0e+00,6e+02) |  1: 5.8e+00  0: 5.1e+00 | 5.4e+00 5.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.0269401886996332e+02 (+0e+00,4e+02) |  1: 3.7e+00  0: 3.7e+00 | 4.0e+00 4.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.8700291973319285e+01 (+0e+00,5e+02) |  1: 4.1e+00  0: 4.1e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.0253460841365950e+01 (+0e+00,1e+02) |  0: 3.8e+00  0: 3.7e+00 | 4.1e+00 4.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0897372333270903e+02 (+0e+00,1e+02) |  1: 4.7e+00  0: 4.4e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.3169683802732760e+01 (+0e+00,1e+03) |  0: 6.9e+00  0: 5.9e+00 | 6.1e+00 6.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.5847674458357136e+02 (+0e+00,9e+02) |  0: 4.5e+00  0: 4.4e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.1253693592129910e+02 (+0e+00,4e+02) |  0: 5.5e+00  0: 5.2e+00 | 5.4e+00 5.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.0338062716414650e+02 (+0e+00,1e+03) |  0: 6.8e+00  0: 5.4e+00 | 5.9e+00 5.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.2044515671972890e+02 (+0e+00,8e+02) |  0: 9.8e+00  0: 7.8e+00 | 8.2e+00 8.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0853778583582102e+03 (+0e+00,6e+02) |  0: 8.4e+00  0: 6.4e+00 | 6.8e+00 6.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5787639348658702e+03 (+0e+00,6e+02) |  1: 4.3e+00  0: 4.1e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5802021929312514e+03 (+0e+00,9e+02) |  0: 4.7e+00  0: 4.3e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2695064864896140e+03 (+0e+00,9e+02) |  1: 9.0e+00  0: 7.5e+00 | 7.8e+00 7.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4463704193765163e+03 (+0e+00,8e+02) |  0: 4.9e+00  0: 4.7e+00 | 4.8e+00 4.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2452055337109632e+03 (+0e+00,7e+02) |  1: 4.7e+00  0: 4.6e+00 | 4.8e+00 4.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.3000319038010560e+00 (+0e+00,3e+02) |  0: 3.2e+00  0: 3.2e+00 | 3.5e+00 3.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.1046735019427610e+01 (+0e+00,3e+02) |  0: 6.0e+00  0: 5.2e+00 | 5.6e+00 5.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.7912031976473990e+01 (+0e+00,1e+02) |  1: 3.3e+00  0: 3.3e+00 | 3.6e+00 3.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.4232286543334750e+01 (+0e+00,2e+02) |  0: 4.5e+00  0: 4.3e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.9682921191196330e+01 (+0e+00,4e+02) |  1: 4.6e+00  0: 4.4e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2064233130616535e+02 (+0e+00,2e+02) |  1: 4.8e+00  0: 4.5e+00 | 4.8e+00 4.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.7008190175263985e+02 (+0e+00,5e+02) |  0: 5.5e+00  0: 5.3e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2399750570889350e+02 (+0e+00,4e+02) |  1: 4.7e+00  0: 4.3e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.1099063917571950e+01 (+0e+00,3e+02) |  0: 7.9e+00  0: 6.1e+00 | 6.4e+00 6.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.4204711330396600e+01 (+0e+00,8e+02) |  1: 7.3e+00  0: 6.3e+00 | 6.3e+00 6.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.4408820693655570e+01 (+0e+00,7e+02) |  0: 9.1e+00  0: 7.5e+00 | 7.9e+00 7.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.3314362436426100e+02 (+0e+00,8e+02) |  1: 3.9e+00  0: 3.8e+00 | 4.1e+00 4.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.3695200280595026e+02 (+0e+00,8e+02) |  1: 4.2e+00  0: 4.1e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.5565013086305493e+02 (+0e+00,5e+02) |  0: 6.6e+00  0: 5.7e+00 | 6.0e+00 6.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.6628946990387647e+02 (+0e+00,6e+02) |  1: 6.5e+00  0: 6.1e+00 | 6.0e+00 6.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.9610275626576663e+02 (+0e+00,6e+02) |  0: 7.6e+00  0: 6.6e+00 | 6.6e+00 6.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.0863493774329980e+02 (+0e+00,6e+02) |  0: 4.3e+00  0: 4.1e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.1078503321131770e+02 (+0e+00,5e+02) |  1: 3.8e+00  0: 3.7e+00 | 4.1e+00 4.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.5031601593187240e+02 (+0e+00,9e+02) |  0: 7.9e+00  0: 6.0e+00 | 6.5e+00 6.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.5728797881753710e+02 (+0e+00,7e+02) |  1: 3.9e+00  0: 3.9e+00 | 4.2e+00 4.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.4050589544983300e+02 (+0e+00,8e+02) |  0: 5.5e+00  0: 5.5e+00 | 5.5e+00 5.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.7245329981430420e+02 (+0e+00,7e+02) |  1: 4.0e+00  0: 3.8e+00 | 4.1e+00 4.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.7880699253730230e+02 (+0e+00,6e+02) |  1: 4.0e+00  0: 3.9e+00 | 4.1e+00 4.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.0421918895098200e+02 (+0e+00,6e+02) |  0: 4.3e+00  0: 4.0e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2498398941387820e+03 (+0e+00,2e+02) |  1: 5.9e+00  0: 4.9e+00 | 5.4e+00 5.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1822125369888280e+03 (+0e+00,5e+02) |  1: 3.9e+00  0: 3.9e+00 | 4.2e+00 4.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2597855962626068e+03 (+0e+00,9e+02) |  1: 3.4e+00  0: 3.3e+00 | 3.6e+00 3.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.3027011878464920e+02 (+0e+00,9e+02) |  0: 6.8e+00  0: 5.4e+00 | 5.9e+00 5.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0796956274079669e+03 (+0e+00,8e+02) |  0: 5.9e+00  0: 5.2e+00 | 5.5e+00 5.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4905620971977498e+03 (+0e+00,6e+02) |  1: 4.1e+00  0: 3.9e+00 | 4.3e+00 4.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1486809334657962e+03 (+0e+00,7e+02) |  1: 7.4e+00  0: 7.1e+00 | 7.0e+00 7.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2497803813875034e+03 (+0e+00,6e+02) |  1: 6.0e+00  0: 5.9e+00 | 5.7e+00 5.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2804036788820250e+03 (+0e+00,7e+02) |  0: 6.3e+00  0: 5.6e+00 | 5.8e+00 5.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3277067467549696e+03 (+0e+00,7e+02) |  0: 4.5e+00  0: 4.4e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1799846133083356e+03 (+0e+00,1e+03) |  0: 6.5e+00  0: 5.6e+00 | 5.8e+00 5.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6337942928167608e+03 (+0e+00,4e+02) |  1: 4.6e+00  0: 4.2e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4736100888698310e+03 (+0e+00,5e+02) |  0: 4.4e+00  0: 4.2e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3434055799157110e+03 (+0e+00,1e+03) |  1: 4.8e+00  0: 4.6e+00 | 4.8e+00 4.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.8616733374228995e+03 (+0e+00,5e+02) |  0: 4.4e+00  0: 4.1e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2264811838690787e+03 (+0e+00,1e+03) |  0: 6.0e+00  0: 5.1e+00 | 5.5e+00 5.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3399729986524235e+03 (+0e+00,4e+02) |  0: 7.1e+00  0: 5.7e+00 | 6.1e+00 6.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3934040616037137e+03 (+0e+00,8e+02) |  1: 4.8e+00  0: 4.7e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1409951272292803e+03 (+0e+00,1e+03) |  1: 6.7e+00  0: 6.2e+00 | 6.1e+00 6.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5912456793662918e+03 (+0e+00,8e+02) |  0: 3.8e+00  0: 3.7e+00 | 4.1e+00 4.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5047732639262438e+03 (+0e+00,4e+02) |  1: 4.6e+00  0: 4.2e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5927299238736873e+03 (+0e+00,8e+02) |  1: 3.5e+00  0: 3.5e+00 | 3.9e+00 3.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2871222434774700e+03 (+0e+00,8e+02) |  1: 8.1e+00  0: 6.0e+00 | 6.5e+00 6.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5946992726104877e+03 (+0e+00,6e+02) |  0: 5.6e+00  0: 4.8e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6203670708139061e+03 (+0e+00,7e+02) |  1: 4.6e+00  0: 4.5e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3257779707841046e+03 (+0e+00,9e+02) |  1: 8.7e+00  0: 7.4e+00 | 7.6e+00 7.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4943179734595508e+03 (+0e+00,3e+02) |  1: 4.6e+00  0: 4.3e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3133253861975948e+03 (+0e+00,1e+03) |  1: 5.2e+00  0: 4.8e+00 | 5.0e+00 5.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4186066191935029e+03 (+0e+00,6e+02) |  0: 7.4e+00  0: 6.2e+00 | 6.1e+00 6.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5160325614209967e+03 (+0e+00,4e+02) |  0: 4.1e+00  0: 4.0e+00 | 4.3e+00 4.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4521312875644203e+03 (+0e+00,4e+02) |  1: 4.9e+00  0: 4.7e+00 | 5.0e+00 5.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0440467693242280e+03 (+0e+00,1e+03) |  1: 8.5e+00  0: 6.6e+00 | 6.9e+00 6.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3294633783301570e+03 (+0e+00,1e+03) |  0: 4.8e+00  0: 4.8e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3985946411644572e+03 (+0e+00,1e+03) |  1: 3.9e+00  0: 3.8e+00 | 4.1e+00 4.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2403157541558871e+03 (+0e+00,6e+02) |  1: 5.1e+00  0: 4.7e+00 | 5.0e+00 5.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.5176713112884030e+02 (+0e+00,1e+03) |  1: 6.2e+00  0: 5.1e+00 | 5.5e+00 5.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1735344705426760e+03 (+0e+00,6e+02) |  1: 4.5e+00  0: 4.4e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1335378284832460e+03 (+0e+00,6e+02) |  1: 4.6e+00  0: 4.3e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.6297782795515050e+02 (+0e+00,7e+02) |  1: 6.8e+00  0: 6.2e+00 | 6.2e+00 6.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.1478211933298470e+02 (+0e+00,5e+02) |  1: 6.5e+00  0: 5.5e+00 | 5.8e+00 5.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.1186240475718070e+02 (+0e+00,9e+02) |  1: 7.3e+00  0: 6.1e+00 | 6.2e+00 6.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.4084890164042610e+02 (+0e+00,1e+03) |  1: 8.2e+00  0: 7.0e+00 | 7.3e+00 7.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.9503356031005800e+02 (+0e+00,6e+02) |  1: 9.5e+00  0: 8.1e+00 | 8.2e+00 8.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.7228832670859770e+02 (+0e+00,5e+02) |  0: 4.2e+00  0: 4.1e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.9373552562114680e+02 (+0e+00,8e+02) |  1: 5.2e+00  0: 4.7e+00 | 5.1e+00 5.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.9352029636583200e+02 (+0e+00,4e+02) |  0: 4.3e+00  0: 4.3e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.2391743609722660e+02 (+0e+00,9e+02) |  1: 7.2e+00  0: 5.7e+00 | 6.1e+00 6.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.3786454264463606e+02 (+0e+00,6e+02) |  1: 7.8e+00  0: 7.1e+00 | 7.1e+00 7.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.3503547293787940e+02 (+0e+00,6e+02) |  0: 5.7e+00  0: 5.0e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.5002385969758550e+02 (+0e+00,6e+02) |  1: 4.3e+00  0: 4.2e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.2003035138087466e+02 (+0e+00,1e+03) |  1: 7.1e+00  0: 6.2e+00 | 6.2e+00 6.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.8655819668338927e+02 (+0e+00,6e+02) |  1: 7.9e+00  0: 7.4e+00 | 7.0e+00 7.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.1829674886680570e+02 (+0e+00,2e+02) |  1: 3.5e+00  0: 3.4e+00 | 3.8e+00 3.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.2090040646990440e+02 (+0e+00,6e+02) |  0: 3.8e+00  0: 3.7e+00 | 4.1e+00 4.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.9645648777107650e+01 (+0e+00,4e+02) |  1: 7.5e+00  0: 6.7e+00 | 6.5e+00 6.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.7821411581511810e+01 (+0e+00,6e+02) |  0: 7.8e+00  0: 7.3e+00 | 6.8e+00 6.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.6493080731497830e+01 (+0e+00,3e+02) |  1: 6.6e+00  0: 5.3e+00 | 5.9e+00 5.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.8767416928000193e+02 (+0e+00,6e+02) |  1: 5.4e+00  0: 4.8e+00 | 5.2e+00 5.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.0424006470507580e+01 (+0e+00,4e+02) |  0: 4.9e+00  0: 4.8e+00 | 5.0e+00 5.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.2754206406549540e+01 (+0e+00,3e+02) |  0: 8.1e+00  0: 7.3e+00 | 6.9e+00 6.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.8011189254742625e+01 (+0e+00,1e+02) |  0: 4.6e+00  0: 4.4e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6966905212102950e+01 (+0e+00,2e+02) |  1: 4.5e+00  0: 4.3e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.9680851098289970e+01 (+0e+00,2e+02) |  1: 3.6e+00  0: 3.5e+00 | 3.9e+00 3.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.4124940534482946e+01 (+0e+00,3e+02) |  1: 4.3e+00  0: 4.1e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.7661855897734460e+00 (+0e+00,2e+02) |  1: 3.6e+00  0: 3.5e+00 | 3.8e+00 3.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.2450572457141790e+01 (+0e+00,2e+02) |  0: 3.4e+00  0: 3.4e+00 | 3.7e+00 3.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.0296216118047070e+01 (+0e+00,3e+02) |  0: 5.5e+00  0: 5.2e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6309728050010925e+01 (+0e+00,3e+02) |  1: 4.2e+00  0: 4.1e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.3473371329979870e+01 (+0e+00,3e+02) |  0: 3.9e+00  0: 3.9e+00 | 4.2e+00 4.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5691524193579864e+01 (+0e+00,3e+02) |  0: 3.8e+00  0: 3.8e+00 | 4.1e+00 4.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6059775315652328e+01 (+0e+00,3e+02) |  0: 6.3e+00  0: 5.8e+00 | 5.8e+00 5.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1572750126838616e+02 (+0e+00,2e+02) |  1: 3.7e+00  0: 3.6e+00 | 3.9e+00 3.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.0562424808853730e+01 (+0e+00,5e+02) |  0: 4.8e+00  0: 4.4e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3878309321053527e+02 (+0e+00,4e+02) |  0: 5.8e+00  0: 5.0e+00 | 5.4e+00 5.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.5607362028802580e+01 (+0e+00,5e+02) |  1: 6.4e+00  0: 6.2e+00 | 6.0e+00 6.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.7477304151632410e+02 (+0e+00,4e+02) |  0: 5.8e+00  0: 5.2e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4504031543794680e+02 (+0e+00,6e+02) |  0: 5.6e+00  0: 4.8e+00 | 5.2e+00 5.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.0036594557859155e+02 (+0e+00,8e+02) |  1: 6.3e+00  0: 6.0e+00 | 5.9e+00 5.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1995284612445568e+02 (+0e+00,8e+02) |  0: 8.3e+00  0: 7.2e+00 | 7.4e+00 7.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.7189631254216370e+02 (+0e+00,6e+02) |  0: 7.2e+00  0: 5.7e+00 | 6.1e+00 6.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.1141996217401356e+02 (+0e+00,6e+02) |  0: 4.3e+00  0: 4.1e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.6880145264256540e+02 (+0e+00,1e+03) |  0: 7.9e+00  0: 6.4e+00 | 6.6e+00 6.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.3777455750387860e+02 (+0e+00,5e+02) |  0: 5.1e+00  0: 5.0e+00 | 5.1e+00 5.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.9456585089775400e+02 (+0e+00,6e+02) |  1: 4.6e+00  0: 4.3e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.0902257630217750e+02 (+0e+00,4e+02) |  1: 6.1e+00  0: 5.4e+00 | 5.6e+00 5.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.9051166776958130e+02 (+0e+00,9e+02) |  1: 3.8e+00  0: 3.6e+00 | 3.9e+00 3.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.5590618147929230e+02 (+0e+00,8e+02) |  0: 8.7e+00  0: 7.5e+00 | 7.6e+00 7.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.5973569778936870e+02 (+0e+00,7e+02) |  1: 7.0e+00  0: 6.2e+00 | 6.3e+00 6.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.5787991797252980e+02 (+0e+00,5e+02) |  1: 4.4e+00  0: 4.4e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.2333307183034410e+02 (+0e+00,1e+03) |  0: 5.1e+00  0: 4.7e+00 | 5.0e+00 5.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.8850004252416700e+02 (+0e+00,1e+03) |  0: 6.2e+00  0: 5.3e+00 | 5.6e+00 5.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0333008159876758e+03 (+0e+00,5e+02) |  0: 4.4e+00  0: 4.4e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0626594174723255e+03 (+0e+00,7e+02) |  0: 6.5e+00  0: 6.4e+00 | 6.1e+00 6.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3922150875833534e+03 (+0e+00,5e+02) |  1: 4.1e+00  0: 4.0e+00 | 4.3e+00 4.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1776949665826285e+03 (+0e+00,8e+02) |  1: 6.4e+00  0: 5.8e+00 | 5.9e+00 5.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.2667570256105680e+02 (+0e+00,1e+03) |  0: 9.0e+00  0: 7.5e+00 | 7.7e+00 7.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2718013053939362e+03 (+0e+00,8e+02) |  0: 4.6e+00  0: 4.3e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6172566159094560e+03 (+0e+00,3e+02) |  1: 3.7e+00  0: 3.6e+00 | 3.9e+00 3.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.8913978758449050e+02 (+0e+00,2e+03) |  0: 8.4e+00  0: 7.2e+00 | 7.2e+00 7.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.3796094788863400e+02 (+0e+00,1e+03) |  0: 1.1e+01  0: 9.1e+00 | 9.1e+00 9.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3136500880218694e+03 (+0e+00,6e+02) |  0: 4.9e+00  0: 4.5e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4926974753276245e+03 (+0e+00,7e+02) |  0: 4.0e+00  0: 3.9e+00 | 4.2e+00 4.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4780936588993654e+03 (+0e+00,7e+02) |  1: 4.6e+00  0: 4.4e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5983723863065527e+03 (+0e+00,5e+02) |  1: 4.6e+00  0: 4.5e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4495679866320531e+03 (+0e+00,9e+02) |  1: 4.7e+00  0: 4.2e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2200588656991624e+03 (+0e+00,8e+02) |  1: 4.9e+00  0: 4.8e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3352398349448830e+03 (+0e+00,8e+02) |  1: 5.3e+00  0: 5.3e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6111935302118557e+03 (+0e+00,1e+03) |  1: 5.6e+00  0: 4.9e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3215542684294994e+03 (+0e+00,8e+02) |  0: 6.6e+00  0: 5.6e+00 | 5.9e+00 5.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3190626667679270e+03 (+0e+00,6e+02) |  0: 7.5e+00  0: 6.0e+00 | 6.3e+00 6.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.7466247574194829e+03 (+0e+00,3e+02) |  0: 3.9e+00  0: 3.8e+00 | 4.2e+00 4.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5623500511296781e+03 (+0e+00,5e+02) |  0: 3.9e+00  0: 3.9e+00 | 4.1e+00 4.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.7037367636306724e+03 (+0e+00,4e+02) |  0: 4.5e+00  0: 4.5e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6055501943109648e+03 (+0e+00,8e+02) |  0: 6.1e+00  0: 5.0e+00 | 5.5e+00 5.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3263272739480620e+03 (+0e+00,7e+02) |  1: 6.9e+00  0: 5.5e+00 | 6.0e+00 6.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.7514035544675976e+03 (+0e+00,9e+02) |  0: 4.9e+00  0: 4.5e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2933560774806099e+03 (+0e+00,8e+02) |  1: 4.7e+00  0: 4.6e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3222112985950980e+03 (+0e+00,8e+02) |  0: 7.8e+00  0: 6.3e+00 | 6.5e+00 6.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3869854994233378e+03 (+0e+00,8e+02) |  1: 6.4e+00  0: 6.1e+00 | 6.0e+00 6.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3317127429121897e+03 (+0e+00,8e+02) |  1: 4.4e+00  0: 4.1e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0795448296331292e+03 (+0e+00,9e+02) |  1: 8.1e+00  0: 6.9e+00 | 7.3e+00 7.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3345123427562487e+03 (+0e+00,1e+03) |  1: 5.6e+00  0: 5.2e+00 | 5.4e+00 5.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2988473308259886e+03 (+0e+00,2e+03) |  1: 4.2e+00  0: 4.1e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1806557603171586e+03 (+0e+00,6e+02) |  1: 5.5e+00  0: 4.8e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2372848606726320e+03 (+0e+00,8e+02) |  0: 4.9e+00  0: 4.7e+00 | 4.8e+00 4.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1140482614155803e+03 (+0e+00,9e+02) |  1: 4.8e+00  0: 4.6e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.4774731192710780e+02 (+0e+00,8e+02) |  1: 1.3e+01  0: 1.1e+01 | 1.0e+01 1.0e+01   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.4971342531420400e+02 (+0e+00,1e+03) |  1: 5.0e+00  0: 4.5e+00 | 4.8e+00 4.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.4088123656430970e+02 (+0e+00,8e+02) |  1: 7.9e+00  0: 6.2e+00 | 6.6e+00 6.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.7946503436835860e+02 (+0e+00,8e+02) |  0: 7.6e+00  0: 7.4e+00 | 7.1e+00 7.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.8261094382109640e+02 (+0e+00,9e+02) |  0: 6.9e+00  0: 5.5e+00 | 5.8e+00 5.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.6847539485038520e+02 (+0e+00,1e+03) |  1: 4.9e+00  0: 4.6e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.3660296761536470e+02 (+0e+00,4e+02) |  0: 4.2e+00  0: 4.2e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.3940615932277840e+02 (+0e+00,6e+02) |  1: 4.4e+00  0: 4.1e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.8762573570282380e+02 (+0e+00,6e+02) |  0: 8.8e+00  0: 6.4e+00 | 6.9e+00 6.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.3507667485140350e+02 (+0e+00,7e+02) |  1: 5.0e+00  0: 4.8e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.6835181109731760e+02 (+0e+00,7e+02) |  0: 6.1e+00  0: 5.0e+00 | 5.4e+00 5.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.3972057666557794e+02 (+0e+00,8e+02) |  1: 6.8e+00  0: 6.6e+00 | 6.3e+00 6.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.8085059905803620e+02 (+0e+00,7e+02) |  1: 6.7e+00  0: 5.7e+00 | 6.0e+00 6.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.3682622318034714e+02 (+0e+00,5e+02) |  1: 6.1e+00  0: 5.3e+00 | 5.7e+00 5.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.1363927922126237e+02 (+0e+00,6e+02) |  0: 6.3e+00  0: 6.2e+00 | 6.0e+00 6.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.9031807011029320e+02 (+0e+00,4e+02) |  0: 3.7e+00  0: 3.6e+00 | 3.9e+00 3.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.7970588616678197e+02 (+0e+00,8e+02) |  1: 4.1e+00  0: 3.9e+00 | 4.2e+00 4.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.1029013933144415e+02 (+0e+00,4e+02) |  0: 6.6e+00  0: 5.6e+00 | 5.9e+00 5.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.0615644110115330e+01 (+0e+00,6e+02) |  1: 7.9e+00  0: 7.9e+00 | 7.5e+00 7.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.1268828392776786e+02 (+0e+00,5e+02) |  0: 6.1e+00  0: 5.2e+00 | 5.6e+00 5.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4643349119997927e+01 (+0e+00,7e+02) |  1: 6.7e+00  0: 5.9e+00 | 6.0e+00 6.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0493324688915808e+02 (+0e+00,5e+02) |  1: 5.4e+00  0: 5.2e+00 | 5.2e+00 5.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.7944794612775254e+02 (+0e+00,3e+02) |  1: 5.8e+00  0: 5.0e+00 | 5.4e+00 5.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.0572734585256110e+01 (+0e+00,6e+02) |  0: 3.7e+00  0: 3.6e+00 | 4.0e+00 4.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.9800074245922390e+01 (+0e+00,1e+02) |  0: 4.1e+00  0: 4.0e+00 | 4.3e+00 4.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6339688996894427e+01 (+0e+00,1e+02) |  0: 3.9e+00  0: 3.8e+00 | 4.2e+00 4.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.5072113176400540e+01 (+0e+00,2e+02) |  1: 4.3e+00  0: 4.0e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.9851639820812180e+01 (+0e+00,2e+02) |  0: 4.7e+00  0: 4.4e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.7456014562295450e+01 (+0e+00,3e+02) |  1: 4.5e+00  0: 4.4e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.6603981134326890e+01 (+0e+00,4e+02) |  1: 3.9e+00  0: 3.8e+00 | 4.2e+00 4.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1703985874634180e+01 (+0e+00,2e+02) |  0: 3.6e+00  0: 3.6e+00 | 4.0e+00 4.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.1636128198034560e+01 (+0e+00,2e+02) |  1: 4.0e+00  0: 3.8e+00 | 4.2e+00 4.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.4692474931500065e+01 (+0e+00,2e+02) |  0: 4.6e+00  0: 4.2e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.4600658582043230e+01 (+0e+00,3e+02) |  1: 4.6e+00  0: 4.2e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.4537806963674964e-02 (+0e+00,4e+02) |  0: 4.7e+00  0: 4.7e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.9000810748371464e+01 (+0e+00,3e+02) |  1: 5.4e+00  0: 5.0e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.7766470205866728e+01 (+0e+00,4e+02) |  1: 6.1e+00  0: 6.1e+00 | 5.9e+00 5.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.5718109544172740e+02 (+0e+00,2e+02) |  1: 3.5e+00  0: 3.5e+00 | 3.9e+00 3.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.6491158419924900e+01 (+0e+00,4e+02) |  0: 7.9e+00  0: 7.8e+00 | 7.3e+00 7.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.7238061906657765e+02 (+0e+00,6e+02) |  0: 5.1e+00  0: 4.5e+00 | 5.0e+00 5.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.5459942222802758e+02 (+0e+00,3e+02) |  0: 5.7e+00  0: 5.1e+00 | 5.4e+00 5.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.2342897645836575e+02 (+0e+00,5e+02) |  1: 3.3e+00  0: 3.3e+00 | 3.6e+00 3.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.2998308810512626e+02 (+0e+00,7e+02) |  0: 5.6e+00  0: 5.3e+00 | 5.4e+00 5.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.3663105159469610e+02 (+0e+00,6e+02) |  0: 7.6e+00  0: 5.9e+00 | 6.4e+00 6.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.1451141013194880e+02 (+0e+00,1e+03) |  0: 7.1e+00  0: 6.9e+00 | 6.5e+00 6.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.0409518171440880e+02 (+0e+00,7e+02) |  0: 5.2e+00  0: 4.5e+00 | 5.0e+00 5.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.3924161691242335e+02 (+0e+00,1e+03) |  0: 6.6e+00  0: 5.5e+00 | 5.8e+00 5.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.6244124442037310e+02 (+0e+00,5e+02) |  1: 5.1e+00  0: 4.7e+00 | 5.0e+00 5.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.1887555338343700e+02 (+0e+00,4e+02) |  1: 7.9e+00  0: 6.6e+00 | 6.7e+00 6.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.0743155269304160e+02 (+0e+00,5e+02) |  0: 5.0e+00  0: 4.8e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.3684311103991920e+02 (+0e+00,4e+02) |  0: 4.9e+00  0: 4.5e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.7564248486681650e+02 (+0e+00,9e+02) |  0: 7.7e+00  0: 6.8e+00 | 7.0e+00 7.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.6549124920393160e+02 (+0e+00,7e+02) |  0: 7.7e+00  0: 6.7e+00 | 6.9e+00 6.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.3393162831266490e+02 (+0e+00,9e+02) |  0: 7.0e+00  0: 6.8e+00 | 6.3e+00 6.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.2521268145777960e+02 (+0e+00,9e+02) |  0: 4.5e+00  0: 4.3e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.7134036966614280e+02 (+0e+00,6e+02) |  0: 6.5e+00  0: 5.4e+00 | 5.8e+00 5.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0631860258877255e+03 (+0e+00,7e+02) |  0: 5.4e+00  0: 5.4e+00 | 5.4e+00 5.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.8241141196318430e+02 (+0e+00,7e+02) |  0: 7.8e+00  0: 6.4e+00 | 6.5e+00 6.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3562275865824342e+03 (+0e+00,6e+02) |  1: 3.9e+00  0: 3.7e+00 | 4.1e+00 4.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1185078062355380e+03 (+0e+00,5e+02) |  0: 6.2e+00  0: 5.4e+00 | 5.7e+00 5.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4981608866918357e+03 (+0e+00,6e+02) |  1: 3.8e+00  0: 3.7e+00 | 4.0e+00 4.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.9616885087575380e+02 (+0e+00,1e+03) |  0: 7.9e+00  0: 6.0e+00 | 6.4e+00 6.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3889746270549515e+03 (+0e+00,5e+02) |  0: 4.6e+00  0: 4.5e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2584127410618216e+03 (+0e+00,1e+03) |  0: 5.0e+00  0: 4.5e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2645583577561422e+03 (+0e+00,8e+02) |  0: 8.6e+00  0: 6.6e+00 | 6.9e+00 6.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3058544813491173e+03 (+0e+00,9e+02) |  0: 5.2e+00  0: 4.9e+00 | 5.1e+00 5.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1766718308349364e+03 (+0e+00,1e+03) |  0: 7.7e+00  0: 6.8e+00 | 7.0e+00 7.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4130084646945760e+03 (+0e+00,7e+02) |  1: 5.6e+00  0: 5.0e+00 | 5.4e+00 5.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6417553657673590e+03 (+0e+00,4e+02) |  1: 3.3e+00  0: 3.3e+00 | 3.5e+00 3.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0714205483718845e+03 (+0e+00,1e+03) |  0: 9.0e+00  0: 7.5e+00 | 7.8e+00 7.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5783231576786910e+03 (+0e+00,5e+02) |  1: 4.5e+00  0: 4.4e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5903425652100140e+03 (+0e+00,7e+02) |  1: 5.0e+00  0: 4.5e+00 | 5.0e+00 5.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5788777196674137e+03 (+0e+00,1e+03) |  1: 4.5e+00  0: 4.3e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5553374682816950e+03 (+0e+00,9e+02) |  0: 4.6e+00  0: 4.3e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2034514446273450e+03 (+0e+00,5e+02) |  0: 8.4e+00  0: 7.6e+00 | 7.5e+00 7.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6234546826841370e+03 (+0e+00,8e+02) |  0: 3.6e+00  0: 3.6e+00 | 4.0e+00 4.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0079909746808174e+03 (+0e+00,1e+03) |  1: 8.4e+00  0: 7.6e+00 | 7.5e+00 7.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5449588894868710e+03 (+0e+00,1e+03) |  1: 4.0e+00  0: 3.8e+00 | 4.2e+00 4.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4318515075112778e+03 (+0e+00,3e+02) |  1: 6.2e+00  0: 5.8e+00 | 5.7e+00 5.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4612437868878950e+03 (+0e+00,9e+02) |  0: 4.9e+00  0: 4.5e+00 | 4.8e+00 4.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1463658459233307e+03 (+0e+00,1e+03) |  1: 8.1e+00  0: 6.0e+00 | 6.6e+00 6.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.7104833738095326e+03 (+0e+00,5e+02) |  1: 3.9e+00  0: 3.8e+00 | 4.1e+00 4.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1817189498567808e+01 (+0e+00,2e+02) |  0: 3.5e+00  0: 3.4e+00 | 3.8e+00 3.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.4490539610091176e+01 (+0e+00,3e+02) |  1: 4.5e+00  0: 4.1e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.9948604395665008e+01 (+0e+00,2e+02) |  0: 3.6e+00  0: 3.6e+00 | 3.9e+00 3.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.9631542015230217e+01 (+0e+00,6e+02) |  1: 4.5e+00  0: 4.2e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4236302653874226e+01 (+0e+00,4e+02) |  0: 5.7e+00  0: 5.1e+00 | 5.4e+00 5.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3484685912408779e+02 (+0e+00,4e+02) |  0: 5.0e+00  0: 5.0e+00 | 5.1e+00 5.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.1798796721385390e+01 (+0e+00,3e+02) |  0: 3.8e+00  0: 3.7e+00 | 4.1e+00 4.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.6436386328122850e+01 (+0e+00,3e+02) |  0: 4.4e+00  0: 4.2e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.0998752292660760e+01 (+0e+00,5e+02) |  0: 8.9e+00  0: 6.2e+00 | 6.7e+00 6.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.0322149440753730e+01 (+0e+00,5e+02) |  0: 7.5e+00  0: 6.8e+00 | 7.0e+00 7.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3785967969191069e+02 (+0e+00,7e+02) |  0: 5.2e+00  0: 5.0e+00 | 5.2e+00 5.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.9866895859608707e+02 (+0e+00,5e+02) |  1: 4.3e+00  0: 4.3e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.8462439560818655e+02 (+0e+00,4e+02) |  1: 6.0e+00  0: 5.5e+00 | 5.6e+00 5.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.1345483363462387e+02 (+0e+00,7e+02) |  0: 4.4e+00  0: 4.2e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.7463603855026940e+02 (+0e+00,6e+02) |  0: 7.9e+00  0: 6.7e+00 | 7.1e+00 7.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.0397486150886630e+02 (+0e+00,7e+02) |  0: 6.3e+00  0: 5.7e+00 | 5.8e+00 5.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.9290101788334397e+02 (+0e+00,7e+02) |  0: 5.7e+00  0: 5.2e+00 | 5.5e+00 5.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.8469272188937410e+02 (+0e+00,4e+02) |  1: 6.6e+00  0: 5.6e+00 | 5.8e+00 5.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.5139189493779190e+02 (+0e+00,5e+02) |  1: 4.3e+00  0: 4.0e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.9124573046288220e+02 (+0e+00,5e+02) |  0: 4.6e+00  0: 4.6e+00 | 4.8e+00 4.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.0548627183056750e+02 (+0e+00,1e+03) |  0: 8.5e+00  0: 7.7e+00 | 7.7e+00 7.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0087933895258265e+03 (+0e+00,4e+02) |  1: 5.0e+00  0: 4.5e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0716844266568842e+03 (+0e+00,9e+02) |  1: 5.7e+00  0: 5.1e+00 | 5.4e+00 5.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.1834255103906070e+02 (+0e+00,6e+02) |  1: 6.0e+00  0: 5.9e+00 | 5.8e+00 5.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.1963907838781790e+02 (+0e+00,1e+03) |  0: 8.6e+00  0: 7.4e+00 | 7.3e+00 7.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0578382616837310e+03 (+0e+00,8e+02) |  0: 4.5e+00  0: 4.4e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.9881063545809320e+02 (+0e+00,1e+03) |  0: 5.4e+00  0: 4.9e+00 | 5.2e+00 5.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2578587506082070e+03 (+0e+00,4e+02) |  1: 6.5e+00  0: 5.7e+00 | 5.8e+00 5.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0434353525809447e+03 (+0e+00,8e+02) |  0: 5.6e+00  0: 5.4e+00 | 5.2e+00 5.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1120750977403989e+03 (+0e+00,1e+03) |  0: 6.0e+00  0: 5.0e+00 | 5.5e+00 5.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2711084730308430e+03 (+0e+00,6e+02) |  0: 4.2e+00  0: 4.1e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1761982036219590e+03 (+0e+00,5e+02) |  0: 7.3e+00  0: 5.9e+00 | 6.3e+00 6.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3756280294443156e+03 (+0e+00,7e+02) |  1: 4.1e+00  0: 4.0e+00 | 4.3e+00 4.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0731522384706980e+03 (+0e+00,8e+02) |  0: 5.8e+00  0: 4.9e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3417638329545840e+03 (+0e+00,1e+03) |  1: 6.0e+00  0: 5.8e+00 | 5.7e+00 5.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1138394187496224e+03 (+0e+00,1e+03) |  0: 6.4e+00  0: 5.9e+00 | 5.9e+00 5.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5620537632414278e+03 (+0e+00,1e+03) |  1: 4.0e+00  0: 4.0e+00 | 4.2e+00 4.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2614264164006765e+03 (+0e+00,9e+02) |  0: 8.7e+00  0: 6.4e+00 | 6.9e+00 6.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3966931248041822e+03 (+0e+00,7e+02) |  0: 4.2e+00  0: 4.1e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2384896687453760e+03 (+0e+00,7e+02) |  0: 6.3e+00  0: 5.3e+00 | 5.7e+00 5.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4495954724405708e+03 (+0e+00,6e+02) |  1: 5.3e+00  0: 4.9e+00 | 5.2e+00 5.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4997134120566918e+03 (+0e+00,8e+02) |  1: 4.7e+00  0: 4.2e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5605817026793975e+03 (+0e+00,9e+02) |  0: 5.2e+00  0: 4.6e+00 | 5.1e+00 5.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3135632880156636e+03 (+0e+00,9e+02) |  1: 8.3e+00  0: 6.2e+00 | 6.6e+00 6.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5049605857961078e+03 (+0e+00,5e+02) |  1: 5.1e+00  0: 4.7e+00 | 5.0e+00 5.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5888452177337410e+03 (+0e+00,7e+02) |  1: 3.9e+00  0: 3.8e+00 | 4.2e+00 4.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.8633013353168790e+03 (+0e+00,5e+02) |  0: 5.5e+00  0: 5.0e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2324540797943350e+03 (+0e+00,7e+02) |  1: 6.4e+00  0: 6.1e+00 | 5.9e+00 5.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2601335084370346e+03 (+0e+00,1e+03) |  1: 6.5e+00  0: 5.2e+00 | 5.7e+00 5.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6910939466227790e+03 (+0e+00,8e+02) |  0: 7.0e+00  0: 6.3e+00 | 6.3e+00 6.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1894274199619736e+03 (+0e+00,7e+02) |  1: 7.8e+00  0: 6.9e+00 | 6.8e+00 6.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2880783882259143e+03 (+0e+00,6e+02) |  0: 5.8e+00  0: 5.8e+00 | 5.6e+00 5.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6073936983427666e+03 (+0e+00,8e+02) |  0: 3.6e+00  0: 3.5e+00 | 3.9e+00 3.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2275196639538226e+03 (+0e+00,1e+03) |  1: 6.3e+00  0: 5.8e+00 | 5.9e+00 5.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1977114836403798e+03 (+0e+00,7e+02) |  0: 7.6e+00  0: 6.8e+00 | 6.6e+00 6.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3416923922576184e+03 (+0e+00,6e+02) |  1: 4.9e+00  0: 4.5e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5645219676813913e+03 (+0e+00,3e+02) |  0: 3.8e+00  0: 3.4e+00 | 3.8e+00 3.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0790647765878646e+03 (+0e+00,1e+03) |  1: 7.1e+00  0: 6.3e+00 | 6.3e+00 6.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0638116245155610e+03 (+0e+00,1e+03) |  1: 6.2e+00  0: 5.4e+00 | 5.7e+00 5.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4448180666874587e+03 (+0e+00,3e+02) |  0: 3.3e+00  0: 3.3e+00 | 3.6e+00 3.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0252307375112869e+03 (+0e+00,7e+02) |  1: 6.3e+00  0: 5.5e+00 | 5.7e+00 5.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1595722281871724e+03 (+0e+00,5e+02) |  0: 5.2e+00  0: 5.2e+00 | 5.2e+00 5.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.3984214282643420e+02 (+0e+00,1e+03) |  1: 8.4e+00  0: 6.4e+00 | 6.7e+00 6.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.7811678035550370e+02 (+0e+00,6e+02) |  1: 6.1e+00  0: 6.1e+00 | 5.9e+00 5.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.9642534362687240e+02 (+0e+00,8e+02) |  1: 4.8e+00  0: 4.7e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.1472072567814774e+02 (+0e+00,7e+02) |  1: 1.5e+01  0: 1.1e+01 | 1.1e+01 1.1e+01   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.7584394053840770e+02 (+0e+00,1e+03) |  1: 7.2e+00  0: 6.3e+00 | 6.3e+00 6.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.8790175794889330e+02 (+0e+00,5e+02) |  1: 5.2e+00  0: 5.0e+00 | 5.2e+00 5.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.5809206257731410e+02 (+0e+00,3e+02) |  1: 6.1e+00  0: 5.1e+00 | 5.6e+00 5.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.5909753537768640e+02 (+0e+00,7e+02) |  0: 7.3e+00  0: 6.3e+00 | 6.4e+00 6.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.7191447346562320e+02 (+0e+00,8e+02) |  0: 3.4e+00  0: 3.4e+00 | 3.7e+00 3.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.9423949577444870e+02 (+0e+00,4e+02) |  1: 5.7e+00  0: 4.8e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.3815976273040033e+02 (+0e+00,8e+02) |  1: 7.7e+00  0: 6.6e+00 | 6.9e+00 6.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.9375803799256744e+02 (+0e+00,8e+02) |  1: 6.5e+00  0: 6.3e+00 | 6.1e+00 6.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.3149940370621800e+02 (+0e+00,8e+02) |  1: 6.1e+00  0: 5.7e+00 | 5.6e+00 5.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2810235154460960e+02 (+0e+00,1e+03) |  1: 7.3e+00  0: 6.7e+00 | 6.5e+00 6.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.7990292163907841e+02 (+0e+00,5e+02) |  1: 7.8e+00  0: 6.7e+00 | 7.1e+00 7.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.0233629773477410e+02 (+0e+00,5e+02) |  1: 4.9e+00  0: 4.6e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.1858778552307066e+02 (+0e+00,5e+02) |  0: 4.0e+00  0: 3.8e+00 | 4.1e+00 4.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.8384026203983353e+02 (+0e+00,3e+02) |  1: 7.2e+00  0: 5.4e+00 | 5.9e+00 5.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1238167401528489e+02 (+0e+00,4e+02) |  1: 5.7e+00  0: 5.0e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.4784240874574192e+02 (+0e+00,2e+02) |  1: 3.5e+00  0: 3.5e+00 | 3.6e+00 3.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.1976084416077155e+00 (+0e+00,4e+02) |  1: 7.6e+00  0: 7.5e+00 | 7.2e+00 7.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.6931526165475596e+01 (+0e+00,3e+02) |  1: 4.5e+00  0: 4.2e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.5929409089134104e+01 (+0e+00,1e+02) |  0: 3.6e+00  0: 3.5e+00 | 3.9e+00 3.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.2253562268123420e+01 (+0e+00,5e+02) |  1: 3.3e+00  0: 3.3e+00 | 3.6e+00 3.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3979036027192060e+02 (+0e+00,2e+02) |  0: 4.1e+00  0: 4.1e+00 | 4.2e+00 4.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.3074282079067668e+01 (+0e+00,1e+02) |  1: 3.7e+00  0: 3.6e+00 | 4.0e+00 4.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0673904868601248e+01 (+0e+00,1e+02) |  0: 3.8e+00  0: 3.8e+00 | 4.1e+00 4.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.5759184134471240e+01 (+0e+00,2e+02) |  0: 3.7e+00  0: 3.6e+00 | 3.9e+00 3.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5175649460142008e+01 (+0e+00,2e+02) |  0: 3.4e+00  0: 3.4e+00 | 3.7e+00 3.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.1933821956148580e+01 (+0e+00,9e+01) |  0: 5.4e+00  0: 4.7e+00 | 5.1e+00 5.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.7474446606593332e+01 (+0e+00,3e+02) |  0: 4.5e+00  0: 4.2e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.8128621420425940e+01 (+0e+00,3e+02) |  1: 5.9e+00  0: 5.7e+00 | 5.6e+00 5.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2135546664664083e+01 (+0e+00,4e+02) |  1: 6.2e+00  0: 5.9e+00 | 5.9e+00 5.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.3075208156811870e+00 (+0e+00,4e+02) |  0: 4.4e+00  0: 4.1e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0037225198673850e+02 (+0e+00,5e+02) |  1: 5.2e+00  0: 5.1e+00 | 5.2e+00 5.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.4886899883388030e+01 (+0e+00,7e+02) |  0: 5.7e+00  0: 4.9e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3942899929027990e+02 (+0e+00,4e+02) |  1: 8.6e+00  0: 6.3e+00 | 6.8e+00 6.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.1862296384005990e+02 (+0e+00,5e+02) |  1: 4.2e+00  0: 4.1e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.5204464250753650e+01 (+0e+00,5e+02) |  0: 6.6e+00  0: 5.7e+00 | 5.9e+00 5.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.4482547566184314e+02 (+0e+00,5e+02) |  1: 3.4e+00  0: 3.4e+00 | 3.7e+00 3.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.9657357686169416e+02 (+0e+00,6e+02) |  1: 6.0e+00  0: 5.4e+00 | 5.6e+00 5.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.1263129408561000e+02 (+0e+00,5e+02) |  1: 6.0e+00  0: 5.9e+00 | 5.8e+00 5.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.5201538922701650e+02 (+0e+00,5e+02) |  0: 4.9e+00  0: 4.8e+00 | 5.0e+00 5.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.4483737981867890e+02 (+0e+00,8e+02) |  1: 5.5e+00  0: 5.4e+00 | 5.4e+00 5.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.0673062447123410e+02 (+0e+00,1e+03) |  0: 8.4e+00  0: 6.6e+00 | 6.7e+00 6.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.0974131402943290e+02 (+0e+00,7e+02) |  1: 4.6e+00  0: 4.3e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.7318757939491760e+02 (+0e+00,4e+02) |  1: 3.5e+00  0: 3.4e+00 | 3.8e+00 3.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.0126812004445014e+02 (+0e+00,7e+02) |  0: 7.7e+00  0: 7.0e+00 | 7.1e+00 7.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.3285337790345570e+02 (+0e+00,4e+02) |  0: 5.5e+00  0: 5.1e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.7337470508066950e+02 (+0e+00,1e+03) |  0: 8.6e+00  0: 6.3e+00 | 6.8e+00 6.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1631019900156036e+03 (+0e+00,3e+02) |  1: 3.6e+00  0: 3.5e+00 | 3.9e+00 3.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.1583350201910090e+02 (+0e+00,9e+02) |  0: 8.2e+00  0: 6.1e+00 | 6.6e+00 6.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.2809254121212080e+02 (+0e+00,8e+02) |  0: 5.8e+00  0: 5.4e+00 | 5.5e+00 5.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.2086084671886480e+02 (+0e+00,7e+02) |  0: 8.6e+00  0: 6.5e+00 | 6.8e+00 6.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.9301610731872230e+02 (+0e+00,1e+03) |  0: 4.8e+00  0: 4.5e+00 | 4.8e+00 4.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2486320577900160e+03 (+0e+00,5e+02) |  0: 4.1e+00  0: 4.0e+00 | 4.3e+00 4.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2643273360496476e+03 (+0e+00,5e+02) |  0: 4.4e+00  0: 4.2e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1861263074677474e+03 (+0e+00,1e+03) |  0: 4.1e+00  0: 3.9e+00 | 4.3e+00 4.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0762144427249390e+03 (+0e+00,1e+03) |  0: 6.5e+00  0: 5.7e+00 | 5.8e+00 5.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4689577522939476e+03 (+0e+00,7e+02) |  1: 4.1e+00  0: 3.8e+00 | 4.1e+00 4.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3739689052845083e+03 (+0e+00,5e+02) |  0: 4.1e+00  0: 4.1e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0233123708281124e+03 (+0e+00,1e+03) |  0: 8.6e+00  0: 7.4e+00 | 7.5e+00 7.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3901825840621705e+03 (+0e+00,6e+02) |  0: 7.0e+00  0: 6.0e+00 | 6.2e+00 6.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3786912933568804e+03 (+0e+00,5e+02) |  0: 5.2e+00  0: 4.7e+00 | 5.1e+00 5.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.7443277989568746e+03 (+0e+00,4e+02) |  1: 4.9e+00  0: 4.5e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3895937762492001e+03 (+0e+00,9e+02) |  0: 4.4e+00  0: 4.2e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6290693919640642e+03 (+0e+00,6e+02) |  0: 4.3e+00  0: 4.3e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6962413976275280e+03 (+0e+00,9e+02) |  1: 3.7e+00  0: 3.6e+00 | 4.0e+00 4.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4439301454305153e+03 (+0e+00,3e+02) |  1: 5.3e+00  0: 5.0e+00 | 5.2e+00 5.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4254031004928584e+03 (+0e+00,8e+02) |  0: 4.1e+00  0: 3.9e+00 | 4.3e+00 4.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6803275781805378e+03 (+0e+00,5e+02) |  0: 3.9e+00  0: 3.7e+00 | 4.0e+00 4.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.7531937374079369e+03 (+0e+00,8e+02) |  0: 3.3e+00  0: 3.3e+00 | 3.6e+00 3.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6609755838434671e+03 (+0e+00,6e+02) |  1: 4.0e+00  0: 3.9e+00 | 4.2e+00 4.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.3772405314800390e+02 (+0e+00,1e+03) |  1: 1.2e+01  0: 9.2e+00 | 9.4e+00 9.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.7834758692155597e+03 (+0e+00,6e+02) |  0: 4.0e+00  0: 3.8e+00 | 4.2e+00 4.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.7519950516075098e+03 (+0e+00,6e+02) |  0: 5.1e+00  0: 5.1e+00 | 5.0e+00 5.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5803128755347154e+03 (+0e+00,8e+02) |  1: 3.9e+00  0: 3.9e+00 | 4.2e+00 4.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0853362191303406e+03 (+0e+00,9e+02) |  1: 7.9e+00  0: 6.9e+00 | 7.2e+00 7.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2394517447255164e+03 (+0e+00,8e+02) |  1: 7.0e+00  0: 5.6e+00 | 6.1e+00 6.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3831601482260423e+03 (+0e+00,1e+03) |  1: 5.1e+00  0: 4.5e+00 | 5.0e+00 5.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6317092352370307e+03 (+0e+00,1e+03) |  0: 4.8e+00  0: 4.5e+00 | 4.8e+00 4.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5647344335104940e+03 (+0e+00,8e+02) |  0: 6.2e+00  0: 4.9e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5791648345945760e+03 (+0e+00,8e+02) |  0: 5.7e+00  0: 4.6e+00 | 5.1e+00 5.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4235151219305878e+03 (+0e+00,7e+02) |  0: 5.2e+00  0: 4.8e+00 | 5.1e+00 5.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1343178006634250e+03 (+0e+00,4e+02) |  0: 8.8e+00  0: 8.5e+00 | 8.0e+00 8.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2744042369306476e+03 (+0e+00,1e+03) |  1: 3.8e+00  0: 3.6e+00 | 4.0e+00 4.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1980150064352943e+03 (+0e+00,8e+02) |  0: 5.4e+00  0: 5.3e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2220245516468910e+03 (+0e+00,8e+02) |  1: 4.8e+00  0: 4.6e+00 | 4.8e+00 4.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2753114754237880e+03 (+0e+00,5e+02) |  1: 3.5e+00  0: 3.5e+00 | 3.8e+00 3.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1671649203419710e+03 (+0e+00,8e+02) |  0: 5.9e+00  0: 5.5e+00 | 5.7e+00 5.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.8107190730719800e+02 (+0e+00,7e+02) |  1: 6.1e+00  0: 5.2e+00 | 5.6e+00 5.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.6873215595151900e+02 (+0e+00,7e+02) |  1: 4.6e+00  0: 4.3e+00 | 4.6e+00 4.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.1862919192916440e+02 (+0e+00,1e+03) |  0: 5.1e+00  0: 5.0e+00 | 5.1e+00 5.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.2875455769901120e+02 (+0e+00,7e+02) |  0: 7.8e+00  0: 6.0e+00 | 6.4e+00 6.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.1004668531415020e+02 (+0e+00,7e+02) |  1: 8.5e+00  0: 7.0e+00 | 7.4e+00 7.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.4819249170940540e+02 (+0e+00,1e+03) |  0: 4.5e+00  0: 4.3e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.9562627464198170e+02 (+0e+00,5e+02) |  1: 3.5e+00  0: 3.5e+00 | 3.8e+00 3.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.0458501524240740e+02 (+0e+00,5e+02) |  1: 5.7e+00  0: 5.4e+00 | 5.5e+00 5.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.6258541138220360e+02 (+0e+00,6e+02) |  1: 4.6e+00  0: 4.5e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.1921265095172770e+02 (+0e+00,6e+02) |  1: 4.9e+00  0: 4.5e+00 | 4.8e+00 4.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.8362251277539116e+02 (+0e+00,7e+02) |  1: 8.6e+00  0: 6.2e+00 | 6.9e+00 6.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.5880006895430716e+02 (+0e+00,8e+02) |  1: 7.6e+00  0: 5.8e+00 | 6.3e+00 6.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5417011384616424e+02 (+0e+00,9e+02) |  1: 8.5e+00  0: 8.4e+00 | 7.9e+00 7.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3294170961573946e+02 (+0e+00,8e+02) |  1: 7.7e+00  0: 7.4e+00 | 7.3e+00 7.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.9350313870758333e+02 (+0e+00,5e+02) |  0: 5.7e+00  0: 4.8e+00 | 5.2e+00 5.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.8231705798846534e+02 (+0e+00,4e+02) |  1: 5.7e+00  0: 5.0e+00 | 5.4e+00 5.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.9868161216571690e+01 (+0e+00,2e+02) |  1: 4.9e+00  0: 4.7e+00 | 5.0e+00 5.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.8209451360573915e+01 (+0e+00,2e+02) |  1: 4.2e+00  0: 4.0e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.8455948205550534e+01 (+0e+00,2e+02) |  1: 4.4e+00  0: 4.2e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.7234798661065890e+01 (+0e+00,2e+02) |  1: 5.4e+00  0: 5.1e+00 | 5.2e+00 5.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3348727186086007e+01 (+0e+00,4e+02) |  1: 4.9e+00  0: 4.8e+00 | 5.0e+00 5.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.1729474139907370e+01 (+0e+00,3e+02) |  0: 6.2e+00  0: 5.5e+00 | 5.6e+00 5.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.4743459104684590e+01 (+0e+00,2e+02) |  1: 4.2e+00  0: 4.1e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2004261943829844e+02 (+0e+00,3e+02) |  0: 6.0e+00  0: 5.1e+00 | 5.5e+00 5.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.2443322533873487e+02 (+0e+00,3e+02) |  0: 3.7e+00  0: 3.7e+00 | 4.0e+00 4.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.0755017424047284e+02 (+0e+00,4e+02) |  1: 5.9e+00  0: 5.0e+00 | 5.4e+00 5.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.0564510753066680e+02 (+0e+00,6e+02) |  1: 4.1e+00  0: 3.9e+00 | 4.3e+00 4.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.5267022400375920e+02 (+0e+00,4e+02) |  1: 5.6e+00  0: 5.0e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.5436807444822030e+02 (+0e+00,3e+02) |  1: 3.5e+00  0: 3.5e+00 | 3.8e+00 3.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.4384157852169360e+02 (+0e+00,6e+02) |  0: 3.9e+00  0: 3.8e+00 | 4.1e+00 4.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.3193403030618090e+02 (+0e+00,9e+02) |  0: 5.7e+00  0: 4.8e+00 | 5.2e+00 5.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.2494811777225820e+02 (+0e+00,3e+02) |  1: 4.3e+00  0: 4.0e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.9927457785627970e+02 (+0e+00,6e+02) |  1: 5.6e+00  0: 4.7e+00 | 5.2e+00 5.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.8133089889235520e+02 (+0e+00,7e+02) |  0: 5.0e+00  0: 4.5e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.2003524301820100e+02 (+0e+00,6e+02) |  1: 5.0e+00  0: 4.5e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.1635961852538170e+02 (+0e+00,8e+02) |  0: 5.5e+00  0: 4.9e+00 | 5.2e+00 5.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.4475924842692780e+02 (+0e+00,1e+03) |  1: 5.9e+00  0: 5.0e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.5137891085652310e+02 (+0e+00,5e+02) |  0: 6.9e+00  0: 6.6e+00 | 6.2e+00 6.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.9153201338622700e+02 (+0e+00,7e+02) |  1: 8.2e+00  0: 7.0e+00 | 6.7e+00 6.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0481445681931305e+03 (+0e+00,5e+02) |  1: 4.6e+00  0: 4.5e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.3736246365042330e+02 (+0e+00,7e+02) |  0: 8.3e+00  0: 6.2e+00 | 6.7e+00 6.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.2195745383981760e+02 (+0e+00,7e+02) |  0: 7.2e+00  0: 5.9e+00 | 6.2e+00 6.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1262086099258433e+03 (+0e+00,6e+02) |  0: 4.3e+00  0: 4.2e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.5775774385836830e+02 (+0e+00,1e+03) |  0: 8.4e+00  0: 7.4e+00 | 7.4e+00 7.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0301750598658903e+03 (+0e+00,9e+02) |  0: 7.4e+00  0: 6.0e+00 | 6.3e+00 6.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.5281941785195180e+02 (+0e+00,1e+03) |  0: 8.8e+00  0: 6.4e+00 | 6.9e+00 6.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2054207222906152e+03 (+0e+00,1e+03) |  0: 8.0e+00  0: 6.9e+00 | 6.7e+00 6.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1993478039879574e+03 (+0e+00,6e+02) |  0: 5.9e+00  0: 5.3e+00 | 5.6e+00 5.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3322689032028522e+03 (+0e+00,8e+02) |  1: 5.1e+00  0: 4.9e+00 | 5.0e+00 5.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4548060670516247e+03 (+0e+00,8e+02) |  0: 5.1e+00  0: 5.0e+00 | 5.2e+00 5.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3485281382034948e+03 (+0e+00,7e+02) |  0: 4.2e+00  0: 4.1e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0925634775464700e+03 (+0e+00,6e+02) |  0: 1.0e+01  0: 8.0e+00 | 8.5e+00 8.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3638286052392036e+03 (+0e+00,1e+03) |  0: 5.2e+00  0: 4.9e+00 | 5.1e+00 5.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0971888203017830e+03 (+0e+00,2e+03) |  0: 8.2e+00  0: 7.1e+00 | 7.3e+00 7.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0871585804034091e+03 (+0e+00,9e+02) |  1: 8.4e+00  0: 8.2e+00 | 7.8e+00 7.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1556720698074223e+03 (+0e+00,1e+03) |  0: 7.5e+00  0: 7.2e+00 | 6.7e+00 6.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1462821604776677e+03 (+0e+00,1e+03) |  0: 5.5e+00  0: 5.4e+00 | 5.4e+00 5.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1586560080474985e+03 (+0e+00,1e+03) |  0: 6.5e+00  0: 6.0e+00 | 5.9e+00 5.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.8736257895366770e+02 (+0e+00,1e+03) |  0: 9.1e+00  0: 8.7e+00 | 8.3e+00 8.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1833043090356134e+03 (+0e+00,5e+02) |  1: 8.4e+00  0: 6.5e+00 | 6.8e+00 6.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4966629345682936e+03 (+0e+00,8e+02) |  1: 4.3e+00  0: 4.2e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2901603096657957e+03 (+0e+00,9e+02) |  0: 6.4e+00  0: 5.9e+00 | 5.8e+00 5.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3230487391980548e+03 (+0e+00,1e+03) |  1: 5.6e+00  0: 4.9e+00 | 5.2e+00 5.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6494754801436832e+03 (+0e+00,9e+02) |  0: 3.2e+00  0: 3.2e+00 | 3.5e+00 3.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.7454953951965826e+03 (+0e+00,4e+02) |  0: 4.7e+00  0: 4.5e+00 | 4.8e+00 4.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6671343863076986e+03 (+0e+00,8e+02) |  0: 9.0e+00  0: 8.8e+00 | 8.3e+00 8.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4606879318850206e+03 (+0e+00,4e+02) |  1: 4.4e+00  0: 4.1e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2887154383158093e+03 (+0e+00,6e+02) |  1: 5.6e+00  0: 5.0e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5579072857966562e+03 (+0e+00,1e+03) |  1: 3.7e+00  0: 3.7e+00 | 4.0e+00 4.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3605055581900922e+03 (+0e+00,9e+02) |  1: 4.9e+00  0: 4.7e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5159243902680096e+03 (+0e+00,6e+02) |  0: 4.8e+00  0: 4.3e+00 | 4.8e+00 4.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.5138473995085894e+03 (+0e+00,3e+02) |  1: 3.5e+00  0: 3.5e+00 | 3.8e+00 3.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0516605870982587e+03 (+0e+00,9e+02) |  1: 6.1e+00  0: 5.3e+00 | 5.5e+00 5.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.4477387174650316e+03 (+0e+00,9e+02) |  0: 5.1e+00  0: 4.4e+00 | 4.8e+00 4.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.3110406297328902e+03 (+0e+00,6e+02) |  1: 4.9e+00  0: 4.7e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.1554402496948692e+03 (+0e+00,1e+03) |  1: 4.9e+00  0: 4.6e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0221904597806731e+03 (+0e+00,8e+02) |  1: 7.0e+00  0: 6.8e+00 | 6.4e+00 6.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0201817903745826e+03 (+0e+00,7e+02) |  1: 5.9e+00  0: 5.3e+00 | 5.5e+00 5.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.7982450802419370e+02 (+0e+00,1e+03) |  1: 5.5e+00  0: 5.1e+00 | 5.2e+00 5.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.0341591663710976e+03 (+0e+00,6e+02) |  1: 4.7e+00  0: 4.4e+00 | 4.8e+00 4.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.3427014696596870e+02 (+0e+00,7e+02) |  0: 7.6e+00  0: 7.1e+00 | 6.7e+00 6.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 7.5940134188125900e+02 (+0e+00,6e+02) |  1: 6.5e+00  0: 5.8e+00 | 6.0e+00 6.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.5820182593144220e+02 (+0e+00,7e+02) |  0: 8.0e+00  0: 6.1e+00 | 6.5e+00 6.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.8373159152721470e+02 (+0e+00,5e+02) |  1: 7.2e+00  0: 5.7e+00 | 6.2e+00 6.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.8757065540007090e+02 (+0e+00,7e+02) |  0: 3.2e+00  0: 3.2e+00 | 3.6e+00 3.6e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.8598165707100950e+02 (+0e+00,1e+03) |  1: 5.3e+00  0: 4.9e+00 | 5.2e+00 5.2e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.2146725900042200e+02 (+0e+00,5e+02) |  0: 7.8e+00  0: 7.2e+00 | 7.1e+00 7.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.8982783656045220e+02 (+0e+00,5e+02) |  0: 6.5e+00  0: 6.2e+00 | 6.1e+00 6.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 5.2265283662491030e+02 (+0e+00,6e+02) |  1: 5.0e+00  0: 4.5e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.8092540853244054e+02 (+0e+00,6e+02) |  1: 5.3e+00  0: 5.2e+00 | 5.3e+00 5.3e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 4.0721482883705204e+02 (+0e+00,7e+02) |  1: 5.1e+00  0: 4.6e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.6919080195821700e+02 (+0e+00,5e+02) |  1: 4.6e+00  0: 4.5e+00 | 4.8e+00 4.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.7359542283990890e+02 (+0e+00,8e+02) |  1: 5.0e+00  0: 4.4e+00 | 4.9e+00 4.9e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.4723925841563710e+02 (+0e+00,2e+02) |  0: 4.3e+00  0: 4.0e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 6.2965634466169760e+01 (+0e+00,6e+02) |  1: 7.7e+00  0: 6.8e+00 | 7.0e+00 7.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.6668833595503060e+01 (+0e+00,6e+02) |  1: 7.8e+00  0: 7.8e+00 | 7.4e+00 7.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 2.1355646842048262e+02 (+0e+00,5e+02) |  0: 3.8e+00  0: 3.7e+00 | 4.1e+00 4.1e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.3052666852191960e+01 (+0e+00,4e+02) |  0: 4.7e+00  0: 4.7e+00 | 4.8e+00 4.8e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 1.2817376140108670e+02 (+0e+00,4e+02) |  0: 4.7e+00  0: 4.4e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 9.6498807716373550e+01 (+0e+00,3e+02) |  1: 4.4e+00  0: 4.1e+00 | 4.5e+00 4.5e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 8.6116242546114560e+00 (+0e+00,3e+02) |  0: 4.3e+00  0: 4.1e+00 | 4.4e+00 4.4e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.9403473246452684e+01 (+0e+00,3e+02) |  0: 5.1e+00  0: 4.7e+00 | 5.0e+00 5.0e+00   1.00   |  0.0  0.0 
+Iteration,#Fevals: rb Function Value Delta( best ,worst) |idx: Max SD idx: Min SD  | minsigD  sigma Axisratio | time, in eig
+    1( 6),      6: 3.3037102684044470e+01 (+0e+00,5e+02) |  0: 4.6e+00  0: 4.4e+00 | 4.7e+00 4.7e+00   1.00   |  0.0  0.0 

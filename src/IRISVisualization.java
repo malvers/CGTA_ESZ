@@ -102,7 +102,6 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
     private double[] fitness;
     private IRISVisualization fitFun;
     private CMAEvolutionStrategy cmaes;
-    private long runningDelay = 0;
     private BufferedImage heatMap;
 
     /// constructor ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -241,7 +240,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         }
     }
 
-    private void handleSpaceBar(KeyEvent e) {
+    private void handleSpaceBar() {
         createHeatMap();
     }
 
@@ -255,7 +254,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         double max = 0.0;
         double wbb = boundingBoxTest.getWidth();
 
-        double values[][] = new double[getWidth()][getHeight()];
+        double[][] values = new double[getWidth()][getHeight()];
 
         int count = 0;
         for (int x = 0; x < getWidth(); x++) {
@@ -368,24 +367,18 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                     return;
                 }
 
-                /// TODO: for debugging the bounding box only
-                if (e.isShiftDown()) {
-                    irisPicSize = zoomedSize;
-                    irisZoom = 1.0;
+                irisPicSize = zoomedSize;
+                irisZoom = 1.0;
 
-                    sceneShift.x += dragShift.x;
-                    sceneShift.y += dragShift.y;
-                    dragShift.x = 0;
-                    dragShift.y = 0;
+                sceneShift.x += dragShift.x;
+                sceneShift.y += dragShift.y;
+                dragShift.x = 0;
+                dragShift.y = 0;
 
-                    calculateWhipers();
-                    setWhipersVisibility(true);
-                    deselectAllHandles();
-                    deselectAllWhipers();
-                } else {
-//                    qualityFunction();
-                    numberPointsOutside();
-                }
+                calculateWhipers();
+                setWhipersVisibility(true);
+                deselectAllHandles();
+                deselectAllWhipers();
             }
         });
 
@@ -516,6 +509,8 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
             @Override
             public void keyPressed(KeyEvent e) {
 
+                boolean doRepaint = true;
+
 //                println("key: " + e.getKeyCode());
                 switch (e.getKeyCode()) {
 
@@ -527,18 +522,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                             sceneShift.y = 0;
                             doCalculations();
                             calculateWhipers();
-                        } else {
-                            runningDelay = 0;
                         }
-                        break;
-                    case KeyEvent.VK_1:
-                        runningDelay = 100;
-                        break;
-                    case KeyEvent.VK_2:
-                        runningDelay = 200;
-                        break;
-                    case KeyEvent.VK_3:
-                        runningDelay = 300;
                         break;
                     case KeyEvent.VK_UP:
                     case KeyEvent.VK_DOWN:
@@ -557,7 +541,9 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                         }
                         break;
                     case KeyEvent.VK_SPACE:
-                        handleSpaceBar(e);
+                        //handleSpaceBar();
+                        doRepaint = false;
+                        handleRotation(1.0);
                         break;
                     case KeyEvent.VK_A:
                         drawAnnotation = !drawAnnotation;
@@ -598,7 +584,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                         }
                         break;
                     case KeyEvent.VK_R:
-                        handleRotation(e);
+//                        handleRotation(e);
                         break;
                     case KeyEvent.VK_Q:
                         println("Q - exp q: " + qualityFunction(boundingBox));
@@ -619,7 +605,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                         break;
                     case KeyEvent.VK_X:
                         //startCMAES();
-                        createBoundingBoxRotationCurve360(e);
+                        createBoundingBoxRotationCurve360();
                         break;
                     case KeyEvent.VK_Z:
                         if (e.isMetaDown()) {
@@ -651,7 +637,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                         }
                         break;
                 }
-                repaint();
+                if(doRepaint) repaint();
             }
         });
     }
@@ -951,6 +937,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         Point2D.Double extendY = getExtendsWhiperCurveY();
         double distY = (extendY.y - extendY.x);
 
+        /// TODO: check 2. parameter extendY.x
         boundingBoxWC = new Rectangle2D.Double(extendX.x, extendY.x, distX, distY);
 
         doRotation(0);
@@ -1022,7 +1009,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
     }
 
     /// TODO: why three functions (also MyDoublePolygon.getIntersectionPoint)
-    private MyVector getIntersectionPoint(MyVector vec1Start, MyVector vec1End, MyVector vec2Start, MyVector vec2End) {
+    protected static MyVector getIntersectionPoint(MyVector vec1Start, MyVector vec1End, MyVector vec2Start, MyVector vec2End) {
 
         // Create Line2D objects for the input vectors
         Line2D line1 = new Line2D.Double(vec1Start.x, vec1Start.y, vec1End.x, vec1End.y);
@@ -1400,20 +1387,19 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         //println("\nx: " + shiftX + "y: " + shiftY);
 
         MyVector centerBoundingBox = new MyVector(shiftX, shiftY, "center bounding box");
-        centerBoundingBox.setSize(12);
+        centerBoundingBox.setSize(4);
 
         g2d.setColor(Color.RED);
         centerBoundingBox.fill(g2d, false);
-
-        g2d.setColor(Color.MAGENTA);
-        centerCircle.fill(g2d, false);
 
         g2d.setColor(Color.RED);
         ///g2d.draw(boundingBoxWC);
 
         g2d.setStroke(new BasicStroke(1));
         g2d.setColor(Color.GREEN);
-        boundingBox.getCenter().fill(g2d, true);
+        MyVector c = boundingBox.getCenter();
+        c.setSize(4);
+        c.fill(g2d, true);
 
         boundingBox.draw(g2d);
     }
@@ -1498,7 +1484,8 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
     private void drawIris(Graphics2D g2d) {
 
         g2d.setStroke(new BasicStroke(2));
-        g2d.setColor(Color.MAGENTA.darker().darker());
+        g2d.setColor(Color.MAGENTA.darker());
+        centerCircle.fill(g2d, drawAnnotation);
         double ir = calculateInnerRadiusTriangle(handleA, handleB, handleC);
         irisCircle = new Ellipse2D.Double(centerCircle.x - ir, centerCircle.y - ir, 2 * ir, 2 * ir);
         g2d.draw(irisCircle);
@@ -1512,7 +1499,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
     private void drawCircle(Graphics2D g2d) {
         g2d.setStroke(new BasicStroke(2));
-        g2d.setColor(Color.MAGENTA.darker().darker());
+        g2d.setColor(Color.MAGENTA.darker());
         centerCircle.fill(g2d, drawAnnotation);
         g2d.draw(new Ellipse2D.Double(centerCircle.x - radiusCircle, centerCircle.y - radiusCircle, 2 * radiusCircle, 2 * radiusCircle));
     }
@@ -1564,13 +1551,8 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
     /// optimizing related section /////////////////////////////////////////////////////////////////////////////////////
 
-    private void handleRotation(KeyEvent e) {
+    private void handleRotation(double inc) {
 
-        double val = 5.0;
-        double inc = val;
-        if (e.isShiftDown()) {
-            inc = -val;
-        }
         rotateBoundingBox(inc);
         startCMAES();
     }
@@ -1660,9 +1642,9 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         println("experimental quality: " + qualityFunction(boundingBox));
     }
 
-    private double numberPointsOutside() {
+    private void numberPointsOutside() {
 
-        return numberPointsOutside(boundingBox);
+        numberPointsOutside(boundingBox);
     }
 
     private double numberPointsOutside(MyDoublePolygon outer) {
@@ -1778,7 +1760,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         runIt = !runIt;
     }
 
-    private void createBoundingBoxRotationCurve360(KeyEvent e) {
+    private void createBoundingBoxRotationCurve360() {
 
         long start = System.currentTimeMillis();
         println("createBoundingBoxRotationCurve360");
@@ -1788,7 +1770,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
             runCMAES();
         }
         double delta = System.currentTimeMillis() - start;
-        println("done - time needed: " + delta  +" ms");
+        println("done - time needed: " + delta + " ms");
     }
 
     private void runCMAES() {
@@ -1864,8 +1846,8 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         SwingUtilities.invokeLater(() -> repaint());
 
 //        println("best bx:         " + best[0] + " best by: " + best[1]);
-        println("experimental bb: " + qualityFunction(boundingBox));
-        println("best cmaes:      " + cmaes.getBestFunctionValue());
+//        println("experimental bb: " + qualityFunction(boundingBox));
+//        println("best cmaes:      " + cmaes.getBestFunctionValue());
     }
 
     /// last but not least main ////////////////////////////////////////////////////////////////////////////////////////
@@ -1882,124 +1864,124 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         });
     }
 
-    /// deprecated ////////////////////////////////////////////////////////////////////////////////////////
+    /// deprecated /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public static Rectangle constructRectangle(MyVector p1, MyVector p2, MyVector p3, MyVector p4) {
-
-        // Find extreme coordinates
-        double minX = Math.min(Math.min(Math.min(p1.x, p2.x), p3.x), p4.x);
-        double maxX = Math.max(Math.max(Math.max(p1.x, p2.x), p3.x), p4.x);
-        double minY = Math.min(Math.min(Math.min(p1.y, p2.y), p3.y), p4.y);
-        double maxY = Math.max(Math.max(Math.max(p1.y, p2.y), p3.y), p4.y);
-
-        // Calculate width and height
-        double width = maxX - minX;
-        double height = maxY - minY;
-
-        // Create and return the rectangle
-        return new Rectangle((int) minX, (int) minY, (int) width, (int) height);
-    }
-
-    private Point2D.Double getCenter(Rectangle rect) {
-
-        double centerX = rect.getX() + rect.getWidth() / 2;
-        double centerY = rect.getY() + rect.getHeight() / 2;
-        return new Point2D.Double(centerX, centerY);
-    }
-
-    private double distanceToClosestIndex(double x, double y) {
-
-        int numPoints = hugeCurve.getNumPoints();
-
-        double minDistance = Double.POSITIVE_INFINITY;
-        for (int i = 0; i < numPoints; i++) {
-            Point2D.Double vertex = hugeCurve.getPoints().get(i);
-            double distance = vertex.distance(x, y);
-            if (distance < minDistance) {
-                minDistance = distance;
-            }
-        }
-        return minDistance;
-    }
-
-    private double qualityFunctionOld() {
-
-        qualityPolygons = new ArrayList<>();
-        intersectionPoints = hugeCurve.getIntersectionPoints(boundingBox); /// TODO: reset to boundingBoxTest ?
-
-        //for (MyVector v : intersectionPoints) v.print();
-
-        double quality = 0.0;
-        int count = 0;
-
-        for (int i = 0; i < intersectionPoints.size() - 1; i += 2) {
-
-
-            MyVector isp1 = intersectionPoints.get(i);
-            MyVector isp2 = intersectionPoints.get(i + 1);
-            isp1.setName(isp1.getName() + " i: " + count);
-            isp2.setName(isp2.getName() + " i: " + (count + 1));
-            count++;
-            int from = isp1.getId();
-            int to = isp2.getId();
-            MyDoublePolygon polygon = hugeCurve.getSubPolygon(from, to);
-            double area = polygon.calculateArea();
-            qualityPolygons.add(polygon);
-            quality += area;
-        }
-        return quality;
-    }
-
-    private void optimizePolygonPositionBruteForce(int count) {
-
-        /// puzzle the single 6 curves together to one huge one
-
-        double qStart = numberPointsOutside();
-        double qOptimal = Double.MAX_VALUE;
-
-        double searchSize = 16;
-
-        int numPoints = 10000;
-
-        MyVector center = boundingBox.getCenter();
-        ArrayList<MyVector> scatter = MyVector.scatterPointsAround(center, searchSize, numPoints);
-
-        debugList = new ArrayList<>();
-
-        MyDoublePolygon testPolygonOptimal = new MyDoublePolygon();
-
-        for (MyVector scatterPoint : scatter) {
-
-            testPolygonOptimal = copyPolygons(boundingBox);
-
-            double displaceX = center.x - scatterPoint.x;
-            double displaceY = center.y - scatterPoint.y;
-
-            ArrayList<Point2D.Double> testPolygon = createTestPolygon();
-
-            for (int i = 0; i < 4; i++) {
-                testPolygon.get(i).x = boundingBox.getPoint(i).x + displaceX;
-                testPolygon.get(i).y = boundingBox.getPoint(i).y + displaceY;
-            }
-
-            MyDoublePolygon debug = new MyDoublePolygon("debug " + count);
-            debug.setPoints(testPolygon);
-            debugList.add(debug);
-
-            qOptimal = numberPointsOutside(debug);
-
-            if (qOptimal < qStart) {
-                //println("BINGO optimal: " + qOptimal + " start: " + qStart);
-                boundingBox.setPoints(testPolygon);
-                testPolygonOptimal = copyPolygons(debug);
-                qStart = qOptimal;
-            }
-        }
-        boundingBox = copyPolygons(testPolygonOptimal);
-        MyVector c = boundingBox.getCenter();
-        c.setSize(4);
-        boundingBoxInnerRotationPath.add(c);
-
-        println(count + " optimizePolygonPosition: " + qOptimal);
-    }
+//    public static Rectangle constructRectangle(MyVector p1, MyVector p2, MyVector p3, MyVector p4) {
+//
+//        // Find extreme coordinates
+//        double minX = Math.min(Math.min(Math.min(p1.x, p2.x), p3.x), p4.x);
+//        double maxX = Math.max(Math.max(Math.max(p1.x, p2.x), p3.x), p4.x);
+//        double minY = Math.min(Math.min(Math.min(p1.y, p2.y), p3.y), p4.y);
+//        double maxY = Math.max(Math.max(Math.max(p1.y, p2.y), p3.y), p4.y);
+//
+//        // Calculate width and height
+//        double width = maxX - minX;
+//        double height = maxY - minY;
+//
+//        // Create and return the rectangle
+//        return new Rectangle((int) minX, (int) minY, (int) width, (int) height);
+//    }
+//
+//    private Point2D.Double getCenter(Rectangle rect) {
+//
+//        double centerX = rect.getX() + rect.getWidth() / 2;
+//        double centerY = rect.getY() + rect.getHeight() / 2;
+//        return new Point2D.Double(centerX, centerY);
+//    }
+//
+//    private double distanceToClosestIndex(double x, double y) {
+//
+//        int numPoints = hugeCurve.getNumPoints();
+//
+//        double minDistance = Double.POSITIVE_INFINITY;
+//        for (int i = 0; i < numPoints; i++) {
+//            Point2D.Double vertex = hugeCurve.getPoints().get(i);
+//            double distance = vertex.distance(x, y);
+//            if (distance < minDistance) {
+//                minDistance = distance;
+//            }
+//        }
+//        return minDistance;
+//    }
+//
+//    private double qualityFunctionOld() {
+//
+//        qualityPolygons = new ArrayList<>();
+//        intersectionPoints = hugeCurve.getIntersectionPoints(boundingBox); /// TODO: reset to boundingBoxTest ?
+//
+//        //for (MyVector v : intersectionPoints) v.print();
+//
+//        double quality = 0.0;
+//        int count = 0;
+//
+//        for (int i = 0; i < intersectionPoints.size() - 1; i += 2) {
+//
+//
+//            MyVector isp1 = intersectionPoints.get(i);
+//            MyVector isp2 = intersectionPoints.get(i + 1);
+//            isp1.setName(isp1.getName() + " i: " + count);
+//            isp2.setName(isp2.getName() + " i: " + (count + 1));
+//            count++;
+//            int from = isp1.getId();
+//            int to = isp2.getId();
+//            MyDoublePolygon polygon = hugeCurve.getSubPolygon(from, to);
+//            double area = polygon.calculateArea();
+//            qualityPolygons.add(polygon);
+//            quality += area;
+//        }
+//        return quality;
+//    }
+//
+//    private void optimizePolygonPositionBruteForce(int count) {
+//
+//        /// puzzle the single 6 curves together to one huge one
+//
+//        double qStart = numberPointsOutside();
+//        double qOptimal = Double.MAX_VALUE;
+//
+//        double searchSize = 16;
+//
+//        int numPoints = 10000;
+//
+//        MyVector center = boundingBox.getCenter();
+//        ArrayList<MyVector> scatter = MyVector.scatterPointsAround(center, searchSize, numPoints);
+//
+//        debugList = new ArrayList<>();
+//
+//        MyDoublePolygon testPolygonOptimal = new MyDoublePolygon();
+//
+//        for (MyVector scatterPoint : scatter) {
+//
+//            testPolygonOptimal = copyPolygons(boundingBox);
+//
+//            double displaceX = center.x - scatterPoint.x;
+//            double displaceY = center.y - scatterPoint.y;
+//
+//            ArrayList<Point2D.Double> testPolygon = createTestPolygon();
+//
+//            for (int i = 0; i < 4; i++) {
+//                testPolygon.get(i).x = boundingBox.getPoint(i).x + displaceX;
+//                testPolygon.get(i).y = boundingBox.getPoint(i).y + displaceY;
+//            }
+//
+//            MyDoublePolygon debug = new MyDoublePolygon("debug " + count);
+//            debug.setPoints(testPolygon);
+//            debugList.add(debug);
+//
+//            qOptimal = numberPointsOutside(debug);
+//
+//            if (qOptimal < qStart) {
+//                //println("BINGO optimal: " + qOptimal + " start: " + qStart);
+//                boundingBox.setPoints(testPolygon);
+//                testPolygonOptimal = copyPolygons(debug);
+//                qStart = qOptimal;
+//            }
+//        }
+//        boundingBox = copyPolygons(testPolygonOptimal);
+//        MyVector c = boundingBox.getCenter();
+//        c.setSize(4);
+//        boundingBoxInnerRotationPath.add(c);
+//
+//        println(count + " optimizePolygonPosition: " + qOptimal);
+//    }
 }

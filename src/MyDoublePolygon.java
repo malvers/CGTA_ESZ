@@ -210,10 +210,18 @@ public class MyDoublePolygon {
 
     public MyVector getCenter() {
 
-        double width = points.get(1).x - points.get(0).x;
-        double x = points.get(0).x + (width / 2.0);
-        double y = points.get(0).y + (width / 2.0);
+        MyVector lUpper = new MyVector(points.get(0).x, points.get(0).y, "");
+        MyVector rLower = new MyVector(points.get(2).x, points.get(2).y, "");
 
-        return new MyVector(x, y, "");
+        MyVector rUpper = new MyVector(points.get(1).x, points.get(1).y, "");
+        MyVector lLower = new MyVector(points.get(3).x, points.get(3).y, "");
+
+        return IRISVisualization.getIntersectionPoint(lUpper, rLower, rUpper, lLower);
+
+//        double width = points.get(1).x - points.get(0).x;
+//        double x = points.get(0).x + (width / 2.0);
+//        double y = points.get(0).y + (width / 2.0);
+//
+//        return new MyVector(x, y, "");
     }
 }
