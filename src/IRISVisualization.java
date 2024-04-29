@@ -139,8 +139,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
     private void writeSettings() {
 
         try {
-            String uh = System.getProperty("user.home");
-            FileOutputStream f = new FileOutputStream(uh + "/IRISVisualization.bin");
+            FileOutputStream f = new FileOutputStream("./IRISVisualization.bin");
             ObjectOutputStream os = new ObjectOutputStream(f);
 
             os.writeObject(frame.getSize());
@@ -181,8 +180,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
     private void readSettings() {
 
         try {
-            String uh = System.getProperty("user.home");
-            FileInputStream f = new FileInputStream(uh + "/IRISVisualization.bin");
+            FileInputStream f = new FileInputStream("./IRISVisualization.bin");
             ObjectInputStream os = new ObjectInputStream(f);
 
             frame.setSize((Dimension) os.readObject());
@@ -600,13 +598,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                         }
                         break;
                     case KeyEvent.VK_R:
-                        double val = 5.0;
-                        double inc = val;
-                        if (e.isShiftDown()) {
-                            inc = -val;
-                        }
-                        rotateBoundingBox(inc);
-                        startCMAES();
+                        handleRotation(e);
                         break;
                     case KeyEvent.VK_Q:
                         println("Q - exp q: " + qualityFunction(boundingBox));
@@ -961,7 +953,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
         boundingBoxWC = new Rectangle((int) extendX.x, (int) extendY.x, (int) distX, (int) distY);
 
-        rotateRectangle(boundingBoxWC, 0);
+        doRotation(0);
 
         createHugeCurve();
     }
@@ -1256,32 +1248,6 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public void rotateRectangle(Rectangle rectangle, double angle) {
-
-        double centerX = rectangle.getCenterX();
-        double centerY = rectangle.getCenterY();
-
-        double d = 0.001;
-        double d2 = d * 2.0;
-        MyVector center = new MyVector(centerX, centerY, "");
-        /// .width can be used everywhere since it is a square
-        MyVector c1 = new MyVector(rectangle.x - d, rectangle.y - d, "");
-        MyVector c2 = new MyVector(rectangle.x - d + rectangle.width + d2, rectangle.y - d, "");
-        MyVector c3 = new MyVector(rectangle.x - d, rectangle.y - d + rectangle.width + d2, "");
-        MyVector c4 = new MyVector(rectangle.x - d + rectangle.width + d2 - d, rectangle.y - d + rectangle.width + d2, "");
-
-        MyVector c1r = MyVector.getVector(c1, center).rotate(angle).add(center);
-        MyVector c2r = MyVector.getVector(c2, center).rotate(angle).add(center);
-        MyVector c4r = MyVector.getVector(c3, center).rotate(angle).add(center);
-        MyVector c3r = MyVector.getVector(c4, center).rotate(angle).add(center);
-
-        boundingBox = new MyDoublePolygon();
-        boundingBox.addPoint((int) c1r.x, (int) c1r.y);
-        boundingBox.addPoint((int) c2r.x, (int) c2r.y);
-        boundingBox.addPoint((int) c3r.x, (int) c3r.y);
-        boundingBox.addPoint((int) c4r.x, (int) c4r.y);
     }
 
     private Point2D.Double getExtendsWhiperCurveX() {
@@ -1596,12 +1562,78 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         }
     }
 
-    /// optimizing section /////////////////////////////////////////////////////////////////////////////////////////////
+    /// optimizing related section /////////////////////////////////////////////////////////////////////////////////////
+
+    private void handleRotation(KeyEvent e) {
+
+        double val = 5.0;
+        double inc = val;
+        if (e.isShiftDown()) {
+            inc = -val;
+        }
+        rotateBoundingBox(inc);
+        startCMAES();
+    }
+
+    public void doRotation(double angle) {
+
+        double centerX = boundingBoxWC.getCenterX();
+        double centerY = boundingBoxWC.getCenterY();
+
+        double d = 0.0;
+        double d2 = d * 2.0;
+        MyVector center = new MyVector(centerX, centerY, "");
+        /// .width can be used everywhere since it is a square
+        MyVector c1 = new MyVector(boundingBoxWC.x - d, boundingBoxWC.y - d, "");
+        MyVector c2 = new MyVector(boundingBoxWC.x - d + boundingBoxWC.width + d2, boundingBoxWC.y - d, "");
+        MyVector c3 = new MyVector(boundingBoxWC.x - d, boundingBoxWC.y - d + boundingBoxWC.width + d2, "");
+        MyVector c4 = new MyVector(boundingBoxWC.x - d + boundingBoxWC.width + d2 - d, boundingBoxWC.y - d + boundingBoxWC.width + d2, "");
+
+        MyVector c1r = MyVector.getVector(c1, center).rotate(angle).add(center);
+        MyVector c2r = MyVector.getVector(c2, center).rotate(angle).add(center);
+        MyVector c4r = MyVector.getVector(c3, center).rotate(angle).add(center);
+        MyVector c3r = MyVector.getVector(c4, center).rotate(angle).add(center);
+
+        boundingBox = new MyDoublePolygon();
+        boundingBox.addPoint((int) c1r.x, (int) c1r.y);
+        boundingBox.addPoint((int) c2r.x, (int) c2r.y);
+        boundingBox.addPoint((int) c3r.x, (int) c3r.y);
+        boundingBox.addPoint((int) c4r.x, (int) c4r.y);
+    }
+
+    public void rotateRectangleGPT(double angle) {
+
+        double centerX = boundingBoxWC.getCenterX();
+        double centerY = boundingBoxWC.getCenterY();
+
+        double halfWidth = boundingBoxWC.width / 2.0;
+        double halfHeight = boundingBoxWC.height / 2.0;
+
+        double cosAngle = Math.cos(angle);
+        double sinAngle = Math.sin(angle);
+
+        // Calculate the rotated coordinates of the rectangle's corners
+        double topLeftX = centerX + (-halfWidth * cosAngle - halfHeight * sinAngle);
+        double topLeftY = centerY + (-halfWidth * sinAngle + halfHeight * cosAngle);
+        double topRightX = centerX + (halfWidth * cosAngle - halfHeight * sinAngle);
+        double topRightY = centerY + (halfWidth * sinAngle + halfHeight * cosAngle);
+        double bottomLeftX = centerX + (-halfWidth * cosAngle + halfHeight * sinAngle);
+        double bottomLeftY = centerY + (-halfWidth * sinAngle - halfHeight * cosAngle);
+        double bottomRightX = centerX + (halfWidth * cosAngle + halfHeight * sinAngle);
+        double bottomRightY = centerY + (halfWidth * sinAngle - halfHeight * cosAngle);
+
+        // Update the bounding box polygon with the rotated coordinates
+        boundingBox = new MyDoublePolygon();
+        boundingBox.addPoint((int) topLeftX, (int) topLeftY);
+        boundingBox.addPoint((int) topRightX, (int) topRightY);
+        boundingBox.addPoint((int) bottomRightX, (int) bottomRightY);
+        boundingBox.addPoint((int) bottomLeftX, (int) bottomLeftY);
+    }
 
     private void rotateBoundingBox(double inc) {
 
         rotationAngle += Math.toRadians(inc);
-        rotateRectangle(boundingBoxWC, rotationAngle);
+        doRotation(rotationAngle);
     }
 
     private void shiftBoundingBoxPolygon(int vKup, double inc) {
@@ -1695,6 +1727,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         cmaes.setInitialX(1);
         cmaes.setInitialStandardDeviation(5);
         cmaes.options.stopFitness = 0;
+        cmaes.options.verbosity = -1;
 
         fitness = cmaes.init();
     }
@@ -1747,19 +1780,23 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
     private void createBoundingBoxRotationCurve360(KeyEvent e) {
 
-        for (int i = 0; i < 360; i++) {
-            println("rotating: " + i);
-            rotateBoundingBox(1.0);
-
+        long start = System.currentTimeMillis();
+        println("createBoundingBoxRotationCurve360");
+        double inc = 1.0;
+        for (double i = 0; i < 360; i += inc) {
+            rotateBoundingBox(inc);
             runCMAES();
         }
+        double delta = System.currentTimeMillis() - start;
+        println("done - time needed: " + delta  +" ms");
     }
+
     private void runCMAES() {
 
         initBoundingBoxPolygonTest();
         initCMAES();
 
-        while(cmaes.stopConditions.getNumber() == 0) {
+        while (cmaes.stopConditions.getNumber() == 0) {
 
             /// core iteration step
             double[][] population = cmaes.samplePopulation();  // get a new population of solutions
