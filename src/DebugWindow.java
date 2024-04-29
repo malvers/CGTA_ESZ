@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.geom.Rectangle2D;
 
 public class DebugWindow extends JFrame {
 
@@ -7,6 +8,9 @@ public class DebugWindow extends JFrame {
     private JTextArea textArea = new JTextArea();
 
     public DebugWindow() {
+
+        Rectangle2D.Double rect = new Rectangle2D.Double();
+
         setLocation(200, -1070);
         setVisible(true);
         setSize(600, 1010);
