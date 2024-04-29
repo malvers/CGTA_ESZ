@@ -9,7 +9,6 @@ import java.awt.geom.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -276,7 +275,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                 boundingBoxTest.getPoint(3).x = x;
                 boundingBoxTest.getPoint(3).y = y + wbb;
 
-                double q = experimentalQuality(boundingBoxTest);
+                double q = qualityFunction(boundingBoxTest);
 
                 values[x][y] = q;
 
@@ -316,7 +315,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
             @Override
             public void mousePressed(MouseEvent e) {
 
-                println("experimental quality: lll" + experimentalQuality(boundingBox));
+                println("experimental quality: lll" + qualityFunction(boundingBox));
 
                 Point2D.Double pd = new Point2D.Double(e.getX(), e.getY());
 
@@ -508,7 +507,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         double x = -(onMousePressed.x - e.getX());
         double y = -(onMousePressed.y - e.getY());
         setPositionBoundingBox(x, y);
-        println("experimental quality: " + experimentalQuality(boundingBox));
+        println("experimental quality: " + qualityFunction(boundingBox));
     }
 
     /// key handling ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -558,7 +557,6 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                             }
                             shiftBoundingBoxPolygon(e.getKeyCode(), inc);
                         }
-//                        qualityFunction();
                         break;
                     case KeyEvent.VK_SPACE:
                         handleSpaceBar(e);
@@ -602,10 +600,16 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                         }
                         break;
                     case KeyEvent.VK_R:
-                        rotateBoundingBox(e);
+                        double val = 5.0;
+                        double inc = val;
+                        if (e.isShiftDown()) {
+                            inc = -val;
+                        }
+                        rotateBoundingBox(inc);
+                        startCMAES();
                         break;
                     case KeyEvent.VK_Q:
-                        println("Q - exp q: " + experimentalQuality(boundingBox));
+                        println("Q - exp q: " + qualityFunction(boundingBox));
                         break;
                     case KeyEvent.VK_S:
                         screenshotCapture();
@@ -622,7 +626,8 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                         }
                         break;
                     case KeyEvent.VK_X:
-                        startOptimization();
+                        //startCMAES();
+                        createBoundingBoxRotationCurve360(e);
                         break;
                     case KeyEvent.VK_Z:
                         if (e.isMetaDown()) {
@@ -1277,31 +1282,6 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         boundingBox.addPoint((int) c2r.x, (int) c2r.y);
         boundingBox.addPoint((int) c3r.x, (int) c3r.y);
         boundingBox.addPoint((int) c4r.x, (int) c4r.y);
-
-        //howManyPointsOutside(boundingBoxPolygon);
-    }
-
-    public static Rectangle constructRectangle(MyVector p1, MyVector p2, MyVector p3, MyVector p4) {
-
-        // Find extreme coordinates
-        double minX = Math.min(Math.min(Math.min(p1.x, p2.x), p3.x), p4.x);
-        double maxX = Math.max(Math.max(Math.max(p1.x, p2.x), p3.x), p4.x);
-        double minY = Math.min(Math.min(Math.min(p1.y, p2.y), p3.y), p4.y);
-        double maxY = Math.max(Math.max(Math.max(p1.y, p2.y), p3.y), p4.y);
-
-        // Calculate width and height
-        double width = maxX - minX;
-        double height = maxY - minY;
-
-        // Create and return the rectangle
-        return new Rectangle((int) minX, (int) minY, (int) width, (int) height);
-    }
-
-    private Point2D.Double getCenter(Rectangle rect) {
-
-        double centerX = rect.getX() + rect.getWidth() / 2;
-        double centerY = rect.getY() + rect.getHeight() / 2;
-        return new Point2D.Double(centerX, centerY);
     }
 
     private Point2D.Double getExtendsWhiperCurveX() {
@@ -1432,7 +1412,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
         zoomedSize = (int) (irisPicSize * irisZoom);
         int delta = (int) (((zoomedSize) / 2.0));
-        g2d.drawImage((Image) irisPicture, (int) (centerCircle.x - delta), (int) (centerCircle.y - delta), zoomedSize, zoomedSize, null);
+        g2d.drawImage(irisPicture, (int) (centerCircle.x - delta), (int) (centerCircle.y - delta), zoomedSize, zoomedSize, null);
     }
 
     private void clearBackground(Graphics2D g2d) {
@@ -1618,23 +1598,319 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
     /// optimizing section /////////////////////////////////////////////////////////////////////////////////////////////
 
-    private void rotateBoundingBox(KeyEvent e) {
+    private void rotateBoundingBox(double inc) {
 
-        double inc = 5.0;
-        if (e.isShiftDown()) {
-            rotationAngle -= Math.toRadians(inc);
-        } else {
-            rotationAngle += Math.toRadians(inc);
-        }
+        rotationAngle += Math.toRadians(inc);
         rotateRectangle(boundingBoxWC, rotationAngle);
-        //qualityFunction();
     }
 
-    private void bruteForce360(KeyEvent e) {
-        for (int i = 0; i <= 360; i++) {
-            rotateBoundingBox(e);
-            optimizePolygonPositionBruteForce(i);
+    private void shiftBoundingBoxPolygon(int vKup, double inc) {
+
+        //boundingBox.print("shiftBoundingBoxPolygon");
+
+        for (int i = 0; i < boundingBox.getNumPoints(); i++) {
+
+            switch (vKup) {
+                case KeyEvent.VK_UP:
+                    boundingBox.getPoint(i).y -= inc;
+                    break;
+                case KeyEvent.VK_DOWN:
+                    boundingBox.getPoint(i).y += inc;
+                    break;
+                case KeyEvent.VK_LEFT:
+                    boundingBox.getPoint(i).x -= inc;
+                    break;
+                case KeyEvent.VK_RIGHT:
+                    boundingBox.getPoint(i).x += inc;
+                    break;
+            }
         }
+        println("experimental quality: " + qualityFunction(boundingBox));
+    }
+
+    private double numberPointsOutside() {
+
+        return numberPointsOutside(boundingBox);
+    }
+
+    private double numberPointsOutside(MyDoublePolygon outer) {
+
+        if (hugeCurve == null) {
+            return -1;
+        }
+        int count = 0;
+        for (int i = 0; i < hugeCurve.getNumPoints(); i += 1) {
+
+            if (outer.contains(hugeCurve.getPoints().get(i).x, hugeCurve.getPoints().get(i).y)) {
+                count++;
+            }
+        }
+        return hugeCurve.getNumPoints() - count;
+    }
+
+    private double closestDistanceToBox(Point2D.Double pIn, MyDoublePolygon box) {
+
+        Point2D.Double pNull = new Point2D.Double(0.0, 0.0);
+
+        double minDist = Double.MAX_VALUE;
+        for (int i = 0; i < box.getNumPoints(); i++) {
+
+            Point2D.Double p1 = box.getPoint(i);
+            Point2D.Double p2 = box.getPoint((i + 1) % box.getNumPoints());
+
+            MyVector v1 = new MyVector(p1);
+            MyVector v2 = new MyVector(p2);
+
+            double dist = MyVector.distanceToPointFromLine(pIn, pNull, v1, v2);
+            if (dist < minDist) {
+                minDist = dist;
+            }
+        }
+        return minDist;
+    }
+
+    private void setPositionBoundingBox(double x, double y) {
+
+        for (int i = 0; i < boundingBoxTest.getNumPoints(); i++) {
+            boundingBox.getPoint(i).x = boundingBoxTest.getPoint(i).x + x;
+            boundingBox.getPoint(i).y = boundingBoxTest.getPoint(i).y + y;
+        }
+    }
+
+    /// implementations for CMAES //////////////////////////////////////////////////////////////////////////////////////
+
+    private void initBoundingBoxPolygonTest() {
+
+        boundingBoxTest = new MyDoublePolygon();
+        boundingBoxTest.setPoints(boundingBox.getPoints());
+    }
+
+    private void initCMAES() {
+
+        // we are the optimizer our self
+        fitFun = this;
+
+        cmaes = new CMAEvolutionStrategy();
+        cmaes.setDimension(2);
+        cmaes.setInitialX(1);
+        cmaes.setInitialStandardDeviation(5);
+        cmaes.options.stopFitness = 0;
+
+        fitness = cmaes.init();
+    }
+
+    private double qualityFunction(MyDoublePolygon box) {
+
+//        if (boundingBoxTest == null) {
+//            initBoundingBoxPolygonTest();
+//        }
+//
+//        if (hugeCurve == null) {
+//            createHugeCurve();
+//        }
+        ArrayList<Point2D.Double> points = hugeCurve.getPoints();
+
+        double sumDist = 0.0;
+
+        for (int i = 0; i < hugeCurve.getNumPoints(); i++) {
+
+            if (!box.contains(points.get(i))) {
+                sumDist += closestDistanceToBox(points.get(i), box);
+            }
+        }
+        return sumDist;
+    }
+
+    @Override
+    public double valueOf(double[] values) {
+
+        for (int i = 0; i < 4; i++) {
+            boundingBoxTest.getPoint(i).x = boundingBox.getPoint(i).x + values[0];
+            boundingBoxTest.getPoint(i).y = boundingBox.getPoint(i).y + values[1];
+        }
+        return qualityFunction(boundingBoxTest);
+    }
+
+    @Override
+    public boolean isFeasible(double[] values) {
+        return true;
+    }
+
+    private void startCMAES() {
+
+        initBoundingBoxPolygonTest();
+        initCMAES();
+
+        new Thread(this).start();
+        runIt = !runIt;
+    }
+
+    private void createBoundingBoxRotationCurve360(KeyEvent e) {
+
+        for (int i = 0; i < 360; i++) {
+            println("rotating: " + i);
+            rotateBoundingBox(1.0);
+
+            runCMAES();
+        }
+    }
+    private void runCMAES() {
+
+        initBoundingBoxPolygonTest();
+        initCMAES();
+
+        while(cmaes.stopConditions.getNumber() == 0) {
+
+            /// core iteration step
+            double[][] population = cmaes.samplePopulation();  // get a new population of solutions
+            for (int i = 0; i < population.length; ++i) {      // for each candidate solution i
+
+                while (!fitFun.isFeasible(population[i])) {    // test whether solution is feasible,
+                    population[i] = cmaes.resampleSingle(i);   // re-sample solution until it is feasible
+                }
+                fitness[i] = fitFun.valueOf(population[i]);    // compute fitness value, where fitFun
+            }                                                  // is the function to be minimized
+            cmaes.updateDistribution(fitness);                 // pass fitness array to update search distribution
+        }
+
+        double[] best = cmaes.getBestSolution().getX();
+
+        for (int i = 0; i < boundingBox.getNumPoints(); i++) {
+            boundingBox.getPoint(i).x += best[0];
+            boundingBox.getPoint(i).y += best[1];
+        }
+//        println("experimental bb: " + qualityFunction(boundingBox));
+//        println("best cmaes:      " + cmaes.getBestFunctionValue());
+
+        SwingUtilities.invokeLater(() -> repaint());
+    }
+
+    @Override
+    public void run() {
+
+        while (runIt) {
+
+            if (cmaes.stopConditions.getNumber() != 0) {
+                runIt = false;
+            }
+
+            /// core iteration step
+            double[][] population = cmaes.samplePopulation();  // get a new population of solutions
+            for (int i = 0; i < population.length; ++i) {      // for each candidate solution i
+
+                while (!fitFun.isFeasible(population[i])) {    // test whether solution is feasible,
+                    population[i] = cmaes.resampleSingle(i);   // re-sample solution until it is feasible
+                }
+                fitness[i] = fitFun.valueOf(population[i]);    // compute fitness value, where fitFun
+            }                                                  // is the function to be minimized
+            cmaes.updateDistribution(fitness);                 // pass fitness array to update search distribution
+
+            if (debugMode) {
+                cmaes.writeToDefaultFiles();
+
+                int outModulo = 150000;
+                if (cmaes.getCountIter() % (15 * outModulo) == 1) {
+                    cmaes.printlnAnnotation();              // might write file as well
+                }
+                if (cmaes.getCountIter() % outModulo == 1) {
+                    cmaes.println();
+                }
+            }
+        }
+
+        double[] best = cmaes.getBestSolution().getX();
+
+        for (int i = 0; i < boundingBox.getNumPoints(); i++) {
+            boundingBox.getPoint(i).x += best[0];
+            boundingBox.getPoint(i).y += best[1];
+        }
+        SwingUtilities.invokeLater(() -> repaint());
+
+//        println("best bx:         " + best[0] + " best by: " + best[1]);
+        println("experimental bb: " + qualityFunction(boundingBox));
+        println("best cmaes:      " + cmaes.getBestFunctionValue());
+    }
+
+    /// last but not least main ////////////////////////////////////////////////////////////////////////////////////////
+
+    public static void main(String[] args) {
+
+        SwingUtilities.invokeLater(() -> {
+
+            JFrame f = new JFrame();
+            f.setSize(760, 760);
+            f.add(new IRISVisualization(f));
+            f.setTitle(defaultTitle);
+            f.setVisible(true);
+        });
+    }
+
+    /// deprecated ////////////////////////////////////////////////////////////////////////////////////////
+
+    public static Rectangle constructRectangle(MyVector p1, MyVector p2, MyVector p3, MyVector p4) {
+
+        // Find extreme coordinates
+        double minX = Math.min(Math.min(Math.min(p1.x, p2.x), p3.x), p4.x);
+        double maxX = Math.max(Math.max(Math.max(p1.x, p2.x), p3.x), p4.x);
+        double minY = Math.min(Math.min(Math.min(p1.y, p2.y), p3.y), p4.y);
+        double maxY = Math.max(Math.max(Math.max(p1.y, p2.y), p3.y), p4.y);
+
+        // Calculate width and height
+        double width = maxX - minX;
+        double height = maxY - minY;
+
+        // Create and return the rectangle
+        return new Rectangle((int) minX, (int) minY, (int) width, (int) height);
+    }
+
+    private Point2D.Double getCenter(Rectangle rect) {
+
+        double centerX = rect.getX() + rect.getWidth() / 2;
+        double centerY = rect.getY() + rect.getHeight() / 2;
+        return new Point2D.Double(centerX, centerY);
+    }
+
+    private double distanceToClosestIndex(double x, double y) {
+
+        int numPoints = hugeCurve.getNumPoints();
+
+        double minDistance = Double.POSITIVE_INFINITY;
+        for (int i = 0; i < numPoints; i++) {
+            Point2D.Double vertex = hugeCurve.getPoints().get(i);
+            double distance = vertex.distance(x, y);
+            if (distance < minDistance) {
+                minDistance = distance;
+            }
+        }
+        return minDistance;
+    }
+
+    private double qualityFunctionOld() {
+
+        qualityPolygons = new ArrayList<>();
+        intersectionPoints = hugeCurve.getIntersectionPoints(boundingBox); /// TODO: reset to boundingBoxTest ?
+
+        //for (MyVector v : intersectionPoints) v.print();
+
+        double quality = 0.0;
+        int count = 0;
+
+        for (int i = 0; i < intersectionPoints.size() - 1; i += 2) {
+
+
+            MyVector isp1 = intersectionPoints.get(i);
+            MyVector isp2 = intersectionPoints.get(i + 1);
+            isp1.setName(isp1.getName() + " i: " + count);
+            isp2.setName(isp2.getName() + " i: " + (count + 1));
+            count++;
+            int from = isp1.getId();
+            int to = isp2.getId();
+            MyDoublePolygon polygon = hugeCurve.getSubPolygon(from, to);
+            double area = polygon.calculateArea();
+            qualityPolygons.add(polygon);
+            quality += area;
+        }
+        return quality;
     }
 
     private void optimizePolygonPositionBruteForce(int count) {
@@ -1688,261 +1964,5 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         boundingBoxInnerRotationPath.add(c);
 
         println(count + " optimizePolygonPosition: " + qOptimal);
-    }
-
-
-    private void shiftBoundingBoxPolygon(int vKup, double inc) {
-
-        //boundingBox.print("shiftBoundingBoxPolygon");
-
-        for (int i = 0; i < boundingBox.getNumPoints(); i++) {
-
-            switch (vKup) {
-                case KeyEvent.VK_UP:
-                    boundingBox.getPoint(i).y -= inc;
-                    break;
-                case KeyEvent.VK_DOWN:
-                    boundingBox.getPoint(i).y += inc;
-                    break;
-                case KeyEvent.VK_LEFT:
-                    boundingBox.getPoint(i).x -= inc;
-                    break;
-                case KeyEvent.VK_RIGHT:
-                    boundingBox.getPoint(i).x += inc;
-                    break;
-            }
-        }
-        println("experimental quality: " + experimentalQuality(boundingBox));
-    }
-
-    private double numberPointsOutside() {
-
-        return numberPointsOutside(boundingBox);
-    }
-
-    private double numberPointsOutside(MyDoublePolygon outer) {
-
-        if (hugeCurve == null) {
-            return -1;
-        }
-        int count = 0;
-        for (int i = 0; i < hugeCurve.getNumPoints(); i += 1) {
-
-            if (outer.contains(hugeCurve.getPoints().get(i).x, hugeCurve.getPoints().get(i).y)) {
-                count++;
-            }
-        }
-        return hugeCurve.getNumPoints() - count;
-    }
-
-    private double closestDistanceToBox(Point2D.Double pIn, MyDoublePolygon box) {
-
-        Point2D.Double pNull = new Point2D.Double(0.0, 0.0);
-
-        double minDist = Double.MAX_VALUE;
-        for (int i = 0; i < box.getNumPoints(); i++) {
-
-            Point2D.Double p1 = box.getPoint(i);
-            Point2D.Double p2 = box.getPoint((i + 1) % box.getNumPoints());
-
-            MyVector v1 = new MyVector(p1);
-            MyVector v2 = new MyVector(p2);
-
-            double dist = MyVector.distanceToPointFromLine(pIn, pNull, v1, v2);
-            if (dist < minDist) {
-                minDist = dist;
-            }
-        }
-//        println("min to box: " + minDist);
-        return minDist;
-    }
-
-    private void setPositionBoundingBox(double x, double y) {
-
-        for (int i = 0; i < boundingBoxTest.getNumPoints(); i++) {
-            boundingBox.getPoint(i).x = boundingBoxTest.getPoint(i).x + x;
-            boundingBox.getPoint(i).y = boundingBoxTest.getPoint(i).y + y;
-        }
-        //println("points outside: " + numberPointsOutside());
-    }
-
-    /// implementations for CMAES //////////////////////////////////////////////////////////////////////////////////////
-
-    private void initBoundingBoxPolygonTest() {
-
-        boundingBoxTest = new MyDoublePolygon();
-        boundingBoxTest.setPoints(boundingBox.getPoints());
-    }
-
-    private void initCMAES() {
-
-        // we are the optimizer our self
-        fitFun = this;
-
-        // new a CMA-ES and set some initial values
-        cmaes = new CMAEvolutionStrategy();
-        //cmaes.readProperties();
-        cmaes.setDimension(2);
-        cmaes.setInitialX(1);
-        cmaes.setInitialStandardDeviation(5);
-        cmaes.options.stopFitness = 0;
-
-//        double[] par = new double[2];
-  //      cmaes.setInitialX(par);
-
-        // initialize cma and get fitness array to fill in later
-        fitness = cmaes.init();                  // new double[cma.parameters.getPopulationSize()];
-    }
-
-    private double experimentalQuality(MyDoublePolygon box) {
-
-//        if (boundingBoxTest == null) {
-//            initBoundingBoxPolygonTest();
-//        }
-//
-//        if (hugeCurve == null) {
-//            createHugeCurve();
-//        }
-        ArrayList<Point2D.Double> points = hugeCurve.getPoints();
-
-        double sumDist = 0.0;
-
-        for (int i = 0; i < hugeCurve.getNumPoints(); i++) {
-
-            if (!box.contains(points.get(i))) {
-                sumDist += closestDistanceToBox(points.get(i), box);
-            }
-        }
-        return sumDist;
-    }
-
-    @Override
-    public double valueOf(double[] values) {
-        for (int i = 0; i < 4; i++) {
-            boundingBoxTest.getPoint(i).x = boundingBox.getPoint(i).x + values[0];
-            boundingBoxTest.getPoint(i).y = boundingBox.getPoint(i).y + values[1];
-        }
-        return experimentalQuality(boundingBoxTest);
-    }
-
-    @Override
-    public boolean isFeasible(double[] values) {
-        return true;
-    }
-
-    private void startOptimization() {
-
-        initCMAES();
-        initBoundingBoxPolygonTest();
-
-        new Thread(this).start();
-        runIt = !runIt;
-    }
-
-    @Override
-    public void run() {
-
-        while (runIt) {
-
-            if (cmaes.stopConditions.getNumber() != 0) {
-                runIt = false;
-            }
-
-            /// core iteration step
-            double[][] population = cmaes.samplePopulation();  // get a new population of solutions
-            for (int i = 0; i < population.length; ++i) {      // for each candidate solution i
-
-                while (!fitFun.isFeasible(population[i])) {    // test whether solution is feasible,
-                    population[i] = cmaes.resampleSingle(i);   // re-sample solution until it is feasible
-                }
-                fitness[i] = fitFun.valueOf(population[i]);    // compute fitness value, where fitFun
-            }                                                  // is the function to be minimized
-            cmaes.updateDistribution(fitness);                 // pass fitness array to update search distribution
-
-            if (debugMode) {
-                cmaes.writeToDefaultFiles();
-
-                int outModulo = 150000;
-                if (cmaes.getCountIter() % (15 * outModulo) == 1) {
-                    cmaes.printlnAnnotation();              // might write file as well
-                }
-                if (cmaes.getCountIter() % outModulo == 1) {
-                    cmaes.println();
-                }
-            }
-        }
-
-        ///cmaes.setFitnessOfMeanX(fitFun.valueOf(cmaes.getMeanX()));
-
-        double[] best = cmaes.getBestSolution().getX();
-
-        for (int i = 0; i < boundingBox.getNumPoints(); i++) {
-            boundingBox.getPoint(i).x += best[0];
-            boundingBox.getPoint(i).y += best[1];
-        }
-        SwingUtilities.invokeLater(() -> repaint());
-
-        println("best bx:         " + best[0] + " best by: " + best[1]);
-        println("experimental bb: " + experimentalQuality(boundingBox));
-        println("best cmaes:      " + cmaes.getBestFunctionValue());
-    }
-
-    /// last but not least main ////////////////////////////////////////////////////////////////////////////////////////
-
-    public static void main(String[] args) {
-
-        SwingUtilities.invokeLater(() -> {
-
-            JFrame f = new JFrame();
-            f.setSize(760, 760);
-            f.add(new IRISVisualization(f));
-            f.setTitle(defaultTitle);
-            f.setVisible(true);
-        });
-    }
-
-    /// deprecated ////////////////////////////////////////////////////////////////////////////////////////
-
-    private double distanceToClosestIndex(double x, double y) {
-
-        int numPoints = hugeCurve.getNumPoints();
-
-        double minDistance = Double.POSITIVE_INFINITY;
-        for (int i = 0; i < numPoints; i++) {
-            Point2D.Double vertex = hugeCurve.getPoints().get(i);
-            double distance = vertex.distance(x, y);
-            if (distance < minDistance) {
-                minDistance = distance;
-            }
-        }
-        return minDistance;
-    }
-
-    private double qualityFunctionOld() {
-
-        qualityPolygons = new ArrayList<>();
-        intersectionPoints = hugeCurve.getIntersectionPoints(boundingBox); /// TODO: reset to boundingBoxTest ?
-
-        //for (MyVector v : intersectionPoints) v.print();
-
-        double quality = 0.0;
-        int count = 0;
-
-        for (int i = 0; i < intersectionPoints.size() - 1; i += 2) {
-
-
-            MyVector isp1 = intersectionPoints.get(i);
-            MyVector isp2 = intersectionPoints.get(i + 1);
-            isp1.setName(isp1.getName() + " i: " + count);
-            isp2.setName(isp2.getName() + " i: " + (count + 1));
-            count++;
-            int from = isp1.getId();
-            int to = isp2.getId();
-            MyDoublePolygon polygon = hugeCurve.getSubPolygon(from, to);
-            double area = polygon.calculateArea();
-            qualityPolygons.add(polygon);
-            quality += area;
-        }
-        return quality;
     }
 }
