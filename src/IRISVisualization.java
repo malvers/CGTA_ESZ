@@ -87,10 +87,10 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
     private Ellipse2D.Double irisCircle;
     private Ellipse2D.Double irisCircleStore;
     private double irisZoom = 1.0;
-    private Rectangle boundingBoxWC;
+    private Rectangle2D.Double boundingBoxWC;
     private double rotationAngle = 0;
     private MyDoublePolygon boundingBox;
-    MyDoublePolygon boundingBoxTest = null;
+    private MyDoublePolygon boundingBoxTest = null;
     private MyDoublePolygon hugeCurve;
     private ArrayList<MyVector> boundingBoxInnerRotationPath;
     private ArrayList<MyDoublePolygon> debugList;
@@ -951,7 +951,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         Point2D.Double extendY = getExtendsWhiperCurveY();
         double distY = (extendY.y - extendY.x);
 
-        boundingBoxWC = new Rectangle((int) extendX.x, (int) extendY.x, (int) distX, (int) distY);
+        boundingBoxWC = new Rectangle2D.Double(extendX.x, extendY.x, distX, distY);
 
         doRotation(0);
 
