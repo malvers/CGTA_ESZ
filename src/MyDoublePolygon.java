@@ -34,6 +34,10 @@ public class MyDoublePolygon {
         points.add(new Point2D.Double(x, y));
     }
 
+    public boolean contains(Point2D.Double p) {
+        return contains(p.x, p.y);
+    }
+
     public boolean contains(double x, double y) {
 
         int numPoints = points.size();
@@ -71,6 +75,7 @@ public class MyDoublePolygon {
     }
 
     public void setPoints(ArrayList<Point2D.Double> pointsIn) {
+
         points = new ArrayList<>();
         for (int i = 0; i < pointsIn.size(); i++) {
             Point2D.Double pNew = new Point2D.Double();
@@ -206,8 +211,8 @@ public class MyDoublePolygon {
     public MyVector getCenter() {
 
         double width = points.get(1).x - points.get(0).x;
-        double x = points.get(0).x + (width/2.0);
-        double y = points.get(0).y + (width/2.0);
+        double x = points.get(0).x + (width / 2.0);
+        double y = points.get(0).y + (width / 2.0);
 
         return new MyVector(x, y, "");
     }

@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Helper {
+public class HelpPage {
 
     public static void drawHelpPage(Graphics2D g2d) {
 

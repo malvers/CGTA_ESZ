@@ -1,12 +1,12 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class HelperWindow extends JFrame {
+public class DebugWindow extends JFrame {
 
     private final JScrollPane scrollPane;
     private JTextArea textArea = new JTextArea();
 
-    public HelperWindow() {
+    public DebugWindow() {
         setLocation(200, -1070);
         setVisible(true);
         setSize(600, 1010);

@@ -225,7 +225,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
     /// helper functions /////////////////////////////////////////////////////////////////////////////////////////////////
 
-    HelperWindow hw = null;//new HelperWindow();
+    DebugWindow hw = null;//new HelperWindow();
 
     public void println() {
         if (hw == null) {
@@ -298,6 +298,10 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
             for (int y = 0; y < getHeight(); y++) {
                 Color color = ColorSpectrum.getColorSpectrum(values[x][y], min, max);
                 heatMap.setRGB(x, y, color.getRGB());
+
+                if (values[x][y] == 0.0) {
+                    heatMap.setRGB(x, y, Color.WHITE.getRGB());
+                }
             }
         }
     }
@@ -357,8 +361,6 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
                 initBoundingBoxPolygonTest();
                 createHugeCurve();
-
-                println("points outside: " + (int) numberPointsOutside());
             }
 
             @Override
@@ -426,11 +428,23 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         });
     }
 
+    private boolean areHandlesSelected() {
+        return handleA.selected || handleB.selected || handleC.selected;
+    }
+
+    private boolean areWhipersSelected() {
+        return whiperAC.selected || whiperBA.selected || whiperCB.selected || whiperCA.selected || whiperBC.selected || whiperAB.selected;
+    }
+
     private void moveSceneHandlesWhipers(MouseEvent e) {
 
         if (irisCircleStore != null && irisCircle != null) {
             irisZoom = irisCircle.getWidth() / irisCircleStore.getWidth();
         }
+
+        println("handles selected?: " + areHandlesSelected());
+        println("whipers selected?: " + areWhipersSelected());
+
         if (handleA.selected) {
             boundingBoxInnerRotationPath = new ArrayList<>();
             handleA.x = e.getX() - sceneShift.x;
@@ -482,8 +496,6 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                 whiperAB.x = tmp.x;
                 whiperAB.y = tmp.y;
             }
-        } else if (e.isShiftDown()) {
-
         } else {
             dragShift.x = -(onMousePressed.x - e.getX());
             dragShift.y = -(onMousePressed.y - e.getY());
@@ -1085,7 +1097,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         g2d.setFont(new Font("Arial", Font.PLAIN, 22));
 
         if (drawHelp) {
-            Helper.drawHelpPage(g2d);
+            HelpPage.drawHelpPage(g2d);
             return;
         }
 
@@ -1677,7 +1689,6 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         println(count + " optimizePolygonPosition: " + qOptimal);
     }
 
-    /// implementations for CMAES //////////////////////////////////////////////////////////////////////////////////////
 
     private void shiftBoundingBoxPolygon(int vKup, double inc) {
 
@@ -1723,21 +1734,15 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         return hugeCurve.getNumPoints() - count;
     }
 
-    private void initBoundingBoxPolygonTest() {
-
-        boundingBoxTest = new MyDoublePolygon();
-        boundingBoxTest.setPoints(boundingBox.getPoints());
-    }
-
-    private double closestDistanceToBoundingBox(Point2D.Double pIn) {
+    private double closestDistanceToBox(Point2D.Double pIn, MyDoublePolygon box) {
 
         Point2D.Double pNull = new Point2D.Double(0.0, 0.0);
 
         double minDist = Double.MAX_VALUE;
-        for (int i = 0; i < boundingBox.getNumPoints(); i++) {
+        for (int i = 0; i < box.getNumPoints(); i++) {
 
-            Point2D.Double p1 = boundingBox.getPoint(i);
-            Point2D.Double p2 = boundingBox.getPoint((i + 1) % boundingBox.getNumPoints());
+            Point2D.Double p1 = box.getPoint(i);
+            Point2D.Double p2 = box.getPoint((i + 1) % box.getNumPoints());
 
             MyVector v1 = new MyVector(p1);
             MyVector v2 = new MyVector(p2);
@@ -1747,7 +1752,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                 minDist = dist;
             }
         }
-//        println("min to bb: " + minDist);
+//        println("min to box: " + minDist);
         return minDist;
     }
 
@@ -1760,6 +1765,14 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         //println("points outside: " + numberPointsOutside());
     }
 
+    /// implementations for CMAES //////////////////////////////////////////////////////////////////////////////////////
+
+    private void initBoundingBoxPolygonTest() {
+
+        boundingBoxTest = new MyDoublePolygon();
+        boundingBoxTest.setPoints(boundingBox.getPoints());
+    }
+
     private void initCMAES() {
 
         // we are the optimizer our self
@@ -1770,7 +1783,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         cmaes.readProperties();
         cmaes.setDimension(2);
         cmaes.setInitialX(1);
-        cmaes.setInitialStandardDeviation(0.1);
+        cmaes.setInitialStandardDeviation(0.01);
         cmaes.options.stopFitness = 1e-9;
 
         double[] par = new double[2];
@@ -1780,7 +1793,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         fitness = cmaes.init();                  // new double[cma.parameters.getPopulationSize()];
     }
 
-    private double experimentalQuality(MyDoublePolygon theBox) {
+    private double experimentalQuality(MyDoublePolygon box) {
 
 //        if (boundingBoxTest == null) {
 //            initBoundingBoxPolygonTest();
@@ -1789,17 +1802,14 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 //        if (hugeCurve == null) {
 //            createHugeCurve();
 //        }
-
         ArrayList<Point2D.Double> points = hugeCurve.getPoints();
 
         double sumDist = 0.0;
 
         for (int i = 0; i < hugeCurve.getNumPoints(); i++) {
 
-            Point2D.Double hcp = points.get(i);
-
-            if (!theBox.contains(hcp.x, hcp.y)) {
-                sumDist += closestDistanceToBoundingBox(hcp);
+            if (!box.contains(points.get(i))) {
+                sumDist += closestDistanceToBox(points.get(i), box);
             }
         }
         return sumDist;
@@ -1873,18 +1883,18 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
             repaint();
         }
 
-        cmaes.setFitnessOfMeanX(fitFun.valueOf(cmaes.getMeanX()));
+        ///cmaes.setFitnessOfMeanX(fitFun.valueOf(cmaes.getMeanX()));
 
         double[] best = cmaes.getBestSolution().getX();
-
-        println("best bx: " + best[0] + " best by: " + best[1]);
 
         for (int i = 0; i < boundingBox.getNumPoints(); i++) {
             boundingBox.getPoint(i).x += best[0];
             boundingBox.getPoint(i).y += best[1];
         }
 
-        println("experimental bb: " + experimentalQuality(boundingBox) + " best cmaes: " + cmaes.getBestFunctionValue());
+        println("best bx:         " + best[0] + " best by: " + best[1]);
+        println("experimental bb: " + experimentalQuality(boundingBox));
+        println("best cmaes:      " + cmaes.getBestFunctionValue());
     }
 
     /// last but not least main ////////////////////////////////////////////////////////////////////////////////////////

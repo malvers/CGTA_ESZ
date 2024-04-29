@@ -4,7 +4,7 @@ public class ColorSpectrum {
 
     public static Color getColorSpectrum(double value, double min, double max) {
 
-        Color startColor = Color.GREEN;
+        Color startColor = Color.BLUE;
         Color endColor = Color.RED;
 
         // Clamp the value to the range [min, max]
