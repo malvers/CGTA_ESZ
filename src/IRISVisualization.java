@@ -9,6 +9,7 @@ import java.awt.geom.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -133,7 +134,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         debugList = new ArrayList<>();
         qualityPolygons = new ArrayList<>();
 
-        initCMAES();
+        //initCMAES();
     }
 
     private void writeSettings() {
@@ -1780,14 +1781,14 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
         // new a CMA-ES and set some initial values
         cmaes = new CMAEvolutionStrategy();
-        cmaes.readProperties();
+        //cmaes.readProperties();
         cmaes.setDimension(2);
         cmaes.setInitialX(1);
-        cmaes.setInitialStandardDeviation(0.01);
-        cmaes.options.stopFitness = 1e-9;
+        cmaes.setInitialStandardDeviation(5);
+        cmaes.options.stopFitness = 0;
 
-        double[] par = new double[2];
-        cmaes.setInitialX(par);
+//        double[] par = new double[2];
+  //      cmaes.setInitialX(par);
 
         // initialize cma and get fitness array to fill in later
         fitness = cmaes.init();                  // new double[cma.parameters.getPopulationSize()];
@@ -1817,11 +1818,9 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
     @Override
     public double valueOf(double[] values) {
-
         for (int i = 0; i < 4; i++) {
-
-            boundingBoxTest.getPoint(i).x += values[0];
-            boundingBoxTest.getPoint(i).y += values[1];
+            boundingBoxTest.getPoint(i).x = boundingBox.getPoint(i).x + values[0];
+            boundingBoxTest.getPoint(i).y = boundingBox.getPoint(i).y + values[1];
         }
         return experimentalQuality(boundingBoxTest);
     }
@@ -1845,20 +1844,12 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
         while (runIt) {
 
-            try {
-                Thread.sleep(runningDelay);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-
             if (cmaes.stopConditions.getNumber() != 0) {
                 runIt = false;
             }
 
             /// core iteration step
             double[][] population = cmaes.samplePopulation();  // get a new population of solutions
-
-
             for (int i = 0; i < population.length; ++i) {      // for each candidate solution i
 
                 while (!fitFun.isFeasible(population[i])) {    // test whether solution is feasible,
@@ -1879,8 +1870,6 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                     cmaes.println();
                 }
             }
-
-            repaint();
         }
 
         ///cmaes.setFitnessOfMeanX(fitFun.valueOf(cmaes.getMeanX()));
@@ -1891,6 +1880,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
             boundingBox.getPoint(i).x += best[0];
             boundingBox.getPoint(i).y += best[1];
         }
+        SwingUtilities.invokeLater(() -> repaint());
 
         println("best bx:         " + best[0] + " best by: " + best[1]);
         println("experimental bb: " + experimentalQuality(boundingBox));
