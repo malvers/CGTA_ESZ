@@ -533,8 +533,13 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                         }
                         break;
                     case KeyEvent.VK_SPACE:
+
                         doRepaint = false;
                         rotationAngle += Math.toRadians(5.0);
+                        initBoundingBoxPolygonTest();
+                        initCMAES();
+                        runCMAES();
+
                         break;
                     case KeyEvent.VK_A:
                         drawAnnotation = !drawAnnotation;
@@ -1586,26 +1591,10 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
         boundingBoxTest = new Rectangle2D.Double();
         boundingBoxTest.setRect(boundingBox);
-
         rotatedBoundingBox = rotateRectangle2D(boundingBox);
     }
 
-    private void initCMAES() {
-
-        // we are the optimizer our self
-        fitFun = this;
-
-        cmaes = new CMAEvolutionStrategy();
-        cmaes.setDimension(2);
-        cmaes.setInitialX(1);
-        cmaes.setInitialStandardDeviation(5);
-        cmaes.options.stopFitness = 0;
-        cmaes.options.verbosity = -1;
-
-        fitness = cmaes.init();
-    }
-
-    ArrayList<Point2D.Double> pointsHugeCurve = null;
+        ArrayList<Point2D.Double> pointsHugeCurve = null;
     Shape rotatedBoundingBox;
 
     private double qualityFunction(Shape box) {
@@ -1651,22 +1640,49 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         runIt = !runIt;
     }
 
+    private void initCMAES() {
+
+        // we are the optimizer our self
+        fitFun = this;
+
+        cmaes = new CMAEvolutionStrategy();
+        cmaes.setDimension(2);
+        cmaes.setInitialX(0);
+        cmaes.setInitialStandardDeviation(0.1);
+        cmaes.options.stopFitness = 0;
+        //cmaes.options.verbosity = -1;
+
+        fitness = cmaes.init();
+    }
+
     private void createBoundingBoxRotationCurve360() {
 
         println("createBoundingBoxRotationCurve360");
 
-        initBoundingBoxPolygonTest();
         boundingBoxInnerRotationPath = new ArrayList<>();
-        initCMAES();
 
         long start = System.currentTimeMillis();
-        double incAngle = Math.toRadians(1.0);
+        double incAngle = Math.toRadians(2);
+
+        initBoundingBoxPolygonTest();
 
         for (rotationAngle = 0; rotationAngle < 2 * Math.PI; rotationAngle += incAngle) {
+
             println("rotation: " + Math.toDegrees(rotationAngle));
-            MyVector cbb = getCenterBoundingBox();
-            boundingBoxInnerRotationPath.add(cbb);
+
+            long innerStart = System.currentTimeMillis();
+            rotatedBoundingBox = rotateRectangle2D(boundingBox);
+            println("rotatedBoundingBox: " + (System.currentTimeMillis() - innerStart) + " ms");
+
+            innerStart = System.currentTimeMillis();
+            initCMAES();
+            println("initCMAES:          " + (System.currentTimeMillis() - innerStart) + " ms");
+
+            innerStart = System.currentTimeMillis();
             runCMAES();
+            println("runCMAES:           " + (System.currentTimeMillis() - innerStart) + " ms");
+
+            boundingBoxInnerRotationPath.add(getCenterBoundingBox());
         }
         double delta = System.currentTimeMillis() - start;
         println("done - time needed: " + delta + " ms");
