@@ -1339,20 +1339,22 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
     private void drawBoundingBoxWhiperCurve(Graphics2D g2d) {
 
+        MyVector centerBoundingBox = getCenterBoundingBox();
+        g2d.setColor(Color.ORANGE);
+        centerBoundingBox.fill(g2d, true);
+
+        g2d.setStroke(new BasicStroke(1));
+        g2d.draw(rotateRectangle2D(boundingBox));
+    }
+
+    private MyVector getCenterBoundingBox() {
+
         double cx = boundingBox.getCenterX();
         double cy = boundingBox.getCenterY();
 
         MyVector centerBoundingBox = new MyVector(cx, cy, "center bounding box");
         centerBoundingBox.setSize(4);
-
-        g2d.setStroke(new BasicStroke(1));
-        g2d.setColor(Color.GREEN);
-
-        MyVector c = new MyVector(cx, cy, "center");
-        c.setSize(4);
-        c.fill(g2d, true);
-
-        g2d.draw(rotateRectangle2D(boundingBox));
+        return centerBoundingBox;
     }
 
     private void drawWiperCurves(Graphics2D g2d) {
@@ -1654,14 +1656,16 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         println("createBoundingBoxRotationCurve360");
 
         initBoundingBoxPolygonTest();
+        boundingBoxInnerRotationPath = new ArrayList<>();
         initCMAES();
 
         long start = System.currentTimeMillis();
-        rotationAngle = 0.0;
-        double incAngle = 1.0;
+        double incAngle = Math.toRadians(1.0);
 
-        for (double i = 0; i < 360; i += incAngle) {
-            rotationAngle += Math.toRadians(incAngle);
+        for (rotationAngle = 0; rotationAngle < 2 * Math.PI; rotationAngle += incAngle) {
+            println("rotation: " + Math.toDegrees(rotationAngle));
+            MyVector cbb = getCenterBoundingBox();
+            boundingBoxInnerRotationPath.add(cbb);
             runCMAES();
         }
         double delta = System.currentTimeMillis() - start;
