@@ -89,7 +89,6 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
     private double irisZoom = 1.0;
     private double rotationAngle = 0;
     private Rectangle2D.Double boundingBox = new Rectangle2D.Double();
-    private Rectangle2D.Double boundingBoxTest = new Rectangle2D.Double();
     private MyDoublePolygon hugeCurve;
     private ArrayList<MyVector> boundingBoxInnerRotationPath;
     private final ArrayList<MyDoublePolygon> debugList;
@@ -241,60 +240,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
     }
 
     private void handleSpaceBar() {
-        createHeatMap();
-    }
-
-    private void createHeatMap() {
-
-        println("create heat map: " + (getWidth() * getHeight()));
-
-        initBoundingBoxPolygonTest();
-
-        double min = Double.MAX_VALUE;
-        double max = 0.0;
-        double size = boundingBoxTest.getWidth();
-
-        double[][] values = new double[getWidth()][getHeight()];
-
-        int count = 0;
-        for (int x = 0; x < getWidth(); x++) {
-            for (int y = 0; y < getHeight(); y++) {
-
-                boundingBoxTest.x = x;
-                boundingBoxTest.y = y;
-
-                boundingBoxTest.width = size;
-                boundingBoxTest.height = size;
-
-                double q = qualityFunction(boundingBoxTest);
-
-                values[x][y] = q;
-
-                if (q < min) {
-                    min = q;
-                }
-                if (q > max) {
-                    max = q;
-                }
-                if (count % 100000 == 0) {
-                    println("count: " + count);
-                }
-                count++;
-            }
-        }
-
-        heatMap = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_ARGB);
-        println(count + " min: " + min + " max: " + max);
-        for (int x = 0; x < getWidth(); x++) {
-            for (int y = 0; y < getHeight(); y++) {
-                Color color = ColorSpectrum.getColorSpectrum(values[x][y], min, max);
-                heatMap.setRGB(x, y, color.getRGB());
-
-                if (values[x][y] == 0.0) {
-                    heatMap.setRGB(x, y, Color.WHITE.getRGB());
-                }
-            }
-        }
+//        createHeatMap();
     }
 
     /// mouse handling /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -348,7 +294,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                     whiperAB.selected = true;
                 }
 
-                initBoundingBoxPolygonTest();
+                initRotatedBoundingBox();
                 createHugeCurve();
             }
 
@@ -530,13 +476,14 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                                 inc = 5.0;
                             }
                             shiftBoundingBox(e.getKeyCode(), inc);
+
                         }
                         break;
                     case KeyEvent.VK_SPACE:
 
                         doRepaint = false;
                         rotationAngle += Math.toRadians(5.0);
-                        initBoundingBoxPolygonTest();
+                        initRotatedBoundingBox();
                         initCMAES();
                         runCMAES();
 
@@ -603,11 +550,13 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                         if (e.isShiftDown()) {
                             createBoundingBoxRotationCurve360();
                         } else {
+                            long innerStart = System.currentTimeMillis();
                             startCMAES();
+                            println("startCMAES: " + (System.currentTimeMillis() - innerStart) + " ms");
                         }
                         break;
                     case KeyEvent.VK_Y:
-                        createHeatMap();
+//                        createHeatMap();
                         break;
                     case KeyEvent.VK_Z:
                         if (e.isMetaDown()) {
@@ -904,7 +853,8 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         Point2D.Double extendY = getExtendsWhiperCurveY();
         double distY = (extendY.y - extendY.x);
 
-        boundingBox = new Rectangle2D.Double(extendX.x, extendY.x, distX, distY);
+        double d = 0.1;
+        boundingBox = new Rectangle2D.Double(extendX.x - d, extendY.x - d, distX + 2 * d, distY + 2 * d);
 
         createHugeCurve();
     }
@@ -1087,7 +1037,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
         /// under development
         if (drawBoundingBox) {
-            drawBoundingBoxWhiperCurve(g2d);
+            drawBoundingBox(g2d);
         }
 
         /// under development
@@ -1342,11 +1292,12 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         g2d.fillRect(0, 0, getWidth(), getHeight());
     }
 
-    private void drawBoundingBoxWhiperCurve(Graphics2D g2d) {
+    private void drawBoundingBox(Graphics2D g2d) {
 
         MyVector centerBoundingBox = getCenterBoundingBox();
-        g2d.setColor(Color.ORANGE);
-        centerBoundingBox.fill(g2d, true);
+        g2d.setColor(Color.GREEN);
+        centerBoundingBox.setSize(6);
+        centerBoundingBox.fill(g2d, false);
 
         g2d.setStroke(new BasicStroke(1));
         g2d.draw(rotateRectangle2D(boundingBox));
@@ -1525,7 +1476,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                 boundingBox.x += inc;
                 break;
         }
-        println("experimental quality: " + qualityFunction(boundingBox));
+        println("quality: " + qualityFunction(boundingBox));
     }
 
     private double numberPointsOutside(MyDoublePolygon outer) {
@@ -1582,20 +1533,18 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
     private void setPositionBoundingBox(double x, double y) {
 
-        boundingBox.setRect(boundingBoxTest);
+        //boundingBox.setRect(boundingBoxTest);
     }
 
     /// implementations for CMAES //////////////////////////////////////////////////////////////////////////////////////
 
-    private void initBoundingBoxPolygonTest() {
+    Shape rotatedBoundingBox;
 
-        boundingBoxTest = new Rectangle2D.Double();
-        boundingBoxTest.setRect(boundingBox);
+    private void initRotatedBoundingBox() {
         rotatedBoundingBox = rotateRectangle2D(boundingBox);
     }
 
-        ArrayList<Point2D.Double> pointsHugeCurve = null;
-    Shape rotatedBoundingBox;
+    ArrayList<Point2D.Double> pointsHugeCurve = null;
 
     private double qualityFunction(Shape box) {
 
@@ -1633,7 +1582,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
     private void startCMAES() {
 
-        initBoundingBoxPolygonTest();
+        initRotatedBoundingBox();
         initCMAES();
 
         new Thread(this).start();
@@ -1650,7 +1599,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         cmaes.setInitialX(0);
         cmaes.setInitialStandardDeviation(0.1);
         cmaes.options.stopFitness = 0;
-        //cmaes.options.verbosity = -1;
+        cmaes.options.verbosity = -1;
 
         fitness = cmaes.init();
     }
@@ -1662,25 +1611,39 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         boundingBoxInnerRotationPath = new ArrayList<>();
 
         long start = System.currentTimeMillis();
-        double incAngle = Math.toRadians(2);
+        double incAngle = Math.toRadians(1);
 
-        initBoundingBoxPolygonTest();
+        initRotatedBoundingBox();
 
-        for (rotationAngle = 0; rotationAngle < 2 * Math.PI; rotationAngle += incAngle) {
+        double to = 2 * Math.PI - incAngle;
+        long innerStart = 0;
+        for (rotationAngle = 0; rotationAngle < to; rotationAngle += incAngle) {
 
-            println("rotation: " + Math.toDegrees(rotationAngle));
+            if (debugMode) println("rotation: " + Math.toDegrees(rotationAngle));
 
-            long innerStart = System.currentTimeMillis();
+            if (debugMode) {
+                innerStart = System.currentTimeMillis();
+            }
             rotatedBoundingBox = rotateRectangle2D(boundingBox);
-            println("rotatedBoundingBox: " + (System.currentTimeMillis() - innerStart) + " ms");
+            if (debugMode) {
+                println("rotatedBoundingBox: " + (System.currentTimeMillis() - innerStart) + " ms");
+            }
 
-            innerStart = System.currentTimeMillis();
+            if (debugMode) {
+                innerStart = System.currentTimeMillis();
+            }
             initCMAES();
-            println("initCMAES:          " + (System.currentTimeMillis() - innerStart) + " ms");
+            if (debugMode) {
+                println("initCMAES:          " + (System.currentTimeMillis() - innerStart) + " ms");
+            }
 
-            innerStart = System.currentTimeMillis();
+            if (debugMode) {
+                innerStart = System.currentTimeMillis();
+            }
             runCMAES();
-            println("runCMAES:           " + (System.currentTimeMillis() - innerStart) + " ms");
+            if (debugMode) {
+                println("runCMAES:           " + (System.currentTimeMillis() - innerStart) + " ms");
+            }
 
             boundingBoxInnerRotationPath.add(getCenterBoundingBox());
         }
@@ -1752,6 +1715,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
     private void setOptimizedBoundingBox() {
 
         double[] best = cmaes.getBestSolution().getX();
+
         double nx = boundingBox.getX() + best[0];
         double ny = boundingBox.getY() + best[1];
         boundingBox.setRect(nx, ny, boundingBox.width, boundingBox.width);
@@ -1771,7 +1735,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         });
     }
 
-    /// deprecated /////////////////////////////////////////////////////////////////////////////////////////////////////
+    /* deprecated deprecated deprecated deprecated deprecated deprecated deprecated deprecated deprecated deprecated */
 
 //    private void shiftTestPolygonExperimental(double x, double y) {
 //
@@ -1849,7 +1813,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 //    private double qualityFunctionOld() {
 //
 //        qualityPolygons = new ArrayList<>();
-//        intersectionPoints = hugeCurve.getIntersectionPoints(boundingBox); /// TODO: reset to boundingBoxTest ?
+//        intersectionPoints = hugeCurve.getIntersectionPoints(boundingBox);
 //
 //        //for (MyVector v : intersectionPoints) v.print();
 //
@@ -1925,5 +1889,57 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 //        boundingBoxInnerRotationPath.add(c);
 //
 //        println(count + " optimizePolygonPosition: " + qOptimal);
+//    }
+    //    private void createHeatMap() {
+//
+//        println("create heat map: " + (getWidth() * getHeight()));
+//
+//        initBoundingBoxPolygonTest();
+//
+//        double min = Double.MAX_VALUE;
+//        double max = 0.0;
+//        double size = boundingBoxTest.getWidth();
+//
+//        double[][] values = new double[getWidth()][getHeight()];
+//
+//        int count = 0;
+//        for (int x = 0; x < getWidth(); x++) {
+//            for (int y = 0; y < getHeight(); y++) {
+//
+//                boundingBoxTest.x = x;
+//                boundingBoxTest.y = y;
+//
+//                boundingBoxTest.width = size;
+//                boundingBoxTest.height = size;
+//
+//                double q = qualityFunction(boundingBoxTest);
+//
+//                values[x][y] = q;
+//
+//                if (q < min) {
+//                    min = q;
+//                }
+//                if (q > max) {
+//                    max = q;
+//                }
+//                if (count % 100000 == 0) {
+//                    println("count: " + count);
+//                }
+//                count++;
+//            }
+//        }
+//
+//        heatMap = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_ARGB);
+//        println(count + " min: " + min + " max: " + max);
+//        for (int x = 0; x < getWidth(); x++) {
+//            for (int y = 0; y < getHeight(); y++) {
+//                Color color = ColorSpectrum.getColorSpectrum(values[x][y], min, max);
+//                heatMap.setRGB(x, y, color.getRGB());
+//
+//                if (values[x][y] == 0.0) {
+//                    heatMap.setRGB(x, y, Color.WHITE.getRGB());
+//                }
+//            }
+//        }
 //    }
 }
