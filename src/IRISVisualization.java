@@ -135,6 +135,8 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         //initCMAES();
     }
 
+    /// read/write settings ////////////////////////////////////////////////////////////////////////////////////////////
+
     private void writeSettings() {
 
         try {
@@ -604,8 +606,10 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                         }
                         break;
                     case KeyEvent.VK_X:
-                        //startCMAES();
                         createBoundingBoxRotationCurve360();
+                        break;
+                    case KeyEvent.VK_Y:
+                        createHeatMap();
                         break;
                     case KeyEvent.VK_Z:
                         if (e.isMetaDown()) {
@@ -1740,8 +1744,13 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
     public double valueOf(double[] values) {
 
         for (int i = 0; i < 4; i++) {
+
             boundingBoxTest.getPoint(i).x = boundingBox.getPoint(i).x + values[0];
             boundingBoxTest.getPoint(i).y = boundingBox.getPoint(i).y + values[1];
+
+            /// optical illusion settings for heat map
+//            boundingBoxTest.getPoint(i).x += values[0];
+//            boundingBoxTest.getPoint(i).y += values[1];
         }
         return qualityFunction(boundingBoxTest);
     }
