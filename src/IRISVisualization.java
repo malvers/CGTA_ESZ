@@ -87,18 +87,16 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
     private Ellipse2D.Double irisCircle;
     private Ellipse2D.Double irisCircleStore;
     private double irisZoom = 1.0;
-    private Rectangle2D.Double boundingBoxWC;
     private double rotationAngle = 0;
-    private MyDoublePolygon boundingBox;
-    private MyDoublePolygon boundingBoxTest = null;
+    private final Rectangle2D.Double boundingBox = new Rectangle2D.Double();
+    private Rectangle2D.Double boundingBoxTest = new Rectangle2D.Double();
     private MyDoublePolygon hugeCurve;
     private ArrayList<MyVector> boundingBoxInnerRotationPath;
-    private ArrayList<MyDoublePolygon> debugList;
-    private List<MyVector> intersectionPoints;
+    private final ArrayList<MyDoublePolygon> debugList;
+//    private List<MyVector> intersectionPoints;
     private ArrayList<MyDoublePolygon> qualityPolygons;
 
     /// optimization stuff
-
     private double[] fitness;
     private IRISVisualization fitFun;
     private CMAEvolutionStrategy cmaes;
@@ -254,7 +252,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
         double min = Double.MAX_VALUE;
         double max = 0.0;
-        double wbb = boundingBoxTest.getWidth();
+        double size = boundingBoxTest.getWidth();
 
         double[][] values = new double[getWidth()][getHeight()];
 
@@ -262,17 +260,11 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         for (int x = 0; x < getWidth(); x++) {
             for (int y = 0; y < getHeight(); y++) {
 
-                boundingBoxTest.getPoint(0).x = x;
-                boundingBoxTest.getPoint(0).y = y;
+                boundingBoxTest.x = x;
+                boundingBoxTest.y = y;
 
-                boundingBoxTest.getPoint(1).x = x + wbb;
-                boundingBoxTest.getPoint(1).y = y;
-
-                boundingBoxTest.getPoint(2).x = x + wbb;
-                boundingBoxTest.getPoint(2).y = y + wbb;
-
-                boundingBoxTest.getPoint(3).x = x;
-                boundingBoxTest.getPoint(3).y = y + wbb;
+                boundingBoxTest.width = size;
+                boundingBoxTest.height = size;
 
                 double q = qualityFunction(boundingBoxTest);
 
@@ -539,7 +531,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                             } else if (e.isAltDown()) {
                                 inc = 5.0;
                             }
-                            shiftBoundingBoxPolygon(e.getKeyCode(), inc);
+                            shiftBoundingBox(e.getKeyCode(), inc);
                         }
                         break;
                     case KeyEvent.VK_SPACE:
@@ -641,47 +633,13 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                         }
                         break;
                 }
-                if(doRepaint) repaint();
+                if (doRepaint) {
+                    repaint();
+                }
             }
         });
     }
 
-    private void shiftBoundingBoxDouble(int direction) {
-
-        ArrayList<Point2D.Double> points = boundingBox.getPoints();
-
-        double inc = 0.6;
-        for (int i = 0; i < boundingBox.getNumPoints(); i++) {
-
-            switch (direction) {
-                case 0:
-                    points.get(i).y -= inc;
-                    break;
-                case 1:
-                    points.get(i).y += inc;
-                    break;
-                case 2:
-                    points.get(i).x -= inc;
-                    break;
-                case 3:
-                    points.get(i).x += inc;
-                    break;
-            }
-        }
-        boundingBox.setPoints(points);
-    }
-
-    private void shiftTestPolygonExperimental(double x, double y) {
-
-        ArrayList<Point2D.Double> points = boundingBox.getPoints();
-
-        for (int i = 0; i < boundingBox.getNumPoints(); i++) {
-
-            points.get(i).x = x;
-            points.get(i).y = y;
-        }
-        boundingBox.setPoints(points);
-    }
 
     private void setWhipersVisibility(boolean b) {
         whiperAB.setVisible(b);
@@ -942,7 +900,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         double distY = (extendY.y - extendY.x);
 
         /// TODO: check 2. parameter extendY.x
-        boundingBoxWC = new Rectangle2D.Double(extendX.x, extendY.x, distX, distY);
+        Rectangle2D.Double boundingBoxWC = new Rectangle2D.Double(extendX.x, extendY.x, distX, distY);
 
         doRotation(0);
 
@@ -1137,14 +1095,14 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         g2d.setColor(Color.BLUE);
         for (MyDoublePolygon p : qualityPolygons) p.fill(g2d);
 
-        if (intersectionPoints != null && drawBoundingBox) {
-            g2d.setColor(Color.CYAN);
-            for (MyVector v : intersectionPoints) {
-                //v.setNameToPosition();
-                v.setSize(6);
-                v.fill(g2d, debugMode);
-            }
-        }
+//        if (intersectionPoints != null && drawBoundingBox) {
+//            g2d.setColor(Color.CYAN);
+//            for (MyVector v : intersectionPoints) {
+//                //v.setNameToPosition();
+//                v.setSize(6);
+//                v.fill(g2d, debugMode);
+//            }
+//        }
 
         if (drawWhiperStuff) {
             drawWiperCurves(g2d);
@@ -1384,13 +1342,13 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
     private void drawBoundingBoxWhiperCurve(Graphics2D g2d) {
 
-        double shiftX = boundingBox.getCenter().x;
-        double shiftY = boundingBox.getCenter().y;
+        double cx = boundingBox.getCenterX();
+        double cy = boundingBox.getCenterY();
 
         //boundingBox.print("draw bb");
         //println("\nx: " + shiftX + "y: " + shiftY);
 
-        MyVector centerBoundingBox = new MyVector(shiftX, shiftY, "center bounding box");
+        MyVector centerBoundingBox = new MyVector(cx, cy, "center bounding box");
         centerBoundingBox.setSize(4);
 
         g2d.setColor(Color.RED);
@@ -1401,11 +1359,12 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
         g2d.setStroke(new BasicStroke(1));
         g2d.setColor(Color.GREEN);
-        MyVector c = boundingBox.getCenter();
+
+        MyVector c = new MyVector(cx, cy, "center");
         c.setSize(4);
         c.fill(g2d, true);
 
-        boundingBox.draw(g2d);
+        g2d.draw(boundingBox);
     }
 
     private void drawWiperCurves(Graphics2D g2d) {
@@ -1563,57 +1522,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
     public void doRotation(double angle) {
 
-        double centerX = boundingBoxWC.getCenterX();
-        double centerY = boundingBoxWC.getCenterY();
-
-        double d = 0.0;
-        double d2 = d * 2.0;
-        MyVector center = new MyVector(centerX, centerY, "");
-        /// .width can be used everywhere since it is a square
-        MyVector c1 = new MyVector(boundingBoxWC.x - d, boundingBoxWC.y - d, "");
-        MyVector c2 = new MyVector(boundingBoxWC.x - d + boundingBoxWC.width + d2, boundingBoxWC.y - d, "");
-        MyVector c3 = new MyVector(boundingBoxWC.x - d, boundingBoxWC.y - d + boundingBoxWC.width + d2, "");
-        MyVector c4 = new MyVector(boundingBoxWC.x - d + boundingBoxWC.width + d2 - d, boundingBoxWC.y - d + boundingBoxWC.width + d2, "");
-
-        MyVector c1r = MyVector.getVector(c1, center).rotate(angle).add(center);
-        MyVector c2r = MyVector.getVector(c2, center).rotate(angle).add(center);
-        MyVector c4r = MyVector.getVector(c3, center).rotate(angle).add(center);
-        MyVector c3r = MyVector.getVector(c4, center).rotate(angle).add(center);
-
-        boundingBox = new MyDoublePolygon();
-        boundingBox.addPoint((int) c1r.x, (int) c1r.y);
-        boundingBox.addPoint((int) c2r.x, (int) c2r.y);
-        boundingBox.addPoint((int) c3r.x, (int) c3r.y);
-        boundingBox.addPoint((int) c4r.x, (int) c4r.y);
-    }
-
-    public void rotateRectangleGPT(double angle) {
-
-        double centerX = boundingBoxWC.getCenterX();
-        double centerY = boundingBoxWC.getCenterY();
-
-        double halfWidth = boundingBoxWC.width / 2.0;
-        double halfHeight = boundingBoxWC.height / 2.0;
-
-        double cosAngle = Math.cos(angle);
-        double sinAngle = Math.sin(angle);
-
-        // Calculate the rotated coordinates of the rectangle's corners
-        double topLeftX = centerX + (-halfWidth * cosAngle - halfHeight * sinAngle);
-        double topLeftY = centerY + (-halfWidth * sinAngle + halfHeight * cosAngle);
-        double topRightX = centerX + (halfWidth * cosAngle - halfHeight * sinAngle);
-        double topRightY = centerY + (halfWidth * sinAngle + halfHeight * cosAngle);
-        double bottomLeftX = centerX + (-halfWidth * cosAngle + halfHeight * sinAngle);
-        double bottomLeftY = centerY + (-halfWidth * sinAngle - halfHeight * cosAngle);
-        double bottomRightX = centerX + (halfWidth * cosAngle + halfHeight * sinAngle);
-        double bottomRightY = centerY + (halfWidth * sinAngle - halfHeight * cosAngle);
-
-        // Update the bounding box polygon with the rotated coordinates
-        boundingBox = new MyDoublePolygon();
-        boundingBox.addPoint((int) topLeftX, (int) topLeftY);
-        boundingBox.addPoint((int) topRightX, (int) topRightY);
-        boundingBox.addPoint((int) bottomRightX, (int) bottomRightY);
-        boundingBox.addPoint((int) bottomLeftX, (int) bottomLeftY);
+        /// TODO: rotate bounding box
     }
 
     private void rotateBoundingBox(double inc) {
@@ -1622,34 +1531,25 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         doRotation(rotationAngle);
     }
 
-    private void shiftBoundingBoxPolygon(int vKup, double inc) {
+    private void shiftBoundingBox(int vKup, double inc) {
 
-        //boundingBox.print("shiftBoundingBoxPolygon");
-
-        for (int i = 0; i < boundingBox.getNumPoints(); i++) {
-
-            switch (vKup) {
-                case KeyEvent.VK_UP:
-                    boundingBox.getPoint(i).y -= inc;
-                    break;
-                case KeyEvent.VK_DOWN:
-                    boundingBox.getPoint(i).y += inc;
-                    break;
-                case KeyEvent.VK_LEFT:
-                    boundingBox.getPoint(i).x -= inc;
-                    break;
-                case KeyEvent.VK_RIGHT:
-                    boundingBox.getPoint(i).x += inc;
-                    break;
-            }
+        switch (vKup) {
+            case KeyEvent.VK_UP:
+                boundingBox.y -= inc;
+                break;
+            case KeyEvent.VK_DOWN:
+                boundingBox.y += inc;
+                break;
+            case KeyEvent.VK_LEFT:
+                boundingBox.x -= inc;
+                break;
+            case KeyEvent.VK_RIGHT:
+                boundingBox.x += inc;
+                break;
         }
         println("experimental quality: " + qualityFunction(boundingBox));
     }
 
-    private void numberPointsOutside() {
-
-        numberPointsOutside(boundingBox);
-    }
 
     private double numberPointsOutside(MyDoublePolygon outer) {
 
@@ -1666,41 +1566,38 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         return hugeCurve.getNumPoints() - count;
     }
 
-    private double closestDistanceToBox(Point2D.Double pIn, MyDoublePolygon box) {
+    private double closestDistanceToBox(Point2D.Double pIn, Rectangle2D.Double box) {
 
         Point2D.Double pNull = new Point2D.Double(0.0, 0.0);
 
         double minDist = Double.MAX_VALUE;
-        for (int i = 0; i < box.getNumPoints(); i++) {
 
-            Point2D.Double p1 = box.getPoint(i);
-            Point2D.Double p2 = box.getPoint((i + 1) % box.getNumPoints());
+        /// TODO: implement correctly !!!!!
+        Point2D.Double p1 = new Point2D.Double(box.getX(), box.getY());
+        Point2D.Double p2 = new Point2D.Double(box.getX(), box.getY());
 
-            MyVector v1 = new MyVector(p1);
-            MyVector v2 = new MyVector(p2);
+        MyVector v1 = new MyVector(p1);
+        MyVector v2 = new MyVector(p2);
 
-            double dist = MyVector.distanceToPointFromLine(pIn, pNull, v1, v2);
-            if (dist < minDist) {
-                minDist = dist;
-            }
+        double dist = MyVector.distanceToPointFromLine(pIn, pNull, v1, v2);
+        if (dist < minDist) {
+            minDist = dist;
         }
+
         return minDist;
     }
 
     private void setPositionBoundingBox(double x, double y) {
 
-        for (int i = 0; i < boundingBoxTest.getNumPoints(); i++) {
-            boundingBox.getPoint(i).x = boundingBoxTest.getPoint(i).x + x;
-            boundingBox.getPoint(i).y = boundingBoxTest.getPoint(i).y + y;
-        }
+        boundingBox.setRect(boundingBoxTest);
     }
 
     /// implementations for CMAES //////////////////////////////////////////////////////////////////////////////////////
 
     private void initBoundingBoxPolygonTest() {
 
-        boundingBoxTest = new MyDoublePolygon();
-        boundingBoxTest.setPoints(boundingBox.getPoints());
+        boundingBoxTest = new Rectangle2D.Double();
+        boundingBoxTest.setRect(boundingBox);
     }
 
     private void initCMAES() {
@@ -1718,7 +1615,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         fitness = cmaes.init();
     }
 
-    private double qualityFunction(MyDoublePolygon box) {
+    private double qualityFunction(Rectangle2D.Double box) {
 
 //        if (boundingBoxTest == null) {
 //            initBoundingBoxPolygonTest();
@@ -1743,15 +1640,10 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
     @Override
     public double valueOf(double[] values) {
 
-        for (int i = 0; i < 4; i++) {
+        double nx = boundingBox.getX() + values[0];
+        double ny = boundingBox.getY() + values[1];
+        boundingBoxTest.setRect(nx, ny, boundingBox.width, boundingBox.width);
 
-            boundingBoxTest.getPoint(i).x = boundingBox.getPoint(i).x + values[0];
-            boundingBoxTest.getPoint(i).y = boundingBox.getPoint(i).y + values[1];
-
-            /// optical illusion settings for heat map
-//            boundingBoxTest.getPoint(i).x += values[0];
-//            boundingBoxTest.getPoint(i).y += values[1];
-        }
         return qualityFunction(boundingBoxTest);
     }
 
@@ -1803,10 +1695,9 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
         double[] best = cmaes.getBestSolution().getX();
 
-        for (int i = 0; i < boundingBox.getNumPoints(); i++) {
-            boundingBox.getPoint(i).x += best[0];
-            boundingBox.getPoint(i).y += best[1];
-        }
+        double nx = boundingBox.getX() + best[0];
+        double ny = boundingBox.getY() + best[1];
+        boundingBox.setRect(nx, ny, boundingBox.width, boundingBox.width);
 //        println("experimental bb: " + qualityFunction(boundingBox));
 //        println("best cmaes:      " + cmaes.getBestFunctionValue());
 
@@ -1848,10 +1739,10 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
         double[] best = cmaes.getBestSolution().getX();
 
-        for (int i = 0; i < boundingBox.getNumPoints(); i++) {
-            boundingBox.getPoint(i).x += best[0];
-            boundingBox.getPoint(i).y += best[1];
-        }
+        double nx = boundingBox.getX() + best[0];
+        double ny = boundingBox.getY() + best[1];
+        boundingBox.setRect(nx, ny, boundingBox.width, boundingBox.width);
+
         SwingUtilities.invokeLater(() -> repaint());
 
 //        println("best bx:         " + best[0] + " best by: " + best[1]);
@@ -1875,6 +1766,41 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
     /// deprecated /////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//    private void shiftTestPolygonExperimental(double x, double y) {
+//
+//        ArrayList<Point2D.Double> points = boundingBox.getPoints();
+//
+//        for (int i = 0; i < boundingBox.getNumPoints(); i++) {
+//
+//            points.get(i).x = x;
+//            points.get(i).y = y;
+//        }
+//        boundingBox.setPoints(points);
+//    }
+//    private void shiftBoundingBoxDouble(int direction) {
+//
+//        ArrayList<Point2D.Double> points = boundingBox.getPoints();
+//
+//        double inc = 0.6;
+//        for (int i = 0; i < boundingBox.getNumPoints(); i++) {
+//
+//            switch (direction) {
+//                case 0:
+//                    points.get(i).y -= inc;
+//                    break;
+//                case 1:
+//                    points.get(i).y += inc;
+//                    break;
+//                case 2:
+//                    points.get(i).x -= inc;
+//                    break;
+//                case 3:
+//                    points.get(i).x += inc;
+//                    break;
+//            }
+//        }
+//        boundingBox.setPoints(points);
+//    }
 //    public static Rectangle constructRectangle(MyVector p1, MyVector p2, MyVector p3, MyVector p4) {
 //
 //        // Find extreme coordinates

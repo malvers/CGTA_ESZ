@@ -217,11 +217,5 @@ public class MyDoublePolygon {
         MyVector lLower = new MyVector(points.get(3).x, points.get(3).y, "");
 
         return IRISVisualization.getIntersectionPoint(lUpper, rLower, rUpper, lLower);
-
-//        double width = points.get(1).x - points.get(0).x;
-//        double x = points.get(0).x + (width / 2.0);
-//        double y = points.get(0).y + (width / 2.0);
-//
-//        return new MyVector(x, y, "");
     }
 }
