@@ -176,10 +176,10 @@ class MyVector extends Ellipse2D.Double {
         double maxY = Math.max(v1.y, v2.y);
 
         /// TODO: check again for whipers etc.
-//        if (adjustedX < minX || adjustedX > maxX || adjustedY < minY || adjustedY > maxY) {
-//            // Point is outside the bounding box OF THE VECTOR, return some default value (e.g., -1)
-//            return 1000;
-//        }
+        if (adjustedX < minX || adjustedX > maxX || adjustedY < minY || adjustedY > maxY) {
+            // Point is outside the bounding box OF THE VECTOR, return some default value (e.g., -1)
+            return 1000;
+        }
 
         // Calculate the distance to the line
         double x1 = v1.x;
