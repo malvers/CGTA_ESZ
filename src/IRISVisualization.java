@@ -159,6 +159,8 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
             os.writeObject(handleB);
             os.writeObject(handleC);
 
+            os.writeDouble(whiperFactor);
+
             os.writeObject(hw);
 
             os.close();
@@ -193,6 +195,10 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
             irisPicShiftY = os.readInt();
             irisPicSize = os.readInt();
 
+//            os.readInt();
+//            os.readInt();
+//            os.readInt();
+
             drawWhiperStuff = os.readBoolean();
             debugMode = os.readBoolean();
             drawBoundingBox = os.readBoolean();
@@ -200,6 +206,8 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
             handleA = (MyVector) os.readObject();
             handleB = (MyVector) os.readObject();
             handleC = (MyVector) os.readObject();
+
+            whiperFactor = os.readDouble();
 //            hw = (HelperWindow) os.readObject();
 //            hw.setVisible(true);
 //            hw.clear();
@@ -589,16 +597,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                         createHeatMap();
                         break;
                     case KeyEvent.VK_Z:
-                        if (e.isMetaDown()) {
-                            irisZoom += 0.1;
-                        } else if (e.isMetaDown() && e.isShiftDown()) {
-                            irisZoom -= 0.1;
-                        } else if (e.isAltDown()) {
-                            println("BINGO");
-                            zoomFactor += 0.1;
-                        } else if (e.isAltDown() && e.isShiftDown()) {
-                            zoomFactor -= 0.1;
-                        }
+                        handleZ(e);
                         break;
                     case 93: /// +
                         if (e.isShiftDown()) {
@@ -1025,6 +1024,18 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
     double zoomFactor = 1.0;
 
+    private void handleZ(KeyEvent e) {
+        if (e.isMetaDown()) {
+            irisZoom += 0.1;
+        } else if (e.isMetaDown() && e.isShiftDown()) {
+            irisZoom -= 0.1;
+        } else if (e.isAltDown()) {
+            zoomFactor += 0.2;
+        } else if (e.isControlDown()) {
+            zoomFactor -= 0.2;
+        }
+    }
+
     @Override
     public void paint(Graphics g) {
 
@@ -1039,11 +1050,16 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
         clearBackground(g2d);
 
-        AffineTransform transform = AffineTransform.getTranslateInstance(sceneShift.x + dragShift.x, sceneShift.y + dragShift.y);
+        double xs = (sceneShift.x + dragShift.x);
+        double ys = (sceneShift.y + dragShift.y);
 
-        transform.translate(-getWidth() / 2.0, -getHeight() / 2.0);
+        AffineTransform transform = AffineTransform.getTranslateInstance(xs, ys);
+
+        double dx = getWidth() / 2.0;
+        double dy = getWidth() / 2.0;
+        transform.translate(-dx, -dy);
         transform.scale(zoomFactor, zoomFactor);
-        transform.translate(+getWidth() / 2.0, +getHeight() / 2.0);
+        transform.translate(+dx, +dy);
 
         g2d.setTransform(transform);
 
