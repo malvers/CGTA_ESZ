@@ -123,6 +123,11 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         doCalculations();
         calculateWhipers();
         boundingBoxInnerRotationPath = new ArrayList<>();
+
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            System.out.println("hooked");
+            writeSettings();
+        }));
     }
 
     /// read/write settings ////////////////////////////////////////////////////////////////////////////////////////////
@@ -210,8 +215,12 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
             whiperFactor = os.readDouble();
 
             debugWindow = (DebugWindow) os.readObject();
-            debugWindow.setVisible(true);
-            debugWindow.clear();
+            if (debugWindow == null) {
+                debugWindow = new DebugWindow();
+            } else {
+                debugWindow.setVisible(true);
+                debugWindow.clear();
+            }
 
             os.close();
             f.close();
@@ -1345,8 +1354,6 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
         g2d.setColor(Color.ORANGE);
         g2d.setStroke(new BasicStroke(1));
-        //drawHandleConnector(g2d, handleC, whiperC_CB);
-
         hugeCurve.draw(g2d);
     }
 
@@ -1534,25 +1541,20 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
         double minDistance = Double.MAX_VALUE;
 
-        // Get the path iterator for the shape
         PathIterator pathIterator = shape.getPathIterator(null);
         double[] coordinates = new double[6];
 
-        // Iterate through the path segments
         while (!pathIterator.isDone()) {
             int segmentType = pathIterator.currentSegment(coordinates);
             switch (segmentType) {
                 case PathIterator.SEG_MOVETO:
                 case PathIterator.SEG_LINETO:
-                    // Calculate the distance from the point to the current segment
                     double x1 = coordinates[0];
                     double y1 = coordinates[1];
                     double distance = point.distance(x1, y1);
                     minDistance = Math.min(minDistance, distance);
                     break;
-                // Handle other segment types if needed (e.g., curves)
             }
-            // Move to the next segment
             pathIterator.next();
         }
 
@@ -1629,11 +1631,15 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
     private void calculateBoundingBoxRotationCurve360() {
 
-        if (debugMode) println("createBoundingBoxRotationCurve360");
+        long start = 0;
 
-        long start = System.currentTimeMillis();
+        if (debugMode) {
+            println("createBoundingBoxRotationCurve360");
+            start = System.currentTimeMillis();
+        }
 
-        pointsHugeCurve = null;
+        pointsHugeCurve = new ArrayList<>(hugeCurve.getNumPoints());
+        pointsHugeCurve = hugeCurve.getPoints();
 
         initRotatedBoundingBox();
         boundingBoxInnerRotationPath = new ArrayList<>();
@@ -1663,8 +1669,11 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
             boundingBoxInnerRotationPath.add(getCenterBoundingBox());
         }
-        double delta = System.currentTimeMillis() - start;
-        if (debugMode) println("done - time needed: " + delta + " [ms] " + " size path: " + boundingBoxInnerRotationPath.size());
+
+        if (debugMode) {
+            double delta = System.currentTimeMillis() - start;
+            println("done - time needed: " + delta + " [ms] " + " size path: " + boundingBoxInnerRotationPath.size());
+        }
     }
 
     private void runCMAES() {
@@ -1739,12 +1748,13 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
             JFrame f = new JFrame();
             f.setSize(760, 760);
             f.add(new IRISVisualization(f));
+            f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             f.setTitle(defaultTitle);
             f.setVisible(true);
         });
     }
 
-    /* deprecated deprecated deprecated deprecated deprecated deprecated deprecated deprecated deprecated deprecated */
+/*   deprecated deprecated deprecated deprecated deprecated deprecated deprecated deprecated deprecated deprecated    */
 
 //    private void shiftTestPolygonExperimental(double x, double y) {
 //
