@@ -37,9 +37,9 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
     private MyVector extendAC;
     private MyVector extendCA;
     private MyVector extendBA;
-    private final Color color1 = new Color(180, 0, 0);
-    private Color color2 = new Color(0, 0, 80);
-    private final Color color3 = new Color(80, 140, 0);
+    private final Color myRed = new Color(180, 0, 0);
+    private Color myBlue = new Color(0, 0, 80);
+    private final Color myGreen = new Color(80, 140, 0);
     private MyVector handleA;
     private MyVector handleB;
     private MyVector handleC;
@@ -161,7 +161,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
             os.writeDouble(whiperFactor);
 
-            os.writeObject(hw);
+            os.writeObject(debugWindow);
 
             os.close();
             f.close();
@@ -191,13 +191,13 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
             drawTriangle = os.readBoolean();
             drawIrisPicture = os.readBoolean();
 
-            irisPicShiftX = os.readInt();
-            irisPicShiftY = os.readInt();
-            irisPicSize = os.readInt();
+//            irisPicShiftX = os.readInt();
+//            irisPicShiftY = os.readInt();
+//            irisPicSize = os.readInt();
 
-//            os.readInt();
-//            os.readInt();
-//            os.readInt();
+            os.readInt();
+            os.readInt();
+            os.readInt();
 
             drawWhiperStuff = os.readBoolean();
             debugMode = os.readBoolean();
@@ -208,9 +208,11 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
             handleC = (MyVector) os.readObject();
 
             whiperFactor = os.readDouble();
-//            hw = (HelperWindow) os.readObject();
-//            hw.setVisible(true);
-//            hw.clear();
+
+            debugWindow = (DebugWindow) os.readObject();
+            debugWindow.setVisible(true);
+            debugWindow.clear();
+
             os.close();
             f.close();
 
@@ -221,21 +223,29 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
     /// helper functions /////////////////////////////////////////////////////////////////////////////////////////////////
 
-    DebugWindow hw = null;//new HelperWindow();
+    static DebugWindow debugWindow = null;//new DebugWindow();
 
-    public void println() {
-        if (hw == null) {
+    public static void println() {
+        if (debugWindow == null) {
             System.out.println();
         } else {
-            hw.println("");
+            debugWindow.println("");
         }
     }
 
-    public void println(String s) {
-        if (hw == null) {
+    public static void println(String s) {
+        if (debugWindow == null) {
             System.out.println(s);
         } else {
-            hw.println(s);
+            debugWindow.println(s);
+        }
+    }
+
+    public static void print(String s) {
+        if (debugWindow == null) {
+            System.out.println(s);
+        } else {
+            debugWindow.println(s);
         }
     }
 
@@ -380,6 +390,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
                 doCalculations();
                 createWhiperCurves();
+                calculateBoundingBoxRotationCurve360();
 
                 repaint();
             }
@@ -469,14 +480,6 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         }
     }
 
-    private void moveBoundingBox(MouseEvent e) {
-
-        double x = -(onMousePressed.x - e.getX());
-        double y = -(onMousePressed.y - e.getY());
-        setPositionBoundingBox(x, y);
-        ///println("experimental quality: " + qualityFunction(boundingBox));
-    }
-
     /// key handling ///////////////////////////////////////////////////////////////////////////////////////////////////
 
     private void keyInit() {
@@ -492,10 +495,12 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
                     case KeyEvent.VK_0:
                         if (e.isShiftDown()) {
-                            rotationAngle = 0.0;
-                            whiperFactor = 1.0;
                             sceneShift.x = 0;
                             sceneShift.y = 0;
+                        } else {
+                            zoomFactor = 1.0;
+                            rotationAngle = 0.0;
+                            whiperFactor = 1.0;
                             doCalculations();
                             calculateWhipers();
                         }
@@ -514,7 +519,6 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                                 inc = 5.0;
                             }
                             shiftBoundingBox(e.getKeyCode(), inc);
-
                         }
                         break;
                     case KeyEvent.VK_SPACE:
@@ -524,6 +528,13 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                         initRotatedBoundingBox();
                         initCMAES();
                         runCMAES();
+
+                        break;
+                    case KeyEvent.VK_BACK_SPACE:
+
+                        if (debugWindow != null) {
+                            debugWindow.clear();
+                        }
 
                         break;
                     case KeyEvent.VK_A:
@@ -586,7 +597,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                         break;
                     case KeyEvent.VK_X:
                         if (e.isShiftDown()) {
-                            createBoundingBoxRotationCurve360();
+                            calculateBoundingBoxRotationCurve360();
                         } else {
                             long innerStart = System.currentTimeMillis();
                             startCMAES();
@@ -597,7 +608,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                         createHeatMap();
                         break;
                     case KeyEvent.VK_Z:
-                        handleZ(e);
+                        handleZKey(e);
                         break;
                     case 93: /// +
                         if (e.isShiftDown()) {
@@ -702,9 +713,9 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
     private void adjustColorBlackMode() {
         if (blackMode) {
-            color2 = new Color(0, 180, 180);
+            myBlue = new Color(0, 180, 180);
         } else {
-            color2 = new Color(0, 0, 80);
+            myBlue = new Color(0, 0, 80);
         }
     }
 
@@ -1024,7 +1035,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
     double zoomFactor = 1.0;
 
-    private void handleZ(KeyEvent e) {
+    private void handleZKey(KeyEvent e) {
         if (e.isMetaDown()) {
             irisZoom += 0.1;
         } else if (e.isMetaDown() && e.isShiftDown()) {
@@ -1106,7 +1117,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
         if (boundingBoxInnerRotationPath.size() > 0) {
 
-            g2d.setColor(Color.GREEN);
+            g2d.setColor(myRed);
             Path2D.Double path = new Path2D.Double();
             double x = boundingBoxInnerRotationPath.get(0).x;
             double y = boundingBoxInnerRotationPath.get(0).y;
@@ -1312,8 +1323,8 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
     private void drawBoundingBox(Graphics2D g2d) {
 
         MyVector centerBoundingBox = getCenterBoundingBox();
-        g2d.setColor(color3);
-        centerBoundingBox.setSize(6);
+        g2d.setColor(myRed);
+        centerBoundingBox.setSize(4);
         centerBoundingBox.fill(g2d, false);
 
         g2d.setStroke(new BasicStroke(1));
@@ -1356,11 +1367,11 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
         g2d.setStroke(new BasicStroke(3));
 
-        g2d.setColor(color2);
+        g2d.setColor(myBlue);
         drawHandleConnector(g2d, handleA, handleB);
-        g2d.setColor(color3);
+        g2d.setColor(myGreen);
         drawHandleConnector(g2d, handleB, handleC);
-        g2d.setColor(color1);
+        g2d.setColor(myRed);
         drawHandleConnector(g2d, handleC, handleA);
 
         g2d.setColor(Color.darkGray);
@@ -1372,17 +1383,17 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
     private void drawExtendWhiskers(Graphics2D g2d) {
 
         g2d.setStroke(new BasicStroke(3));
-        g2d.setColor(color3);
+        g2d.setColor(myGreen);
         extendBA.fill(g2d, drawAnnotation);
         extendCA.fill(g2d, drawAnnotation);
         g2d.draw(new Line2D.Double(handleA.x, handleA.y, extendBA.x, extendBA.y));
         g2d.draw(new Line2D.Double(handleA.x, handleA.y, extendCA.x, extendCA.y));
-        g2d.setColor(color2);
+        g2d.setColor(myBlue);
         extendBC.fill(g2d, drawAnnotation);
         extendAC.fill(g2d, drawAnnotation);
         g2d.draw(new Line2D.Double(handleC.x, handleC.y, extendBC.x, extendBC.y));
         g2d.draw(new Line2D.Double(handleC.x, handleC.y, extendAC.x, extendAC.y));
-        g2d.setColor(color1);
+        g2d.setColor(myRed);
         extendAB.fill(g2d, drawAnnotation);
         extendCB.fill(g2d, drawAnnotation);
         g2d.draw(new Line2D.Double(handleB.x, handleB.y, extendAB.x, extendAB.y));
@@ -1548,11 +1559,6 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         return minDistance;
     }
 
-    private void setPositionBoundingBox(double x, double y) {
-
-        //boundingBox.setRect(boundingBoxTest);
-    }
-
     /// implementations for CMAES //////////////////////////////////////////////////////////////////////////////////////
 
     Shape rotatedBoundingBox;
@@ -1621,56 +1627,44 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         fitness = cmaes.init();
     }
 
-    private void createBoundingBoxRotationCurve360() {
+    private void calculateBoundingBoxRotationCurve360() {
 
-        println("createBoundingBoxRotationCurve360");
-
-        boundingBoxInnerRotationPath = new ArrayList<>();
+        if (debugMode) println("createBoundingBoxRotationCurve360");
 
         long start = System.currentTimeMillis();
-        double incAngle = Math.toRadians(1.0);
+
+        pointsHugeCurve = null;
 
         initRotatedBoundingBox();
+        boundingBoxInnerRotationPath = new ArrayList<>();
 
-        double to = 2 * Math.PI - incAngle;
+        double incAngle = Math.toRadians(4.0);
+        double to = Math.PI - incAngle;
         long innerStart = 0;
-        int count = 0;
         for (rotationAngle = 0; rotationAngle < to; rotationAngle += incAngle) {
 
             if (debugMode) {
                 println("rotation: " + Math.toDegrees(rotationAngle));
             }
 
-            if (debugMode) {
-                innerStart = System.currentTimeMillis();
-            }
             rotatedBoundingBox = rotateRectangle2D(boundingBox);
-            if (debugMode) {
-                println("rotatedBoundingBox: " + (System.currentTimeMillis() - innerStart) + " ms");
-            }
 
-            if (debugMode) {
-                innerStart = System.currentTimeMillis();
-            }
             initCMAES();
-            if (debugMode) {
-                println("initCMAES:          " + (System.currentTimeMillis() - innerStart) + " ms");
-            }
 
             if (debugMode) {
                 innerStart = System.currentTimeMillis();
             }
+
             runCMAES();
+
             if (debugMode) {
-                println("runCMAES:           " + (System.currentTimeMillis() - innerStart) + " ms");
+                println("runCMAES: " + (System.currentTimeMillis() - innerStart) + " ms");
             }
 
             boundingBoxInnerRotationPath.add(getCenterBoundingBox());
-
-            count++;
         }
         double delta = System.currentTimeMillis() - start;
-        println("done - time needed: " + delta + " [ms] " + " data points: " + count);
+        if (debugMode) println("done - time needed: " + delta + " [ms] " + " size path: " + boundingBoxInnerRotationPath.size());
     }
 
     private void runCMAES() {

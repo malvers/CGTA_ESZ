@@ -117,14 +117,13 @@ public class MyDoublePolygon {
     public void print(String s) {
 
         name = s;
-        System.out.print("\n" + name + " -> ");
+        IRISVisualization.print("\n" + name + " -> ");
         for (int i = 0; i < points.size(); i++) {
             DecimalFormat formatter = new DecimalFormat("#000.00");
             String xs = formatter.format(points.get(i).x);
             String ys = formatter.format(points.get(i).y);
-            System.out.print((" | " + i + " x: " + xs + " " + i + " y: " + ys + " "));
+            IRISVisualization.print((" | " + i + " x: " + xs + " " + i + " y: " + ys + " "));
         }
-//        System.out.print(" | - width: " + getWidth());
     }
 
     public List<MyVector> getIntersectionPoints(MyDoublePolygon otherPolygon) {
@@ -206,16 +205,5 @@ public class MyDoublePolygon {
         MyDoublePolygon polygon = new MyDoublePolygon();
         polygon.setPoints(poly);
         return polygon;
-    }
-
-    public MyVector getCenter() {
-
-        MyVector lUpper = new MyVector(points.get(0).x, points.get(0).y, "");
-        MyVector rLower = new MyVector(points.get(2).x, points.get(2).y, "");
-
-        MyVector rUpper = new MyVector(points.get(1).x, points.get(1).y, "");
-        MyVector lLower = new MyVector(points.get(3).x, points.get(3).y, "");
-
-        return IRISVisualization.getIntersectionPoint(lUpper, rLower, rUpper, lLower);
     }
 }
