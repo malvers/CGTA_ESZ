@@ -1323,7 +1323,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
     private void drawBoundingBox(Graphics2D g2d) {
 
         MyVector centerBoundingBox = getCenterBoundingBox();
-        g2d.setColor(myRed);
+        g2d.setColor(myGreen);
         centerBoundingBox.setSize(4);
         centerBoundingBox.fill(g2d, false);
 
