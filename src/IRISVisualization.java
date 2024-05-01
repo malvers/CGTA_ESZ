@@ -177,6 +177,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
             frame.setSize((Dimension) os.readObject());
             frame.setLocation((Point) os.readObject());
 
+            //os.readObject();
             sceneShift = (Point2D.Double) os.readObject();
 
             drawCircle = os.readBoolean();
@@ -590,8 +591,13 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                     case KeyEvent.VK_Z:
                         if (e.isMetaDown()) {
                             irisZoom += 0.1;
-                        } else {
+                        } else if (e.isMetaDown() && e.isShiftDown()) {
                             irisZoom -= 0.1;
+                        } else if (e.isAltDown()) {
+                            println("BINGO");
+                            zoomFactor += 0.1;
+                        } else if (e.isAltDown() && e.isShiftDown()) {
+                            zoomFactor -= 0.1;
                         }
                         break;
                     case 93: /// +
@@ -1017,6 +1023,8 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
     /// painting section ///////////////////////////////////////////////////////////////////////////////////////////////
 
+    double zoomFactor = 1.0;
+
     @Override
     public void paint(Graphics g) {
 
@@ -1031,8 +1039,13 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
         clearBackground(g2d);
 
-        AffineTransform shiftTransform = AffineTransform.getTranslateInstance(sceneShift.x + dragShift.x, sceneShift.y + dragShift.y);
-        g2d.setTransform(shiftTransform);
+        AffineTransform transform = AffineTransform.getTranslateInstance(sceneShift.x + dragShift.x, sceneShift.y + dragShift.y);
+
+        transform.translate(-getWidth() / 2.0, -getHeight() / 2.0);
+        transform.scale(zoomFactor, zoomFactor);
+        transform.translate(+getWidth() / 2.0, +getHeight() / 2.0);
+
+        g2d.setTransform(transform);
 
         if (heatMap != null) {
             g2d.drawImage(heatMap, 0, 0, null);
@@ -1648,16 +1661,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
         while (cmaes.stopConditions.getNumber() == 0) {
 
-            /// core iteration step
-            double[][] population = cmaes.samplePopulation();  // get a new population of solutions
-            for (int i = 0; i < population.length; ++i) {      // for each candidate solution i
-
-                while (!fitFun.isFeasible(population[i])) {    // test whether solution is feasible,
-                    population[i] = cmaes.resampleSingle(i);   // re-sample solution until it is feasible
-                }
-                fitness[i] = fitFun.valueOf(population[i]);    // compute fitness value, where fitFun
-            }                                                  // is the function to be minimized
-            cmaes.updateDistribution(fitness);                 // pass fitness array to update search distribution
+            coreIterationStepCMAES();
         }
 
         setOptimizedBoundingBox();
@@ -1674,21 +1678,12 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                 runIt = false;
             }
 
-            /// core iteration step
-            double[][] population = cmaes.samplePopulation();  // get a new population of solutions
-            for (int i = 0; i < population.length; ++i) {      // for each candidate solution i
-
-                while (!fitFun.isFeasible(population[i])) {    // test whether solution is feasible,
-                    population[i] = cmaes.resampleSingle(i);   // re-sample solution until it is feasible
-                }
-                fitness[i] = fitFun.valueOf(population[i]);    // compute fitness value, where fitFun
-            }                                                  // is the function to be minimized
-            cmaes.updateDistribution(fitness);                 // pass fitness array to update search distribution
+            coreIterationStepCMAES();
 
             if (debugMode) {
                 cmaes.writeToDefaultFiles();
 
-                int outModulo = 150000;
+                int outModulo = 150;
                 if (cmaes.getCountIter() % (15 * outModulo) == 1) {
                     cmaes.printlnAnnotation();              // might write file as well
                 }
@@ -1701,8 +1696,19 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         setOptimizedBoundingBox();
 
         SwingUtilities.invokeLater(() -> repaint());
+    }
 
-        println("run best cmaes: " + cmaes.getBestFunctionValue());
+    private void coreIterationStepCMAES() {
+
+        double[][] population = cmaes.samplePopulation();  // get a new population of solutions
+        for (int i = 0; i < population.length; ++i) {      // for each candidate solution i
+
+            while (!fitFun.isFeasible(population[i])) {    // test whether solution is feasible,
+                population[i] = cmaes.resampleSingle(i);   // re-sample solution until it is feasible
+            }
+            fitness[i] = fitFun.valueOf(population[i]);    // compute fitness value, where fitFun
+        }  // is the function to be minimized
+        cmaes.updateDistribution(fitness);                 // pass fitness array to update search distribution
     }
 
     private void setOptimizedBoundingBox() {
