@@ -11,6 +11,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 public class IRISVisualization extends JButton implements IObjectiveFunction, Runnable {
 
@@ -48,7 +49,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
     private MyVector midBC_AC;
     private final Point2D.Double onMousePressed = new Point2D.Double();
     private final Point2D.Double dragShift = new Point2D.Double();
-    private Point2D.Double sceneShift = new Point2D.Double();
+    //    private Point2D.Double sceneShift = new Point2D.Double();
     private boolean drawAnnotation = true;
     private MyVector towCA_BA;
     private MyVector towBC_AC;
@@ -59,7 +60,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
     private boolean drawLines = false;
     private boolean drawIris = false;
     private boolean blackMode = false;
-    private boolean drawWhiskers = false;
+    private boolean drawExtends = false;
     private boolean drawTriangle = false;
     private boolean drawHelp = false;
     private boolean drawIrisPicture = true;
@@ -97,6 +98,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
     private IRISVisualization fitFun;
     private CMAEvolutionStrategy cmaes;
     private BufferedImage heatMap;
+    private final Painter painter = new Painter();
 
     /// constructor ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -107,8 +109,8 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         mouseInit();
         keyInit();
 
-        sceneShift.x = 80;
-        sceneShift.y = 20;
+        painter.sceneShift.x = 80;
+        painter.sceneShift.y = 20;
 
         handleA = new MyVector(535, 395, "A");
         handleB = new MyVector(358, 573, "B");
@@ -141,14 +143,14 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
             os.writeObject(frame.getSize());
             os.writeObject(frame.getLocation());
 
-            os.writeObject(sceneShift);
+            os.writeObject(painter.sceneShift);
 
             os.writeBoolean(drawCircle);
             os.writeBoolean(drawLines);
             os.writeBoolean(drawAnnotation);
             os.writeBoolean(drawIris);
             os.writeBoolean(blackMode);
-            os.writeBoolean(drawWhiskers);
+            os.writeBoolean(drawExtends);
             os.writeBoolean(drawTriangle);
             os.writeBoolean(drawIrisPicture);
 
@@ -185,14 +187,14 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
             frame.setLocation((Point) os.readObject());
 
             //os.readObject();
-            sceneShift = (Point2D.Double) os.readObject();
+            painter.sceneShift = (Point2D.Double) os.readObject();
 
             drawCircle = os.readBoolean();
             drawLines = os.readBoolean();
             drawAnnotation = os.readBoolean();
             drawIris = os.readBoolean();
             blackMode = os.readBoolean();
-            drawWhiskers = os.readBoolean();
+            drawExtends = os.readBoolean();
             drawTriangle = os.readBoolean();
             drawIrisPicture = os.readBoolean();
 
@@ -266,7 +268,6 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
         double min = Double.MAX_VALUE;
         double max = 0.0;
-        double size = boundingBox.getWidth();
 
         double[][] values = new double[getWidth()][getHeight()];
 
@@ -314,8 +315,6 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
             @Override
             public void mousePressed(MouseEvent e) {
 
-                Point2D.Double pd = new Point2D.Double(e.getX(), e.getY());
-
                 if (drawHelp) {
                     return;
                 }
@@ -325,10 +324,8 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
                 Point2D.Double shiftMouse = new Point2D.Double();
 
-                shiftMouse.x = e.getX() - sceneShift.x;
-                shiftMouse.y = e.getY() - sceneShift.y;
-
-                double delta = 4.0;
+                shiftMouse.x = e.getX() - painter.sceneShift.x;
+                shiftMouse.y = e.getY() - painter.sceneShift.y;
 
                 deselectAllHandles();
 
@@ -368,8 +365,8 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                 irisPicSize = zoomedSize;
                 irisZoom = 1.0;
 
-                sceneShift.x += dragShift.x;
-                sceneShift.y += dragShift.y;
+                painter.sceneShift.x += dragShift.x;
+                painter.sceneShift.y += dragShift.y;
                 dragShift.x = 0;
                 dragShift.y = 0;
 
@@ -434,18 +431,18 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
         if (handleA.selected) {
             boundingBoxInnerRotationPath = new ArrayList<>();
-            handleA.x = e.getX() - sceneShift.x;
-            handleA.y = e.getY() - sceneShift.y;
+            handleA.x = e.getX() - painter.sceneShift.x;
+            handleA.y = e.getY() - painter.sceneShift.y;
             setWhipersVisibility(false);
         } else if (handleB.selected) {
             boundingBoxInnerRotationPath = new ArrayList<>();
-            handleB.x = e.getX() - sceneShift.x;
-            handleB.y = e.getY() - sceneShift.y;
+            handleB.x = e.getX() - painter.sceneShift.x;
+            handleB.y = e.getY() - painter.sceneShift.y;
             setWhipersVisibility(false);
         } else if (handleC.selected) {
             boundingBoxInnerRotationPath = new ArrayList<>();
-            handleC.x = e.getX() - sceneShift.x;
-            handleC.y = e.getY() - sceneShift.y;
+            handleC.x = e.getX() - painter.sceneShift.x;
+            handleC.y = e.getY() - painter.sceneShift.y;
             setWhipersVisibility(false);
         } else if (whiperAC.selected) {
             MyVector tmp = calculateTemporaryWhiper(e, whiperAC, handleA, bigWhiperCurve3);
@@ -504,10 +501,10 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
                     case KeyEvent.VK_0:
                         if (e.isShiftDown()) {
-                            sceneShift.x = 0;
-                            sceneShift.y = 0;
+                            painter.sceneShift.x = 0;
+                            painter.sceneShift.y = 0;
                         } else {
-                            zoomFactor = 1.0;
+                            painter.zoomFactor = 1.0;
                             rotationAngle = 0.0;
                             whiperFactor = 1.0;
                             doCalculations();
@@ -567,7 +564,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                         calculateWhipers();
                         break;
                     case KeyEvent.VK_E:
-                        drawWhiskers = !drawWhiskers;
+                        drawExtends = !drawExtends;
                         break;
                     case KeyEvent.VK_H:
                         drawHelp = !drawHelp;
@@ -744,8 +741,8 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
         MyVector tmp = whiper.subtract(handle);
 
-        tmp.x = e.getX() - sceneShift.x;
-        tmp.y = e.getY() - sceneShift.y;
+        tmp.x = e.getX() - painter.sceneShift.x;
+        tmp.y = e.getY() - painter.sceneShift.y;
 
         tmp = MyVector.getVector(tmp, handle).makeItThatLong(1000).add(handle);
 
@@ -827,12 +824,12 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         extendAC = adjustLength(diffLen, extendAC, handleC);
         extendAC.setName("AC");
 
-        /// calculate the middpoints between the extends
+        /// calculate the midpoints between the extends
         midCA_BA = calculateMidpoint(extendCA, extendBA);
         midBC_AC = calculateMidpoint(extendAC, extendBC);
         midCB_AB = calculateMidpoint(extendCB, extendAB);
 
-        /// add perpendicular vetors to the midd vector to calculat the center of the circle
+        /// add perpendicular vectors to the mid-vector to calculate the center of the circle
         MyVector vecCA_BA = MyVector.getVector(extendBA, extendCA);
         MyVector recCA_BA = vecCA_BA.flip();
         recCA_BA.x = -recCA_BA.x;
@@ -1040,21 +1037,35 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         return testPolygon;
     }
 
-    /// painting section ///////////////////////////////////////////////////////////////////////////////////////////////
-
-    double zoomFactor = 1.0;
-
     private void handleZKey(KeyEvent e) {
         if (e.isMetaDown()) {
             irisZoom += 0.1;
         } else if (e.isMetaDown() && e.isShiftDown()) {
             irisZoom -= 0.1;
         } else if (e.isAltDown()) {
-            zoomFactor += 0.2;
+            painter.zoomFactor += 0.2;
         } else if (e.isControlDown()) {
-            zoomFactor -= 0.2;
+            painter.zoomFactor -= 0.2;
         }
     }
+
+    /// painting section ///////////////////////////////////////////////////////////////////////////////////////////////
+
+    private final Consumer<Graphics2D> paint = g2d -> {
+
+        clearBackground(g2d);
+        drawIrisPicture(drawIrisPicture, g2d);
+        drawCircle(drawCircle, g2d);
+        drawLines(drawLines, g2d);
+        drawIris(drawIris, g2d);
+        drawExtends(drawExtends, g2d);
+        drawTriangle(drawTriangle, g2d);
+        drawBoundingBox(drawBoundingBox, g2d);
+        drawBoundingBoxRotationPath(drawBoundingBox, g2d);
+        drawWiperCurves(drawWhiperStuff, g2d);
+        drawWipers(drawWhiperStuff, g2d);
+    };
+
 
     @Override
     public void paint(Graphics g) {
@@ -1063,67 +1074,38 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setFont(new Font("Arial", Font.PLAIN, 22));
 
-        if (drawHelp) {
-            HelpPage.drawHelpPage(g2d);
-            return;
-        }
-
-        clearBackground(g2d);
-
-        double xs = (sceneShift.x + dragShift.x);
-        double ys = (sceneShift.y + dragShift.y);
+        double xs = (painter.sceneShift.x + dragShift.x);
+        double ys = (painter.sceneShift.y + dragShift.y);
 
         AffineTransform transform = AffineTransform.getTranslateInstance(xs, ys);
 
         double dx = getWidth() / 2.0;
         double dy = getWidth() / 2.0;
         transform.translate(-dx, -dy);
-        transform.scale(zoomFactor, zoomFactor);
+        transform.scale(painter.zoomFactor, painter.zoomFactor);
         transform.translate(+dx, +dy);
 
         g2d.setTransform(transform);
 
+        if (drawHelp) {
+            HelpPage.drawHelpPage(g2d);
+            return;
+        }
+
+        painter.paintAll(g2d, paint);
+    }
+
+    private void drawHeatMap(Graphics2D g2d) {
         if (heatMap != null) {
             g2d.drawImage(heatMap, 0, 0, null);
         }
-
-        if (drawIrisPicture) {
-            drawIrisPicture(g2d);
-        }
-
-        if (drawLines) {
-            drawLines(g2d);
-        }
-
-        if (drawCircle) {
-            drawCircle(g2d);
-        }
-
-        if (drawIris) {
-            drawIris(g2d);
-        }
-
-        if (drawWhiskers) {
-            drawExtendWhiskers(g2d);
-        }
-
-        if (drawTriangle) {
-            drawTriangle(g2d);
-        }
-
-        if (drawBoundingBox) {
-            drawBoundingBox(g2d);
-            drawBoundingBoxRotationPath(g2d);
-        }
-
-        if (drawWhiperStuff) {
-            drawWiperCurves(g2d);
-            drawWipers(g2d);
-        }
     }
 
-    private void drawBoundingBoxRotationPath(Graphics2D g2d) {
+    private void drawBoundingBoxRotationPath(boolean draw, Graphics2D g2d) {
 
+        if (!draw) {
+            return;
+        }
         if (boundingBoxInnerRotationPath.size() > 0) {
 
             g2d.setColor(myRed);
@@ -1312,8 +1294,11 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         return new Point2D.Double(min, max);
     }
 
-    private void drawIrisPicture(Graphics2D g2d) {
+    private void drawIrisPicture(boolean draw, Graphics2D g2d) {
 
+        if (!draw) {
+            return;
+        }
         zoomedSize = (int) (irisPicSize * irisZoom);
         int delta = (int) (((zoomedSize) / 2.0));
         g2d.drawImage(irisPicture, (int) (centerCircle.x - delta), (int) (centerCircle.y - delta), zoomedSize, zoomedSize, null);
@@ -1329,8 +1314,11 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         g2d.fillRect(0, 0, getWidth(), getHeight());
     }
 
-    private void drawBoundingBox(Graphics2D g2d) {
+    private void drawBoundingBox(boolean draw, Graphics2D g2d) {
 
+        if (!draw) {
+            return;
+        }
         MyVector centerBoundingBox = getCenterBoundingBox();
         g2d.setColor(myGreen);
         centerBoundingBox.setSize(4);
@@ -1350,8 +1338,11 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         return centerBoundingBox;
     }
 
-    private void drawWiperCurves(Graphics2D g2d) {
+    private void drawWiperCurves(boolean draw, Graphics2D g2d) {
 
+        if (!draw) {
+            return;
+        }
         g2d.setColor(Color.ORANGE);
         g2d.setStroke(new BasicStroke(1));
         hugeCurve.draw(g2d);
@@ -1370,8 +1361,11 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         g2d.draw(path);
     }
 
-    private void drawTriangle(Graphics2D g2d) {
+    private void drawTriangle(boolean draw, Graphics2D g2d) {
 
+        if (!draw) {
+            return;
+        }
         g2d.setStroke(new BasicStroke(3));
 
         g2d.setColor(myBlue);
@@ -1387,8 +1381,11 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         handleC.fill(g2d, drawAnnotation);
     }
 
-    private void drawExtendWhiskers(Graphics2D g2d) {
+    private void drawExtends(boolean draw, Graphics2D g2d) {
 
+        if (!draw) {
+            return;
+        }
         g2d.setStroke(new BasicStroke(3));
         g2d.setColor(myGreen);
         extendBA.fill(g2d, drawAnnotation);
@@ -1407,8 +1404,11 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         g2d.draw(new Line2D.Double(handleB.x, handleB.y, extendCB.x, extendCB.y));
     }
 
-    private void drawLines(Graphics2D g2d) {
+    private void drawLines(boolean draw, Graphics2D g2d) {
 
+        if (!draw) {
+            return;
+        }
         g2d.setStroke(new BasicStroke(1));
         g2d.setColor(Color.lightGray);
         drawHandleConnector(g2d, extendCA, extendBA);
@@ -1425,8 +1425,11 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         drawHandleConnector(g2d, midCB_AB, towCB_AB);
     }
 
-    private void drawIris(Graphics2D g2d) {
+    private void drawIris(boolean draw, Graphics2D g2d) {
 
+        if (!draw) {
+            return;
+        }
         g2d.setStroke(new BasicStroke(2));
         g2d.setColor(Color.MAGENTA.darker());
         centerCircle.fill(g2d, drawAnnotation);
@@ -1441,7 +1444,11 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 //        }
     }
 
-    private void drawCircle(Graphics2D g2d) {
+    private void drawCircle(boolean draw, Graphics2D g2d) {
+
+        if (!draw) {
+            return;
+        }
         g2d.setStroke(new BasicStroke(2));
         g2d.setColor(Color.MAGENTA.darker());
         centerCircle.fill(g2d, drawAnnotation);
@@ -1453,8 +1460,11 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         g2d.draw(new Line2D.Double(h1.x, h1.y, h2.x, h2.y));
     }
 
-    private void drawWipers(Graphics2D g2d) {
+    private void drawWipers(boolean draw, Graphics2D g2d) {
 
+        if (!draw) {
+            return;
+        }
         int r = Color.ORANGE.getRed();
         int g = Color.ORANGE.getGreen();
         int b = Color.ORANGE.getBlue();
@@ -1754,7 +1764,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         });
     }
 
-/*   deprecated deprecated deprecated deprecated deprecated deprecated deprecated deprecated deprecated deprecated    */
+    /*   deprecated deprecated deprecated deprecated deprecated deprecated deprecated deprecated deprecated deprecated    */
 
 //    private void shiftTestPolygonExperimental(double x, double y) {
 //
