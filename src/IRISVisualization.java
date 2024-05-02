@@ -56,17 +56,6 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
     private MyVector towCB_AB;
     private MyVector centerCircle;
     private double radiusCircle;
-    private boolean drawCircle = false;
-    private boolean drawLines = false;
-    private boolean drawIris = false;
-    private boolean blackMode = false;
-    private boolean drawExtends = false;
-    private boolean drawTriangle = false;
-    private boolean drawHelp = false;
-    private boolean drawIrisPicture = true;
-    private boolean debugMode = true;
-    private boolean drawWhiperStuff = false;
-    private boolean drawBoundingBox = true;
     private boolean runIt = false;
     private int irisPicSize = 688;
     private int zoomedSize;
@@ -158,7 +147,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
             os.writeInt(irisPicShiftY);
             os.writeInt(irisPicSize);
 
-            os.writeBoolean(drawWhiperStuff);
+            os.writeBoolean(drawWhiperCurves);
             os.writeBoolean(debugMode);
             os.writeBoolean(drawBoundingBox);
 
@@ -206,7 +195,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
             os.readInt();
             os.readInt();
 
-            drawWhiperStuff = os.readBoolean();
+            drawWhiperCurves = os.readBoolean();
             debugMode = os.readBoolean();
             drawBoundingBox = os.readBoolean();
 
@@ -598,7 +587,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                             writeSettings();
                             System.exit(0);
                         } else {
-                            drawWhiperStuff = !drawWhiperStuff;
+                            drawWhiperCurves = !drawWhiperCurves;
                         }
                         break;
                     case KeyEvent.VK_X:
@@ -1051,6 +1040,19 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
     /// painting section ///////////////////////////////////////////////////////////////////////////////////////////////
 
+    private boolean drawWhipers = true;
+    private boolean drawCircle = true;
+    private boolean drawLines = false;
+    private boolean drawIris = true;
+    private boolean blackMode = true;
+    private boolean drawExtends = true;
+    private boolean drawTriangle = true;
+    private boolean drawHelp = true;
+    private boolean drawIrisPicture = true;
+    private boolean debugMode = true;
+    private boolean drawWhiperCurves = false;
+    private boolean drawBoundingBox = true;
+
     private final Consumer<Graphics2D> paint = g2d -> {
 
         clearBackground(g2d);
@@ -1062,30 +1064,14 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
         drawTriangle(drawTriangle, g2d);
         drawBoundingBox(drawBoundingBox, g2d);
         drawBoundingBoxRotationPath(drawBoundingBox, g2d);
-        drawWiperCurves(drawWhiperStuff, g2d);
-        drawWipers(drawWhiperStuff, g2d);
+        drawWiperCurves(drawWhiperCurves, g2d);
+        drawWipers(drawWhipers, g2d);
     };
-
 
     @Override
     public void paint(Graphics g) {
 
         Graphics2D g2d = (Graphics2D) g;
-        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        g2d.setFont(new Font("Arial", Font.PLAIN, 22));
-
-        double xs = (painter.sceneShift.x + dragShift.x);
-        double ys = (painter.sceneShift.y + dragShift.y);
-
-        AffineTransform transform = AffineTransform.getTranslateInstance(xs, ys);
-
-        double dx = getWidth() / 2.0;
-        double dy = getWidth() / 2.0;
-        transform.translate(-dx, -dy);
-        transform.scale(painter.zoomFactor, painter.zoomFactor);
-        transform.translate(+dx, +dy);
-
-        g2d.setTransform(transform);
 
         if (drawHelp) {
             HelpPage.drawHelpPage(g2d);
