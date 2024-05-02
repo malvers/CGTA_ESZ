@@ -48,8 +48,6 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
     private MyVector midCB_AB;
     private MyVector midBC_AC;
     private final Point2D.Double onMousePressed = new Point2D.Double();
-    private final Point2D.Double dragShift = new Point2D.Double();
-    //    private Point2D.Double sceneShift = new Point2D.Double();
     private boolean drawAnnotation = true;
     private MyVector towCA_BA;
     private MyVector towBC_AC;
@@ -354,10 +352,10 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                 irisPicSize = zoomedSize;
                 irisZoom = 1.0;
 
-                painter.sceneShift.x += dragShift.x;
-                painter.sceneShift.y += dragShift.y;
-                dragShift.x = 0;
-                dragShift.y = 0;
+                painter.sceneShift.x += painter.dragShift.x;
+                painter.sceneShift.y += painter.dragShift.y;
+                painter.dragShift.x = 0;
+                painter.dragShift.y = 0;
 
                 calculateWhipers();
                 createHugeCurve();
@@ -470,8 +468,8 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
                 whiperAB.y = tmp.y;
             }
         } else {
-            dragShift.x = -(onMousePressed.x - e.getX());
-            dragShift.y = -(onMousePressed.y - e.getY());
+            painter.dragShift.x = -(onMousePressed.x - e.getX());
+            painter.dragShift.y = -(onMousePressed.y - e.getY());
         }
     }
 
@@ -1040,6 +1038,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
     /// painting section ///////////////////////////////////////////////////////////////////////////////////////////////
 
+    private boolean drawHelp = false;
     private boolean drawWhipers = true;
     private boolean drawCircle = true;
     private boolean drawLines = false;
@@ -1047,7 +1046,6 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
     private boolean blackMode = true;
     private boolean drawExtends = true;
     private boolean drawTriangle = true;
-    private boolean drawHelp = true;
     private boolean drawIrisPicture = true;
     private boolean debugMode = true;
     private boolean drawWhiperCurves = false;
@@ -1055,7 +1053,7 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
 
     private final Consumer<Graphics2D> paint = g2d -> {
 
-        clearBackground(g2d);
+        drawHeatMap(g2d);
         drawIrisPicture(drawIrisPicture, g2d);
         drawCircle(drawCircle, g2d);
         drawLines(drawLines, g2d);
@@ -1072,13 +1070,12 @@ public class IRISVisualization extends JButton implements IObjectiveFunction, Ru
     public void paint(Graphics g) {
 
         Graphics2D g2d = (Graphics2D) g;
-
         if (drawHelp) {
             HelpPage.drawHelpPage(g2d);
             return;
         }
-
-        painter.paintAll(g2d, paint);
+        clearBackground(g2d);
+        painter.paintAll((Graphics2D) g, getWidth(), getHeight(), paint);
     }
 
     private void drawHeatMap(Graphics2D g2d) {
