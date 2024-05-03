@@ -3,7 +3,7 @@ import java.awt.geom.AffineTransform;
 import java.awt.geom.Point2D;
 import java.util.function.Consumer;
 
-final class Painter {
+class Painter {
 
     protected Point2D.Double paintShiftStart = new Point2D.Double();
     protected Point2D.Double paintShift = new Point2D.Double();
@@ -13,11 +13,9 @@ final class Painter {
 
     private AffineTransform transform = new AffineTransform();
 
-    protected void zoomToPoint(double zoom, double x, double y) {
+    protected void zoomToPoint(double zoom) {
 
         zoomFactor = zoomFactorStart - zoom;
-        zoomPoint.x = x;
-        zoomPoint.y = y;
 
         IrisVis.println("zoom: " + zoom + " zoom factor: " + zoomFactor);
     }
@@ -46,11 +44,14 @@ final class Painter {
         g2d.setTransform(transform);
     }
 
-    protected void storeAtStart() {
+    protected void storeAtStart(double x, double y) {
 
         zoomFactorStart = zoomFactor;
         paintShiftStart.x = paintShift.x;
         paintShiftStart.y = paintShift.y;
+        zoomPoint.x = x;
+        zoomPoint.y = y;
+
     }
 
     protected void setPaintShift(double dx, double dy) {

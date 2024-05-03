@@ -174,14 +174,14 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
             f.close();
 
         } catch (IOException e) {
-            creatDebugWindow();
+            createDebugWindow();
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             System.out.println("readSettings: ClassNotFoundException");
         }
     }
 
-    private void creatDebugWindow() {
+    private void createDebugWindow() {
         if (debugWindow == null) {
             debugWindow = new DebugWindow();
         } else {
@@ -287,7 +287,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
                     return;
                 }
 
-                painter.storeAtStart();
+                painter.storeAtStart(e.getX(), e.getY());
 
                 onMousePressed.x = e.getX();
                 onMousePressed.y = e.getY();
@@ -359,7 +359,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
 
                 if (e.isShiftDown()) {
                     double zoom = (onMousePressed.y - e.getY()) / 100.0;
-                    painter.zoomToPoint(zoom, e.getX(), e.getY());
+                    painter.zoomToPoint(zoom);
                 } else if (areHandlesSelected() || areWhipersSelected()) {
                     moveHandlesOrWhipers(e);
                     doCalculations();
@@ -623,7 +623,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
         painter.paintShift.x = 0;
         painter.paintShift.y = 0;
         painter.zoomFactorStart = 1.0;
-        painter.zoomToPoint(0.0, getWidth() / 2.0, getHeight() / 2.0);
+        painter.zoomToPoint(0.0);
         rotationAngle = 0.0;
         whiskerFactor = 1.0;
         doCalculations();
