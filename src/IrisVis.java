@@ -278,7 +278,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
             @Override
             public void mouseWheelMoved(MouseWheelEvent e) {
                 int notches = e.getWheelRotation();
-                double zoom = notches / 2.0;
+                double zoom = notches / 1.0;
                 if (firstTimeMouseWheel) {
                     painter.storeAtStart(e.getPoint());
 //                    firstTimeMouseWheel = false;
@@ -1110,7 +1110,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
             return;
         }
 
-        g2d.setStroke(new BasicStroke((float) (1.0 / painter.zoomFactor)));
+        g2d.setStroke(new BasicStroke((float) Math.abs(1.0 / painter.zoomFactor)));
         g2d.setColor(myRed);
         Path2D.Double path = new Path2D.Double();
         double x = boundingBoxRotationPath.get(0).x;
@@ -1154,7 +1154,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
         centerBoundingBox.setSize(4);
         centerBoundingBox.fill(g2d, false);
 
-        g2d.setStroke(new BasicStroke((float) (1.0 / painter.zoomFactor)));
+        g2d.setStroke(new BasicStroke((float) Math.abs(1.0 / painter.zoomFactor)));
         g2d.draw(rotateRectangle2D(boundingBox));
     }
 
@@ -1174,7 +1174,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
             return;
         }
         g2d.setColor(Color.ORANGE);
-        g2d.setStroke(new BasicStroke((float) (2 / painter.zoomFactor)));
+        g2d.setStroke(new BasicStroke((float) Math.abs(2.0 / painter.zoomFactor)));
         hugeCurve.draw(g2d);
     }
 
@@ -1196,7 +1196,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
         if (!draw) {
             return;
         }
-        g2d.setStroke(new BasicStroke((float) (3 / painter.zoomFactor)));
+        g2d.setStroke(new BasicStroke((float) Math.abs(2.0 / painter.zoomFactor)));
 
         g2d.setColor(myBlue);
         drawHandleConnector(g2d, handleA, handleB);
@@ -1216,7 +1216,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
         if (!draw) {
             return;
         }
-        g2d.setStroke(new BasicStroke((float) (3 / painter.zoomFactor)));
+        g2d.setStroke(new BasicStroke((float) Math.abs(2.0 / painter.zoomFactor)));
         g2d.setColor(myGreen);
         extendBA.fill(g2d, drawAnnotation);
         extendCA.fill(g2d, drawAnnotation);
@@ -1239,7 +1239,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
         if (!draw) {
             return;
         }
-        g2d.setStroke(new BasicStroke((float) (1 / painter.zoomFactor)));
+        g2d.setStroke(new BasicStroke((float) Math.abs(1.0 / painter.zoomFactor)));
         g2d.setColor(Color.lightGray);
         drawHandleConnector(g2d, extendCA, extendBA);
         drawHandleConnector(g2d, extendBC, extendAC);
@@ -1260,7 +1260,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
         if (!draw) {
             return;
         }
-        g2d.setStroke(new BasicStroke((float) (1.0 / painter.zoomFactor)));
+        g2d.setStroke(new BasicStroke((float) Math.abs(1.0 / painter.zoomFactor)));
         g2d.setColor(Color.MAGENTA.darker());
         centerCircle.fill(g2d, drawAnnotation);
         double ir = calculateInnerRadiusTriangle(handleA, handleB, handleC);
@@ -1279,7 +1279,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
         if (!draw) {
             return;
         }
-        g2d.setStroke(new BasicStroke((float) (1 / painter.zoomFactor)));
+        g2d.setStroke(new BasicStroke((float) Math.abs(1.0 / painter.zoomFactor)));
         g2d.setColor(Color.MAGENTA.darker());
         centerCircle.fill(g2d, drawAnnotation);
         g2d.draw(new Ellipse2D.Double(centerCircle.x - radiusCircle, centerCircle.y - radiusCircle, 2 * radiusCircle, 2 * radiusCircle));
@@ -1299,7 +1299,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
         int g = Color.ORANGE.getGreen();
         int b = Color.ORANGE.getBlue();
 
-        g2d.setStroke(new BasicStroke((float) (2 / painter.zoomFactor)));
+        g2d.setStroke(new BasicStroke((float) Math.abs(2.0 / painter.zoomFactor)));
 
         whiperAC.fill(g2d, false);
         whiperBA.fill(g2d, false);
