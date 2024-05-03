@@ -85,7 +85,7 @@ class MyVector extends Ellipse2D.Double {
 
     protected void print(String s) {
 
-        IRISVisualization.println("name: " + s + " x: " + x + " y: " + y);
+        IrisVis.println("name: " + s + " x: " + x + " y: " + y);
     }
 
     protected void print() {

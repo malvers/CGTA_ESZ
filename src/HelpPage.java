@@ -17,28 +17,36 @@ public class HelpPage {
         int yPos = dy;
         int tab = 350;
 
-        g2d.drawString("Arrow up / down", xPos, yPos);
-        g2d.drawString("move bounding box up and down", xPos + tab, yPos);
-        yPos += dy;
-
-        g2d.drawString("Arrow left / right", xPos, yPos);
-        g2d.drawString("Move bounding box left and right", xPos + tab, yPos);
-        yPos += dy;
+//        g2d.drawString("Arrow up / down", xPos, yPos);
+//        g2d.drawString("move bounding box up and down", xPos + tab, yPos);
+//        yPos += dy;
+//
+//        g2d.drawString("Arrow left / right", xPos, yPos);
+//        g2d.drawString("Move bounding box left and right", xPos + tab, yPos);
+//        yPos += dy;
 
         g2d.drawString("+ / -", xPos, yPos);
         g2d.drawString("Grow / shrink whiskers | extends", xPos + tab, yPos);
+        yPos += dy;
+
+        g2d.drawString("0 (zero)", xPos, yPos);
+        g2d.drawString("Reset", xPos + tab, yPos);
+        yPos += dy;
+
+        g2d.drawString("Shift 0 (zero)", xPos, yPos);
+        g2d.drawString("Reset 2.0 :-)", xPos + tab, yPos);
         yPos += dy;
 
         g2d.drawString("A", xPos, yPos);
         g2d.drawString("Toggle annotations", xPos + tab, yPos);
         yPos += dy;
 
-        g2d.drawString("0", xPos, yPos);
-        g2d.drawString("Reset", xPos + tab, yPos);
-        yPos += dy;
-
         g2d.drawString("B", xPos, yPos);
         g2d.drawString("Toggle bounding box whiper curve", xPos + tab, yPos);
+        yPos += dy;
+
+        g2d.drawString("Shift B", xPos, yPos);
+        g2d.drawString("Toggle bounding rotation curve", xPos + tab, yPos);
         yPos += dy;
 
         g2d.drawString("Command B", xPos, yPos);
@@ -82,6 +90,10 @@ public class HelpPage {
         yPos += dy;
 
         g2d.drawString("W", xPos, yPos);
+        g2d.drawString("Toggle whiper", xPos + tab, yPos);
+        yPos += dy;
+
+        g2d.drawString("Shift W", xPos, yPos);
         g2d.drawString("Toggle whiper curve", xPos + tab, yPos);
         yPos += dy;
 

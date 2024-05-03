@@ -117,12 +117,12 @@ public class MyDoublePolygon {
     public void print(String s) {
 
         name = s;
-        IRISVisualization.print("\n" + name + " -> ");
+        IrisVis.print("\n" + name + " -> ");
         for (int i = 0; i < points.size(); i++) {
             DecimalFormat formatter = new DecimalFormat("#000.00");
             String xs = formatter.format(points.get(i).x);
             String ys = formatter.format(points.get(i).y);
-            IRISVisualization.print((" | " + i + " x: " + xs + " " + i + " y: " + ys + " "));
+            IrisVis.print((" | " + i + " x: " + xs + " " + i + " y: " + ys + " "));
         }
     }
 
