@@ -507,12 +507,10 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
 //                        shiftBoundingBox(e.getKeyCode(), inc);
 
                     case KeyEvent.VK_SPACE:
-
-                        rotationAngle += Math.toRadians(1.0);
+                        rotationAngle += Math.toRadians(2.0);
                         initRotatedBoundingBox();
                         initCMAES();
                         runCMAES();
-
                         break;
                     case KeyEvent.VK_BACK_SPACE:
 
@@ -1122,6 +1120,13 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
             path.lineTo(x, y);
         }
         g2d.draw(path);
+        g2d.setColor(myGreen);
+        for (int i = 0; i < boundingBoxRotationPath.size(); i++) {
+            x = boundingBoxRotationPath.get(i).x;
+            y = boundingBoxRotationPath.get(i).y;
+            double size = 2 / painter.zoomFactor;
+            g2d.fill(new Ellipse2D.Double(x - size / 2.0, y - size / 2.0, size, size));
+        }
     }
 
     private void drawIrisPicture(boolean draw, Graphics2D g2d) {
@@ -1665,9 +1670,9 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
 
             initCMAES();
 
-            if (debugMode) {
-                innerStart = System.currentTimeMillis();
-            }
+//            if (debugMode) {
+//                innerStart = System.currentTimeMillis();
+//            }
 
             runCMAES();
 
