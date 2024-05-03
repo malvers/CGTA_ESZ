@@ -16,8 +16,6 @@ class Painter {
     protected void zoomToPoint(double zoom) {
 
         zoomFactor = zoomFactorStart - zoom;
-
-        IrisVis.println("zoom: " + zoom + " zoom factor: " + zoomFactor);
     }
 
     @SafeVarargs
@@ -35,29 +33,43 @@ class Painter {
         g2d.dispose();
     }
 
+    protected Point transform(Point p) {
+
+        int x = (int) (zoomFactor * p.x + paintShift.x);
+        int y = (int) (zoomFactor * p.y + paintShift.y);
+        return new Point(x, y);
+    }
+
     private void setZoomAndPan(Graphics2D g2d) {
 
-        transform = AffineTransform.getTranslateInstance(paintShift.x, paintShift.y);
+        transform = AffineTransform.getTranslateInstance(paintShift.x * zoomFactor, paintShift.y * zoomFactor);
+
         transform.translate(+zoomPoint.x, +zoomPoint.y);
         transform.scale(zoomFactor, zoomFactor);
         transform.translate(-zoomPoint.x, -zoomPoint.y);
+
         g2d.setTransform(transform);
     }
 
-    protected void storeAtStart(double x, double y) {
+    protected void storeAtStart(Point2D p) {
 
         zoomFactorStart = zoomFactor;
+        zoomPoint.x = p.getX();
+        zoomPoint.y = p.getY();
         paintShiftStart.x = paintShift.x;
         paintShiftStart.y = paintShift.y;
-        zoomPoint.x = x;
-        zoomPoint.y = y;
-
     }
 
     protected void setPaintShift(double dx, double dy) {
 
-        paintShift.x = paintShiftStart.x - dx;
-        paintShift.y = paintShiftStart.y - dy;
+        IrisVis.println();
+        IrisVis.print("delta dx: " + dx + " dy: " + dy);
+        IrisVis.print(" start x:  " + paintShiftStart.x + " y: " + paintShiftStart.y);
 
+        paintShift.x = paintShiftStart.x - dx / zoomFactor;
+        paintShift.y = paintShiftStart.y - dy / zoomFactor;
+
+        IrisVis.print(" after x:  " + paintShift.x + " y: " + paintShift.y);
+        IrisVis.println();
     }
 }

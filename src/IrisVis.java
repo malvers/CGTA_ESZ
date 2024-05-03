@@ -71,6 +71,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
     private CMAEvolutionStrategy cmaes;
     private BufferedImage heatMap;
     private final Painter painter = new Painter();
+    private boolean firstTimeMouseWheel = true;
 
     /// constructor ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -89,11 +90,13 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
 
         adjustColorBlackMode();
 
-        irisPicture = loadImage("/Users/malvers/IdeaProjects/CGTA_ESZ/src/Iris Mi free.png");
+        irisPicture = loadImage("/Users/malvers/IdeaProjects/CONWAYS IRIS/src/Iris Mi free.png");
 
         doCalculations();
         calculateWhipers();
-        calculateBoundingBoxRotationCurve360();
+        calculateBoundingBoxRotationPath360();
+
+        painter.zoomFactor = 1.5;
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             System.out.println("hooked");
@@ -182,12 +185,12 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
     }
 
     private void createDebugWindow() {
+
         if (debugWindow == null) {
             debugWindow = new DebugWindow();
-        } else {
-            debugWindow.setVisible(true);
-            debugWindow.clear();
         }
+        debugWindow.setVisible(true);
+        debugWindow.clear();
     }
 
     /// helper functions /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -214,7 +217,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
         if (debugWindow == null) {
             System.out.println(s);
         } else {
-            debugWindow.println(s);
+            debugWindow.print(s);
         }
     }
 
@@ -268,16 +271,23 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
 
     private void mouseInit() {
 
+        firstTimeMouseWheel = true;
+
         addMouseWheelListener(new MouseWheelListener() {
+
             @Override
             public void mouseWheelMoved(MouseWheelEvent e) {
                 int notches = e.getWheelRotation();
-                double zoom = notches / 10.0;
-                println("Mouse wheel - zoom: " + zoom + " x: " + e.getX() + "y: " + e.getY());
-//                painter.zoomToPoint(zoom, e.getX(), e.getY());
+                double zoom = notches / 2.0;
+                if (firstTimeMouseWheel) {
+                    painter.storeAtStart(e.getPoint());
+//                    firstTimeMouseWheel = false;
+                }
+                painter.zoomToPoint(zoom);
                 repaint();
             }
         });
+
         addMouseListener(new MouseAdapter() {
 
             @Override
@@ -287,7 +297,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
                     return;
                 }
 
-                painter.storeAtStart(e.getX(), e.getY());
+                painter.storeAtStart(e.getPoint());
 
                 onMousePressed.x = e.getX();
                 onMousePressed.y = e.getY();
@@ -335,6 +345,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
                 irisPicSize = zoomedIrisSize;
                 irisZoom = 1.0;
 
+                firstTimeMouseWheel = true;
                 calculateWhipers();
                 createHugeCurve();
                 setWhipersVisibility(true);
@@ -364,7 +375,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
                     moveHandlesOrWhipers(e);
                     doCalculations();
                     createWhiperCurves();
-                } else {
+                } else if (!e.isShiftDown()) {
                     double dx = onMousePressed.x - e.getX();
                     double dy = onMousePressed.y - e.getY();
                     painter.setPaintShift(dx, dy);
@@ -378,7 +389,8 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
                 if (!drawHelp) {
                     String title = "Conway's IRIS - Press H for Help";
                     if (debugMode) {
-                        title += " - x: " + e.getX() + " y: " + e.getY();
+                        Point pt = painter.transform(e.getPoint());
+                        title += " - x: " + e.getX() + " y: " + e.getY() + " --- xt: " + pt.x + " yt: " + pt.y;
                     }
                     frame.setTitle(title);
                 }
@@ -453,7 +465,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
             }
         }
         if (areHandlesSelected()) {
-            calculateBoundingBoxRotationCurve360();
+            calculateBoundingBoxRotationPath360();
         }
     }
 
@@ -468,27 +480,32 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
                 boolean doRepaint = true;
 
 //                println("key: " + e.getKeyCode());
+                double inc = 10.0;
+
                 switch (e.getKeyCode()) {
 
                     case KeyEvent.VK_0:
                         theGreatReset();
                         break;
-                    case KeyEvent.VK_UP:
-                    case KeyEvent.VK_DOWN:
-                    case KeyEvent.VK_LEFT:
-                    case KeyEvent.VK_RIGHT:
-                        if (e.isMetaDown()) {
-                            moveIrisPic(e.getKeyCode(), 1);
-                        } else {
-                            double inc = 0.1;
-                            if (e.isShiftDown()) {
-                                inc = 1.0;
-                            } else if (e.isAltDown()) {
-                                inc = 5.0;
-                            }
-                            shiftBoundingBox(e.getKeyCode(), inc);
-                        }
+                    case KeyEvent.VK_2:
+                        painter.zoomFactor = 2.0;//ToPoint(2.0, getWidth()/2.0, getHeight()/2.0);
                         break;
+
+                    case KeyEvent.VK_UP:
+                        painter.paintShift.y -= inc;
+                        break;
+                    case KeyEvent.VK_DOWN:
+                        painter.paintShift.y += inc;
+                        break;
+                    case KeyEvent.VK_LEFT:
+                        painter.paintShift.x -= inc;
+                        break;
+                    case KeyEvent.VK_RIGHT:
+                        painter.paintShift.x += inc;
+                        break;
+//                        moveIrisPic(e.getKeyCode(), 1);
+//                        shiftBoundingBox(e.getKeyCode(), inc);
+
                     case KeyEvent.VK_SPACE:
 
                         rotationAngle += Math.toRadians(1.0);
@@ -522,6 +539,11 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
                         break;
                     case KeyEvent.VK_D:
                         debugMode = !debugMode;
+                        if (debugMode) {
+                            createDebugWindow();
+                        } else if (!debugMode && debugWindow != null) {
+                            debugWindow.setVisible(false);
+                        }
                         printHandles();
                         doCalculations();
                         calculateWhipers();
@@ -569,7 +591,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
                         break;
                     case KeyEvent.VK_X:
                         if (e.isShiftDown()) {
-                            calculateBoundingBoxRotationCurve360();
+                            calculateBoundingBoxRotationPath360();
                         } else {
                             long innerStart = System.currentTimeMillis();
                             startCMAES();
@@ -628,7 +650,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
         whiskerFactor = 1.0;
         doCalculations();
         calculateWhipers();
-        calculateBoundingBoxRotationCurve360();
+        calculateBoundingBoxRotationPath360();
     }
 
     private void setWhipersVisibility(boolean b) {
@@ -1088,15 +1110,15 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
             return;
         }
 
-        g2d.setStroke(new BasicStroke(1));
+        g2d.setStroke(new BasicStroke((float) (1.0 / painter.zoomFactor)));
         g2d.setColor(myRed);
         Path2D.Double path = new Path2D.Double();
         double x = boundingBoxRotationPath.get(0).x;
         double y = boundingBoxRotationPath.get(0).y;
         path.moveTo(x, y);
-        for (int i = 1; i < boundingBoxRotationPath.size(); i++) {
-            x = boundingBoxRotationPath.get(i).x;
-            y = boundingBoxRotationPath.get(i).y;
+        for (int i = 1; i < boundingBoxRotationPath.size() + 1; i++) {
+            x = boundingBoxRotationPath.get(i % boundingBoxRotationPath.size()).x;
+            y = boundingBoxRotationPath.get(i % boundingBoxRotationPath.size()).y;
             path.lineTo(x, y);
         }
         g2d.draw(path);
@@ -1132,7 +1154,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
         centerBoundingBox.setSize(4);
         centerBoundingBox.fill(g2d, false);
 
-        g2d.setStroke(new BasicStroke(1));
+        g2d.setStroke(new BasicStroke((float) (1.0 / painter.zoomFactor)));
         g2d.draw(rotateRectangle2D(boundingBox));
     }
 
@@ -1152,7 +1174,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
             return;
         }
         g2d.setColor(Color.ORANGE);
-        g2d.setStroke(new BasicStroke(2));
+        g2d.setStroke(new BasicStroke((float) (2 / painter.zoomFactor)));
         hugeCurve.draw(g2d);
     }
 
@@ -1174,7 +1196,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
         if (!draw) {
             return;
         }
-        g2d.setStroke(new BasicStroke(3));
+        g2d.setStroke(new BasicStroke((float) (3 / painter.zoomFactor)));
 
         g2d.setColor(myBlue);
         drawHandleConnector(g2d, handleA, handleB);
@@ -1194,7 +1216,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
         if (!draw) {
             return;
         }
-        g2d.setStroke(new BasicStroke(3));
+        g2d.setStroke(new BasicStroke((float) (3 / painter.zoomFactor)));
         g2d.setColor(myGreen);
         extendBA.fill(g2d, drawAnnotation);
         extendCA.fill(g2d, drawAnnotation);
@@ -1217,7 +1239,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
         if (!draw) {
             return;
         }
-        g2d.setStroke(new BasicStroke(1));
+        g2d.setStroke(new BasicStroke((float) (1 / painter.zoomFactor)));
         g2d.setColor(Color.lightGray);
         drawHandleConnector(g2d, extendCA, extendBA);
         drawHandleConnector(g2d, extendBC, extendAC);
@@ -1238,7 +1260,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
         if (!draw) {
             return;
         }
-        g2d.setStroke(new BasicStroke(2));
+        g2d.setStroke(new BasicStroke((float) (1.0 / painter.zoomFactor)));
         g2d.setColor(Color.MAGENTA.darker());
         centerCircle.fill(g2d, drawAnnotation);
         double ir = calculateInnerRadiusTriangle(handleA, handleB, handleC);
@@ -1257,7 +1279,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
         if (!draw) {
             return;
         }
-        g2d.setStroke(new BasicStroke(1));
+        g2d.setStroke(new BasicStroke((float) (1 / painter.zoomFactor)));
         g2d.setColor(Color.MAGENTA.darker());
         centerCircle.fill(g2d, drawAnnotation);
         g2d.draw(new Ellipse2D.Double(centerCircle.x - radiusCircle, centerCircle.y - radiusCircle, 2 * radiusCircle, 2 * radiusCircle));
@@ -1277,7 +1299,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
         int g = Color.ORANGE.getGreen();
         int b = Color.ORANGE.getBlue();
 
-        g2d.setStroke(new BasicStroke(2));
+        g2d.setStroke(new BasicStroke((float) (2 / painter.zoomFactor)));
 
         whiperAC.fill(g2d, false);
         whiperBA.fill(g2d, false);
@@ -1615,7 +1637,7 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
         fitness = cmaes.init();
     }
 
-    private void calculateBoundingBoxRotationCurve360() {
+    private void calculateBoundingBoxRotationPath360() {
 
         long start = 0;
 
@@ -1630,14 +1652,14 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
         initRotatedBoundingBox();
         boundingBoxRotationPath = new ArrayList<>();
 
-        double incAngle = Math.toRadians(4.0);
-        double to = Math.PI;
+        double incAngle = Math.toRadians(2.0);
+        double to = Math.PI / 2.0;
         long innerStart = 0;
         for (rotationAngle = 0; rotationAngle < to; rotationAngle += incAngle) {
 
-            if (debugMode) {
-                println("rotation: " + Math.toDegrees(rotationAngle));
-            }
+//            if (debugMode) {
+//                println("rotation: " + Math.toDegrees(rotationAngle));
+//            }
 
             rotatedBoundingBox = rotateRectangle2D(boundingBox);
 
@@ -1649,9 +1671,9 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
 
             runCMAES();
 
-            if (debugMode) {
-                println("runCMAES: " + (System.currentTimeMillis() - innerStart) + " ms");
-            }
+//            if (debugMode) {
+//                println("runCMAES: " + (System.currentTimeMillis() - innerStart) + " ms");
+//            }
 
             boundingBoxRotationPath.add(getCenterBoundingBox());
         }
@@ -1741,8 +1763,9 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
             f.setVisible(true);
         });
     }
+}
 
-    /*   deprecated deprecated deprecated deprecated deprecated deprecated deprecated deprecated deprecated deprecated    */
+/* deprecated deprecated deprecated deprecated deprecated deprecated deprecated deprecated deprecated deprecated depr */
 
 //    private void shiftTestPolygonExperimental(double x, double y) {
 //
@@ -1897,4 +1920,4 @@ public class IrisVis extends JButton implements IObjectiveFunction, Runnable {
 //
 //        println(count + " optimizePolygonPosition: " + qOptimal);
 //    }
-}
+

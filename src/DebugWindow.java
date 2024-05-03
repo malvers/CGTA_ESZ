@@ -34,4 +34,8 @@ public class DebugWindow extends JFrame {
     public void clear() {
         textArea.setText("");
     }
+
+    public void print(String s) {
+        textArea.append(s);
+    }
 }
